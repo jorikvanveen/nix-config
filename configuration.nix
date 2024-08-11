@@ -60,6 +60,9 @@
 
   # Configure scroll speec
   services.xserver.synaptics.scrollDelta = 1000;
+  services.libinput.touchpad.additionalOptions = ''
+  Option "Scroll Pixel Distance" 10
+  '';
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
