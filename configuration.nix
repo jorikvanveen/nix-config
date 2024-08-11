@@ -60,6 +60,7 @@
 
   # Configure scroll speec
   services.xserver.synaptics.scrollDelta = 1000;
+  services.libinput.enable = true;
   services.libinput.touchpad.additionalOptions = ''
   Option "Scroll Pixel Distance" 100
   '';
