@@ -8,7 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs_stable";
   };
 
-  outputs = { self, nixpkgs, nixpkgs_stable, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs_stable, home-manager } @ inputs:
   let
     unstable = nixpkgs.legacyPackages.x86_64-linux;
     pkgs = nixpkgs_stable.legacyPackages.x86_64-linux;
@@ -18,6 +18,12 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.main = import ./home.nix;
+        }
       ];
     };
   };
