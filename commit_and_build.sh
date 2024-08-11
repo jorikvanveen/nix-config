@@ -1,4 +1,3 @@
 git add --all &&
-sudo nixos-rebuild dry-build --flake . &&
-git commit -m "$1" &&
-sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake . &&
+git commit -m "$1"
