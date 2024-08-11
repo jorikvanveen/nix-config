@@ -103,10 +103,10 @@
   #  wget
     neovim
     git
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnomeExtensions.forge
     zed-editor
-    gnome.dconf-editor
+    dconf-editor
   ];
 
   # Enable flakes
