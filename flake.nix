@@ -16,6 +16,7 @@
   {
     nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
+      system = "x86_64-linux";
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
