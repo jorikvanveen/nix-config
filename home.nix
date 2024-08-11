@@ -1,3 +1,7 @@
 {...} @ inputs: {
-  home.stateVersion = "24.05";
+  home = {
+    username = "main";
+    homeDirectory = "/home/main";
+    stateVersion = "24.05";
+  };
 }
