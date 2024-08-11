@@ -59,10 +59,9 @@
   console.keyMap = "us-acentos";
 
   # Configure scroll speec
-  services.xserver.synaptics.scrollDelta = 1000;
   services.libinput.enable = true;
   services.libinput.touchpad.additionalOptions = ''
-  Option "Scroll Pixel Distance" 100
+  Option "Scroll Pixel Distance" 1000
   '';
 
   # Enable CUPS to print documents.
