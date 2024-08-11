@@ -1,4 +1,4 @@
-{...} @ inputs: {
+{ pkgs, ...} @ inputs: {
   home = {
     username = "main";
     homeDirectory = "/home/main";
@@ -7,8 +7,8 @@
 
   programs.git = {
     enable = true;
-    userEmail = "test@test.org";
-    userName = "test";
+    userEmail = "vanveenjorik@protonmail.com";
+    userName = "Jorik";
   };
 
   programs.home-manager.enable = true;
