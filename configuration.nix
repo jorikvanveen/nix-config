@@ -59,7 +59,7 @@
   console.keyMap = "us-acentos";
 
   # Configure scroll speec
-  services.xserver.synaptics.scrollDelta = 40;
+  services.xserver.synaptics.scrollDelta = 10;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
