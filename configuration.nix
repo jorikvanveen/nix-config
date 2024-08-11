@@ -105,6 +105,7 @@
     git
     gnome.gnome-tweaks
     gnomeExtensions.forge
+    zed-editor
   ];
 
   # Enable flakes
