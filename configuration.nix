@@ -61,7 +61,7 @@
   # Configure scroll speec
   services.libinput.enable = true;
   services.libinput.touchpad.additionalOptions = ''
-    Option "ScrollPixelDistance" "1000"
+    Option "ScrollPixelDistance" "100"
   '';
 
   # Enable CUPS to print documents.
