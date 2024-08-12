@@ -5,11 +5,7 @@
     stateVersion = "24.05";
   };
 
-  programs.git = {
-    enable = true;
-    userEmail = "vanveenjorik@protonmail.com";
-    userName = "Jorik";
-  };
+  programs.git = import program-config/git.nix;
 
   programs.firefox = {
     enable = true;
