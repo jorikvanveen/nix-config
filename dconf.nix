@@ -225,7 +225,7 @@ with lib.hm.gvariant;
     window-swap-left = [ "<Control><Super>h" ];
     window-swap-right = [ "<Control><Super>l" ];
     window-swap-up = [ "<Control><Super>k" ];
-    window-toggle-always-float = [ "<Shift><Super>c" ];
+    window-toggle-always-float = [ ];
     window-toggle-float = [ "<Super>c" ];
     workspace-active-tile-toggle = [ "<Shift><Super>w" ];
   };
