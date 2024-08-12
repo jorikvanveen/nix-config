@@ -18,6 +18,7 @@
       extensions = with inputs.ff-addons.packages.x86_64-linux; [
         ublock-origin
         bitwarden
+        tree-style-tab
       ];
       settings = {
         "signon.rememberSignons" = false;
