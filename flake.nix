@@ -25,11 +25,11 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
+          home-manager.backupFileExtension = "hmbak";
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.main = import ./home.nix;
-          home-manager.backupFileExtension = "hmbak";
         }
       ];
     };

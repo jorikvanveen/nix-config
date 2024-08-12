@@ -17,6 +17,7 @@
       search.default = "DuckDuckGo";
       extensions = with inputs.ff-addons.packages.x86_64-linux; [
         ublock-origin
+        bitwarden
       ];
       settings = {
         "signon.rememberSignons" = false;
