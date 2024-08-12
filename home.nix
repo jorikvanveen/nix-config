@@ -13,18 +13,22 @@
 
   programs.firefox = {
     enable = true;
-    profiles.default.bookmarks = [
-      {
-        name = "Toolbar";
-        toolbar = true;
-        bookmarks = [
-          {
-            name = "Nix search";
-            url = "https://search.nixos.org";
-          }
-        ];
-      }
-    ];
+    profiles.default = {
+      search.default = "DuckDuckGo";
+      bookmarks = [
+        {
+          name = "Toolbar";
+          toolbar = true;
+          bookmarks = [
+            {
+              name = "Nix search";
+              url = "https://search.nixos.org";
+            }
+          ];
+        }
+      ];
+    };
+
   };
 
   programs.home-manager.enable = true;
