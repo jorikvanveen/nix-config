@@ -120,6 +120,11 @@ with lib.hm.gvariant;
     focus-mode = "sloppy";
   };
 
+  "org/gnome/desktop/wm/keybindings" = {
+    switch-to-workspace-left = [ "<Super>Q" ];
+    switch-to-workspace-right = [ "<Super>W" ];
+  };
+
   "org/gnome/epiphany" = {
     ask-for-default = false;
   };
@@ -190,7 +195,7 @@ with lib.hm.gvariant;
     con-tabbed-layout-toggle = [ "<Shift><Super>t" ];
     con-tabbed-showtab-decoration-toggle = [ "<Control><Alt>y" ];
     focus-border-toggle = [ "<Super>x" ];
-    prefs-tiling-toggle = [ "<Super>w" ];
+    prefs-tiling-toggle = [ ];
     window-focus-down = [ "<Super>j" ];
     window-focus-left = [ "<Super>h" ];
     window-focus-right = [ "<Super>l" ];
