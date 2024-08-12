@@ -123,6 +123,7 @@ with lib.hm.gvariant;
   "org/gnome/desktop/wm/keybindings" = {
     switch-to-workspace-left = [ "<Super>Q" ];
     switch-to-workspace-right = [ "<Super>W" ];
+    close = ["<Super><Shift>C"];
   };
 
   "org/gnome/epiphany" = {
