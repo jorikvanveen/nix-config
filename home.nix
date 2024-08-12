@@ -15,9 +15,9 @@
     enable = true;
     profiles.default = {
       search.default = "DuckDuckGo";
-      #extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      #  bitwarden
-      #];
+      extensions = with inputs.ff-addons.packages.x86_64-linux; [
+        ublock-origin
+      ];
       settings = {
         "signon.rememberSignons" = false;
         "app.shield.optoutstudies.enabled" = false;
