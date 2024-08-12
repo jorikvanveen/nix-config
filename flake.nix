@@ -21,12 +21,13 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        nur.nixosModules.nur
         home-manager.nixosModules.home-manager
         {
-          home-manager.extraSpecialArgs = { inherit inputs; };
+          #home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.main = import ./home.nix { inherit inputs; inherit pkgs; inherit nur; };
+          home-manager.users.main = import ./home.nix;
           home-manager.backupFileExtension = "hmbak";
         }
       ];

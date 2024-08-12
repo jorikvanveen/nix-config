@@ -1,8 +1,4 @@
 { pkgs, ...} @ inputs: {
-  imports = [
-    inputs.nur.hmModules.nur
-  ];
-
   home = {
     username = "main";
     homeDirectory = "/home/main";
@@ -19,6 +15,9 @@
     enable = true;
     profiles.default = {
       search.default = "DuckDuckGo";
+      #extensions = with nur.repos.rycee.firefox-addons; [
+      #  bitwarden
+      #];
       settings = {
         "signon.rememberSignons" = false;
         "app.shield.optoutstudies.enabled" = false;
