@@ -114,6 +114,9 @@
     gnomeExtensions.forge
     zed-editor
     dconf-editor
+  ];
+
+  fonts.fonts = with pkgs; [
     fira-code
   ];
 
