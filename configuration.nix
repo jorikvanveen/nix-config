@@ -114,6 +114,7 @@
     gnomeExtensions.forge
     zed-editor
     dconf-editor
+    tmux
   ];
 
   fonts.fonts = with pkgs; [
