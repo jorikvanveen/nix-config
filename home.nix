@@ -1,4 +1,4 @@
-{ pkgs, ...} @ inputs: {
+{ pkgs, inputs, lib, config, options, specialArgs, modulesPath, nixosConfig, osConfig }: {
   home = {
     username = "main";
     homeDirectory = "/home/main";
@@ -15,7 +15,7 @@
     enable = true;
     profiles.default = {
       search.default = "DuckDuckGo";
-      #extensions = with nur.repos.rycee.firefox-addons; [
+      #extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       #  bitwarden
       #];
       settings = {
