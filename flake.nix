@@ -9,10 +9,11 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, nixpkgs_stable, home-manager, nur, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs_stable, home-manager, ... } @ inputs:
   let
     unstable = nixpkgs.legacyPackages.x86_64-linux;
     pkgs = nixpkgs_stable.legacyPackages.x86_64-linux;
+    nur = inputs.nur;
   in
   {
     nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
@@ -22,9 +23,10 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
+          home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.main = import ./home.nix;
+          home-manager.users.main = import ./home.nix { inherit inputs; inherit pkgs; inherit nur; };
           home-manager.backupFileExtension = "hmbak";
         }
       ];

@@ -1,4 +1,8 @@
-{ pkgs, nur, ...} @ inputs: {
+{ pkgs, ...} @ inputs: {
+  imports = [
+    inputs.nur.hmModules.nur
+  ];
+
   home = {
     username = "main";
     homeDirectory = "/home/main";
