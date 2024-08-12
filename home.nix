@@ -16,7 +16,7 @@
     profiles.default = {
       search.default = "DuckDuckGo";
       settings = {
-        signon.rememberSignons = false;
+        "signon.rememberSignons" = false;
       };
       bookmarks = [
         {
