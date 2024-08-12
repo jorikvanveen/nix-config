@@ -4,18 +4,38 @@
 // documentation: https://zed.dev/docs/configuring-zed
 //
 // To see all of Zed's default settings without changing your
-// custom settings, run the `zed: Open Default Settings` command
-// from the command palette
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
 {
+  "language_models": {
+    "openai": {}
+  },
+  "languages": {
+    "Rust": {
+      "show_inline_completions": true
+    },
+    "C": {
+      "show_inline_completions": true
+    }
+  },
+  "assistant": {
+    "version": "2",
+    "provider": null
+  },
+  "inline_completions": {
+    "disabled_globs": [".env", "myprogram.c"]
+  },
+  "show_inline_completions": false,
+  "theme": "Ayu Mirage",
+  "vim_mode": true,
   "ui_font_size": 14,
   "buffer_font_size": 14,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Andromeda"
-  },
-  "ui_font_family": "Fira Code",
-  "buffer_font_family": "Fira Code",
+  "relative_line_numbers": true,
+  "ui_font_family": "SFMono Nerd Font Mono",
+  "buffer_font_family": "SFMono Nerd Font Mono",
+  "tab_bar": { "show": true },
+  "base_keymap": "VSCode",
+  "cursor_blink": false,
   "auto_update": false,
-  "vim_mode": true
+  "use_autoclose": true
 }

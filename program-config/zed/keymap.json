@@ -7,15 +7,43 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "Editor && vim_mode != insert",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "space space": "tab_switcher::Toggle",
+      "space f f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-\\": ["workspace::ActivatePaneInDirection", "Up"]
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-j": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "tab": ["workspace::SendKeystrokes", "down"],
+      "shift-tab": ["workspace::SendKeystrokes", "up"]
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrev",
+      "x": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-n": "workspace::ToggleLeftDock"
     }
   }
 ]
