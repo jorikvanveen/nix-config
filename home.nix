@@ -8,6 +8,12 @@
     shellAliases = {
       "zed" = "nix-shell ~/Projects/zed-nix/shell.nix";
     };
+
+    file.zed = {
+      enable = true;
+      source = program-config/zed;
+      recursive = true;
+    };
   };
 
   programs.git = import program-config/git.nix;
