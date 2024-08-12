@@ -115,6 +115,7 @@
     zed-editor
     dconf-editor
     tmux
+    alacritty
   ];
 
   fonts.packages = with pkgs; [
