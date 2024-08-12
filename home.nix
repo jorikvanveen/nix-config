@@ -15,6 +15,9 @@
     enable = true;
     profiles.default = {
       search.default = "DuckDuckGo";
+      settings = {
+        signon.rememberSignons = false;
+      };
       bookmarks = [
         {
           name = "Toolbar";
