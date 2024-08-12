@@ -1,9 +1,9 @@
 { pkgs, inputs, lib, config, options, specialArgs, modulesPath, nixosConfig, osConfig }: {
   programs.home-manager.enable = true;
 
-  home = {
+  home = let home = "/home/main"; in {
     username = "main";
-    homeDirectory = "/home/main";
+    homeDirectory = home;
     stateVersion = "24.05";
     shellAliases = {
       "zed" = "nix-shell ~/Projects/zed-nix/shell.nix";
@@ -12,6 +12,7 @@
     file.zed = {
       enable = true;
       source = program-config/zed;
+      target = home + "/.config/zed";
       recursive = true;
     };
   };
