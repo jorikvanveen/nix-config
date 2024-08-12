@@ -126,6 +126,12 @@ with lib.hm.gvariant;
     close = ["<Super><Shift>C"];
   };
 
+  "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+    binding = "<Shift><Super>Return";
+    command = "alacritty";
+    name = "Open terminal";
+  };
+
   "org/gnome/epiphany" = {
     ask-for-default = false;
   };
