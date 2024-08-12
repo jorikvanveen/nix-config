@@ -1,13 +1,17 @@
 { pkgs, inputs, lib, config, options, specialArgs, modulesPath, nixosConfig, osConfig }: {
+  programs.home-manager.enable = true;
+
   home = {
     username = "main";
     homeDirectory = "/home/main";
     stateVersion = "24.05";
+    shellAliases = {
+      "zed" = "nix-shell ~/Projects/zed-nix/shell.nix";
+    };
   };
 
   programs.git = import program-config/git.nix;
+  programs.firefox = import program-config/firefox.nix { inherit inputs; };
 
-  programs.firefox = import program-config/firefox.nix { inherit pkgs inputs; };
-
-  programs.home-manager.enable = true;
+  dconf.settings = import ./dconf.nix { inherit lib; };
 }

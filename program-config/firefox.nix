@@ -1,4 +1,4 @@
-{pkgs, inputs}: {
+{ inputs }: {
   enable = true;
   profiles.default = {
     search.default = "DuckDuckGo";
