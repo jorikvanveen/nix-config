@@ -11,5 +11,15 @@
     userName = "Jorik";
   };
 
+  programs.firefox = {
+    enable = true;
+    profiles.default.bookmarks = [
+      {
+        name = "Nix search";
+        url = "https://search.nixos.org";
+      }
+    ];
+  };
+
   programs.home-manager.enable = true;
 }
