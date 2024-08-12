@@ -9,7 +9,7 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, nixpkgs_stable, home-manager, nur } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs_stable, home-manager, nur, ... } @ inputs:
   let
     unstable = nixpkgs.legacyPackages.x86_64-linux;
     pkgs = nixpkgs_stable.legacyPackages.x86_64-linux;
