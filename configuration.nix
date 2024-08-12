@@ -116,6 +116,7 @@
     dconf-editor
     tmux
     alacritty
+    open-webui
   ];
 
   fonts.packages = with pkgs; [
