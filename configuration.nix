@@ -114,6 +114,7 @@
     gnomeExtensions.forge
     zed-editor
     dconf-editor
+    fira-code
   ];
 
   # Enable flakes
