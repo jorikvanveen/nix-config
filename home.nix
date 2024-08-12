@@ -17,7 +17,7 @@
       search.default = "DuckDuckGo";
       settings = {
         "signon.rememberSignons" = false;
-        "app.shield.optoutstudies.enabled" = true;
+        "app.shield.optoutstudies.enabled" = false;
         "datareporting.healthreport.uploadEnabled" = false;
       };
       bookmarks = [
