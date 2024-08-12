@@ -15,8 +15,14 @@
     enable = true;
     profiles.default.bookmarks = [
       {
-        name = "Nix search";
-        url = "https://search.nixos.org";
+        name = "Toolbar";
+        toolbar = true;
+        bookmarks = [
+          {
+            name = "Nix search";
+            url = "https://search.nixos.org";
+          }
+        ];
       }
     ];
   };
