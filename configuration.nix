@@ -124,6 +124,7 @@
     description = "Jorik";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.nushell;
+    useDefaultShell = true;
     packages = with pkgs; [
     #  thunderbird
     ];
