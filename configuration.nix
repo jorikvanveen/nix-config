@@ -153,6 +153,7 @@
     tmux
     alacritty
     open-webui
+    nixd
   ];
 
   fonts.packages = with pkgs; [
