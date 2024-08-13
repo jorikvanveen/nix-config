@@ -20,5 +20,25 @@
   programs.git = import program-config/git.nix;
   programs.firefox = import program-config/firefox.nix { inherit inputs; };
 
+  programs.carapace.enable = true;
+  programs.carapace.enableNushellIntegration = true;
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = true;
+      # character = {
+
+      # };
+    };
+  };
+  programs.nushell = {
+    enable = true;
+    configFile.source = program-config/nushell/config.nu;
+
+
+  };
+
+
+
   dconf.settings = import ./dconf.nix { inherit lib; };
 }
