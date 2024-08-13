@@ -33,7 +33,7 @@
   "relative_line_numbers": true,
   "ui_font_family": "Fira Code",
   "buffer_font_family": "Fira Code",
-  "tab_bar": { "show": true },
+  "tab_bar": { "show": false },
   "base_keymap": "VSCode",
   "cursor_blink": false,
   "auto_update": false,
