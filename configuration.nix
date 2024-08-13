@@ -57,7 +57,7 @@
     powerManagement.enable = false;
 
     # When enabled, turns off the gpu when not in use.
-    powerManagement.finegrained = false;
+    powerManagement.finegrained = true;
 
     # When enabled, uses the open kernel modules
     open = false;
