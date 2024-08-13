@@ -1,6 +1,7 @@
 { inputs }: {
   enable = true;
   profiles.default = {
+    search.force = true;
     search.default = "DuckDuckGo";
     extensions = with inputs.ff-addons.packages.x86_64-linux; [
       ublock-origin
