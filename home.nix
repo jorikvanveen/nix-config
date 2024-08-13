@@ -5,9 +5,6 @@
     username = "main";
     homeDirectory = home;
     stateVersion = "24.05";
-    shellAliases = {
-      "zed" = "nix-shell ~/Projects/zed-nix/shell.nix";
-    };
 
     file.zed = {
       enable = true;
