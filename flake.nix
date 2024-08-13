@@ -16,12 +16,12 @@
 
   outputs = { self, nixpkgs, nixpkgs_stable, home-manager, ff-addons } @ inputs:
   let
-    unstable = nixpkgs.legacyPackages.x86_64-linux;
-    pkgs = nixpkgs_stable.legacyPackages.x86_64-linux;
+    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    stable_pkgs = nixpkgs_stable.legacyPackages.x86_64-linux;
   in
   {
     nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs unstable; };
+      specialArgs = { inherit inputs; };
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
