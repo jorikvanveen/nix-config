@@ -16,7 +16,8 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-return": ["workspace::ActivatePaneInDirection", "up"]
+      "ctrl-return": ["workspace::ActivatePaneInDirection", "up"],
+      "escape": ["terminal::SendKeystroke", "escape"]
     }
   },
   {
