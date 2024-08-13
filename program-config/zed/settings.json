@@ -37,5 +37,8 @@
   "base_keymap": "VSCode",
   "cursor_blink": false,
   "auto_update": false,
-  "use_autoclose": true
+  "use_autoclose": true,
+  "shell": {
+    "program": "nu"
+  }
 }
