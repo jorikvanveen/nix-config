@@ -16,7 +16,7 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-\\": ["workspace::ActivatePaneInDirection", "up"]
+      "ctrl-return": ["workspace::ActivatePaneInDirection", "up"]
     }
   },
   {
