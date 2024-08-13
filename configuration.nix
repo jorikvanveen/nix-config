@@ -132,6 +132,12 @@
 
   programs.nix-ld.enable = true;
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
   programs.firefox.package = pkgs.firefox;
@@ -154,6 +160,7 @@
     alacritty
     open-webui
     nixd
+    steam-run
   ];
 
   fonts.packages = with pkgs; [
