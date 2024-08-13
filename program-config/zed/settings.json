@@ -39,6 +39,6 @@
   "auto_update": false,
   "use_autoclose": true,
   "shell": {
-    "program": "nu"
+    "program": "/etc/profiles/per-user/main/bin/nu"
   }
 }
