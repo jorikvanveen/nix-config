@@ -31,13 +31,20 @@
       # };
     };
   };
+
   programs.nushell = {
     enable = true;
     configFile.source = program-config/nushell/config.nu;
-
-
+  };
+  
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+    nix-direnv.enable = true;
   };
 
+  programs.bash.enable = true;
 
 
   dconf.settings = import ./dconf.nix { inherit lib; };

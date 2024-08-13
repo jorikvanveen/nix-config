@@ -154,7 +154,6 @@
     alacritty
     open-webui
     nixd
-    direnv
   ];
 
   fonts.packages = with pkgs; [
