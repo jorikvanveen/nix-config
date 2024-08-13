@@ -45,6 +45,41 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable proprietary nvidia drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  # https://wiki.nixos.org/wiki/Nvidia
+  hardware.nvidia = {
+    # Required
+    modesetting.enable = true;
+
+    # Fixes issues with sleep/suspend.
+    powerManagement.enable = false;
+
+    # When enabled, turns off the gpu when not in use.
+    powerManagement.finegrained = false;
+
+    # When enabled, uses the open kernel modules
+    open = false;
+
+    # Enable settings for nvidia
+    nvidiaSettings = true;
+
+    # .production is nvidia-550 at the time of writing
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+
+    # Nvidia bus id: 01:00.0
+    # Intel bus id: 00:02.0
+    prime = {
+      nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+    };
+  };
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -57,12 +92,6 @@
 
   # Configure console keymap
   console.keyMap = "us-acentos";
-
-  # Configure scroll speec
-  services.libinput.enable = true;
-  services.libinput.touchpad.additionalOptions = ''
-    Option "ScrollPixelDistance" "100"
-  '';
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -82,9 +111,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.main = {
