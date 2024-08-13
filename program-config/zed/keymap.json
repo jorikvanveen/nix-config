@@ -17,6 +17,7 @@
     "context": "Terminal",
     "bindings": {
       "ctrl-return": ["workspace::ActivatePaneInDirection", "up"],
+      "ctrl-b": ["terminal::SendKeystroke", "ctrl-b"],
       "escape": ["terminal::SendKeystroke", "escape"]
     }
   },
