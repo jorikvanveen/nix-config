@@ -7,7 +7,7 @@
 // from the command palette.
 [
   {
-    "context": "Editor && vim_mode != insert",
+    "context": "Editor && vim_mode != insert && !BufferSearchBar",
     "bindings": {
       "space space": "tab_switcher::Toggle",
       "space f f": "file_finder::Toggle"
@@ -16,9 +16,9 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-\\": ["workspace::ActivatePaneInDirection", "Up"],
+      "escape": ["terminal::SendKeystroke", "escape"],
       "ctrl-b": ["terminal::SendKeystroke", "ctrl-b"],
-      "escape": ["terminal::SendKeystroke", "escape"]
+      "ctrl-\\": ["workspace::ActivatePaneInDirection", "Up"]
     }
   },
   {
