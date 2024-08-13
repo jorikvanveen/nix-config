@@ -123,6 +123,7 @@
     isNormalUser = true;
     description = "Jorik";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.nushell;
     packages = with pkgs; [
     #  thunderbird
     ];
