@@ -38,7 +38,9 @@
   "cursor_blink": false,
   "auto_update": false,
   "use_autoclose": true,
-  "shell": {
-    "program": "/etc/profiles/per-user/main/bin/nu"
+  "terminal": {
+    "shell": {
+      "program": "/etc/profiles/per-user/main/bin/nu"
+    }
   }
 }
