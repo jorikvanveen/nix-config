@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -47,6 +47,16 @@
 
   specialisation = {
     nvidia.configuration = {
+      # Disable gnome
+      services.xserver.displayManager.gdm.enable = lib.mkForce false;
+      services.xserver.desktopManager.gnome.enable = lib.mkForce false;
+
+      # Enable KDE plasma 6
+      services.displayManager.sddm.enable = true;
+      services.displayManager.sddm.wayland.enable = true;
+      services.desktopManager.plasma6.enable = true;
+
+
       # Make nvidia configuration an entry in the boot menu
       system.nixos.tags = [ "nvidia" ];
 
