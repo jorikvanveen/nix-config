@@ -163,6 +163,7 @@
     open-webui
     nixd
     steam-run
+    galaxy-buds-client
   ];
 
   fonts.packages = with pkgs; [
