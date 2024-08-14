@@ -47,7 +47,9 @@
 
   specialisation = {
     nvidia.configuration = {
+      # Make nvidia configuration an entry in the boot menu
       system.nixos.tags = [ "nvidia" ];
+
       # Enable proprietary nvidia drivers
       services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -59,20 +61,18 @@
         # Fixes issues with sleep/suspend.
         powerManagement.enable = false;
 
-        # When enabled, turns off the gpu when not in use.
+        # Turns off the gpu when not in use.
         powerManagement.finegrained = true;
 
-        # When enabled, uses the open kernel modules
+        # Uses the open kernel modules
         open = false;
 
-        # Enable settings for nvidia
+        # Enable nvidia-settings GUI
         nvidiaSettings = true;
 
         # .production is nvidia-550 at the time of writing
         package = config.boot.kernelPackages.nvidiaPackages.production;
 
-        # Nvidia bus id: 01:00.0
-        # Intel bus id: 00:02.0
         prime = {
           nvidiaBusId = "PCI:1:0:0";
           intelBusId = "PCI:0:2:0";
@@ -166,6 +166,10 @@
   fonts.packages = with pkgs; [
     fira-code
   ];
+
+  services.syncthing = {
+    enable = true;
+  };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
