@@ -123,8 +123,8 @@ with lib.hm.gvariant;
   "org/gnome/desktop/wm/keybindings" = {
     switch-to-workspace-left = [ "<Super>Q" ];
     switch-to-workspace-right = [ "<Super>W" ];
-    close = ["<Super><Shift>C"];
-    minimize = [];
+    close = ["<Super><Shift>C" ];
+    minimize = [ "<Super>m" ];
   };
 
   "org/gnome/settings-daemon/plugins/media-keys" = {
