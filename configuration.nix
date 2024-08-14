@@ -164,6 +164,7 @@
     nixd
     steam-run
     galaxy-buds-client
+    skia
   ];
 
   fonts.packages = with pkgs; [
