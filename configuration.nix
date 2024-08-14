@@ -138,6 +138,8 @@
     dedicatedServer.openFirewall = true;
   };
 
+  programs.gamemode.enable = true;
+
   # Install firefox.
   programs.firefox.enable = true;
   programs.firefox.package = pkgs.firefox;
