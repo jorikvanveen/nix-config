@@ -53,7 +53,7 @@
 
       # Enable KDE plasma 6
       services.displayManager.sddm.enable = true;
-      services.displayManager.sddm.wayland.enable = false;
+      services.displayManager.sddm.wayland.enable = true;
       services.desktopManager.plasma6.enable = true;
 
 
@@ -94,6 +94,8 @@
       };
     };
   };
+
+  hardware.bluetooth.enable = true;
 
 
   # Enable the GNOME Desktop Environment.
@@ -178,6 +180,7 @@
     adwaita-icon-theme
     kdePackages.breeze
     brave
+    blueman
   ];
 
   fonts.packages = with pkgs; [
