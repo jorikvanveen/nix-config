@@ -175,7 +175,7 @@
     steam-run
     galaxy-buds-client
     skia
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     kdePackages.breeze
   ];
 
