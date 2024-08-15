@@ -48,8 +48,8 @@
   specialisation = {
     nvidia.configuration = {
       # Disable gnome
-      services.xserver.displayManager.gdm.enable = lib.mkForce false;
-      services.xserver.desktopManager.gnome.enable = lib.mkForce false;
+      services.xserver.displayManager.gdm.enable = false;
+      services.xserver.desktopManager.gnome.enable = false;
 
       # Enable KDE plasma 6
       services.displayManager.sddm.enable = true;
@@ -97,8 +97,8 @@
 
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = lib.mkDefault true;
+  services.xserver.desktopManager.gnome.enable = lib.mkDefault true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -176,6 +176,7 @@
     galaxy-buds-client
     skia
     gnome.adwaita-icon-theme
+    kdePackages.breeze
   ];
 
   fonts.packages = with pkgs; [
