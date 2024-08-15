@@ -53,7 +53,7 @@
 
       # Enable KDE plasma 6
       services.displayManager.sddm.enable = true;
-      services.displayManager.sddm.wayland.enable = true;
+      services.displayManager.sddm.wayland.enable = false;
       services.desktopManager.plasma6.enable = true;
 
 
@@ -177,6 +177,7 @@
     skia
     adwaita-icon-theme
     kdePackages.breeze
+    brave
   ];
 
   fonts.packages = with pkgs; [
