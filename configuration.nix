@@ -185,6 +185,9 @@
 
   services.syncthing = {
     enable = true;
+    user = "main";
+    dataDir = "/home/main/Documents";
+    configDir = "/home/main/.config/syncthing";
   };
 
   # Enable flakes
