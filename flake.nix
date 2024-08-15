@@ -6,11 +6,11 @@
     nixpkgs_stable.url = "github:nixos/nixpkgs?ref=nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs_stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     ff-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs_stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
