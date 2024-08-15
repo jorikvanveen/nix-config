@@ -175,6 +175,7 @@
     steam-run
     galaxy-buds-client
     skia
+    gnome.adwaita-icon-theme
   ];
 
   fonts.packages = with pkgs; [
