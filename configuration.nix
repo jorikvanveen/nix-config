@@ -181,7 +181,6 @@
     pkgs.kdePackages.breeze
     pkgs.brave
     pkgs.blueman
-    stable.gaphor
   ];
 
   fonts.packages = with pkgs; [
