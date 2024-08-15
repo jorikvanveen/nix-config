@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, stable, ... }:
 
 {
   imports =
@@ -161,26 +161,27 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    neovim
-    git
-    gnome-tweaks
-    gnomeExtensions.forge
-    zed-editor
-    dconf-editor
-    tmux
-    alacritty
-    open-webui
-    nixd
-    steam-run
-    galaxy-buds-client
-    skia
-    adwaita-icon-theme
-    kdePackages.breeze
-    brave
-    blueman
+    pkgs.neovim
+    pkgs.git
+    pkgs.gnome-tweaks
+    pkgs.gnomeExtensions.forge
+    pkgs.zed-editor
+    pkgs.dconf-editor
+    pkgs.tmux
+    pkgs.alacritty
+    pkgs.open-webui
+    pkgs.nixd
+    pkgs.steam-run
+    pkgs.galaxy-buds-client
+    pkgs.skia
+    pkgs.adwaita-icon-theme
+    pkgs.kdePackages.breeze
+    pkgs.brave
+    pkgs.blueman
+    stable.gaphor
   ];
 
   fonts.packages = with pkgs; [

@@ -17,11 +17,11 @@
   outputs = { self, nixpkgs, nixpkgs_stable, home-manager, ff-addons } @ inputs:
   let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    stable_pkgs = nixpkgs_stable.legacyPackages.x86_64-linux;
+    stable = nixpkgs_stable.legacyPackages.x86_64-linux;
   in
   {
     nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs stable; };
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
