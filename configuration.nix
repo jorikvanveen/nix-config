@@ -183,6 +183,7 @@
     pkgs.brave
     pkgs.blueman
     pkgs.calibre
+    pkgs.errands
   ];
 
   fonts.packages = with pkgs; [
