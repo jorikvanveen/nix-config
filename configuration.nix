@@ -47,7 +47,7 @@
   services.xserver.enable = true;
 
   specialisation = {
-    nvidia.configuration = {
+    gaming.configuration = {
       # Disable gnome
       services.xserver.displayManager.gdm.enable = false;
       services.xserver.desktopManager.gnome.enable = false;
@@ -57,9 +57,8 @@
       services.displayManager.sddm.wayland.enable = true;
       services.desktopManager.plasma6.enable = true;
 
-
       # Make nvidia configuration an entry in the boot menu
-      system.nixos.tags = [ "nvidia" ];
+      system.nixos.tags = [ "gaming" ];
 
       # Enable proprietary nvidia drivers
       services.xserver.videoDrivers = [ "nvidia" ];
