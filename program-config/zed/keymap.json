@@ -11,7 +11,7 @@
     "bindings": {
       "space space": "tab_switcher::Toggle",
       "space f f": "file_finder::Toggle"
-    }
+      "space w s": "project_symbols::Toggle"
   },
   {
     "context": "Terminal",
