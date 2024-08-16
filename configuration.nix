@@ -72,7 +72,7 @@
         powerManagement.enable = false;
 
         # Turns off the gpu when not in use.
-        powerManagement.finegrained = true;
+        # powerManagement.finegrained = true;
 
         # Uses the open kernel modules
         open = false;
@@ -135,7 +135,7 @@
   users.users.main = {
     isNormalUser = true;
     description = "Jorik";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
     shell = pkgs.nushell;
     useDefaultShell = true;
     packages = with pkgs; [
