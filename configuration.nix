@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -138,7 +139,7 @@
     shell = pkgs.nushell;
     useDefaultShell = true;
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -162,8 +163,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
     pkgs.neovim
     pkgs.git
     pkgs.gnome-tweaks
@@ -181,7 +182,7 @@
     pkgs.kdePackages.breeze
     pkgs.brave
     pkgs.blueman
-    stable.gaphor
+    pkgs.calibre
   ];
 
   fonts.packages = with pkgs; [
