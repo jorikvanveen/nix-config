@@ -31,7 +31,7 @@
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "buffer_font_features": {
-    // Disable ligatures:
+    // Enable ligatures
     "calt": true
   },
   "relative_line_numbers": true,
