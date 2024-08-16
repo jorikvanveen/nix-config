@@ -190,6 +190,7 @@
     pkgs.calibre
     pkgs.errands
     pkgs.gnome-pomodoro
+    pkgs.protonup-qt
   ];
 
   fonts.packages = with pkgs; [
