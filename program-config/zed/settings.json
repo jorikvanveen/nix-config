@@ -35,7 +35,7 @@
     "calt": true
   },
   "relative_line_numbers": true,
-  "ui_font_family": "",
+  "ui_font_family": "SFMono Nerd Font",
   "buffer_font_family": "SFMono Nerd Font",
   "tab_bar": { "show": false },
   "base_keymap": "VSCode",
