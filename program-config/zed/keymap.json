@@ -13,6 +13,7 @@
       "space f f": "file_finder::Toggle",
       "space w s": "project_symbols::Toggle",
       "space g r": "editor::FindAllReferences"
+      "space c a": "editor::ToggleCodeActions"
     }
   },
   {
