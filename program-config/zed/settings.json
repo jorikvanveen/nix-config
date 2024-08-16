@@ -32,7 +32,7 @@
   "buffer_font_size": 14,
   "buffer_font_features": {
     // Disable ligatures:
-    "calt": false
+    "calt": true
   },
   "relative_line_numbers": true,
   "ui_font_family": "Fira Code",

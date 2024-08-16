@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, stable, ... }:
+{ config, pkgs, lib, stable, inputs, ... }:
 
 {
   imports =
@@ -188,6 +188,7 @@
 
   fonts.packages = with pkgs; [
     fira-code
+    inputs.apple-fonts.packages.x86_64-linux.sf-mono-nerd
   ];
 
   services.syncthing = {
