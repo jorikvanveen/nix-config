@@ -57,7 +57,7 @@
       services.displayManager.sddm.wayland.enable = true;
       services.desktopManager.plasma6.enable = true;
 
-      # Make nvidia configuration an entry in the boot menu
+      # Make gaming configuration an entry in the boot menu
       system.nixos.tags = [ "gaming" ];
 
       # Enable proprietary nvidia drivers
@@ -183,7 +183,7 @@
     pkgs.blueman
     pkgs.calibre
     pkgs.errands
-    pkgs.gnome.pomodoro
+    pkgs.gnome-pomodoro
   ];
 
   fonts.packages = with pkgs; [
