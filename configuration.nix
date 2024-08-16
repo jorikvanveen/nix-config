@@ -184,6 +184,7 @@
     pkgs.blueman
     pkgs.calibre
     pkgs.errands
+    pkgs.gnome.pomodoro
   ];
 
   fonts.packages = with pkgs; [
