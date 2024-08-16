@@ -152,7 +152,12 @@
   };
 
   programs.gamemode.enable = true;
-
+  programs.gamemode.enableRenice = true;
+  programs.gamemode.settings = {
+    general = {
+      renice = 10;
+    };
+  };
   # Install firefox.
   programs.firefox.enable = true;
   programs.firefox.package = pkgs.firefox;
