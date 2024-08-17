@@ -196,6 +196,7 @@
   fonts.packages = with pkgs; [
     fira-code
     inputs.apple-fonts.packages.x86_64-linux.sf-mono-nerd
+    inputs.apple-fonts.packages.x86_64-linux.sf-pro
   ];
 
   services.syncthing = {
