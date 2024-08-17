@@ -193,6 +193,13 @@
     pkgs.errands
     pkgs.gnome-pomodoro
     pkgs.protonup-qt
+	
+    # Vulkan stuff
+    pkgs.vulkan-loader
+    pkgs.mesa
+    pkgs.vulkan-headers
+    #pkgs.vulkan-validation-layers
+
   ];
 
   fonts.packages = with pkgs; [
