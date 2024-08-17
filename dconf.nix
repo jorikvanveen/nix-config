@@ -170,7 +170,7 @@ with lib.hm.gvariant;
   };
 
   "org/gnome/mutter" = {
-    dynamic-workspaces = true;
+    dynamic-workspaces = false;
   };
 
   "org/gnome/nautilus/preferences" = {
