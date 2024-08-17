@@ -202,7 +202,7 @@
 
   fonts.fontconfig = {
     defaultFonts = {
-      serif = [  "New York Small" ];
+      serif = [  "New York Medium" ];
       sansSerif = [ "SF Pro" ];
       monospace = [ "SFMono Nerd Font" ];
     };
