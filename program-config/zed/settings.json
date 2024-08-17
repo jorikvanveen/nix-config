@@ -46,5 +46,14 @@
     "shell": {
       "program": "/etc/profiles/per-user/main/bin/nu"
     }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "cargo": {
+          "features": "all"
+        }
+      }
+    }
   }
 }
