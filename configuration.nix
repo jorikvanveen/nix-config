@@ -198,8 +198,8 @@
     pkgs.vulkan-loader
     pkgs.mesa
     pkgs.vulkan-headers
-    #pkgs.vulkan-validation-layers
 
+    pkgs.rustup
   ];
 
   fonts.packages = with pkgs; [
