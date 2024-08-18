@@ -133,6 +133,10 @@ with lib.hm.gvariant;
     minimize = [ "<Super>m" ];
   };
 
+  "org/gnome/shell/keybindings" = {
+    toggle-message-tray = [ ];
+  };
+
   "org/gnome/settings-daemon/plugins/media-keys" = {
     custom-keybindings=["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
   };
