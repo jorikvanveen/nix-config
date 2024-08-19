@@ -75,13 +75,13 @@
         # powerManagement.finegrained = true;
 
         # Uses the open kernel modules
-        open = false;
+        open = true;
 
         # Enable nvidia-settings GUI
         nvidiaSettings = true;
 
         # .production is nvidia-550 at the time of writing
-        package = config.boot.kernelPackages.nvidiaPackages.production;
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
 
         prime = {
           nvidiaBusId = "PCI:1:0:0";
@@ -198,6 +198,7 @@
     pkgs.vulkan-loader
     pkgs.mesa
     pkgs.vulkan-headers
+    pkgs.vulkan-tools
 
     pkgs.rustup
   ];
@@ -245,8 +246,8 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  # open ports in the firewall.
+  networking.firewall.allowedTCPPorts = [ 5173 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
