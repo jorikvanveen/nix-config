@@ -67,7 +67,7 @@ with lib.hm.gvariant;
     color-scheme = "prefer-dark";
     font-antialiasing = "rgba";
     font-hinting = "slight";
-    font-name = "SF Pro Rounded 11";
+    font-name = "SF Pro Display 11";
     monospace-font-name = "SFMono Nerd Font 11";
     gtk-theme = "Adwaita";
     icon-theme = "Adwaita";
