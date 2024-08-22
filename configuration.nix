@@ -201,6 +201,9 @@
     pkgs.vulkan-tools
 
     pkgs.rustup
+
+    pkgs.nicotine-plus
+    pkgs.g4music
   ];
 
   fonts.packages = with pkgs; [
