@@ -54,7 +54,7 @@
     }
   },
   {
-    "context": "editing",
+    "context": "true",
     "bindings": {
       "tab": ["workspace::SendKeystrokes", "down"],
       "shift-tab": ["workspace::SendKeystrokes", "up"],
