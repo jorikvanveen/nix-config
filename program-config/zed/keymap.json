@@ -57,7 +57,8 @@
     "context": "Picker || menu || FileFinder",
     "bindings": {
       "tab": ["workspace::SendKeystrokes", "down"],
-      "shift-tab": ["workspace::SendKeystrokes", "up"]
+      "shift-tab": ["workspace::SendKeystrokes", "up"],
+      "ctrl-m": ["workspace::SendKeystrokes", "up"]
     }
   }
 ]
