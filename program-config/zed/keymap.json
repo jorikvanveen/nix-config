@@ -54,7 +54,7 @@
     }
   },
   {
-    "context": "Workspace",
+    "context": "Search",
     "bindings": {
       "tab": ["workspace::SendKeystrokes", "down"],
       "shift-tab": ["workspace::SendKeystrokes", "up"],
