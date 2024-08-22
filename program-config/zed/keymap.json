@@ -54,7 +54,7 @@
     }
   },
   {
-    "context": "Search",
+    "context": "FileFinder",
     "bindings": {
       "tab": "menu::SelectNext",
       "shift-tab": "menu::SelectPrev",
