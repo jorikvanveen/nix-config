@@ -7,6 +7,14 @@
 // from the command palette.
 [
   {
+    "context": "FileFinder",
+    "bindings": {
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrev",
+      "ctrl-m": ["workspace::SendKeystrokes", "up"]
+    }
+  },
+  {
     "context": "Editor && vim_mode != insert && !BufferSearchBar",
     "bindings": {
       "space space": "tab_switcher::Toggle",
@@ -51,14 +59,6 @@
     "bindings": {
       "ctrl-n": "workspace::ToggleLeftDock",
       "alt-w": "diagnostics::ToggleWarnings"
-    }
-  },
-  {
-    "context": "FileFinder",
-    "bindings": {
-      "tab": "menu::SelectNext",
-      "shift-tab": "menu::SelectPrev",
-      "ctrl-m": ["workspace::SendKeystrokes", "up"]
     }
   }
 ]
