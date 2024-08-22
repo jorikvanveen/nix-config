@@ -56,8 +56,8 @@
   {
     "context": "Search",
     "bindings": {
-      "tab": ["workspace::SendKeystrokes", "down"],
-      "shift-tab": ["workspace::SendKeystrokes", "up"],
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrev",
       "ctrl-m": ["workspace::SendKeystrokes", "up"]
     }
   }
