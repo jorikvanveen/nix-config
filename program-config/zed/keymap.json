@@ -28,7 +28,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-j": "terminal_panel::ToggleFocus"
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "alt-w": "diagnostics::ToggleWarnings"
     }
   },
   {
