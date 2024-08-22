@@ -194,7 +194,7 @@
     pkgs.errands
     pkgs.gnome-pomodoro
     pkgs.protonup-qt
-	
+
     # Vulkan stuff
     pkgs.vulkan-loader
     pkgs.mesa
@@ -227,6 +227,10 @@
     user = "main";
     dataDir = "/home/main/Documents";
     configDir = "/home/main/.config/syncthing";
+  };
+
+  services.open-webui = {
+    enable = true;
   };
 
   # Enable flakes
