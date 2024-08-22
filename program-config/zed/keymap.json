@@ -52,5 +52,12 @@
       "ctrl-n": "workspace::ToggleLeftDock",
       "alt-w": "diagnostics::ToggleWarnings"
     }
+  },
+  {
+    "context": "Picker || menu",
+    "bindings": {
+      "tab": ["Workspace::SendKeystrokes", "down"],
+      "s-tab": ["Workspace::SendKeystrokes", "up"]
+    }
   }
 ]
