@@ -54,7 +54,7 @@
     }
   },
   {
-    "context": "Picker || menu || FileFinder",
+    "context": "not_editing",
     "bindings": {
       "tab": ["workspace::SendKeystrokes", "down"],
       "shift-tab": ["workspace::SendKeystrokes", "up"],
