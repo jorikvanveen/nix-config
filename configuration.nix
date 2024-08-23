@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, master, stable, inputs, ... }:
+{ config, pkgs, lib, master, stable, inputs, zen_flake, ... }:
 
 {
   imports =
@@ -205,6 +205,8 @@
 
     pkgs.nicotine-plus
     pkgs.g4music
+
+    zen_flake.default
   ];
 
   fonts.packages = with pkgs; [

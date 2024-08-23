@@ -118,6 +118,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1724224976,
+        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_master": {
       "locked": {
         "lastModified": 1724404047,
@@ -169,7 +185,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs_master": "nixpkgs_master",
-        "nixpkgs_stable": "nixpkgs_stable"
+        "nixpkgs_stable": "nixpkgs_stable",
+        "zen_flake": "zen_flake"
       }
     },
     "sf-arabic": {
@@ -232,6 +249,24 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen_flake": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1724347856,
+        "narHash": "sha256-OQxWHztlw5hSJYCRWoJ98+bgqWinRSTR0KZos7aq2h8=",
+        "owner": "MarceColl",
+        "repo": "zen-browser-flake",
+        "rev": "96dffb45b36141261e97a8f83438e4c88911fefa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MarceColl",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
