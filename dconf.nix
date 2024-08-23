@@ -198,7 +198,7 @@ with lib.hm.gvariant;
 
   "org/gnome/shell" = {
     disabled-extensions = [ "window-list@gnome-shell-extensions.gcampax.github.com" "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" ];
-    enabled-extensions = [ "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "system-monitor@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "native-window-placement@gnome-shell-extensions.gcampax.github.com" "forge@jmmaranan.com" ];
+    enabled-extensions = [ "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "system-monitor@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "native-window-placement@gnome-shell-extensions.gcampax.github.com" "forge@jmmaranan.com" "cronomix@zagortenay333" ];
     last-selected-power-profile = "performance";
     welcome-dialog-last-shown-version = "46.2";
   };
