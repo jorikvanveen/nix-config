@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs_stable.url = "github:nixos/nixpkgs?ref=nixos-23.11";
+    nixpkgs_master.url = "github:nixos/nixpkgs?ref=master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,10 +23,11 @@
     let
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       stable = nixpkgs_stable.legacyPackages.x86_64-linux;
+      master = inputs.nixpkgs_master.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs stable; };
+        specialArgs = { inherit inputs stable master; };
         system = "x86_64-linux";
         modules = [
           ./configuration.nix

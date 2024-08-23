@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, stable, inputs, ... }:
+{ config, pkgs, lib, master, stable, inputs, ... }:
 
 {
   imports =
@@ -177,7 +177,7 @@
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
     pkgs.gnomeExtensions.cronomix
-    pkgs.zed-editor
+    master.zed-editor
     pkgs.dconf-editor
     pkgs.tmux
     pkgs.alacritty
