@@ -209,6 +209,7 @@
     zen_flake.default
 
     pkgs.qgis-ltr
+    pkgs.qbittorrent
   ];
 
   fonts.packages = with pkgs; [
