@@ -207,6 +207,8 @@
     pkgs.g4music
 
     zen_flake.default
+
+    pkgs.qgis-ltr
   ];
 
   fonts.packages = with pkgs; [
