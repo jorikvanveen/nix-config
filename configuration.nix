@@ -177,7 +177,7 @@
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
     pkgs.gnomeExtensions.cronomix
-    master.zed-editor
+    pkgs.zed-editor
     pkgs.dconf-editor
     pkgs.tmux
     pkgs.alacritty
