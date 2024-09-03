@@ -141,7 +141,7 @@
     shell = pkgs.nushell;
     useDefaultShell = true;
     packages = with pkgs; [
-      #  thunderbird
+      thunderbird
     ];
   };
 
