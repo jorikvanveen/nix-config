@@ -210,6 +210,9 @@
 
     pkgs.qgis-ltr
     pkgs.qbittorrent
+
+    pkgs.ripgrep
+    pkgs.obsidian
   ];
 
   fonts.packages = with pkgs; [
