@@ -172,14 +172,11 @@
   environment.systemPackages = [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
-    pkgs.neovim
-    pkgs.git
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
     pkgs.gnomeExtensions.cronomix
     pkgs.zed-editor
     pkgs.dconf-editor
-    pkgs.tmux
     pkgs.alacritty
     pkgs.open-webui
     pkgs.nixd
@@ -194,6 +191,14 @@
     pkgs.errands
     pkgs.gnome-pomodoro
     pkgs.protonup-qt
+
+    # Cli utilities
+    pkgs.ripgrep
+    pkgs.jq
+    pkgs.tmux
+    pkgs.file
+    pkgs.neovim
+    pkgs.git
 
     # Vulkan stuff
     pkgs.vulkan-loader
@@ -211,7 +216,6 @@
     pkgs.qgis-ltr
     pkgs.qbittorrent
 
-    pkgs.ripgrep
     pkgs.obsidian
   ];
 
