@@ -217,6 +217,9 @@
     pkgs.qbittorrent
 
     pkgs.obsidian
+
+    pkgs.vscode
+    pkgs.jetbrains.idea-ultimate
   ];
 
   fonts.packages = with pkgs; [
