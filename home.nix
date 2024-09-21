@@ -32,6 +32,7 @@
   programs.firefox = import program-config/firefox.nix { inherit inputs; };
 
   programs.carapace.enable = true;
+  programs.carapace.enableBashIntegration = false;
   programs.carapace.enableNushellIntegration = true;
   programs.starship = {
     enable = true;
