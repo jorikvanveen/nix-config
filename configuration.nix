@@ -199,6 +199,7 @@
     pkgs.file
     pkgs.neovim
     pkgs.git
+    pkgs.wl-clipboard
 
     # Vulkan stuff
     pkgs.vulkan-loader
