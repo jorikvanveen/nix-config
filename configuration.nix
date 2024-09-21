@@ -220,6 +220,7 @@
 
     pkgs.vscode
     pkgs.jetbrains.idea-ultimate
+    pkgs.distrobox
   ];
 
   fonts.packages = with pkgs; [
@@ -248,6 +249,11 @@
     enable = true;
     host = "0.0.0.0";
     openFirewall = true;
+  };
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
   };
 
   # Enable flakes
