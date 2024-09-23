@@ -160,9 +160,6 @@
       renice = 10;
     };
   };
-  # Install firefox.
-  programs.firefox.enable = true;
-  programs.firefox.package = pkgs.firefox;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -191,6 +188,7 @@
     pkgs.errands
     pkgs.gnome-pomodoro
     pkgs.protonup-qt
+    pkgs.planify
 
     # Cli utilities
     pkgs.ripgrep
