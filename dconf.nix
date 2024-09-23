@@ -138,13 +138,22 @@ with lib.hm.gvariant;
   };
 
   "org/gnome/settings-daemon/plugins/media-keys" = {
-    custom-keybindings=["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+    custom-keybindings=[
+    	"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+    	"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+		];
   };
 
   "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
     binding = "<Shift><Super>Return";
     command = "alacritty";
     name = "Open terminal";
+  };
+
+  "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    binding = "<Control><Super>T";
+    command = "io.github.alainm23.planify.quick-add";
+    name = "Quick add a task";
   };
 
   "org/gnome/epiphany" = {
