@@ -29,7 +29,6 @@
   };
 
   programs.git = import program-config/git.nix;
-  programs.firefox = import program-config/firefox.nix { inherit inputs; };
 
   programs.carapace.enable = true;
   programs.carapace.enableBashIntegration = false;
