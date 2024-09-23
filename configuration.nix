@@ -189,6 +189,7 @@
     pkgs.gnome-pomodoro
     pkgs.protonup-qt
     pkgs.planify
+    pkgs.vlc
 
     # Cli utilities
     pkgs.ripgrep
