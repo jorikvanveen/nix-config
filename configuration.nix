@@ -249,6 +249,7 @@
     enable = true;
     host = "0.0.0.0";
     openFirewall = true;
+    package = stable.open-webui;
   };
 
   virtualisation.podman = {
