@@ -175,7 +175,6 @@
     pkgs.zed-editor
     pkgs.dconf-editor
     pkgs.alacritty
-    stable.open-webui
     pkgs.nixd
     pkgs.steam-run
     pkgs.galaxy-buds-client
