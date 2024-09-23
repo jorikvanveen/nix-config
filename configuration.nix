@@ -216,10 +216,12 @@
     pkgs.qbittorrent
 
     pkgs.obsidian
+    pkgs.distrobox
 
+    # Module 9 Stuff
     pkgs.vscode
     pkgs.jetbrains.idea-ultimate
-    pkgs.distrobox
+    pkgs.qtspim
   ];
 
   fonts.packages = with pkgs; [
