@@ -189,6 +189,7 @@
     pkgs.protonup-qt
     pkgs.planify
     pkgs.vlc
+    pkgs.signal-desktop
 
     # Cli utilities
     pkgs.ripgrep
