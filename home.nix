@@ -28,6 +28,13 @@
     "zed/node/${nodeVersion}/share".source = "${nodePackage}/share";
   };
 
+  xdg.mimeApps = {
+		enable = true;
+		defaultApplications = {
+			"video/mp4" = "vlc.desktop";
+		};
+	};
+
   programs.git = import program-config/git.nix;
 
   programs.carapace.enable = true;
