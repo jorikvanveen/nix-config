@@ -164,6 +164,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+	environment.sessionVariables = {
+		XCURSOR_THEME = "Adwaita";
+	};
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
