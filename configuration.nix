@@ -145,6 +145,8 @@
     ];
   };
 
+  documentation.dev.enable = true;
+
   programs.nix-ld.enable = true;
 
   programs.steam = {
@@ -202,6 +204,9 @@
     pkgs.neovim
     pkgs.git
     pkgs.wl-clipboard
+    pkgs.man-pages
+    pkgs.man-pages-posix
+
 
     # Vulkan stuff
     pkgs.vulkan-loader
