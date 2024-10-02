@@ -194,6 +194,7 @@
     pkgs.planify
     pkgs.vlc
     pkgs.signal-desktop
+    pkgs.thunderbird
 
     # Cli utilities
     pkgs.ripgrep
