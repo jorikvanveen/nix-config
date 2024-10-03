@@ -167,6 +167,7 @@
 
 	environment.sessionVariables = {
 		XCURSOR_THEME = "Adwaita";
+		_JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
 	};
   # List packages installed in system profile. To search, run:
   # $ nix search wget
