@@ -232,6 +232,7 @@
     pkgs.vscode
     pkgs.jetbrains.idea-ultimate
     pkgs.qtspim
+    pkgs.android-studio
   ];
 
   fonts.packages = with pkgs; [
