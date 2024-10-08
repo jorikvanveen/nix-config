@@ -137,7 +137,7 @@
   users.users.main = {
     isNormalUser = true;
     description = "Jorik";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "kvm" ];
     shell = pkgs.nushell;
     useDefaultShell = true;
     packages = with pkgs; [
