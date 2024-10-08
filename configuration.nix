@@ -233,6 +233,7 @@
     pkgs.jetbrains.idea-ultimate
     pkgs.qtspim
     pkgs.android-studio
+    pkgs.android-tools
   ];
 
   fonts.packages = with pkgs; [
