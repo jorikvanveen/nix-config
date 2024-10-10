@@ -59,7 +59,7 @@ with lib.hm.gvariant;
   };
 
   "org/gnome/desktop/input-sources" = {
-    sources = [ (mkTuple [ "xkb" "us+intl" ]) ];
+    sources = [ (mkTuple [ "xkb" "us+intl" ]) (mkTuple [ "xkb" "us" ]) ];
     xkb-options = [ "terminate:ctrl_alt_bksp" ];
   };
 
