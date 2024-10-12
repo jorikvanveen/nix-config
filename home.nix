@@ -55,6 +55,10 @@
   programs.nushell = {
     enable = true;
     # configFile.source = program-config/nushell/config.nu;
+    shellAliases = {
+      ls = "lsd -- --json --icon always --icon-theme fancy | from json | get 0.content | select display type content date | update date {|row| $row.date | into datetime}";
+      lsdata = "lsd --json --icon always --icon-theme fancy | from json";
+    };
   };
 
   programs.direnv = {

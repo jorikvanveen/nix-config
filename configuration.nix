@@ -179,11 +179,10 @@
           src = previous.fetchFromGitHub {
             owner = "jorikvanveen";
             repo = "lsd";
-            rev = "5226c720fa51077338afe73c728cda5f7b831675";
-            hash = "sha256-0+3ZJsMNr+T6AdIyXZG78l7QipT2PB37boMc9lapTaU=";
+            rev = "7d176a0d3dbb978420d68cd4060d6080836db0ce";
+            hash = "sha256-m1p9/HLNRlYE5pTOAIAy2/2La+2OclTfEvb03/Id1nw=";
           };
           cargoHash = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
-          cargoSha256 = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
         });
       };
     });
