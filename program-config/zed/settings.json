@@ -42,9 +42,10 @@
   "cursor_blink": false,
   "auto_update": false,
   "use_autoclose": true,
+  "load_direnv": "direct",
   "terminal": {
     "shell": {
       "program": "/etc/profiles/per-user/main/bin/nu"
     }
-  },
+  }
 }
