@@ -179,8 +179,8 @@
           src = previous.fetchFromGitHub {
             owner = "jorikvanveen";
             repo = "lsd";
-            rev = "714f48532638ef795b1dc08e4bb59de4ea7314da";
-            hash = "sha256-3s7ZIl0k6yNVBla2ZqqsyFhhQYn7Hzw8wS35GX/hMz8=";
+            rev = "1a04dd009328511fba3c43260440c3e9db8b67e7";
+            hash = "sha256-x4kbtL6vbMB9OKHZGuKPz6Cco6kTIBT0UMcLB2seja8=";
           };
           cargoHash = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
         });
