@@ -62,6 +62,11 @@
     nix-direnv.enable = true;
   };
 
+  programs.eza = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
+
   programs.bash.enable = true;
 
 
