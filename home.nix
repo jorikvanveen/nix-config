@@ -57,8 +57,8 @@
     # configFile.source = program-config/nushell/config.nu;
     extraConfig = ''
       alias core-ls = ls
-      def --wrapped ls [...args] { lsd ...$args --json --icon always --icon-theme fancy --color always | from json | get 0.content | select display type content date | update date {|row| $row.date | into datetime} }
-      def --wrapped lsdata [...args] { lsd ...$args --json --icon always --icon-theme fancy --color always | from json }
+      def --wrapped ls [] { lsd $in --json --icon always --icon-theme fancy --color always | from json | get 0.content | select display type content date | update date {|row| $row.date | into datetime} }
+      def --wrapped lsdata [] { lsd $in --json --icon always --icon-theme fancy --color always | from json }
     '';
   };
 
