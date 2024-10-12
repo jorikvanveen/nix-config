@@ -54,7 +54,7 @@
 
   programs.nushell = {
     enable = true;
-    configFile.source = program-config/nushell/config.nu;
+    # configFile.source = program-config/nushell/config.nu;
   };
 
   programs.direnv = {
