@@ -56,8 +56,8 @@
     enable = true;
     # configFile.source = program-config/nushell/config.nu;
     extraConfig = ''
-      def ls [] { lsd --json --icon always --icon-theme fancy | from json | get 0.content | select display type content date | update date {|row| $row.date | into datetime} }
-      def lsdata [] { lsd --json --icon always --icon-theme fancy | from json }
+      def ls [arg0] { lsd $arg0 --json --icon always --icon-theme fancy --color always | from json | get 0.content | select display type content date | update date {|row| $row.date | into datetime} }
+      def lsdata [arg0] { lsd $arg0 --json --icon always --icon-theme fancy --color always | from json }
     '';
   };
 
