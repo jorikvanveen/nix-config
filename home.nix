@@ -61,7 +61,7 @@
         lsd ...$rest --json --icon always --icon-theme fancy --color always
         | from json
         | get 0.content
-        | select display type size date
+        | select type display size date
         | update date {|row| $row.date | into datetime}
         | update size {|row| $row.size | into filesize}
       }
