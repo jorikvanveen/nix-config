@@ -172,7 +172,33 @@
 	};
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [
+  environment.systemPackages = let
+    mylsd = pkgs.lsd.override (previous: {
+      rustPlatform = previous.rustPlatform // {
+        buildRustPackage = args: previous.rustPlatform.buildRustPackage (args // {
+          src = previous.fetchFromGitHub {
+            owner = "jorikvanveen";
+            repo = "lsd";
+            rev = "5226c720fa51077338afe73c728cda5f7b831675";
+            hash = "sha256-0+3ZJsMNr+T6AdIyXZG78l7QipT2PB37boMc9lapTaU=";
+          };
+          cargoHash = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
+          cargoSha256 = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
+        });
+      };
+    });
+    #    src = pkgs.fetchFromGitHub {
+    #      owner = "jorikvanveen";
+    #      repo = "lsd";
+    #      rev = "5226c720fa51077338afe73c728cda5f7b831675";
+    #      hash = "sha256-0+3ZJsMNr+T6AdIyXZG78l7QipT2PB37boMc9lapTaU=";
+    #    };
+    #    cargoDeps = oldAttrs.cargoDeps // {
+    #      hash = "";
+    #      outputHash = "";
+    #    };
+    #  });
+  in [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     pkgs.gnome-tweaks
@@ -208,6 +234,7 @@
     pkgs.wl-clipboard
     pkgs.man-pages
     pkgs.man-pages-posix
+    mylsd
 
 
     # Vulkan stuff

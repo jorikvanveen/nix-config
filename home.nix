@@ -67,6 +67,11 @@
     enable = true;
   };
 
+  #programs.lsd = {
+  #  enable = true;
+  #
+  #};
+
   programs.bash.enable = true;
 
 
