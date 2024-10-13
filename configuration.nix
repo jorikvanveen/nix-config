@@ -222,6 +222,7 @@
     pkgs.vlc
     pkgs.signal-desktop
     pkgs.thunderbird
+    pkgs.mutter
 
     # Cli utilities
     pkgs.ripgrep
