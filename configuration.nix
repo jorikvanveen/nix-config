@@ -293,6 +293,10 @@
     package = stable.open-webui;
   };
 
+  services.mullvad-vpn = {
+	enable = true;
+};
+
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
