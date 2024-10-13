@@ -81,17 +81,7 @@
     enableNushellIntegration = true;
   };
 
-  programs.eza = {
-    enable = true;
-  };
-
-  #programs.lsd = {
-  #  enable = true;
-  #
-  #};
-
   programs.bash.enable = true;
-
 
   dconf.settings = import ./dconf.nix { inherit lib; };
 }
