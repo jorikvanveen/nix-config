@@ -223,6 +223,8 @@
     pkgs.signal-desktop
     pkgs.thunderbird
     pkgs.mutter
+    pkgs.mullvad-vpn
+    pkgs.qbittorrent
 
     # Cli utilities
     pkgs.ripgrep
