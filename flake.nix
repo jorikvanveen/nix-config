@@ -33,14 +33,14 @@
         specialArgs = { inherit inputs stable zen_flake; };
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.main = import ./home.nix;
+            home-manager.users.main = import ./homes/nixos-tp-p15v.nix;
           }
         ];
       };

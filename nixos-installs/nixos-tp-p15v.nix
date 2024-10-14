@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./nixos-tp-p15v-hardware.nix
     ];
 
   # Bootloader.
@@ -190,9 +190,10 @@
   in [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
+    mylsd
+    zen_flake.default
 
-
-  ] ++ import ./modules/system_pkgs.nix { inherit pkgs; };
+  ] ++ import ../modules/system_pkgs.nix { inherit pkgs; };
 
   fonts.packages = with pkgs; [
     fira-code
