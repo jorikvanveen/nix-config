@@ -39,5 +39,7 @@
     pkgs.vscode
     pkgs.android-studio
     pkgs.android-tools
+
+    pkgs.lutris
   ];
 }

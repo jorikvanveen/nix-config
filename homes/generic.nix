@@ -5,8 +5,8 @@
     ./modules/starship.nix
     ./modules/nushell.nix
     ./modules/direnv.nix
-    ../packages/home_pkgs.nix
     ./modules/custom_lsd.nix
+    ../packages/home_pkgs.nix
   ];
 
   home.file.zed = {
