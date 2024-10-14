@@ -184,6 +184,7 @@ with lib.hm.gvariant;
 
   "org/gnome/mutter" = {
     dynamic-workspaces = false;
+    experimental-features = "['scale-monitor-framebuffer']";
   };
 
   "org/gnome/nautilus/preferences" = {
