@@ -186,23 +186,14 @@
         });
       };
     });
-    #    src = pkgs.fetchFromGitHub {
-    #      owner = "jorikvanveen";
-    #      repo = "lsd";
-    #      rev = "5226c720fa51077338afe73c728cda5f7b831675";
-    #      hash = "sha256-0+3ZJsMNr+T6AdIyXZG78l7QipT2PB37boMc9lapTaU=";
-    #    };
-    #    cargoDeps = oldAttrs.cargoDeps // {
-    #      hash = "";
-    #      outputHash = "";
-    #    };
-    #  });
+    
   in [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
     pkgs.gnomeExtensions.cronomix
+    pkgs.gsettings-desktop-schemas
     pkgs.zed-editor
     pkgs.dconf-editor
     pkgs.alacritty
