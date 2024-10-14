@@ -41,5 +41,6 @@
     pkgs.android-tools
 
     pkgs.lutris
+    zen_flake.default
   ];
 }
