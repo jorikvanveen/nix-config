@@ -1,8 +1,8 @@
 { pkgs, zen_flake, ... }: {
   environment.systemPackages = [
-    #pkgs.gnome-tweaks
-    #pkgs.gnomeExtensions.forge
-    #pkgs.gnome-pomodoro
+    pkgs.gnome-tweaks
+    pkgs.gnomeExtensions.forge
+    pkgs.gnome-pomodoro
     pkgs.gsettings-desktop-schemas
     pkgs.dconf-editor
 
