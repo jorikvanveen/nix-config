@@ -186,14 +186,11 @@
         });
       };
     });
-    
+
   in [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
-    pkgs.gnome-tweaks
-    pkgs.gnomeExtensions.forge
-    pkgs.gnomeExtensions.cronomix
-    pkgs.gsettings-desktop-schemas
+
     pkgs.zed-editor
     pkgs.dconf-editor
     pkgs.alacritty
@@ -253,7 +250,7 @@
     pkgs.qtspim
     pkgs.android-studio
     pkgs.android-tools
-  ];
+  ] ++ import ./modules/system_pkgs.nix { inherit pkgs; };
 
   fonts.packages = with pkgs; [
     fira-code
