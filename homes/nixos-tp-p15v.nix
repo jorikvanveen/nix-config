@@ -1,19 +1,17 @@
-{ pkgs, inputs, lib, config, options, specialArgs, modulesPath, nixosConfig, osConfig }: {
+{ pkgs, inputs, lib, config, options, specialArgs, modulesPath, nixosConfig, osConfig }:
+  let homedir = "/home/main";
+in {
   programs.home-manager.enable = true;
 
-  home = let home = "/home/main"; in {
+  _module.args = { inherit homedir; };
+  imports = [
+    ./generic.nix
+  ];
+
+  home = {
     username = "main";
-    homeDirectory = home;
+    homeDirectory = homedir;
     stateVersion = "24.05";
-
-    file.zed = {
-      enable = true;
-      source = ../program-config/zed;
-      target = home + "/.config/zed";
-      recursive = true;
-    };
-
-
   };
 
   # NodeJS workaround for Zed https://github.com/zed-industries/zed/issues/12631
