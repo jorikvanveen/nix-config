@@ -9,6 +9,8 @@
     [
       # Include the results of the hardware scan.
       ./nixos-tp-p15v-hardware.nix
+
+      # Include generic nixos config
       ./generic.nix
     ];
 
@@ -73,49 +75,9 @@
     extraGroups = [ "networkmanager" "wheel" "gamemode" "kvm" ];
     shell = pkgs.nushell;
     useDefaultShell = true;
-    packages = with pkgs; [
-    ];
   };
 
   documentation.dev.enable = true;
-
-  fonts.packages = with pkgs; [
-    fira-code
-    inputs.apple-fonts.packages.x86_64-linux.sf-mono-nerd
-    inputs.apple-fonts.packages.x86_64-linux.sf-pro
-    inputs.apple-fonts.packages.x86_64-linux.ny
-  ];
-
-  fonts.fontconfig = {
-    defaultFonts = {
-      serif = [  "New York Medium" ];
-      sansSerif = [ "SF Pro" ];
-      monospace = [ "SFMono Nerd Font" ];
-    };
-  };
-
-  services.syncthing = {
-    enable = true;
-    user = "main";
-    dataDir = "/home/main/Documents";
-    configDir = "/home/main/.config/syncthing";
-  };
-
-  services.open-webui = {
-    enable = true;
-    host = "0.0.0.0";
-    openFirewall = true;
-    package = stable.open-webui;
-  };
-
-  services.mullvad-vpn = {
-	enable = true;
-};
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -125,21 +87,14 @@
     options = "--delete-older-than 30d";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 5173 ];
+
+
+
+
+
+
+
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -151,5 +106,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
