@@ -296,6 +296,4 @@ with lib.hm.gvariant;
     window-position = mkTuple [ 26 23 ];
     window-size = mkTuple [ 1231 902 ];
   };
-
-
 }

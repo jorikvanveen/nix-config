@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./nixos-tp-p15v-hardware.nix
+      ./generic.nix
     ];
 
   # Bootloader.
@@ -16,35 +17,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos-laptop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nl_NL.UTF-8";
-    LC_IDENTIFICATION = "nl_NL.UTF-8";
-    LC_MEASUREMENT = "nl_NL.UTF-8";
-    LC_MONETARY = "nl_NL.UTF-8";
-    LC_NAME = "nl_NL.UTF-8";
-    LC_NUMERIC = "nl_NL.UTF-8";
-    LC_PAPER = "nl_NL.UTF-8";
-    LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "nl_NL.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   specialisation = {
     gaming.configuration = {
@@ -86,52 +58,13 @@
         prime = {
           nvidiaBusId = "PCI:1:0:0";
           intelBusId = "PCI:0:2:0";
-          #offload = {
-          #  enable = true;
-          #  enableOffloadCmd = true;
-          #};
-	  sync.enable = true;
+          sync.enable = true;
         };
       };
     };
   };
 
-  hardware.graphics.enable = true;
-
   hardware.bluetooth.enable = true;
-
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = lib.mkDefault true;
-  services.xserver.desktopManager.gnome.enable = lib.mkDefault true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
-  };
-
-  # Configure console keymap
-  console.keyMap = "us-acentos";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.main = {
@@ -145,55 +78,6 @@
   };
 
   documentation.dev.enable = true;
-
-  programs.nix-ld.enable = true;
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
-  programs.gamemode.enable = true;
-  programs.gamemode.enableRenice = true;
-  programs.gamemode.settings = {
-    general = {
-      renice = 10;
-    };
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-	environment.sessionVariables = {
-		XCURSOR_THEME = "Adwaita";
-		_JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
-		NIXPKGS_ALLOW_UNFREE = "1";
-	};
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = let
-    mylsd = pkgs.lsd.override (previous: {
-      rustPlatform = previous.rustPlatform // {
-        buildRustPackage = args: previous.rustPlatform.buildRustPackage (args // {
-          src = previous.fetchFromGitHub {
-            owner = "jorikvanveen";
-            repo = "lsd";
-            rev = "c9b76cc5eec5247ebc7442c5d7148c62ac0e9fb5";
-            hash = "sha256-nIu4iytDLPpTgz4Fqnwcw2DPELSzPVJXC9vuoZY46AE=";
-          };
-          cargoHash = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
-        });
-      };
-    });
-
-  in [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    mylsd
-    zen_flake.default
-
-  ] ++ import ../packages/system_pkgs.nix { inherit pkgs; };
 
   fonts.packages = with pkgs; [
     fira-code

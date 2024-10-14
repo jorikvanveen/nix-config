@@ -1,4 +1,4 @@
-{ pkgs }: [
+{ pkgs, ... }: { home.packages = [
   pkgs.zed-editor
   pkgs.brave
 
@@ -9,4 +9,4 @@
   pkgs.neovim
   pkgs.git
   pkgs.obsidian
-]
+];}
