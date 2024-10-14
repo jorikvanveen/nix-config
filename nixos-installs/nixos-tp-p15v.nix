@@ -193,7 +193,7 @@
     mylsd
     zen_flake.default
 
-  ] ++ import ../modules/system_pkgs.nix { inherit pkgs; };
+  ] ++ import ../packages/system_pkgs.nix { inherit pkgs; };
 
   fonts.packages = with pkgs; [
     fira-code

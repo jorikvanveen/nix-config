@@ -5,4 +5,5 @@
     target = homedir + "/.config/zed";
     recursive = true;
   };
+  home.packages = import ../packages/home_pkgs.nix { inherit pkgs; };
 }
