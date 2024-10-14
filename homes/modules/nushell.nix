@@ -19,7 +19,7 @@
         | update date {|row| $row.date | into datetime}
         | update size {|row| $row.size | into filesize}
       }
-      $env.config.edit_mode = vi
+      $env.config.edit_mode = "vi""
     '';
   };
 }
