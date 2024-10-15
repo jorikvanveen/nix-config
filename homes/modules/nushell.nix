@@ -5,7 +5,7 @@
     extraConfig = ''
       alias core-ls = ls
       def --wrapped ls [...rest] {
-        lsd ...$rest --json --icon always --icon-theme fancy --color always
+        lsd ...$rest --json --icon always --icon-theme fancy --color always --hyperlink always
         | from json
         | get 0.content
         | select type display size date
