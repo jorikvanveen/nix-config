@@ -23,7 +23,6 @@
 
   outputs = { nixpkgs, nixpkgs_stable, home-manager, ... } @ inputs:
     let
-      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
       stable = nixpkgs_stable.legacyPackages.x86_64-linux;
     in
     {

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, stable, inputs, zen_flake, ... }:
+{ config, pkgs, spicetify-nix, lib, stable, inputs, zen_flake, ... }:
 
 {
   imports =
@@ -12,6 +12,8 @@
 
       # Include generic nixos config
       ./generic.nix
+
+      spicetify-nix.nixosModules.default
     ];
 
   # Bootloader.

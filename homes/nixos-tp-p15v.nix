@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, spicetify-nix, ... }:
   let homedir = "/home/main";
 in {
   _module.args = { inherit homedir; };
