@@ -9,4 +9,5 @@
   pkgs.neovim
   pkgs.git
   pkgs.obsidian
+  pkgs.vesktop
 ];}
