@@ -1,5 +1,9 @@
 # Takes the stylix flake (github:danth/stylix)
-{ stylix, pkgs, ... }: {
+{ stylix, pkgs, apple-fonts, ... }: let
+  sfmono = apple-fonts.packages.x86_64-linux.sf-mono-nerd;
+  sfpro = apple-fonts.packages.x86_64-linux.sf-mono-nerd;
+  ny = apple-fonts.packages.x86_64-linux.sf-mono-nerd;
+in {
   imports = [
     stylix.nixosModules.stylix
   ];
@@ -11,4 +15,13 @@
   stylix.cursor.name = "Bibata-Modern-Classic";
   stylix.polarity = "dark";
   stylix.cursor.size = 24;
+  #stylix.fonts.packages = [
+  #  sfmono
+  #  sfpro
+  #  ny
+  #];
+  stylix.fonts.monospace = {
+    name = "SFMono Nerd Font 11";
+    package = sfmono;
+  };
 }

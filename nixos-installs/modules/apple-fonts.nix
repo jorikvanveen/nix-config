@@ -1,9 +1,9 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, apple-fonts, ... }: {
   fonts.packages = with pkgs; [
     fira-code
-    inputs.apple-fonts.packages.x86_64-linux.sf-mono-nerd
-    inputs.apple-fonts.packages.x86_64-linux.sf-pro
-    inputs.apple-fonts.packages.x86_64-linux.ny
+    apple-fonts.packages.x86_64-linux.sf-mono-nerd
+    apple-fonts.packages.x86_64-linux.sf-pro
+    apple-fonts.packages.x86_64-linux.ny
   ];
 
   fonts.fontconfig = {

@@ -1,6 +1,5 @@
 {
   imports = [
-
     ./modules/locale.nix
     ./modules/gnome.nix
     ./modules/x11-keymap.nix
@@ -12,7 +11,7 @@
     ./modules/fix-java-fonts.nix
     ./modules/fix-alacritty-cursor.nix
     ./modules/distrobox.nix
-    ./modules/apple-fonts.nix
+    #./modules/apple-fonts.nix
     ./modules/syncthing.nix
     ./modules/mullvad.nix
     ./modules/stylix.nix
