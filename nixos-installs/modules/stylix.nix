@@ -24,4 +24,9 @@ in {
     name = "SFMono Nerd Font";
     package = sfmono;
   };
+  stylix.fonts.sizes = {
+    desktop = 11;
+    applications = 11;
+    terminal = 11;
+  };
 }
