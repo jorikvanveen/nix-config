@@ -20,6 +20,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  programs.spicetify.enable = true;
+
   networking.hostName = "nixos-laptop"; # Define your hostname.
 
   specialisation = {
