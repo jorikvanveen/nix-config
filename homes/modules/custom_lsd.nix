@@ -6,8 +6,8 @@ let
         src = previous.fetchFromGitHub {
           owner = "jorikvanveen";
           repo = "lsd";
-          rev = "c9b76cc5eec5247ebc7442c5d7148c62ac0e9fb5";
-          hash = "sha256-nIu4iytDLPpTgz4Fqnwcw2DPELSzPVJXC9vuoZY46AE=";
+          rev = "fbad80e0a5f5f162495f8646eac56bc0b91361c2";
+          hash = "sha256-6S7aVEoOVQ4S+0d0eqkPYrinzSlsrJeF78SL4pocy+E=";
         };
         cargoHash = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
       });
