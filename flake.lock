@@ -287,7 +287,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs_stable": "nixpkgs_stable",
-        "spicetify": "spicetify",
+        "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
         "zen_flake": "zen_flake"
       }
@@ -340,7 +340,7 @@
         "url": "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg"
       }
     },
-    "spicetify": {
+    "spicetify-nix": {
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
