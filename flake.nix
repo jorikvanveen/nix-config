@@ -24,17 +24,18 @@
   outputs = { nixpkgs, nixpkgs_stable, home-manager, ... } @ inputs:
     let
       stable = nixpkgs_stable.legacyPackages.x86_64-linux;
+      homedir = "/home/main";
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) zen_flake stylix apple-fonts spicetify-nix; inherit stable; };
+        specialArgs = { inherit (inputs) zen_flake stylix apple-fonts spicetify-nix; inherit stable homedir; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
-            #home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { inherit homedir; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.main = import ./homes/nixos-tp-p15v.nix;
