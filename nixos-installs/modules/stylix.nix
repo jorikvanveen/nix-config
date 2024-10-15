@@ -21,7 +21,7 @@ in {
   #  ny
   #];
   stylix.fonts.monospace = {
-    name = "SFMono Nerd Font 11";
+    name = "SFMono Nerd Font";
     package = sfmono;
   };
 }
