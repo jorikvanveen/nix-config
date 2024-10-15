@@ -1,6 +1,5 @@
-{ pkgs, homedir, spicetify-nix, ... }: {
+{ pkgs, homedir, ... }: {
   imports = [
-    #spicetify-nix.homeManagerModules.default
     ./modules/git.nix
     ./modules/carapace.nix
     ./modules/starship.nix
@@ -9,7 +8,7 @@
     ./modules/custom_lsd.nix
     ./modules/alacritty.nix
     ./modules/stylix.nix
-    #./modules/spotify.nix
+    ./modules/spotify.nix
     ../packages/home_pkgs.nix
   ];
 

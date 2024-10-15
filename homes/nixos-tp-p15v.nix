@@ -1,7 +1,7 @@
-{ lib, spicetify-nix, ... }:
+{ lib, ... }:
   let homedir = "/home/main";
 in {
-  _module.args = { inherit homedir spicetify-nix; };
+  _module.args = { inherit homedir; };
   imports = [
     ./generic.nix
     ./modules/zed-node-fix.nix
