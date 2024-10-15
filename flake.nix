@@ -42,5 +42,20 @@
           }
         ];
       };
+      nixosConfigurations.nixos-pc = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit (inputs) zen_flake stylix apple-fonts spicetify-nix; inherit stable homedir; };
+        system = "x86_64-linux";
+        modules = [
+          ./nixos-installs/nixos-pc.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.backupFileExtension = "hmbak";
+            home-manager.extraSpecialArgs = { inherit homedir; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.main = import ./homes/nixos-pc.nix;
+          }
+        ];
+      };
     };
 }
