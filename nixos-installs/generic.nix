@@ -1,5 +1,6 @@
 {
   imports = [
+
     ./modules/locale.nix
     ./modules/gnome.nix
     ./modules/x11-keymap.nix
@@ -14,6 +15,7 @@
     ./modules/apple-fonts.nix
     ./modules/syncthing.nix
     ./modules/mullvad.nix
+    ./modules/stylix.nix
     ../packages/system_pkgs.nix
   ];
 

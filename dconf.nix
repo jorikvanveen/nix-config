@@ -64,14 +64,14 @@ with lib.hm.gvariant;
   };
 
   "org/gnome/desktop/interface" = {
-    color-scheme = "prefer-dark";
-    font-antialiasing = "rgba";
-    font-hinting = "slight";
-    font-name = "SF Pro Display 11";
-    monospace-font-name = "SFMono Nerd Font 11";
-    gtk-theme = "Adwaita";
-    icon-theme = "Adwaita";
-    cursor-theme = "Adwaita";
+    #color-scheme = "prefer-dark";
+    #font-antialiasing = "rgba";
+    #font-hinting = "slight";
+    #font-name = "SF Pro Display 11";
+    #monospace-font-name = "SFMono Nerd Font 11";
+    #gtk-theme = "Adwaita";
+    #icon-theme = "Adwaita";
+    #cursor-theme = "Adwaita";
     gtk-enable-primary-paste = false;
     show-battery-percentage = false;
   };
