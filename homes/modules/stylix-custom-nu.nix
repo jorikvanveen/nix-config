@@ -13,7 +13,7 @@ with config.lib.stylix.colors.withHashtag; {
       duration: "${base08}"
       range: "${base08}"
       float: "${base08}"
-      string: "${base08}"
+      string: "${base05}"
       nothing: "${base08}"
       binary: "${base08}"
       cellpath: "${base08}"
