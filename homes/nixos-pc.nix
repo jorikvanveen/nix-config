@@ -15,6 +15,5 @@
     stateVersion = "24.05";
   };
 
-
   dconf.settings = import ../dconf.nix { inherit lib; };
 }
