@@ -4,6 +4,7 @@
     ./generic.nix
     ./modules/zed-node-fix.nix
     ./modules/mime-associations.nix
+    ./modules/close-with-x.nix
   ];
 
   programs.home-manager.enable = true;
@@ -15,9 +16,5 @@
   };
 
 
-  dconf.settings = import ../dconf.nix { inherit lib; } // {
-    "org/gnome/desktop/wm/keybindings" = {
-      close = ["<Super><Shift>X" ];
-    };
-  };
+  dconf.settings = import ../dconf.nix { inherit lib; };
 }
