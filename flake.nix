@@ -23,9 +23,8 @@
 
   outputs = { nixpkgs, nixpkgs_stable, home-manager, ... } @ inputs:
     let
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
       stable = nixpkgs_stable.legacyPackages.x86_64-linux;
-      zen_flake = inputs.zen_flake.packages.x86_64-linux;
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
