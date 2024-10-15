@@ -1,6 +1,5 @@
 { pkgs, ... }: { home.packages = [
   pkgs.zed-editor
-  pkgs.brave
 
   pkgs.ripgrep
   pkgs.jq
@@ -8,6 +7,5 @@
   pkgs.file
   pkgs.neovim
   pkgs.git
-  pkgs.obsidian
-  pkgs.vesktop
+  pkgs.qbittorrent
 ];}

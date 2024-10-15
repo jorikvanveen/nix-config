@@ -1,4 +1,4 @@
-{
+{ spicetify-nix, ... }: {
   imports = [
     ./modules/locale.nix
     ./modules/gnome.nix
@@ -11,11 +11,11 @@
     ./modules/fix-java-fonts.nix
     #./modules/fix-alacritty-cursor.nix
     ./modules/distrobox.nix
-    #./modules/apple-fonts.nix
     ./modules/syncthing.nix
     ./modules/mullvad.nix
     ./modules/stylix.nix
     ../packages/system_pkgs.nix
+    spicetify-nix.nixosModules.default
   ];
 
   networking.networkmanager.enable = true;

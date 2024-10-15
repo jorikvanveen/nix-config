@@ -17,7 +17,9 @@
     pkgs.signal-desktop
     pkgs.thunderbird
     pkgs.mullvad-vpn
-    pkgs.qbittorrent
+    pkgs.vesktop
+    pkgs.obsidian
+    pkgs.brave
 
     # Cli utilities
     pkgs.man-pages
