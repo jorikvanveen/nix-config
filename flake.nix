@@ -17,8 +17,8 @@
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     apple-fonts.inputs.nixpkgs.follows = "nixpkgs";
 
-    #spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    #spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, nixpkgs_stable, home-manager, stylix, apple-fonts, ... } @ inputs:
