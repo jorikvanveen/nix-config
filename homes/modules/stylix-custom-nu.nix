@@ -1,6 +1,6 @@
 { config, lib, ... }:
 with config.lib.stylix.colors.withHashtag; {
-  config.programs.nushell.extraConfig = lib.mkIf (config.stylix.enable) (lib.mkForce ''
+  config.programs.nushell.extraConfig = ''
     $env.config.color_config = {
       separator: "${base03}"
       leading_trailing_space_bg: "${base04}"
@@ -37,5 +37,5 @@ with config.lib.stylix.colors.withHashtag; {
       shape_flag: { fg: "${base0D}" attr: b }
       shape_custom: { attr: b }
     }
-  '');
+  '';
 }

@@ -7,7 +7,7 @@
     ./modules/direnv.nix
     ./modules/custom_lsd.nix
     ./modules/alacritty.nix
-    ./modules/stylix-custom-nu.nix
+    ./modules/stylix.nix
     ../packages/home_pkgs.nix
   ];
 
