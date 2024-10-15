@@ -6,6 +6,7 @@
     ./modules/nushell.nix
     ./modules/direnv.nix
     ./modules/custom_lsd.nix
+    ./modules/alacritty.nix
     ../packages/home_pkgs.nix
   ];
 

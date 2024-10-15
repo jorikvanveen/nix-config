@@ -6,7 +6,6 @@
     pkgs.gsettings-desktop-schemas
     pkgs.dconf-editor
 
-    pkgs.alacritty
     pkgs.nixd
     pkgs.steam-run
     pkgs.skia

@@ -9,7 +9,7 @@
     ./modules/gamemode.nix
     ./modules/env_vars.nix
     ./modules/fix-java-fonts.nix
-    ./modules/fix-alacritty-cursor.nix
+    #./modules/fix-alacritty-cursor.nix
     ./modules/distrobox.nix
     #./modules/apple-fonts.nix
     ./modules/syncthing.nix
