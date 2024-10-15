@@ -14,5 +14,10 @@
     stateVersion = "24.05";
   };
 
-  dconf.settings = import ../dconf.nix { inherit lib; };
+
+  dconf.settings = import ../dconf.nix { inherit lib; } // {
+    "org/gnome/desktop/wm/keybindings" = {
+      close = ["<Super><Shift>X" ];
+    };
+  };
 }

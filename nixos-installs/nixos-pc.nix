@@ -19,7 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-laptop"; # Define your hostname.
+  networking.hostName = "nixos-pc"; # Define your hostname.
 
   hardware.bluetooth.enable = true;
 
@@ -41,8 +41,6 @@
     automatic = true;
     options = "--delete-older-than 30d";
   };
-
-  networking.firewall.allowedTCPPorts = [ 5173 ];
 
 
 
