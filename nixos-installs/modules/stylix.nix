@@ -10,4 +10,5 @@
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Classic";
   stylix.polarity = "dark";
+  stylix.cursor.size = 24;
 }
