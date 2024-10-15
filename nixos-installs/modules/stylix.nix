@@ -25,7 +25,7 @@ in {
     package = sfmono;
   };
   stylix.fonts.sansSerif = {
-    name = "SF Pro Display";
+    name = "SF Pro";
     package = sfpro;
   };
   stylix.fonts.sizes = {
