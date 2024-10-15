@@ -24,6 +24,10 @@ in {
     name = "SFMono Nerd Font";
     package = sfmono;
   };
+  stylix.fonts.sansSerif = {
+    name = "SF Pro Display";
+    package = sfpro;
+  };
   stylix.fonts.sizes = {
     desktop = 11;
     applications = 11;
