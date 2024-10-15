@@ -40,6 +40,6 @@
     pkgs.android-tools
 
     pkgs.lutris
-    zen_flake.default
+    zen_flake.packages.x86_64-linux.default
   ];
 }

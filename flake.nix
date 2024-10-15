@@ -21,7 +21,7 @@
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs_stable, home-manager, stylix, apple-fonts, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs_stable, home-manager, ... } @ inputs:
     let
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       stable = nixpkgs_stable.legacyPackages.x86_64-linux;
@@ -29,7 +29,7 @@
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit stable zen_flake stylix apple-fonts; };
+        specialArgs = { inherit (inputs) zen_flake stylix apple-fonts spicetify-nix; inherit stable; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
