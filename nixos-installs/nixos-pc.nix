@@ -13,9 +13,6 @@
 
       # Include generic nixos config
       ./generic.nix
-
-      # Add kde
-      ./modules/kde.nix
     ];
 
   # Bootloader.
