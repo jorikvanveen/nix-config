@@ -8,4 +8,5 @@
   pkgs.neovim
   pkgs.git
   pkgs.qbittorrent
+  pkgs.magic-wormhole
 ];}
