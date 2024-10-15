@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, config, options, specialArgs, modulesPath, nixosConfig, osConfig }:
+{ lib, ... }:
   let homedir = "/home/main";
 in {
   _module.args = { inherit homedir; };
