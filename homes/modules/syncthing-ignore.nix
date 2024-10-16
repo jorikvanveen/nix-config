@@ -6,6 +6,7 @@
       **/node_modules
       **/site-packages
       **/*.laz
+      **/*.direnv
     '';
   };
 }
