@@ -5,6 +5,7 @@
     pkgs.gnome-pomodoro
     pkgs.gsettings-desktop-schemas
     pkgs.dconf-editor
+    pkgs.spotify
 
     pkgs.nixd
     pkgs.steam-run
