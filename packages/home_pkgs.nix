@@ -5,7 +5,7 @@
   pkgs.jq
   pkgs.tmux
   pkgs.file
-  pkgs.neovim
+  #pkgs.neovim
   pkgs.git
   pkgs.qbittorrent
   pkgs.magic-wormhole
