@@ -9,6 +9,7 @@
     ./modules/alacritty.nix
     ./modules/stylix.nix
     ./modules/neovim.nix
+    ./modules/syncthing-ignore.nix
     ../packages/home_pkgs.nix
   ];
 
