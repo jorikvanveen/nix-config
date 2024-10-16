@@ -5,7 +5,7 @@
 
   services.syncthing = {
     settings.devices.pc = {
-      id = "5E777XO-Y43G7RH-ILBGF6T-L7G4HUB-UTCQ4KC-BYOMVDA-NRIVROU-XWEVTQD";
+      id = "TXMWH2O-4PTEIVD-3XS7IBS-UXJT7BE-GTKEMU5-RY7WORS-S24S4ET-BNDMXQB";
       name = "pc";
     };
 
