@@ -23,7 +23,7 @@
         | update date {|row| $row.date | into datetime}
         | update size {|row| $row.size | into filesize}
       }
-      def dui [path] {
+      def dui [path: glob] {
         ^du --exclude-from=/home/main/shared/personal/.stignore -s $path
         | str replace -a "\t" "  "
         | from ssv  -n
