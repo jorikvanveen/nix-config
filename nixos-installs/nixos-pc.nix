@@ -13,6 +13,8 @@
 
       # Include generic nixos config
       ./generic.nix
+
+      ./modules/syncthing-pc.nix
     ];
 
   # Bootloader.

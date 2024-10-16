@@ -16,6 +16,7 @@
       # Include gaming specialisatoin
       ./modules/gaming-specialisation.nix
 
+      ./modules/syncthing-laptop.nix
     ];
 
   # Bootloader.

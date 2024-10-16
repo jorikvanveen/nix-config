@@ -13,7 +13,6 @@ in {
       id = "personal";
       label = "personal";
       enable = true;
-      devices = [ ];
     };
   };
 }
