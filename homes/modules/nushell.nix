@@ -23,13 +23,14 @@
         | update date {|row| $row.date | into datetime}
         | update size {|row| $row.size | into filesize}
       }
-      def dui [path]
-      ^du --exclude-from=/home/main/shared/personal/.stignore -s $path
+      def dui [path] {
+        ^du --exclude-from=/home/main/shared/personal/.stignore -s $path
         | str replace -a "\t" "  "
         | from ssv  -n
         | rename size path
         | into value
         | update size { |row| $row.size | into filesize }
+      }
       $env.config.edit_mode = "vi"
     '';
   };
