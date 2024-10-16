@@ -4,11 +4,12 @@
     pkgs.gnomeExtensions.forge
     pkgs.gnome-pomodoro
     pkgs.gsettings-desktop-schemas
+    pkgs.gnomeExtensions.blur-my-shell
     pkgs.dconf-editor
-    pkgs.spotify
 
     pkgs.nixd
     pkgs.steam-run
+    pkgs.mangohud
     pkgs.skia
     pkgs.adwaita-icon-theme
     pkgs.adw-gtk3
