@@ -19,6 +19,7 @@
 
   programs.spicetify.enable = true;
 
+  hardware.xone.enable = true;
   networking.networkmanager.enable = true;
   services.xserver.enable = true;
   hardware.graphics.enable = true;
