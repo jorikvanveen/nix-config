@@ -15,6 +15,8 @@
       ./generic.nix
 
       ./modules/syncthing-pc.nix
+
+      ./modules/gamescope-specialisation.nix
     ];
 
   # Bootloader.
