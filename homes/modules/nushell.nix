@@ -30,7 +30,7 @@
         | rename size path
         | into value
         | update size { |row| $row.size | into filesize }
-        | sorty-by -r size
+        | sort-by -r size
       }
       $env.config.edit_mode = "vi"
     '';
