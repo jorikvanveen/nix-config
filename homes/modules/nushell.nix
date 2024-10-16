@@ -2,6 +2,10 @@
   programs.nushell = {
     enable = true;
     # configFile.source = ../program-config/nushell/config.nu;
+    shellAliases = {
+      vi = "nvim";
+      vim = "nvim";
+    };
     extraConfig = ''
       alias core-ls = ls
       def --wrapped ls [...rest] {

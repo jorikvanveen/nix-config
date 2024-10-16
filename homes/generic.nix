@@ -8,6 +8,7 @@
     ./modules/custom_lsd.nix
     ./modules/alacritty.nix
     ./modules/stylix.nix
+    ./modules/neovim.nix
     ../packages/home_pkgs.nix
   ];
 
