@@ -10,6 +10,7 @@
     pkgs.steam-run
     pkgs.skia
     pkgs.adwaita-icon-theme
+    pkgs.adw-gtk3
     pkgs.kdePackages.breeze
     pkgs.protonup-qt
     pkgs.planify
