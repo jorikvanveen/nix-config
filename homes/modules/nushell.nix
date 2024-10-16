@@ -23,7 +23,7 @@
         | update date {|row| $row.date | into datetime}
         | update size {|row| $row.size | into filesize}
       }
-      alias dui [path] {
+      def dui [path] {
         ^du --exclude-from=/home/main/shared/personal/.stignore -s $path
         | str replace -a "\t" "  "
         | from ssv  -n
