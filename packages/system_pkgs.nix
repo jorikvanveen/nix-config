@@ -1,4 +1,4 @@
-{ pkgs, zen_flake, ... }: {
+{ pkgs, zen_flake, zenpkgs, ... }: {
   environment.systemPackages = [
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
@@ -44,6 +44,8 @@
     pkgs.android-tools
 
     pkgs.lutris
+
     zen_flake.packages.x86_64-linux.default
+    #zenpkgs.legacyPackages.x86_64-linux.zen-browser
   ];
 }

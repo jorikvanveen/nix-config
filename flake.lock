@@ -253,22 +253,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_stable": {
-      "locked": {
-        "lastModified": 1726062873,
-        "narHash": "sha256-IiA3jfbR7K/B5+9byVi9BZGWTD4VSbWe8VLpp9B/iYk=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "4f807e8940284ad7925ebd0a0993d2a1791acb2f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "4f807e8940284ad7925ebd0a0993d2a1791acb2f",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "ny": {
       "flake": false,
       "locked": {
@@ -286,10 +270,10 @@
         "apple-fonts": "apple-fonts",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs_stable": "nixpkgs_stable",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
-        "zen_flake": "zen_flake"
+        "zen_flake": "zen_flake",
+        "zenpkgs": "zenpkgs"
       }
     },
     "sf-arabic": {
@@ -489,6 +473,22 @@
       "original": {
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
+        "type": "github"
+      }
+    },
+    "zenpkgs": {
+      "locked": {
+        "lastModified": 1729025440,
+        "narHash": "sha256-DUhI5F7bOf5x5q5dpBdLZOnFNi3My/ucqkJQ5j1FFjg=",
+        "owner": "matthewpi",
+        "repo": "nixpkgs",
+        "rev": "98eabdf0903f10fc768aebcbe356cd1621bcee8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "matthewpi",
+        "ref": "zen-browser",
+        "repo": "nixpkgs",
         "type": "github"
       }
     }

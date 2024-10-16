@@ -3,7 +3,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, spicetify-nix, lib, stable, inputs, zen_flake, ... }:
+{ config, pkgs, spicetify-nix, lib, inputs, zen_flake, ... }:
 
 {
   imports =
