@@ -10,6 +10,7 @@
     ./modules/stylix.nix
     ./modules/neovim.nix
     ./modules/syncthing-ignore.nix
+    ./modules/zoxide.nix
     ../packages/home_pkgs.nix
   ];
 

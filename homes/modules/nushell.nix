@@ -5,6 +5,7 @@
     shellAliases = {
       vi = "nvim";
       vim = "nvim";
+      cd = "z";
     };
     extraConfig = ''
       alias core-ls = ls
