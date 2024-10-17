@@ -7,6 +7,7 @@
       **/site-packages
       **/*.laz
       **/*.direnv
+      **/*.osm.pbf
     '';
   };
 }

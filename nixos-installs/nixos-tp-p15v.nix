@@ -10,13 +10,14 @@
       # Include the results of the hardware scan.
       ./nixos-tp-p15v-hardware.nix
 
-      # Include generic nixos config
+      # Machine-independent stuff
       ./generic.nix
 
-      # Include gaming specialisatoin
-      ./modules/gaming-specialisation.nix
-
+      # Machine-specific syncthing config
       ./modules/syncthing-laptop.nix
+
+      # Add boot entry that enables NVIDIA dGPU
+      ./modules/gaming-specialisation.nix
     ];
 
   # Bootloader.
@@ -25,15 +26,13 @@
 
   networking.hostName = "nixos-laptop"; # Define your hostname.
 
-
-
   hardware.bluetooth.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.main = {
     isNormalUser = true;
     description = "Jorik";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "kvm" "docker" ];
     shell = pkgs.nushell;
     useDefaultShell = true;
   };
