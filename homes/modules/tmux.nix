@@ -1,6 +1,7 @@
 {
   programs.tmux = {
     enable = true;
-    terminal = "alacritty";
+    terminal = "tmux-256color";
+    escapeTime = 100;
   };
 }
