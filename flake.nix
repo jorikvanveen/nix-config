@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=a28796b8c053def7c3f839d43ca2df76d4d86bb1";
     zenpkgs.url = "github:matthewpi/nixpkgs/zen-browser";
 
     stylix.url = "github:danth/stylix";
@@ -24,10 +25,11 @@
   outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
       homedir = "/home/main";
+      pinned-pkgs = inputs.nixpkgs-pinned.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir; };
+        specialArgs = { inherit (inputs) zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
@@ -42,7 +44,7 @@
         ];
       };
       nixosConfigurations.nixos-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir; };
+        specialArgs = { inherit (inputs) zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-pc.nix

@@ -1,4 +1,4 @@
-{ pkgs, zen_flake, zenpkgs, ... }: {
+{ pkgs, zen_flake, zenpkgs, pinned-pkgs, ... }: {
   environment.systemPackages = [
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
@@ -37,7 +37,7 @@
 
     pkgs.g4music
 
-    pkgs.qgis-ltr
+    pinned-pkgs.qgis-ltr
 
     # Module 9 Stuff
     pkgs.vscode
