@@ -19,6 +19,8 @@ in {
       neo-tree-nvim
       base16-nvim
       telescope-fzf-native-nvim
+      luasnip
+      cmp_luasnip
     ];
   };
 }
