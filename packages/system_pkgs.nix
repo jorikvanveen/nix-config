@@ -24,6 +24,7 @@
     pkgs.obsidian
     pkgs.brave
     pkgs.bruno
+    pkgs.delfin
 
     # Cli utilities
     pkgs.man-pages
