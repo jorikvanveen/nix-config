@@ -18,6 +18,7 @@ in {
       nvim-treesitter
       neo-tree-nvim
       base16-nvim
+      telescope-fzf-native-nvim
     ];
   };
 }

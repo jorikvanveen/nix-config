@@ -1,3 +1,7 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+vim.g.have_nerd_font = true
+
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -40,6 +44,10 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -57,3 +65,17 @@ vim.opt.scrolloff = 10
 vim.opt.termguicolors = true
 
 vim.keymap.set("n", "<C-n>", ":Neotree<CR>")
+
+vim.keymap.set("n", "<leader>ff", function() require'telescope.builtin'.find_files {} end)
+vim.keymap.set("n", "<leader>gf", function() require'telescope.builtin'.git_files {} end)
+vim.keymap.set("n", "<leader>tlg", function() require'telescope.builtin'.live_grep {} end)
+require'telescope'.setup {
+  extensions = {
+    fzf_writer = {
+      minimum_grep_characters = 2,
+      minimum_files_characters = 2,
+
+      use_highlighter = true
+    }
+  }
+}
