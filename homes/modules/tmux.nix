@@ -1,3 +1,6 @@
 {
-  programs.tmux.enable = true;
+  programs.tmux = {
+    enable = true;
+    terminal = "screen-256color";
+  };
 }
