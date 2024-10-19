@@ -4,7 +4,7 @@ in {
     enable = true;
     viAlias = true;
     vimAlias = true;
-    #extraLuaConfig = ../../program-config/neovim/init.lua;
+    extraLuaConfig = builtins.readFile ../../program-config/neovim/init.lua;
     plugins = with pkgs.vimPlugins; [
       gitsigns-nvim
       which-key-nvim
