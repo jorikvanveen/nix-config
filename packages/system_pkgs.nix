@@ -23,6 +23,7 @@
     pkgs.vesktop
     pkgs.obsidian
     pkgs.brave
+    pkgs.bruno
 
     # Cli utilities
     pkgs.man-pages
