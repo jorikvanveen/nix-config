@@ -17,6 +17,7 @@ in {
       todo-comments-nvim
       nvim-treesitter
       neo-tree-nvim
+      base16-nvim
     ];
   };
 }
