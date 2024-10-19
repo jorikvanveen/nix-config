@@ -56,4 +56,4 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.termguicolors = true
 
-map.set("n", "<C-n>", "Neotree<CR>")
+vim.keymap.set("n", "<C-n>", ":Neotree<CR>")
