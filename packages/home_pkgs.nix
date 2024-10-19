@@ -3,7 +3,6 @@
 
   pkgs.ripgrep
   pkgs.jq
-  pkgs.tmux
   pkgs.file
   #pkgs.neovim
   pkgs.git

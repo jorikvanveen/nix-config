@@ -11,6 +11,7 @@
     ./modules/neovim.nix
     ./modules/syncthing-ignore.nix
     ./modules/zoxide.nix
+    ./modules/tmux.nix
     ../packages/home_pkgs.nix
   ];
 
