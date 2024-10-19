@@ -37,7 +37,7 @@
         | sort-by -r size
       }
 
-      def source-dotenv {
+      def source-dotenv [] {
         open .env
         | lines
         | where $it != ""
