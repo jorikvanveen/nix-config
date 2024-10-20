@@ -21,6 +21,7 @@ in {
       telescope-fzf-native-nvim
       luasnip
       cmp_luasnip
+      harpoon
     ];
   };
 }
