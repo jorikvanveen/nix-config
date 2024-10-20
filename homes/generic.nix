@@ -15,6 +15,16 @@
     ./modules/link-zed-config.nix
     ./modules/bash.nix
     ./modules/home-manager.nix
+
+    ./modules/dconf/enable-nightlight.nix
+    ./modules/dconf/extensions.nix
+    ./modules/dconf/font-rendering.nix
+    ./modules/dconf/fractional-scaling.nix
+    ./modules/dconf/keybinds.nix
+    ./modules/dconf/keyboard-layout.nix
+    ./modules/dconf/no-middle-click-paste.nix
+    ./modules/dconf/window-prefs.nix
+
     ../packages/home_pkgs.nix
   ];
 }

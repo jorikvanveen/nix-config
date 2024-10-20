@@ -6,6 +6,4 @@
     ./modules/mime-associations.nix
     ./modules/main-user.nix
   ];
-
-  dconf.settings = import ../dconf.nix { inherit lib; };
 }
