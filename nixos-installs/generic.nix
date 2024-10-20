@@ -21,7 +21,10 @@
     ./modules/graphics.nix
     ./modules/network.nix
     ./modules/unfree-allow.nix
+    ./modules/main-user.nix
+    ./modules/dev-man-pages.nix
+    ./modules/auto-gc.nix
+    ./modules/flake-support.nix
     ../packages/system_pkgs.nix
   ];
-
 }

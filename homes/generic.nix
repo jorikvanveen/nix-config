@@ -12,15 +12,9 @@
     ./modules/syncthing-ignore.nix
     ./modules/zoxide.nix
     ./modules/tmux.nix
+    ./modules/link-zed-config.nix
+    ./modules/bash.nix
+    ./modules/home-manager.nix
     ../packages/home_pkgs.nix
   ];
-
-  home.file.zed = {
-    enable = true;
-    source = ../program-config/zed;
-    target = homedir + "/.config/zed";
-    recursive = true;
-  };
-
-  programs.bash.enable = true;
 }

@@ -5,15 +5,8 @@
     ./modules/zed-node-fix.nix
     ./modules/mime-associations.nix
     ./modules/close-with-x.nix
+    ./modules/main-user.nix
   ];
-
-  programs.home-manager.enable = true;
-
-  home = {
-    username = "main";
-    homeDirectory = homedir;
-    stateVersion = "24.05";
-  };
 
   dconf.settings = import ../dconf.nix { inherit lib; };
 }

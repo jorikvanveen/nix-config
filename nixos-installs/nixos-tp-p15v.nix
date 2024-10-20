@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./nixos-tp-p15v-hardware.nix
+      ./hardware/nixos-tp-p15v-hardware.nix
 
       # Machine-independent stuff
       ./generic.nix
@@ -20,44 +20,8 @@
       ./modules/gaming-specialisation.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos-laptop"; # Define your hostname.
-
-  hardware.bluetooth.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.main = {
-    isNormalUser = true;
-    description = "Jorik";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "kvm" "docker" ];
-    shell = pkgs.nushell;
-    useDefaultShell = true;
-  };
-
-  documentation.dev.enable = true;
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 30d";
-  };
-
-  networking.firewall.allowedTCPPorts = [ 5173 ];
-
-
-
-
-
-
-
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -1,0 +1,4 @@
+{
+  documentation.dev.enable = true;
+}
+  
