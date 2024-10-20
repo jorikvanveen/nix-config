@@ -2,6 +2,6 @@
   programs.tmux = {
     enable = true;
     terminal = "tmux-256color";
-    escapeTime = 100;
+    escapeTime = 0;
   };
 }
