@@ -85,6 +85,22 @@ require'telescope'.setup {
 -- LSPCONFIG
 require'lspconfig'.rust_analyzer.setup {}
 
+vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
+vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)
+vim.keymap.set("n", "E", function() vim.diagnostic.open_float() end)
+
+vim.diagnostic.config({
+  float = {
+    border = "rounded",
+    focusable = false,
+    style = "minimal",
+  }
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
 -- NVIM-CMP
 local cmp = require'cmp'
 
@@ -113,6 +129,19 @@ cmp.setup({
   })
 })
 
+-- HARPOON
+vim.keymap.set("n", "<leader>ah", function() require("harpoon.mark").add_file() end)
+vim.keymap.set("n", "<leader><leader>", function() require("harpoon.ui").toggle_quick_menu() end)
+vim.keymap.set("n", "<leader>1", function() require("harpoon.ui").nav_file(1) end)
+vim.keymap.set("n", "<leader>2", function() require("harpoon.ui").nav_file(2) end)
+vim.keymap.set("n", "<leader>3", function() require("harpoon.ui").nav_file(3) end)
+vim.keymap.set("n", "<leader>4", function() require("harpoon.ui").nav_file(4) end)
+vim.keymap.set("n", "<leader>5", function() require("harpoon.ui").nav_file(5) end)
+vim.keymap.set("n", "<leader>6", function() require("harpoon.ui").nav_file(6) end)
+vim.keymap.set("n", "<leader>7", function() require("harpoon.ui").nav_file(7) end)
+vim.keymap.set("n", "<leader>8", function() require("harpoon.ui").nav_file(8) end)
+vim.keymap.set("n", "<leader>9", function() require("harpoon.ui").nav_file(9) end)
+vim.keymap.set("n", "<leader>0", function() require("harpoon.ui").nav_file(10) end)
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
 -- Set configuration for specific filetype.
 --[[ cmp.setup.filetype('gitcommit', {
