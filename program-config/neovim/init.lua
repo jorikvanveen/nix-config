@@ -84,6 +84,7 @@ require'telescope'.setup {
 
 -- LSPCONFIG
 require'lspconfig'.rust_analyzer.setup {}
+require'lspconfig'.nixd.setup {}
 
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
 vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)

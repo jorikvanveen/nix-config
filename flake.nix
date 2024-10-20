@@ -26,6 +26,7 @@
     let
       homedir = "/home/main";
       pinned-pkgs = inputs.nixpkgs-pinned.legacyPackages.x86_64-linux;
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
@@ -56,6 +57,11 @@
             home-manager.useUserPackages = true;
             home-manager.users.main = import ./homes/nixos-pc.nix;
           }
+        ];
+      };
+      devShells.x86_64-linux.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nixd
         ];
       };
     };

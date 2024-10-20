@@ -6,5 +6,9 @@
       button-layout = "appmenu:minimize,maximize,close";
       focus-mode = "sloppy";
     };
+    
+    "org/gnome/shell/extensions/forge" = {
+      focus-border-toggle = true;
+    };
   };
 }
