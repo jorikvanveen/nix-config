@@ -9,6 +9,8 @@
       **/*.direnv
       **/*.osm.pbf
       **/build
+      **/*.map
+      **/*.mbtiles
     '';
   };
 }
