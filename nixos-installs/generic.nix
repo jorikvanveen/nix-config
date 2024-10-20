@@ -14,16 +14,14 @@
     ./modules/mullvad.nix
     ./modules/stylix.nix
     ./modules/xanmod-kernel.nix
+    ./modules/spicetify.nix
+    ./modules/nix-ld.nix
+    ./modules/systemd-boot.nix
+    ./modules/bluetooth.nix
+    ./modules/graphics.nix
+    ./modules/network.nix
+    ./modules/unfree-allow.nix
     ../packages/system_pkgs.nix
-    spicetify-nix.nixosModules.default
   ];
 
-  programs.spicetify.enable = true;
-
-  hardware.xone.enable = true;
-  networking.networkmanager.enable = true;
-  services.xserver.enable = true;
-  hardware.graphics.enable = true;
-  programs.nix-ld.enable = true;
-  nixpkgs.config.allowUnfree = true;
 }
