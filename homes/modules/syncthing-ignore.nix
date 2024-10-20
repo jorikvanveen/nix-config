@@ -8,6 +8,7 @@
       **/*.laz
       **/*.direnv
       **/*.osm.pbf
+      **/build
     '';
   };
 }
