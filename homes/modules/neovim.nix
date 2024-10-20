@@ -22,6 +22,30 @@ in {
       luasnip
       cmp_luasnip
       harpoon
-    ];
+    ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
+      c
+      cpp
+      rust
+      html
+      json
+      javascript
+      typescript
+      java
+      tsx
+      svelte
+      css
+      dockerfile
+      nix
+      lua
+      go
+      gitignore
+      haskell
+      python
+      toml
+      tmux
+      tsx
+      yaml
+      zig
+    ]);
   };
 }
