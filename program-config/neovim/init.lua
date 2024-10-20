@@ -88,6 +88,7 @@ require'lspconfig'.rust_analyzer.setup {}
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
 vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)
 vim.keymap.set("n", "E", function() vim.diagnostic.open_float() end)
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
 
 vim.diagnostic.config({
   float = {
