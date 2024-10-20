@@ -13,6 +13,7 @@
     ./modules/syncthing.nix
     ./modules/mullvad.nix
     ./modules/stylix.nix
+    ./modules/xanmod-kernel.nix
     ../packages/system_pkgs.nix
     spicetify-nix.nixosModules.default
   ];

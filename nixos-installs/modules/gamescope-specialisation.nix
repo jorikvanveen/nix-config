@@ -6,7 +6,7 @@
     services.xserver.displayManager.gdm.enable = false;
 
     boot.kernelParams = [ "video=HDMI-A-1:d" ]; # Disable second display
-    boot.kernelPackages = pkgs.linuxPackages; # (this is the default) some amdgpu issues on 6.10
+    #boot.kernelPackages = pkgs.linuxPackages; # (this is the default) some amdgpu issues on 6.10
 
     programs = {
       gamescope = {
