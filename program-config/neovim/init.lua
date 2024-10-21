@@ -71,6 +71,7 @@ vim.keymap.set("n", "<C-n>", ":Neotree<CR>")
 vim.keymap.set("n", "<leader>ff", function() require'telescope.builtin'.find_files {} end)
 vim.keymap.set("n", "<leader>gf", function() require'telescope.builtin'.git_files {} end)
 vim.keymap.set("n", "<leader>tlg", function() require'telescope.builtin'.live_grep {} end)
+vim.keymap.set("n", "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<CR>")
 require'telescope'.setup {
   extensions = {
     fzf_writer = {
@@ -85,6 +86,7 @@ require'telescope'.setup {
 -- LSPCONFIG
 require'lspconfig'.rust_analyzer.setup {}
 require'lspconfig'.nixd.setup {}
+require'lspconfig'.jdtls.setup {}
 
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
 vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)

@@ -8,6 +8,9 @@
       **/*.laz
       **/*.direnv
       **/*.osm.pbf
+      **/build
+      **/*.map
+      **/*.mbtiles
     '';
   };
 }
