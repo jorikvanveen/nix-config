@@ -15,6 +15,7 @@
     ./modules/link-zed-config.nix
     ./modules/bash.nix
     ./modules/home-manager.nix
+    ./modules/atuin.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix
