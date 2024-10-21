@@ -4,4 +4,5 @@
   ];
   stylix.targets.nushell.enable = false;
   stylix.targets.vesktop.enable = true;
+  stylix.targets.forge.enable = true;
 }
