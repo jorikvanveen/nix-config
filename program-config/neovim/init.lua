@@ -84,9 +84,19 @@ require'telescope'.setup {
 }
 
 -- LSPCONFIG
-require'lspconfig'.rust_analyzer.setup {}
+require'lspconfig'.rust_analyzer.setup {
+  cargo = {
+    loadOutDirsFromCheck = true
+  },
+  completion = {
+    autoimport = {
+      enable = true
+    }
+  }
+}
 require'lspconfig'.nixd.setup {}
 require'lspconfig'.jdtls.setup {}
+require'lspconfig'.pyright.setup {}
 
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
 vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)
