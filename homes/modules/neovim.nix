@@ -22,6 +22,7 @@ in {
       luasnip
       cmp_luasnip
       harpoon
+      coq_nvim
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp

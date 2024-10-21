@@ -83,10 +83,25 @@ require'telescope'.setup {
   }
 }
 
+-- COQ: Completion provider
+-- Requests completions from LSP and displays them to you in the editor
+local coq = require("coq")
+vim.cmd("COQnow")
+
 -- LSPCONFIG
+local lsps = {
+  rust_analyzer = {},
+  nixd = {},
+  jdtls = {},
+};
+
 require'lspconfig'.rust_analyzer.setup {}
 require'lspconfig'.nixd.setup {}
 require'lspconfig'.jdtls.setup {}
+
+for lsp,config in pairs(lsps) do
+  require("lspconfig")[lsp].setup(coq.lsp_ensure_capabilities(config))
+end
 
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
 vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)
@@ -105,33 +120,35 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })
 
--- NVIM-CMP
-local cmp = require'cmp'
 
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
-  }, {
-    { name = 'buffer' },
-  })
-})
+
+-- -- NVIM-CMP
+-- local cmp = require'cmp'
+-- 
+-- cmp.setup({
+--   snippet = {
+--     expand = function(args)
+--       require('luasnip').lsp_expand(args.body)
+--     end,
+--   },
+--   window = {
+--     -- completion = cmp.config.window.bordered(),
+--     -- documentation = cmp.config.window.bordered(),
+--   },
+--   mapping = cmp.mapping.preset.insert({
+--     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+--     ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--     ['<C-Space>'] = cmp.mapping.complete(),
+--     ['<C-e>'] = cmp.mapping.abort(),
+--     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+--   }),
+--   sources = cmp.config.sources({
+--     { name = 'nvim_lsp' },
+--     { name = 'luasnip' }, -- For luasnip users.
+--   }, {
+--     { name = 'buffer' },
+--   })
+-- })
 
 -- HARPOON
 vim.keymap.set("n", "<leader>ah", function() require("harpoon.mark").add_file() end)
