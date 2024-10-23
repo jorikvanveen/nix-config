@@ -18,6 +18,8 @@
 
       # Add boot entry that enables NVIDIA dGPU
       ./modules/gaming-specialisation.nix
+
+      ./modules/eth-conn-sharing.nix
     ];
 
 
