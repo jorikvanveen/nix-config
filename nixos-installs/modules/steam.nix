@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -6,4 +6,8 @@
   };
 
   hardware.xone.enable = true;
+
+  environment.systemPackages  = [
+    pkgs.mangohud
+  ];
 }
