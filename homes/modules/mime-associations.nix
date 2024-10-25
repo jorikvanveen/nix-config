@@ -8,10 +8,10 @@
       "x-scheme-handler/https" = "zen.desktop";
       "text/html" = "zen.desktop";
       "application/xhtml+xml" = "zen.desktop";
-      "image/jpeg" = "org.gnome.Snapshot.desktop";
-      "image/png" = "org.gnome.Snapshot.desktop";
-      "image/webp" = "org.gnome.Snapshot.desktop";
-      "image/gif" = "org.gnome.Snapshot.desktop";
+      "image/jpeg" = "org.gnome.Loupe.desktop";
+      "image/png" = "org.gnome.Loup.desktop";
+      "image/webp" = "org.gnome.Loupe.desktop";
+      "image/gif" = "org.gnome.Loupe.desktop";
     };
   };
 }
