@@ -14,7 +14,6 @@
     pkgs.mullvad-vpn
     pkgs.vesktop
     pkgs.obsidian
-    pkgs.brave
     pkgs.bruno
     pkgs.delfin
 
