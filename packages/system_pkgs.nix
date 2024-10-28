@@ -35,7 +35,7 @@
 
     pkgs.lutris
 
-    zen_flake.packages.x86_64-linux.default
-    #zenpkgs.legacyPackages.x86_64-linux.zen-browser
+    #zen_flake.packages.x86_64-linux.default
+    zenpkgs.legacyPackages.x86_64-linux.zen-browser
   ];
 }
