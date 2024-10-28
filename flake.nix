@@ -20,6 +20,9 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    posting-flake.url = "github:jorikvanveen/posting-flake";
+    posting-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -30,7 +33,7 @@
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
+        specialArgs = { inherit (inputs) posting-flake zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
@@ -45,7 +48,7 @@
         ];
       };
       nixosConfigurations.nixos-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
+        specialArgs = { inherit (inputs) posting-flake zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-pc.nix

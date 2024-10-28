@@ -1,4 +1,4 @@
-{ pkgs, zen_flake, zenpkgs, pinned-pkgs, ... }: {
+{ pkgs, posting-flake, zen_flake, zenpkgs, pinned-pkgs, ... }: {
   environment.systemPackages = [
     pkgs.dconf-editor
 
@@ -36,5 +36,7 @@
 
     #zen_flake.packages.x86_64-linux.default
     zenpkgs.legacyPackages.x86_64-linux.zen-browser
+    
+    posting-flake.packages.x86_64-linux.posting
   ];
 }
