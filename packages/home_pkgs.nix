@@ -1,5 +1,5 @@
 { pkgs, ... }: { home.packages = [
-  pkgs.zed-editor
+  #pkgs.zed-editor
 
   pkgs.ripgrep
   pkgs.jq

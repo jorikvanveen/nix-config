@@ -12,7 +12,7 @@
     ./modules/syncthing-ignore.nix
     ./modules/zoxide.nix
     ./modules/tmux.nix
-    ./modules/link-zed-config.nix
+    ./modules/zed.nix
     ./modules/bash.nix
     ./modules/home-manager.nix
     ./modules/atuin.nix
