@@ -33,9 +33,6 @@
     pkgs.android-tools
 
     pkgs.lutris
-
-    #zen_flake.packages.x86_64-linux.default
-    zenpkgs.legacyPackages.x86_64-linux.zen-browser
     
     posting-flake.packages.x86_64-linux.posting
   ];

@@ -3,7 +3,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, spicetify-nix, lib, inputs, zen_flake, ... }:
+{ config, pkgs, spicetify-nix, lib, inputs, zenpkgs, ... }:
 
 {
   imports =
@@ -20,6 +20,10 @@
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
+
+  environment.systemPackages = [ 
+    zenpkgs.legacyPackages.x86_64-linux.zen-browser
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
