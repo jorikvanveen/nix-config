@@ -33,6 +33,7 @@
     pkgs.android-tools
 
     pkgs.lutris
+    pkgs.modrinth-app
     
     posting-flake.packages.x86_64-linux.posting
   ];
