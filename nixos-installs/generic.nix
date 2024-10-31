@@ -25,6 +25,7 @@
     ./modules/dev-man-pages.nix
     ./modules/auto-gc.nix
     ./modules/flake-support.nix
+    ./modules/flatpak.nix
     ../packages/system_pkgs.nix
   ];
 }
