@@ -91,7 +91,15 @@ vim.cmd("COQnow --shut-up")
 -- LSPCONFIG
 local lsps = {
   rust_analyzer = {},
-  nixd = {},
+  nixd = {
+    settings = {
+      nixd = {
+        formatting = {
+          command = { "nixfmt" }
+        }
+      }
+    },
+  },
   jdtls = {},
 };
 

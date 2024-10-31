@@ -8,4 +8,5 @@
   pkgs.git
   pkgs.qbittorrent
   pkgs.magic-wormhole
+  pkgs.nixfmt
 ];}
