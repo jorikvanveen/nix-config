@@ -87,6 +87,9 @@
         bindings = {
           ctrl-n = "worspace::ToggleLeftDock";
           alt-w = "diagnostics::ToggleWarnings";
+          j = "menu::SelectNext";
+          k = "menu::SelectPrev";
+          x = "tab_switcher::CloseSelectedItem";
         };
       }
     ];
