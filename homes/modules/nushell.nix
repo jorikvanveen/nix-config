@@ -6,6 +6,8 @@
       vi = "nvim";
       vim = "nvim";
       cd = "z";
+      t = "tmux";
+      ta = "tmux a";
     };
     extraConfig = ''
       alias core-ls = ls
