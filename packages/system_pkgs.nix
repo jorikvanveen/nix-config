@@ -34,6 +34,8 @@
 
     pkgs.lutris
     pkgs.modrinth-app
+
+    pkgs.fractal
     
     posting-flake.packages.x86_64-linux.posting
   ];
