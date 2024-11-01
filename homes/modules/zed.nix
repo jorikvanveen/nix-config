@@ -83,10 +83,15 @@
         };
       }
       {
-        context = "TabSwitcher";
+        context = "Workspace";
         bindings = {
           ctrl-n = "worspace::ToggleLeftDock";
           alt-w = "diagnostics::ToggleWarnings";
+        };
+      }
+      {
+        context = "TabSwitcher";
+        bindings = {
           j = "menu::SelectNext";
           k = "menu::SelectPrev";
           x = "tab_switcher::CloseSelectedItem";
