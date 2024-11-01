@@ -101,6 +101,7 @@ local lsps = {
     },
   },
   jdtls = {},
+  typst_lsp ={}
 };
 
 for lsp,config in pairs(lsps) do
