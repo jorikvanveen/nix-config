@@ -9,7 +9,7 @@
 
     "org/gnome/shell/keybindings" = {
       toggle-message-tray = [ ];
-      screenshot = [ "<Shift><Super>s" ];
+      screenshot-ui = [ "<Shift><Super>s" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
