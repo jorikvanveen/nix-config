@@ -65,7 +65,7 @@ vim.opt.scrolloff = 10
 vim.opt.termguicolors = true
 
 -- Show a marker at column 80 to encourage reasonable line length
-vim.opt.colorcolumn = 80
+vim.opt.colorcolumn = "80"
 
 vim.keymap.set("n", "<C-n>", ":Neotree<CR>")
 
