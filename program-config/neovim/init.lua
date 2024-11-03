@@ -101,7 +101,8 @@ local lsps = {
     },
   },
   jdtls = {},
-  typst_lsp ={}
+  typst_lsp = {},
+  markdown_oxide = {}
 };
 
 for lsp,config in pairs(lsps) do
