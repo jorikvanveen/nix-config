@@ -9,6 +9,7 @@
 
     "org/gnome/shell/keybindings" = {
       toggle-message-tray = [ ];
+      screenshot = [ "<Shift><Super>s" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -34,7 +35,6 @@
       con-split-horizontal = [ "<Super>z" ];
       con-split-layout-toggle = [ "<Super>g" ];
       con-split-vertical = [ "<Super>v" ];
-      con-stacked-layout-toggle = [ "<Shift><Super>s" ];
       con-tabbed-layout-toggle = [ "<Shift><Super>t" ];
       con-tabbed-showtab-decoration-toggle = [ "<Control><Alt>y" ];
       focus-border-toggle = [ "<Super>x" ];
