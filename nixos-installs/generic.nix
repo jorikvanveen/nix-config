@@ -13,7 +13,6 @@
     ./modules/syncthing.nix
     ./modules/mullvad.nix
     ./modules/stylix.nix
-    ./modules/xanmod-kernel.nix
     ./modules/spicetify.nix
     ./modules/nix-ld.nix
     ./modules/systemd-boot.nix

@@ -20,6 +20,8 @@
       ./modules/gaming-specialisation.nix
 
       ./modules/eth-conn-sharing.nix
+
+      ./modules/xanmod-kernel.nix
     ];
 
 

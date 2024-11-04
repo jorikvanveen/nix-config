@@ -17,6 +17,8 @@
       ./modules/syncthing-pc.nix
 
       ./modules/gamescope-specialisation.nix
+
+      ./modules/cachy-kernel.nix
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.

@@ -23,6 +23,9 @@
 
     posting-flake.url = "github:jorikvanveen/posting-flake";
     posting-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -48,7 +51,7 @@
         ];
       };
       nixosConfigurations.nixos-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) posting-flake zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
+        specialArgs = { inherit (inputs) chaotic posting-flake zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
         system = "x86_64-linux";
         modules = [
           ./nixos-installs/nixos-pc.nix
