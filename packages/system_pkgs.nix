@@ -1,5 +1,7 @@
 { pkgs, posting-flake, zen_flake, zenpkgs, pinned-pkgs, ... }: {
   environment.systemPackages = [
+    pkgs.xorg.libXtst
+
     pkgs.dconf-editor
 
     pkgs.steam-run
