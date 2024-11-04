@@ -1,6 +1,6 @@
-{ spicetify-nix, ... }: {
+{ inputs, ... }: {
   imports = [
-    spicetify-nix.nixosModules.default
+    inputs.spicetify-nix.nixosModules.default
   ];
   
   programs.spicetify.enable = true;

@@ -1,6 +1,6 @@
-{ pkgs, chaotic, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
-    chaotic.nixosModules.default
+    inputs.chaotic.nixosModules.default
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;

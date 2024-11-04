@@ -1,15 +1,13 @@
-{ homedir, ... }:
-let
-  shareddir = homedir + "/shared";
-in {
+{ syncdir, ... }:
+{
   services.syncthing = {
     enable = true;
     user = "main";
-    dataDir = shareddir;
+    dataDir = syncdir;
     configDir = "/home/main/.config/syncthing";
 
     settings.folders.personal = {
-      path = shareddir + "/personal";
+      path = syncdir + "/personal";
       id = "personal";
       label = "personal";
       enable = true;

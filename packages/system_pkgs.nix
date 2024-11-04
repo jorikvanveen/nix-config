@@ -1,5 +1,6 @@
-{ pkgs, posting-flake, zen_flake, zenpkgs, pinned-pkgs, ... }: {
+{ inputs, pkgs, pinned-pkgs, ... }: {
   environment.systemPackages = [
+    pkgs.xorg.libXi
     pkgs.xorg.libXtst
 
     pkgs.dconf-editor
@@ -39,6 +40,6 @@
 
     pkgs.fractal
     
-    posting-flake.packages.x86_64-linux.posting
+    inputs.posting-flake.packages.x86_64-linux.posting
   ];
 }

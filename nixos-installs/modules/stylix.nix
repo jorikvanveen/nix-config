@@ -1,11 +1,11 @@
 # Takes the stylix flake (github:danth/stylix)
-{ stylix, pkgs, apple-fonts, ... }: let
-  sfmono = apple-fonts.packages.x86_64-linux.sf-mono-nerd;
-  sfpro = apple-fonts.packages.x86_64-linux.sf-pro;
-  ny = apple-fonts.packages.x86_64-linux.ny;
+{ inputs, pkgs, ... }: let
+  sfmono = inputs.apple-fonts.packages.x86_64-linux.sf-mono-nerd;
+  sfpro = inputs.apple-fonts.packages.x86_64-linux.sf-pro;
+  ny = inputs.apple-fonts.packages.x86_64-linux.ny;
 in {
   imports = [
-    stylix.nixosModules.stylix
+    inputs.stylix.nixosModules.stylix
   ];
 
   stylix.enable = true;

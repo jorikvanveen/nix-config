@@ -3,8 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=a28796b8c053def7c3f839d43ca2df76d4d86bb1";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
     zenpkgs.url = "github:matthewpi/nixpkgs/zen-browser";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
@@ -30,29 +34,31 @@
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
+      system = "x86_64-linux";
       homedir = "/home/main";
+      syncdir = homedir + "/shared";
       pinned-pkgs = inputs.nixpkgs-pinned.legacyPackages.x86_64-linux;
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) posting-flake zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
-        system = "x86_64-linux";
+        inherit system;
+        specialArgs = { inherit inputs homedir syncdir pinned-pkgs; };
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir; };
+            home-manager.extraSpecialArgs = { inherit homedir syncdir; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.main = import ./homes/nixos-tp-p15v.nix;
           }
         ];
       };
-      nixosConfigurations.nixos-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit (inputs) chaotic posting-flake zenpkgs zen_flake stylix apple-fonts spicetify-nix; inherit homedir pinned-pkgs; };
-        system = "x86_64-linux";
+      nixosConfigurations.nixos-pc = let unstable = pkgs; in nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs; };
         modules = [
           ./nixos-installs/nixos-pc.nix
           home-manager.nixosModules.home-manager
@@ -65,9 +71,29 @@
           }
         ];
       };
+      nixosConfigurations.nixos-homelab = let
+        syncdir = homedir + "/data";
+        pkgs = inputs.nixpkgs-stable.legacyPackages.x86_64-linux;
+        unstable = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      in nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
+        modules = [
+          ./nixos-installs/nixos-homelab.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.backupFileExtension = "hmbak";
+            home-manager.extraSpecialArgs = { inherit homedir; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.main = import./homes/nixos-homelab.nix;
+          }
+        ];
+      };
       devShells.x86_64-linux.default = pkgs.mkShell {
         buildInputs = [
           pkgs.nixd
+          pkgs.sops
         ];
       };
     };

@@ -3,8 +3,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, spicetify-nix, lib, inputs, zenpkgs, ... }:
-
+{ inputs, ... }:
 {
   imports =
     [
@@ -19,12 +18,16 @@
       ./modules/gamescope-specialisation.nix
 
       ./modules/cachy-kernel.nix
+
+      ./modules/services/open-webui.nix
+
+      ./modules/sops.nix
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
 
   environment.systemPackages = [ 
-    zenpkgs.legacyPackages.x86_64-linux.zen-browser
+    inputs.zenpkgs.legacyPackages.x86_64-linux.zen-browser
   ];
 
   # This value determines the NixOS release from which the default

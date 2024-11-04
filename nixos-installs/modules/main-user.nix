@@ -2,7 +2,17 @@
   users.users.main = {
     isNormalUser = true;
     description = "Jorik";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "kvm" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "render"
+      "video"
+      "input"
+      "wheel"
+      "gamemode"
+      "kvm"
+      "docker"
+      "caddy"
+    ];
     shell = pkgs.nushell;
     useDefaultShell = true;
   };
