@@ -3,8 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.config.allowUnfree = true;
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs-stable.config.allowUnfree = true;
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
+    nixpkgs-pinned.config.allowUnfree = true;
     zenpkgs.url = "github:matthewpi/nixpkgs/zen-browser";
 
     sops-nix.url = "github:Mic92/sops-nix";
