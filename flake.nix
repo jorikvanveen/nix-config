@@ -37,7 +37,10 @@
       system = "x86_64-linux";
       homedir = "/home/main";
       syncdir = homedir + "/shared";
-      pinned-pkgs = inputs.nixpkgs-pinned.legacyPackages.x86_64-linux;
+      pinned-pkgs = import inputs.nixpkgs-pinned {
+        inherit system;
+        allowUnfree = true;
+      };
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
