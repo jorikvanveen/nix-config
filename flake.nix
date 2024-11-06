@@ -79,17 +79,19 @@
       };
       nixosConfigurations.nixos-homelab = let
         syncdir = homedir + "/data";
-        pkgs = import inputs.nixpkgs-stable {
-          inherit system;
-          config.allowUnfree = true;
-        };
+        
         unstable = import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
         };
       in nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
+        specialArgs = let 
+          pkgs = import inputs.nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
         modules = [
           {
             nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
