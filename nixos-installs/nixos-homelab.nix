@@ -9,7 +9,6 @@
     ./modules/locale.nix
     ./modules/x11-keymap.nix
     ./modules/main-user.nix
-    ./modules/unfree-allow.nix
     ./modules/sops.nix
     ./modules/docker.nix
     ./modules/flake-support.nix
@@ -38,7 +37,6 @@
 
   # Disable printing
   services.printing.enable = false;
-  nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "nixos-homelab";
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
