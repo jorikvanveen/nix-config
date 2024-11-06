@@ -76,7 +76,7 @@
         pkgs = inputs.nixpkgs-stable.legacyPackages.x86_64-linux;
         unstable = inputs.nixpkgs.legacyPackages.x86_64-linux;
       in nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
         modules = [
           ./nixos-installs/nixos-homelab.nix

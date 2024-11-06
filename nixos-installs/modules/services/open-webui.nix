@@ -19,12 +19,7 @@
       ${py-env}/bin/litellm --model anthropic/claude-3-5-sonnet-20241022 --port 4001
     '';
     serviceConfig = {
-      # First read the secret
-      # Pass it to the environment
       LoadCredential = "anthropic-key:/run/secrets/anthropic-key";
-      #Environment = [
-      #  "ANTHROPIC_API_KEY=$(cat /run/secrets/anthropic-key)"
-      #];
       Type = "simple";
     };
   };
