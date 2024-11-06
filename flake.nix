@@ -41,7 +41,10 @@
         inherit system;
         allowUnfree = true;
       };
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = import nixpkgs {
+        inherit system;
+        allowUnfree = true;
+      };
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
