@@ -3,11 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs.config.allowUnfree = true;
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.05";
-    nixpkgs-stable.config.allowUnfree = true;
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
-    nixpkgs-pinned.config.allowUnfree = true;
     zenpkgs.url = "github:matthewpi/nixpkgs/zen-browser";
 
     sops-nix.url = "github:Mic92/sops-nix";
@@ -42,11 +39,11 @@
       syncdir = homedir + "/shared";
       pinned-pkgs = import inputs.nixpkgs-pinned {
         inherit system;
-        allowUnfree = true;
+        config.allowUnfree = true;
       };
       pkgs = import nixpkgs {
         inherit system;
-        allowUnfree = true;
+        config.allowUnfree = true;
       };
     in
     {
@@ -84,11 +81,11 @@
         syncdir = homedir + "/data";
         pkgs = import inputs.nixpkgs-stable {
           inherit system;
-          allowUnfree = true;
+          config.allowUnfree = true;
         };
         unstable = import inputs.nixpkgs {
           inherit system;
-          allowUnfree = true;
+          config.allowUnfree = true;
         };
       in nixpkgs.lib.nixosSystem {
         inherit system;
