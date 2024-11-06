@@ -1,4 +1,4 @@
-{ pkgs, pkgs-pinned, ... }: {  # Enable vaapi on OS-level
+{ pkgs, pinned-pkgs, ... }: {  # Enable vaapi on OS-level
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
@@ -10,7 +10,7 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = pkgs-pinned.jellyfin;
+    package = pinned-pkgs.jellyfin;
   };
 
   hardware.opengl = {
