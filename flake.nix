@@ -77,7 +77,10 @@
           inherit system;
           allowUnfree = true;
         };
-        unstable = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        unstable = import inputs.nixpkgs {
+          inherit system;
+          allowUnfree = true;
+        };
       in nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
