@@ -19,6 +19,7 @@
     pkgs.obsidian
     pkgs.bruno
     pkgs.delfin
+    pkgs.qbittorrent
 
     # Cli utilities
     pkgs.man-pages

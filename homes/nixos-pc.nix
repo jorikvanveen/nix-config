@@ -1,4 +1,4 @@
-{ lib, homedir, ... }:
+{ lib, homedir, pkgs, ... }:
 {
   imports = [
     ./generic.nix
