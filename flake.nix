@@ -86,7 +86,7 @@
             home-manager.extraSpecialArgs = { inherit homedir; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.main = import./homes/nixos-homelab.nix;
+            home-manager.users.main = import ./homes/nixos-homelab.nix;
           }
         ];
       };
