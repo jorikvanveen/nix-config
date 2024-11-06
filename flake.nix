@@ -45,6 +45,10 @@
         inherit system;
         config.allowUnfree = true;
       };
+      pkgs-stable = import inputs.nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
@@ -86,12 +90,7 @@
         };
       in nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = let 
-          pkgs = import inputs.nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        in { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
+        specialArgs = { inherit inputs homedir syncdir unstable pkgs-stable pinned-pkgs; };
         modules = [
           {
             nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
