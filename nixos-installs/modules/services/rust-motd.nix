@@ -1,7 +1,6 @@
 { pkgs-stable, ... }: {
   programs.rust-motd = {
     enable = true;
-    package = pkgs-stable.rust-motd;
     order = [ "banner" "filesystems" "docker" "service_status" "uptime" ];
     settings = {
       banner = {
