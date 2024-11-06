@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ unstable, ... }: {
   services.sabnzbd = {
-    package = pkgs.sabnzbd;
+    package = unstable.sabnzbd;
     enable = true;
     user = "main";
   };
