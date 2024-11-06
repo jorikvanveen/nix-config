@@ -91,6 +91,9 @@
         inherit system;
         specialArgs = { inherit inputs homedir syncdir pkgs unstable pinned-pkgs; };
         modules = [
+          {
+            nixpkgs.config.allowUnfree = true;
+          }
           ./nixos-installs/nixos-homelab.nix
           home-manager.nixosModules.home-manager
           {
