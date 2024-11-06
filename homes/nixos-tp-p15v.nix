@@ -6,5 +6,6 @@
     ./modules/zed-node-fix.nix
     ./modules/mime-associations.nix
     ./modules/main-user.nix
+    ./modules/zed.nix
   ];
 }

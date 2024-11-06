@@ -7,5 +7,6 @@
     ./modules/mime-associations.nix
     ./modules/close-with-x.nix
     ./modules/main-user.nix
+    ./modules/zed.nix
   ];
 }

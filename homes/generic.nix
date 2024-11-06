@@ -11,7 +11,6 @@
     ./modules/syncthing-ignore.nix
     ./modules/zoxide.nix
     ./modules/tmux.nix
-    ./modules/zed.nix
     ./modules/bash.nix
     ./modules/home-manager.nix
     ./modules/atuin.nix
