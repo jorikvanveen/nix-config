@@ -73,7 +73,10 @@
       };
       nixosConfigurations.nixos-homelab = let
         syncdir = homedir + "/data";
-        pkgs = inputs.nixpkgs-stable.legacyPackages.x86_64-linux;
+        pkgs = import inputs.nixpkgs-stable {
+          inherit system;
+          allowUnfree = true;
+        };
         unstable = inputs.nixpkgs.legacyPackages.x86_64-linux;
       in nixpkgs.lib.nixosSystem {
         inherit system;
