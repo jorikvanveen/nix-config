@@ -15,6 +15,7 @@ in {
       enable = true;
       restart = "always";
       package = minecraftServers.fabric-1_21_1;
+      jvmOpts = "-Xms8G -Xmx8G";
       files = {
         "ops.json" = pkgs.writeTextFile {
           name = "ops.json";
