@@ -30,6 +30,9 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
