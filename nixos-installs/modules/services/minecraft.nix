@@ -33,6 +33,7 @@ in {
         Tobeqz = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c";
         bigmo48 = "4aeb4419-1f70-4f6a-bd2c-eb65609916ba";
         Wynt = "4aeb2547-abc1-4e13-be0c-e065754aa152";
+        VEYRON27787 = "3aabbca0-6bda-404a-96cb-8bbaed351110";
       };
       symlinks = {
         mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
