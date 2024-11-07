@@ -19,7 +19,7 @@ in {
         "ops.json" = pkgs.writeTextFile {
           name = "ops.json";
           text = builtins.toJSON [
-            { uuid = "faffa28d-50ca-4a16-b1e6-ecc4b50b033"; name = "Tobeqz"; level = 4; }  
+            { uuid = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c"; name = "Tobeqz"; level = 4; }  
           ];
         };
       };
