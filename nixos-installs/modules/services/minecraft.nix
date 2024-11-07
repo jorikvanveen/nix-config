@@ -6,7 +6,7 @@ in {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
-  servers.minecraft-servers = {
+  services.minecraft-servers = {
     enable = true;
     eula = true;
     openFirewall = true;
@@ -14,7 +14,7 @@ in {
     servers.epicserver = {
       enable = true;
       restart = "always";
-      package = minecraft-servers.fabric-1-21-3;
+      package = minecraftServers.fabric-1_21_3;
     };
   };
 }

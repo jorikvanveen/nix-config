@@ -25,6 +25,7 @@
     ./modules/services/nextcloud.nix
     ./modules/services/rust-motd.nix
     ./modules/services/ssh.nix
+    ./modules/services/minecraft.nix
   ];
 
   environment.systemPackages = [
