@@ -24,6 +24,16 @@ in {
           ];
         };
       };
+      serverProperties = {
+        motd = "I love NIXOS!!!!";
+        difficulty = "hard";
+        white-list = true;
+      };
+      whitelist = {
+        Tobeqz = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c";
+        bigmo48 = "4aeb4419-1f70-4f6a-bd2c-eb65609916ba";
+        Wynt = "4aeb2547-abc1-4e13-be0c-e065754aa152";
+      };
       symlinks = {
         mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
           Chunky = pkgs.fetchurl {
