@@ -15,13 +15,15 @@ in {
       enable = true;
       restart = "always";
       package = minecraftServers.fabric-1_21_1;
-      symlinks = {
+      files = {
         "ops.json" = pkgs.writeTextFile {
           name = "ops.json";
           text = builtins.toJSON [
             { uuid = "faffa28d-50ca-4a16-b1e6-ecc4b50b033"; name = "Tobeqz"; level = 4; }  
           ];
         };
+      };
+      symlinks = {
         mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
           Chunky = pkgs.fetchurl {
             url =
