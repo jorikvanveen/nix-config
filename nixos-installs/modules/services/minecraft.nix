@@ -28,6 +28,7 @@ in {
         motd = "I love NIXOS!!!!";
         difficulty = "hard";
         white-list = true;
+        spawn-protection = 0;
       };
       whitelist = {
         Tobeqz = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c";
