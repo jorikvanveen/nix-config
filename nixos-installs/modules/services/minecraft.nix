@@ -14,7 +14,7 @@ in {
     servers.epicserver = {
       enable = true;
       restart = "always";
-      package = minecraftServers.fabric-1_21_3;
+      package = minecraftServers.fabric-1_21_1;
     };
   };
 }
