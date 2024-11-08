@@ -31,6 +31,8 @@ in {
         difficulty = "hard";
         white-list = true;
         spawn-protection = 0;
+        enable-rcon = true;
+        "rcon.password" = "lolza";
       };
       whitelist = {
         Tobeqz = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c";
