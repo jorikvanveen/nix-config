@@ -6,10 +6,12 @@ in {
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
+  networking.firewall.allowedTCPPorts = [ 25565 ];
+  networking.firewall.allowedUDPPorts = [ 25555 ];
+
   services.minecraft-servers = {
     enable = true;
     eula = true;
-    openFirewall = true;
 
     servers.epicserver = {
       enable = true;
