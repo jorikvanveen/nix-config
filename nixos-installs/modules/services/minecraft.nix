@@ -19,9 +19,11 @@ in {
       files = {
         "ops.json" = pkgs.writeTextFile {
           name = "ops.json";
-          text = builtins.toJSON [
-            { uuid = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c"; name = "Tobeqz"; level = 4; }  
-          ];
+          text = builtins.toJSON [{
+            uuid = "faffa28d-50ca-4a16-b1e6-ecc4b50b033c";
+            name = "Tobeqz";
+            level = 4;
+          }];
         };
       };
       serverProperties = {
@@ -68,11 +70,17 @@ in {
             sha512 =
               "e7ff451152caa994521736b3144e7b3edc98ffee0e04bb8ce4381eb777d64fac2d4e9edf6928303c2228c02c5d09147d369e71c12b45c39b324daf6916e6d0a1";
           };
-          DistantHorizons = pkgs.fetchurl  {
-            url = 
+          DistantHorizons = pkgs.fetchurl {
+            url =
               "https://gitlab.com/distant-horizons-team/distant-horizons/-/jobs/8296050898/artifacts/raw/fabric/build/libs/DistantHorizons-fabric-2.3.0-a-dev-1.21.1.jar";
             sha512 =
               "f62f7194566908d716d81d6551ca008fb05af9edbe35c299c2162951edb092e0419200c15f46293fb49b30c92eea5d023e34832b9c370ab26711fb097391cf5f";
+          };
+          CarpetMod = pkgs.fetchurl {
+            url =
+              "https://cdn.modrinth.com/data/TQTTVgYE/versions/f2mvlGrg/fabric-carpet-1.21-1.4.147%2Bv240613.jar";
+            sha512 =
+              "e6f33d13406796a34e7598d997113f25f7bea3e55f9d334b73842adda52b2c5d0a86b7b12ac812d7e758861e3f468bf201c6c710c40162bb79d6818938204151";
           };
         });
       };
