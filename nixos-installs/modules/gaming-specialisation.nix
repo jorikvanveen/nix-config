@@ -10,6 +10,9 @@
       services.displayManager.sddm.wayland.enable = true;
       services.desktopManager.plasma6.enable = true;
 
+      # Disable intel iGPU
+      boot.kernelParams = [ "module_blacklist=i915" ];
+
       # Make gaming configuration an entry in the boot menu
       system.nixos.tags = [ "gaming" ];
 
@@ -36,12 +39,13 @@
         # .production is nvidia-550 at the time of writing
         package = config.boot.kernelPackages.nvidiaPackages.beta;
 
-        prime = {
-          nvidiaBusId = "PCI:1:0:0";
-          intelBusId = "PCI:0:2:0";
-          reverseSync.enable = true;
-          allowExternalGpu = false;
-        };
+
+        #prime = {
+        #  nvidiaBusId = "PCI:1:0:0";
+        #  intelBusId = "PCI:0:2:0";
+        #  reverseSync.enable = true;
+        #  allowExternalGpu = false;
+        #};
       };
     };
   };
