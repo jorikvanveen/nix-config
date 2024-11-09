@@ -19,6 +19,7 @@
       # Enable proprietary nvidia drivers
       services.xserver.videoDrivers = [ "nvidia" ];
 
+      hardware.graphics.enable = true;
       # https://wiki.nixos.org/wiki/Nvidia
       hardware.nvidia = {
         # Required
