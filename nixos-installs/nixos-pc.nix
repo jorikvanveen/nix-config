@@ -25,6 +25,7 @@
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
+  networking.firewall.enable = true;
 
   environment.systemPackages = [ 
     inputs.zenpkgs.legacyPackages.x86_64-linux.zen-browser

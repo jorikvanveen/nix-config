@@ -39,6 +39,7 @@
 
     pkgs.lutris
     pkgs.modrinth-app
+    pkgs.prismlauncher
 
     pkgs.fractal
     

@@ -12,6 +12,7 @@
       "kvm"
       "docker"
       "caddy"
+      "minecraft"
     ];
     shell = pkgs.nushell;
     useDefaultShell = true;
