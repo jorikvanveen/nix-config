@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, spicetify-nix, lib, inputs, zen_flake, ... }:
+{ config, pkgs, spicetify-nix, lib, inputs, ... }:
 
 {
   imports =
@@ -31,7 +31,7 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   environment.systemPackages = [
-    zen_flake.packages.x86_64-linux.default
+    inputs.zen_flake.packages.x86_64-linux.default
   ];
 
   # This value determines the NixOS release from which the default
@@ -41,4 +41,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
+  programs.kdeconnect.enable = true;
 }

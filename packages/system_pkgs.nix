@@ -25,6 +25,7 @@
     pkgs.man-pages
     pkgs.wl-clipboard
     pkgs.man-pages-posix
+    pkgs.xdg-utils
 
 
     pkgs.g4music
@@ -38,6 +39,7 @@
 
     pkgs.lutris
     pkgs.modrinth-app
+    pkgs.prismlauncher
 
     pkgs.fractal
     
