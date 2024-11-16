@@ -35,6 +35,9 @@
         root * /srv/tutorials
         file_server
       '';
+      "plausible.jorik-dev.com".extraConfig =  ''
+        reverse_proxy http://localhost:8087
+      '';
     };
   };
 }
