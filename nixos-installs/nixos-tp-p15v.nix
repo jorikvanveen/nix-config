@@ -42,4 +42,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
   programs.kdeconnect.enable = true;
+  programs.kdeconnect.package = lib.mkForce pkgs.gnomeExtensions.gsconnect;
 }
