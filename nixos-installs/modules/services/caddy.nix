@@ -35,12 +35,14 @@
         root * /srv/tutorials
         file_server
 
-        handle /js/script.js {
-          reverse_proxy https://plausible.io
-        }
-
-        handle /api/event {
-          reverse_proxy https://plausible.io
+        @plausible path /js/script.js /api/event
+        handle @plausible {
+          # Change this if you use a different variant of the script
+          # e.g. rewrite /js/script.js /js/script.outbound-links.js
+          rewrite /js/script.js /js/script.js
+          reverse_proxy https://plausible.io {
+            header_up Host {http.reverse_proxy.upstream.hostport}
+          }
         }
       '';
       "plausible.jorik-dev.com".extraConfig =  ''
