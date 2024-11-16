@@ -34,6 +34,14 @@
         encode gzip
         root * /srv/tutorials
         file_server
+
+        handle /js/script.js {
+          reverse_proxy https://plausible.io
+        }
+
+        handle /api/event {
+          reverse_proxy https://plausible.io
+        }
       '';
       "plausible.jorik-dev.com".extraConfig =  ''
         reverse_proxy http://localhost:8087

@@ -26,6 +26,7 @@
     ./modules/services/rust-motd.nix
     ./modules/services/ssh.nix
     ./modules/services/minecraft.nix
+    ./modules/services/plausible.nix
   ];
 
   environment.systemPackages = [
