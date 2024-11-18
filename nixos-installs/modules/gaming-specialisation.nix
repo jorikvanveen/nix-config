@@ -34,7 +34,8 @@
         nvidiaSettings = true;
 
         # .production is nvidia-550 at the time of writing
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
+        package = config.boot.kernelPackages.nvidiaPackages.production;
+
 
         prime = {
           nvidiaBusId = "PCI:1:0:0";

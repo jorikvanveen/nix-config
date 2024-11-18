@@ -7,7 +7,7 @@ in {
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   networking.firewall.allowedTCPPorts = [ 25565 ];
-  networking.firewall.allowedUDPPorts = [ 25555 ];
+  networking.firewall.allowedUDPPorts = [ 25565 ];
 
   services.minecraft-servers = {
     enable = true;
@@ -41,6 +41,7 @@ in {
         bigmo48 = "4aeb4419-1f70-4f6a-bd2c-eb65609916ba";
         Wynt = "4aeb2547-abc1-4e13-be0c-e065754aa152";
         VEYRON27787 = "3aabbca0-6bda-404a-96cb-8bbaed351110";
+        IBify = "7e0117db-cf2d-4440-99e0-7c09ef5ba197";
       };
       symlinks = {
         mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
