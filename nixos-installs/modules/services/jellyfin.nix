@@ -10,7 +10,7 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = pkgs-stable.jellyfin;
+    package = pkgs.jellyfin;
   };
 
   hardware.opengl = {
@@ -20,7 +20,7 @@
       pkgs.intel-media-sdk
       pkgs.intel-vaapi-driver
       pkgs.vaapiVdpau
-      pkgs.intel-compute-runtime
+      pkgs-stable.intel-compute-runtime
     ];
   };
 }
