@@ -10,7 +10,7 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = pinned-pkgs.jellyfin;
+    package = pkgs.jellyfin;
   };
 
   hardware.opengl = {
