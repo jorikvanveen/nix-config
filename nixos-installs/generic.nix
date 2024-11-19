@@ -25,6 +25,7 @@
     ./modules/auto-gc.nix
     ./modules/flake-support.nix
     ./modules/flatpak.nix
+    ./modules/ntfs-support.nix
     ../packages/system_pkgs.nix
   ];
 }
