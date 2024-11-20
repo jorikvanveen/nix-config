@@ -9,7 +9,8 @@
     };
 
     volumes = [
-      "/home/main/data/rdt-client:/data"
+      "/home/main/data/rdt-client/db:/data/db"
+      "/home/main/data/rdt-client/downloads:/data/downloads"
     ];
 
     ports = [
