@@ -18,6 +18,7 @@
     ./modules/services/jellyfin.nix
     ./modules/services/radarr.nix
     ./modules/services/sonarr.nix
+    ./modules/services/jackett.nix
     ./modules/services/prowlarr.nix
     ./modules/services/sabnzbd.nix
     ./modules/services/open-webui.nix
