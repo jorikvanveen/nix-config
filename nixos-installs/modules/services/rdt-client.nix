@@ -1,6 +1,6 @@
 {
   virtualisation.oci-containers.containers.rdtclient = {
-    image = "packetshepard/rdt-client";
+    image = "rogerfar/rdtclient";
     environment = {
       PUID = "1000";
       PGID = "1000";
