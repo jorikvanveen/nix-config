@@ -5,6 +5,7 @@
       PUID = "1000";
       PGID = "1000";
       TZ = "Europe/Amsterdam";
+      FILE__PASSWORD = "/run/secrets/rdt-client-pw";
     };
 
     volumes = [
