@@ -7,5 +7,6 @@
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/main/.config/sops/age/keys.txt";
   sops.secrets.anthropic-key = {};
+  sops.secrets.rdt-client-pw = {};
 }
 
