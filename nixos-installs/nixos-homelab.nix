@@ -13,6 +13,7 @@
     ./modules/docker.nix
     ./modules/flake-support.nix
     ./modules/ignore-lid-switch.nix
+    ./modules/nvidia.nix
 
     ./modules/services/atuin.nix
     ./modules/services/jellyfin.nix
