@@ -27,6 +27,7 @@
     ./modules/services/ssh.nix
     ./modules/services/minecraft.nix
     ./modules/services/plausible.nix
+    ./modules/services/rdt-client.nix
   ];
 
   environment.systemPackages = [
