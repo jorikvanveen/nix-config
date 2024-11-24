@@ -38,6 +38,9 @@
 
     pinned-pkgs.qgis-ltr
 
+    pkgs.reaper
+    pkgs.vital
+
     # Module 9 Stuff
     pkgs.vscode
     pkgs.android-studio
@@ -47,7 +50,7 @@
     pkgs.modrinth-app
     pkgs.prismlauncher
     pkgs.libreoffice
-    pkgs.reaper
+
 
     pkgs.fractal
     pkgs.ryujinx
