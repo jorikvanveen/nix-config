@@ -47,6 +47,7 @@
     pkgs.modrinth-app
     pkgs.prismlauncher
     pkgs.libreoffice
+    pkgs.reaper
 
     pkgs.fractal
     pkgs.ryujinx
