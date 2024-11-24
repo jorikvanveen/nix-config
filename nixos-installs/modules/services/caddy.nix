@@ -54,6 +54,9 @@
       "jackett.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:9117
       '';
+      "qb.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8081
+      '';
     };
   };
 }
