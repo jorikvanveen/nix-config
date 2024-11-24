@@ -11,8 +11,8 @@
     };
 
     volumes = [
-      "/home/main/data/qbittorrent/appdata:/config"
-      "/home/main/data/qbittorrent/downloads:/downloads"
+      "/mnt/media/data/qbittorrent/appdata:/config"
+      "/mnt/media/data/qbittorrent/downloads:/downloads"
     ];
 
     ports = [
