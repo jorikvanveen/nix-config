@@ -51,6 +51,7 @@
     pkgs.prismlauncher
     pkgs.libreoffice
     pkgs.cemu
+    pkgs.ungoogled-chromium
 
 
     pkgs.fractal

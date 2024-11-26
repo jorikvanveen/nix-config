@@ -11,10 +11,6 @@
          sha256 = "";
       };
 
-      server = pkgs.fetchurl {
-        url = "https://s3-eu-west-1.amazonaws.com/stremio-artifacts/four/v${version}/server.js";
-        sha256 = "";
-      };
     }))
   ];
 }
