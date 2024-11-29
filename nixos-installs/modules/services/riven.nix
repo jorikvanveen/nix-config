@@ -9,15 +9,12 @@
         PUID = "1000";
         PGID = "1000";
         ORIGIN = "https://riven.jorik-dev.com";
-        BACKEND_URL = "http://localhost:8088";
-        DATABASE_URL = "postgres://postgres:postgres@localhost:5255/riven";
+        BACKEND_URL = "http://riven:8080";
+        DATABASE_URL = "postgres://postgres:postgres@riven-postgres:5432/riven";
         DIALECT = "postgres";
-        PORT = "3000";
       };
 
       dependsOn = [ "riven" ];
-
-      extraOptions = ["--network=host"];
     };
 
     riven = {
@@ -29,7 +26,7 @@
         PUID = "1000";
         PGID = "1000";
         RIVEN_FORCE_ENV = "true";
-        RIVEN_DATABASE_HOST = "postgresql+psycopg2://postgres:postgres@localhost:5255/riven";
+        RIVEN_DATABASE_HOST = "postgresql+psycopg2://postgres:postgres@riven-postgres:5432/riven";
       };
       volumes = [
         "/home/main/data/riven:/riven/data"
@@ -41,8 +38,7 @@
         "--health-interval=30s"
         "--health-timeout=10s"
         "--health-retries=10"
-      ]
-      ;
+      ];
     };
 
     riven-postgres = {
