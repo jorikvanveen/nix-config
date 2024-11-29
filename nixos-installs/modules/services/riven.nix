@@ -8,7 +8,7 @@
       environment = {
         PUID = "1000";
         PGID = "1000";
-        ORIGIN = "https://riven.jorik-dev.com/";
+        ORIGIN = "https://localhost:3000/";
         BACKEND_URL = "http://localhost:8088";
         DATABASE_URL = "postgres://postgres:postgres@localhost:5255/riven";
         DIALECT = "postgres";
