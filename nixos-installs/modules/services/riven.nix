@@ -12,6 +12,7 @@
         BACKEND_URL = "http://localhost:8088";
         DATABASE_URL = "postgres://postgres:postgres@localhost:5255/riven";
         DIALECT = "postgres";
+        PORT = "3000";
       };
 
       dependsOn = [ "riven" ];
