@@ -8,7 +8,7 @@
       environment = {
         PUID = "1000";
         PGID = "1000";
-        ORIGIN = "https://localhost:3000/";
+        ORIGIN = "https://riven.jorik-dev.com";
         BACKEND_URL = "http://localhost:8088";
         DATABASE_URL = "postgres://postgres:postgres@localhost:5255/riven";
         DIALECT = "postgres";
@@ -38,6 +38,9 @@
     riven-postgres = {
       image = "postgres:17.0-apline3.20";
       volumes = [ "/home/main/data/riven-pg:/var/lib/postgresql/data/pgdata" ];
+      ports = [
+        "5255:5432"
+      ];
       environment = {
         PGDATA = "/var/lib/postgresql/data/pgdata";
         POSTGRES_USER = "postgres";
