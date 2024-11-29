@@ -26,7 +26,7 @@
       "/mnt/zurg:/data:rshared"
       "/home/main/.config/zurg/rclone.conf:/config/rclone/rclone.conf"
     ];
-    extraOptions = ["--privileged"];
+    extraOptions = ["--privileged" "--network=host" ];
 
     dependsOn = [ "zurg" ];
     cmd = [ "mount" "zurg:" "/data" "--allow-other" "--allow-non-empty" "--dir-cache-time" "10s" "--vfs-cache-mode" "full" ];
