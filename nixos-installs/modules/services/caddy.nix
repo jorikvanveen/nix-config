@@ -57,8 +57,11 @@
       "qb.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8081
       '';
-      "zurg.jorik-dev.com".extraConfig = ''
-        reverse_proxy http://localhost:9999
+      "rq.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:5055
+      '';
+      "riven.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:3033
       '';
     };
   };
