@@ -15,4 +15,19 @@
       "/home/main/.config/zurg/config.yml:/app/config.yml"
     ];
   };
+
+  virtualisation.oci-containers.containers.rclone = {
+    image = "rclone/rclone:latest";
+    environment = {
+      PUID = "1000";
+      PGID = "1000";
+    };
+    volumes = [
+      "/mnt/zurg:/data:rshared"
+      "/home/main/.config/zurg/rclone.conf:/config/rclone/rclone.conf"
+    ];
+    extraOptions = ["--privileged"];
+
+    dependsOn = [ "zurg" ];
+  };
 }
