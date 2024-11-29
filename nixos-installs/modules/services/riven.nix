@@ -4,7 +4,6 @@
       image = "spoked/riven-frontend:latest";
       ports = [
         "3033:3000"
-        "8088:8088"
       ];
       environment = {
         PUID = "1000";
@@ -16,6 +15,8 @@
       };
 
       dependsOn = [ "riven" ];
+
+      extraOptions = ["--network=host"];
     };
 
     riven = {
