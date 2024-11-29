@@ -11,6 +11,7 @@
       "gamemode"
       "kvm"
       "docker"
+      "podman"
       "caddy"
       "minecraft"
     ];

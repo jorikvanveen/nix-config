@@ -10,7 +10,7 @@
     ./modules/x11-keymap.nix
     ./modules/main-user.nix
     ./modules/sops.nix
-    ./modules/docker.nix
+    ./modules/podman.nix
     ./modules/flake-support.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix

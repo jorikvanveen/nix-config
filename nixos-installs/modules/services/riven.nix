@@ -18,6 +18,7 @@
     };
 
     riven = {
+      hostname = "riven";
       image = "spoked/riven:latest";
       ports = [
         "8088:8080"
@@ -42,6 +43,7 @@
     };
 
     riven-postgres = {
+      hostname = "riven-postgres";
       image = "postgres:17.0-alpine3.20";
       volumes = [ "/home/main/data/riven-pg:/var/lib/postgresql/data/pgdata" ];
       ports = [
