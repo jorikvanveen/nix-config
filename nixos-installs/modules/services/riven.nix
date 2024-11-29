@@ -43,7 +43,7 @@
     };
 
     riven-postgres = {
-      image = "postgres:17.0-apline3.20";
+      image = "postgres:17.0-alpine3.20";
       volumes = [ "/home/main/data/riven-pg:/var/lib/postgresql/data/pgdata" ];
       ports = [
         "5255:5432"
