@@ -29,5 +29,6 @@
     extraOptions = ["--privileged"];
 
     dependsOn = [ "zurg" ];
+    cmd = [ "mount" "zurg:" "/data" "--allow-other" "--allow-non-empty" "--dir-cache-time" "10s" "--vfs-cache-mode" "full" ];
   };
 }
