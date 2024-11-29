@@ -33,6 +33,13 @@
         "/mnt:/mnt"
       ];
       dependsOn = [ "riven-postgres" ];
+      extraOptions = [
+        "--health-cmd=\"curl -s http://localhost:8080 >/dev/null || exit 1\""
+        "--health-interval=30s"
+        "--health-timeout=10s"
+        "--health-retries=10"
+      ]
+      ;
     };
 
     riven-postgres = {
@@ -47,6 +54,12 @@
         POSTGRES_PASSWORD = "postgres";
         POSTGRES_DB = "riven";
       };
+      extraOptions = [
+        "--health-cmd=pg_isready"
+        "--health-interval=10s"
+        "--health-timeout=5s"
+        "--health-retries=5"
+      ];
     };
   };
 }
