@@ -31,6 +31,7 @@
     ./modules/services/plausible.nix
     ./modules/services/rdt-client.nix
     ./modules/services/qbittorrent.nix
+    ./modules/services/zurg.nix
   ];
 
   environment.systemPackages = [
