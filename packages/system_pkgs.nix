@@ -52,6 +52,7 @@
     pkgs.libreoffice
     pkgs.cemu
     pkgs.ungoogled-chromium
+    pkgs.jellyfin-media-player
 
 
     pkgs.fractal
