@@ -40,6 +40,7 @@
 
     pkgs.reaper
     pkgs.vital
+    pkgs.samplv1
 
     # Module 9 Stuff
     pkgs.vscode
