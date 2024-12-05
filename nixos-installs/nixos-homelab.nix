@@ -31,9 +31,10 @@
     ./modules/services/plausible.nix
     ./modules/services/rdt-client.nix
     ./modules/services/qbittorrent.nix
-    ./modules/services/zurg.nix
+    #./modules/services/zurg.nix
     ./modules/services/jellyseerr.nix
     ./modules/services/riven.nix
+    ./modules/services/torbox-rclone.nix
   ];
 
   environment.systemPackages = [
