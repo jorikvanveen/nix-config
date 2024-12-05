@@ -14,6 +14,7 @@
       "podman"
       "caddy"
       "minecraft"
+      "fuse"
     ];
     shell = pkgs.nushell;
     useDefaultShell = true;
