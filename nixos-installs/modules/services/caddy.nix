@@ -34,6 +34,28 @@
         encode gzip
         root * /srv/tutorials
         file_server
+
+        @plausible path /js/script.js /api/event
+        handle @plausible {
+          # Change this if you use a different variant of the script
+          # e.g. rewrite /js/script.js /js/script.outbound-links.js
+          rewrite /js/script.js /js/script.js
+          reverse_proxy https://plausible.io {
+            header_up Host {http.reverse_proxy.upstream.hostport}
+          }
+        }
+      '';
+      "plausible.jorik-dev.com".extraConfig =  ''
+        reverse_proxy http://localhost:8087
+      '';
+      "rdt.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:6500
+      '';
+      "jackett.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:9117
+      '';
+      "qb.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8081
       '';
     };
   };
