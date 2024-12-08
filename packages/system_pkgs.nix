@@ -20,6 +20,7 @@
     pkgs.bruno
     pkgs.delfin
     pkgs.qbittorrent
+    pkgs.jellyfin-media-player
 
     # Cli utilities
     pkgs.man-pages
