@@ -13,11 +13,13 @@
     ./modules/docker.nix
     ./modules/flake-support.nix
     ./modules/ignore-lid-switch.nix
+    ./modules/nvidia.nix
 
     ./modules/services/atuin.nix
     ./modules/services/jellyfin.nix
     ./modules/services/radarr.nix
     ./modules/services/sonarr.nix
+    ./modules/services/jackett.nix
     ./modules/services/prowlarr.nix
     ./modules/services/sabnzbd.nix
     ./modules/services/open-webui.nix
@@ -27,6 +29,8 @@
     ./modules/services/ssh.nix
     ./modules/services/minecraft.nix
     ./modules/services/plausible.nix
+    ./modules/services/rdt-client.nix
+    ./modules/services/qbittorrent.nix
   ];
 
   environment.systemPackages = [

@@ -48,6 +48,15 @@
       "plausible.jorik-dev.com".extraConfig =  ''
         reverse_proxy http://localhost:8087
       '';
+      "rdt.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:6500
+      '';
+      "jackett.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:9117
+      '';
+      "qb.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8081
+      '';
     };
   };
 }
