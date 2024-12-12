@@ -1,6 +1,6 @@
 {
   virtualisation.oci-containers.containers.rdtclient = {
-    image = "rogerfar/rdtclient:2.0.90";
+    image = "rogerfar/rdtclient:2.0.91";
 
     environment = {
       PUID = "1000";

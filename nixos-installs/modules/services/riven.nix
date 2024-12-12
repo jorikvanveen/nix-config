@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   virtualisation.oci-containers.containers = {
     riven-frontend = {
       image = "spoked/riven-frontend:latest";
@@ -19,7 +19,8 @@
 
     riven = {
       hostname = "riven";
-      image = "spoked/riven:latest";
+      #image = "spoked/riven:latest";
+      image = "jorikvanveen/riven-torbox:v0.20.1";
       ports = [
         "8088:8080"
       ];
