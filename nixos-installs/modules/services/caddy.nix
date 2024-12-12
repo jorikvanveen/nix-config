@@ -63,6 +63,9 @@
       "riven.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:3033
       '';
+      "vw.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8222
+      '';
     };
   };
 }

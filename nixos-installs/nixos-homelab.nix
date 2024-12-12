@@ -35,6 +35,7 @@
     ./modules/services/jellyseerr.nix
     ./modules/services/riven.nix
     ./modules/services/torbox-rclone.nix
+    ./modules/services/vaultwarden.nix
   ];
 
   environment.systemPackages = [
