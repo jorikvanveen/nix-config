@@ -66,6 +66,10 @@
       "vw.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8222
       '';
+      "bitwarden.tobeqz-on.top".extraConfig = ''
+        reverse_proxy http://localhost:8222
+      '';
+
     };
   };
 }
