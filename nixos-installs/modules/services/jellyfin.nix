@@ -5,6 +5,7 @@
 
   services.jellyfin = {
     enable = true;
+    group = "video";
     user = "main";
     logDir = "/home/main/Jellyfin/logs";
     cacheDir = "/home/main/Jellyfin/cache";
