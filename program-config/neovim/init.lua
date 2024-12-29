@@ -105,7 +105,8 @@ local lsps = {
   },
   jdtls = {},
   typst_lsp = {},
-  markdown_oxide = {}
+  markdown_oxide = {},
+  pyright = {}
 };
 
 for lsp,config in pairs(lsps) do

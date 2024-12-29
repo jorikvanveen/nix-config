@@ -33,6 +33,10 @@
 
     pinned-pkgs.qgis-ltr
 
+    pkgs.reaper
+    pkgs.vital
+    pkgs.samplv1
+
     # Module 9 Stuff
     pkgs.vscode
     pkgs.android-studio
@@ -42,6 +46,10 @@
     #pkgs.modrinth-app
     pkgs.prismlauncher
     pkgs.libreoffice
+    pkgs.cemu
+    pkgs.ungoogled-chromium
+    pkgs.jellyfin-media-player
+
 
     pkgs.fractal
     pkgs.ryujinx
