@@ -1,4 +1,4 @@
-{ inputs, pkgs, pinned-pkgs, ... }: {
+{ inputs, pkgs, pinned-pkgs, pkgs-stable, ... }: {
   environment.systemPackages = [
     pkgs.xorg.libXi
     pkgs.xorg.libXtst
@@ -17,7 +17,7 @@
     pkgs.mullvad-vpn
     pkgs.vesktop
     pkgs.obsidian
-    pkgs.bruno
+    pkgs-stable.bruno # Broken on unstable (29 dec 2024)
     pkgs.delfin
     pkgs.qbittorrent
     pkgs.jellyfin-media-player

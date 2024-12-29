@@ -56,13 +56,13 @@
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir pinned-pkgs; };
+        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable; };
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir syncdir; };
+            home-manager.extraSpecialArgs = { inherit homedir syncdir pkgs-stable; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.main = import ./homes/nixos-tp-p15v.nix;
@@ -71,13 +71,13 @@
       };
       nixosConfigurations.nixos-pc = let unstable = pkgs; in nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs; };
+        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable; };
         modules = [
           ./nixos-installs/nixos-pc.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir; };
+            home-manager.extraSpecialArgs = { inherit homedir pkgs-stable; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.main = import ./homes/nixos-pc.nix;
@@ -102,7 +102,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir; };
+            home-manager.extraSpecialArgs = { inherit homedir pkgs-stable; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.main = import ./homes/nixos-homelab.nix;
