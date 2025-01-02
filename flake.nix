@@ -11,7 +11,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     #stylix.url = "github:danth/stylix";
-    stylix.url = "github:arunoruto/stylix"; # Use ghostty patch
+    stylix.url = "github:arunoruto/stylix?ref=80fbeebecf08d02a0df944ae009de096cbe041c4"; # Use ghostty patch
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
     zen_flake.url = "github:0xc000022070/zen-browser-flake";
