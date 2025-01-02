@@ -8,8 +8,8 @@
         "ctrl+,=previous_tab"
         "ctrl+.=next_tab"
         "ctrl+q=close_surface"
-        "ctrl+shift+c=copy"
-        "ctrl+shift+v=paste"
+        "ctrl+shift+c=copy_from_clipboard"
+        "ctrl+shift+v=paste_from_clipboard"
       ];
     };
   };
