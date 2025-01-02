@@ -105,6 +105,7 @@ local lsps = {
   },
   jdtls = {},
   typst_lsp = {},
+  tinymist = {},
   markdown_oxide = {},
   pyright = {}
 };
