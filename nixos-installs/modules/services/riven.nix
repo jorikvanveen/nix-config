@@ -19,7 +19,7 @@
 
     riven = {
       hostname = "riven";
-      image = "spoked/riven:main";
+      image = "spoked/riven:v0.20.1";
       #image = "jorikvanveen/riven-torbox:v0.20.1";
       ports = [
         "8088:8080"

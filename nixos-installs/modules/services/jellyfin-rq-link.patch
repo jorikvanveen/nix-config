@@ -1,7 +1,7 @@
-diff --git a/config.json b/config.json
+diff --git a/share/jellyfin-web/config.json b/share/jellyfin-web/config.json
 index 3d80b1e..73179a8 100755
---- a/config.json
-+++ b/config.json
+--- a/share/jellyfin-web/config.json
++++ b/share/jellyfin-web/config.json
 @@ -29,7 +29,13 @@
        "color": "#0c2450"
      }
