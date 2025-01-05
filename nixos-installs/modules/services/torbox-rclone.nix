@@ -14,7 +14,7 @@
       ExecStop = "/biun/fusermount -u /mnt/torbox-webdav";
     };
     #serviceConfig.SupplementaryGroups = [ "fuse" ];
-    script = "${pkgs.rclone}/bin/rclone mount Torbox: /mnt/torbox-webdav --allow-other --dir-cache-time 0s --vfs-cache-mode full";
+    script = "${pkgs.rclone}/bin/rclone mount Torbox: /mnt/torbox-webdav --allow-other --poll-interval 0 --dir-cache-time 10s --vfs-cache-mode full";
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
   };

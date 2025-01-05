@@ -3,6 +3,24 @@
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
+  # --- a/config.json
+  # +++ b/config.json
+  # @@ -29,7 +29,13 @@
+  #        "color": "#0c2450"
+  #      }
+  #    ],
+  # -  "menuLinks": [],
+  # +  "menuLinks": [
+  # +    {
+  # +      "name": "Add content",
+  # +      "icon": "add_circle_outline",
+  # +      "url": "https://rq.jorik-dev.com"
+  # +    }
+  # +  ],
+  #    "servers": [],
+  #    "plugins": [
+  #      "playAccessValidation/plugin",
+
   services.jellyfin = {
     enable = true;
     group = "video";
@@ -11,7 +29,13 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = pkgs.jellyfin;
+    package = (pkgs.jellyfin.override {
+      jellyfin-web = (pkgs.jellyfin-web.overrideAttrs (oldAttrs: {
+        postPatches = [
+          ./jellyfin-rq-link.patch
+        ];
+      }));
+    });
   };
 
   hardware.opengl = {
