@@ -23,7 +23,6 @@
 
   services.jellyfin = {
     enable = true;
-    group = "video";
     user = "main";
     logDir = "/home/main/Jellyfin/logs";
     cacheDir = "/home/main/Jellyfin/cache";
@@ -31,11 +30,18 @@
     configDir = "/home/main/Jellyfin/config";
     package = (pkgs.jellyfin.override {
       jellyfin-web = (pkgs.jellyfin-web.overrideAttrs (oldAttrs: {
-        postPatches = [
-          ./jellyfin-rq-link.patch
-        ];
+        postInstall = ''
+          ${oldAttrs.postInstall or ""}
+          patch -p1 ${./jellyfin-rq-link.patch}
+        '';
       }));
     });
+  };
+
+  systemd.services.jellyfin = {
+    serviceConfig = {
+      SupplementaryGroups = [ "users" "video" ];
+    };
   };
 
   hardware.opengl = {

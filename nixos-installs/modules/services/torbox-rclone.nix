@@ -11,7 +11,7 @@
       DeviceAllow = "/dev/fuse";
       CapabilityBoundingSet = "CAP_SYS_ADMIN";
       AmbientCapabilities = "CAP_SYS_ADMIN";
-      ExecStop = "/biun/fusermount -u /mnt/torbox-webdav";
+      ExecStop = "/bin/fusermount -u /mnt/torbox-webdav";
     };
     #serviceConfig.SupplementaryGroups = [ "fuse" ];
     script = "${pkgs.rclone}/bin/rclone mount Torbox: /mnt/torbox-webdav --allow-other --poll-interval 0 --dir-cache-time 10s --vfs-cache-mode full";
