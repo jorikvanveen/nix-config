@@ -30,10 +30,11 @@
     configDir = "/home/main/Jellyfin/config";
     package = (pkgs.jellyfin.override {
       jellyfin-web = (pkgs.jellyfin-web.overrideAttrs (oldAttrs: {
-        postFixup = ''
-          ${oldAttrs.postFixup or ""}
+        fixup = ''
+          ${oldAttrs.fixup or ""}
           patch -p1 ${./jellyfin-rq-link.patch}
         '';
+
       }));
     });
   };
