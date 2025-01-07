@@ -1,6 +1,7 @@
 {
   virtualisation.oci-containers.containers.zurg = {
     image = "ghcr.io/debridmediamanager/zurg-testing:latest";
+    hostname = "zurg";
     ports = [
       "9999:9999"
     ];
