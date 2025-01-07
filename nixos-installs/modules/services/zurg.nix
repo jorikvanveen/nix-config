@@ -27,7 +27,8 @@
      "/mnt/torbox-library:/data:rshared"
      "/home/main/.config/zurg/rclone.conf:/config/rclone/rclone.conf"
    ];
-   extraOptions = ["--privileged" "--network=host" ];
+   #extraOptions = ["--privileged" "--network=host" ];
+   extraOptions = ["--privileged" "--cap-add" "SYS_ADMIN" ];
 
    # dependsOn = [ "zurg" ];
    cmd = [ "mount" "zurg:" "/data" "--allow-other" "--allow-non-empty" "--dir-cache-time" "10s" "--vfs-cache-mode" "full" ];
