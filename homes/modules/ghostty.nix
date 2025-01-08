@@ -7,7 +7,9 @@
         "ctrl+t=new_tab"
         "ctrl+,=previous_tab"
         "ctrl+.=next_tab"
-        "ctrl+w=close_surface"
+        "ctrl+q=close_surface"
+        "ctrl+shift+c=copy_to_clipboard"
+        "ctrl+shift+v=paste_from_clipboard"
       ];
     };
   };
