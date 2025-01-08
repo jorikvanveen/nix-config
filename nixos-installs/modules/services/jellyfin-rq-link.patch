@@ -1,0 +1,19 @@
+diff --git a/share/jellyfin-web/config.json b/share/jellyfin-web/config.json
+index 3d80b1e..73179a8 100755
+--- a/share/jellyfin-web/config.json
++++ b/share/jellyfin-web/config.json
+@@ -29,7 +29,13 @@
+       "color": "#0c2450"
+     }
+   ],
+-  "menuLinks": [],
++  "menuLinks": [
++    {
++      "name": "Add content",
++      "icon": "add_circle_outline",
++      "url": "https://rq.jorik-dev.com"
++    }
++  ],
+   "servers": [],
+   "plugins": [
+     "playAccessValidation/plugin",

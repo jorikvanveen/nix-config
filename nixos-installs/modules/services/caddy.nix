@@ -57,6 +57,19 @@
       "qb.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8081
       '';
+      "rq.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:5055
+      '';
+      "riven.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:3033
+      '';
+      "vw.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8222
+      '';
+      "bitwarden.tobeqz-on.top".extraConfig = ''
+        reverse_proxy http://localhost:8222
+      '';
+
     };
   };
 }

@@ -53,6 +53,5 @@
 
     pkgs.fractal
     pkgs.ryujinx
-    inputs.posting-flake.packages.x86_64-linux.posting
   ];
 }

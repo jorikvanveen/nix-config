@@ -11,8 +11,10 @@
       "gamemode"
       "kvm"
       "docker"
+      "podman"
       "caddy"
       "minecraft"
+      "fuse"
     ];
     shell = pkgs.nushell;
     useDefaultShell = true;

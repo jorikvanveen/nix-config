@@ -10,7 +10,7 @@
     ./modules/x11-keymap.nix
     ./modules/main-user.nix
     ./modules/sops.nix
-    ./modules/docker.nix
+    ./modules/podman.nix
     ./modules/flake-support.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
@@ -31,6 +31,13 @@
     ./modules/services/plausible.nix
     ./modules/services/rdt-client.nix
     ./modules/services/qbittorrent.nix
+    ./modules/services/earlyoom.nix
+    ./modules/services/zilean.nix
+    ./modules/services/zurg.nix
+    ./modules/services/jellyseerr.nix
+    ./modules/services/riven.nix
+    #./modules/services/torbox-rclone.nix
+    ./modules/services/vaultwarden.nix
   ];
 
   environment.systemPackages = [

@@ -5,6 +5,7 @@
     ./modules/mime-associations.nix
     ./modules/ghostty.nix
     ./modules/kodi.nix
+    ./modules/heroic.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix

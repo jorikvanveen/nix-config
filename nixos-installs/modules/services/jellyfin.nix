@@ -10,7 +10,23 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = pkgs.jellyfin;
+    package = (pkgs.jellyfin.override {
+      jellyfin-web = (pkgs.jellyfin-web.overrideAttrs (oldAttrs: {
+        fixupPhase = ''
+          ${oldAttrs.fixupPhase or ""}
+          
+          echo "Patching config.json"
+          patch -p1 ${./jellyfin-rq-link.patch}
+        '';
+
+      }));
+    });
+  };
+
+  systemd.services.jellyfin = {
+    serviceConfig = {
+      SupplementaryGroups = [ "users" "video" ];
+    };
   };
 
   hardware.opengl = {
