@@ -21,7 +21,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Shift><Super>Return";
-      command = "alacritty";
+      command = "ghostty";
       name = "Open terminal";
     };
 

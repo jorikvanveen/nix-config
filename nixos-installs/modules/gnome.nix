@@ -5,6 +5,7 @@
   environment.systemPackages = [
     pkgs.gnome-tweaks
     pkgs.gnomeExtensions.forge
+    pkgs.gnomeExtensions.caffeine
     pkgs.gnome-pomodoro
     pkgs.gsettings-desktop-schemas
     pkgs.gnomeExtensions.blur-my-shell

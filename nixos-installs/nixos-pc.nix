@@ -19,8 +19,6 @@
 
       ./modules/cachy-kernel.nix
 
-      ./modules/services/open-webui.nix
-
       ./modules/sops.nix
     ];
 
@@ -28,7 +26,7 @@
   networking.firewall.enable = true;
 
   environment.systemPackages = [ 
-    inputs.zenpkgs.legacyPackages.x86_64-linux.zen-browser
+    inputs.zen_flake.packages.x86_64-linux.default
   ];
 
   # This value determines the NixOS release from which the default

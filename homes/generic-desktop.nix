@@ -3,6 +3,8 @@
     ./modules/stylix.nix
     ./modules/zed.nix
     ./modules/mime-associations.nix
+    ./modules/ghostty.nix
+    ./modules/heroic.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix
