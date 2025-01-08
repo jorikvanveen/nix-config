@@ -32,7 +32,7 @@
       };
       volumes = [
         "/home/main/data/riven:/riven/data"
-        "/mnt/torbox-webdav:/mnt/torbox-webdav:ro"
+        "/mnt/torbox-library:/mnt/torbox-library:ro"
         "/mnt/riven-library:/mnt/riven-library"
       ];
       dependsOn = [ "riven-postgres" ];
