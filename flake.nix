@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
 
     sops-nix.url = "github:Mic92/sops-nix";
@@ -44,10 +44,20 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+
+        # Required to use sonarr at all as of 8 jan 2025 (yikes)
+        nixpkgs.config.permittedInsecurePackages = [
+          "dotnet-sdk-6.0.428"
+        ];
       };
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
+
+        # Required to use sonarr at all as of 8 jan 2025 (yikes)
+        nixpkgs.config.permittedInsecurePackages = [
+          "dotnet-sdk-6.0.428"
+        ];
       };
     in
     {
@@ -94,6 +104,7 @@
         modules = [
           {
             nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
+
           }
           ./nixos-installs/nixos-homelab.nix
           home-manager.nixosModules.home-manager
