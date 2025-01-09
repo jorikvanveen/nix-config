@@ -18,6 +18,7 @@
       "application/x-extension-shtml" = "zen.desktop";
       "application/xhtml+xml" = "zen.desktop";
       "application/x-extension-xhtml" = "zen.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
     };
   };
 }
