@@ -26,6 +26,7 @@
     ./modules/flake-support.nix
     ./modules/flatpak.nix
     ./modules/ntfs-support.nix
+    ./modules/bottles.nix
     ../packages/system_pkgs.nix
   ];
 }
