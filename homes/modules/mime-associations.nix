@@ -5,7 +5,7 @@
       "video/mp4" = "vlc.desktop";
       "text/calendar" = "gnome-calendar.desktop";
       "image/jpeg" = "org.gnome.Loupe.desktop";
-      "image/png" = "org.gnome.Loup.desktop";
+      "image/png" = "org.gnome.Loupe.desktop";
       "image/webp" = "org.gnome.Loupe.desktop";
       "application/x-extension-xht" = "zen.desktop";
       "image/gif" = "org.gnome.Loupe.desktop";
