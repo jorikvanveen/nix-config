@@ -22,7 +22,6 @@
       ./modules/sops.nix
 
       ./modules/services/sunshine.nix
-      ./modules/auto-login.nix
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
