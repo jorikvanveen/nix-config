@@ -26,6 +26,7 @@
    volumes = [
      "/mnt/torbox-library:/data:rshared"
      "/home/main/.config/zurg/rclone.conf:/config/rclone/rclone.conf"
+     "/home/main/data/rclone-cache:/root/.cache/rclone"
    ];
    extraOptions = ["--privileged" "--cap-add" "SYS_ADMIN" ];
 
