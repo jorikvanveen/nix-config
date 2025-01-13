@@ -24,7 +24,7 @@
      PGID = "1000";
    };
    volumes = [
-     "/mnt/torbox-library:/data"
+     "/mnt/torbox-library:/data:rshared"
      "/home/main/.config/zurg/rclone.conf:/config/rclone/rclone.conf"
    ];
    extraOptions = ["--privileged" "--cap-add" "SYS_ADMIN" ];
