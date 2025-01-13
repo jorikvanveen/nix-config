@@ -6,6 +6,7 @@
     ./modules/ghostty.nix
     ./modules/kodi.nix
     ./modules/heroic.nix
+    ./modules/moonlight.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix
