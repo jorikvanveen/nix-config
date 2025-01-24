@@ -69,6 +69,8 @@ vim.opt.colorcolumn = "80"
 
 vim.keymap.set("n", "<C-n>", ":Neotree<CR>")
 
+-- OIL
+require('oil').setup()
 
 -- TELESCOPE
 vim.keymap.set("n", "<leader>ff", function() require'telescope.builtin'.find_files {} end)
