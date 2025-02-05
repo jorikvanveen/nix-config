@@ -2,8 +2,7 @@
   services.open-webui = {
     enable = true;
     port = 8090;
-    package = (pkgs-stable.open-webui.overrideAttrs # Unstable broken as of 8 jan 2025
-      (oldAttrs: { patches = [ ./open-webui-o1.patch ]; }));
+    package = unstable.open-webui;
   };
 
   systemd.services.litellm-claude = let
