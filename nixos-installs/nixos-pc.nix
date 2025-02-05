@@ -20,6 +20,12 @@
       ./modules/cachy-kernel.nix
 
       ./modules/sops.nix
+
+      ./modules/services/sunshine.nix
+
+      ./modules/auto-login.nix
+
+      ./modules/ddcutil.nix
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
