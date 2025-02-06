@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ pkgs-stable, pkgs, ... }: let
 in {
   programs.neovim = {
     enable = true;
@@ -22,8 +22,9 @@ in {
       luasnip
       cmp_luasnip
       harpoon
-      coq_nvim
       oil-nvim
+    ] ++ [
+      pkgs-stable.vimPlugins.coq_nvim # Broken in unstable as of 6 feb 2025
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
