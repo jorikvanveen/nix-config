@@ -34,7 +34,7 @@
     ./modules/services/earlyoom.nix
     ./modules/services/zilean.nix
     ./modules/services/zurg.nix
-    ./modules/services/jellyseerr.nix
+    #./modules/services/jellyseerr.nix
     ./modules/services/riven.nix
     #./modules/services/torbox-rclone.nix
     ./modules/services/vaultwarden.nix
