@@ -9,7 +9,7 @@ let
           rev = "fbad80e0a5f5f162495f8646eac56bc0b91361c2";
           hash = "sha256-6S7aVEoOVQ4S+0d0eqkPYrinzSlsrJeF78SL4pocy+E=";
         };
-        cargoHash = "sha256-chryC4YDvd8c7fIiHMWi+g5JYZJqkLPknSCgzYVKucE=";
+        cargoHash = "sha256-YbTfaCk1ZLP+39iI9w6KNvFXOCwIt6Op4OuhurmW1w0=";
       });
     };
   });
