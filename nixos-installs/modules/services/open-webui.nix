@@ -6,7 +6,7 @@
   };
 
   systemd.services.litellm-claude = let
-    py-env = (unstable.python3.withPackages
+    py-env = (pkgs-stable.python3.withPackages
       (ppkgs: with ppkgs; [ litellm ] ++ litellm.optional-dependencies.proxy ++ litellm.optional-dependencies.extra_proxy));
   in {
     enable = true;
