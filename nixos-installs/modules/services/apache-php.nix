@@ -1,6 +1,6 @@
 { pkgs, pkgs-php74, ... }: let
-  #pkgs = pkgs-php74;
-  php = pkgs.php;
+  pkgs = pkgs-php74;
+  php = pkgs.php74;
 in {
   imports = [
     ./msmtp.nix
