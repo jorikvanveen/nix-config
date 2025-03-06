@@ -5,7 +5,8 @@
     accounts = {
       default = {
         auth = false;
-        host = "127.0.0.1:1025";
+        host = "127.0.0.1";
+        port = 1025;
       };
     };
   };
