@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
+    nixpkgs-php74.url = "github:nixos/nixpkgs?ref=ba45a559b5c42e123af07272b0241a73dcfa03b0";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -59,11 +60,14 @@
           "dotnet-sdk-6.0.428"
         ];
       };
+      pkgs-php74 = import inputs.nixpkgs-php74 {
+        inherit system;
+      };
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable; };
+        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable pkgs-php74; };
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
@@ -78,7 +82,7 @@
       };
       nixosConfigurations.nixos-pc = let unstable = pkgs; in nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable; };
+        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable pkgs-php74; };
         modules = [
           ./nixos-installs/nixos-pc.nix
           home-manager.nixosModules.home-manager
