@@ -1,17 +1,20 @@
-{ pkgs, pkgs-php74, ... }: {
+{ pkgs, pkgs-php74, ... }: let
+  #pkgs = pkgs-php74;
+  php = pkgs.php;
+in {
   imports = [
     ./msmtp.nix
   ];
 
   services.httpd = {
     enable = true;
-    package = pkgs-php74.apacheHttpd;
+    package = pkgs.apacheHttpd;
     virtualHosts = {
       localhost = {
         documentRoot = "/srv/apache/avdvegt/public_html"; 
       };
     };
-    phpPackage = pkgs-php74.php74.buildEnv {
+    phpPackage = php.buildEnv {
       extensions = ({ enabled, all }: enabled ++ (with all; [
           xdebug
       ]));
