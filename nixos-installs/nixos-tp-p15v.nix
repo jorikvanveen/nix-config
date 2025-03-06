@@ -22,7 +22,7 @@
       ./modules/eth-conn-sharing.nix
 
       ./modules/xanmod-kernel.nix
-      #./modules/services/kubo.nix
+      ./modules/services/apache-php.nix
     ];
 
 
