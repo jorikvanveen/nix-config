@@ -1,5 +1,5 @@
 {
-  services.msmtp = {
+  programs.msmtp = {
     enable = true;
     setSendmail = true;
     accounts = {
@@ -10,8 +10,8 @@
     };
   };
 
-  services.mailpit.instances = [{
+  services.mailpit.instances.default = {
     smtp = "127.0.0.1:1025";
     listen = "127.0.0.1:8025";
-  }];
+  };
 }

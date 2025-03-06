@@ -1,4 +1,8 @@
 { pkgs, pkgs-php74, ... }: {
+  imports = [
+    ./msmtp.nix
+  ];
+
   services.httpd = {
     enable = true;
     package = pkgs-php74.apacheHttpd;
