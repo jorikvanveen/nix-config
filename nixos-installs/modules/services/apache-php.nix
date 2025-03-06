@@ -14,5 +14,6 @@
           xdebug.mode=debug
       '';
     };
+    enablePHP = true;
   };
 }
