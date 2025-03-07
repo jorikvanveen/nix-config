@@ -1,6 +1,6 @@
 { pkgs, pkgs-php74, pkgs-php8, ... }: let
   pkgs = pkgs-php8;
-  php = pkgs.php80;
+  php = pkgs.php81;
 in {
   imports = [
     ./msmtp.nix
