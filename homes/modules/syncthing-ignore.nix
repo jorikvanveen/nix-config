@@ -9,6 +9,7 @@
       **/*.direnv
       **/*.osm.pbf
       **/build
+      !**/bootstrap/build
       **/*.map
       **/*.mbtiles
     '';
