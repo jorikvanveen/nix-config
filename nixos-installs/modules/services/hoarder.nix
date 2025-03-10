@@ -36,17 +36,16 @@ in {
     };
 
     hoarder-browser = {
-       image = "lscr.io/linuxserver/chromium:latest";
-       pull = "newer";
-       #cmd = [
-       #   "--"
-       #   "--no-sandbox"
-       #   "--disable-gpu"
-       #   "--disable-dev-shm-usage"
-       #   "--remote-debugging-address=0.0.0.0"
-       #   "--remote-debugging-port=9222"
-       #   "--hide-scrollbars"
-       #];
+       image = "gcr.io/zenika-hub/alpine-chrome:123";
+       #pull = "newer";
+       cmd = [
+          "--no-sandbox"
+          "--disable-gpu"
+          "--disable-dev-shm-usage"
+          "--remote-debugging-address=0.0.0.0"
+          "--remote-debugging-port=9222"
+          "--hide-scrollbars"
+       ];
     };
   };
 }
