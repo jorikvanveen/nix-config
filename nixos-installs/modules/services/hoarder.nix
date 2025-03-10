@@ -20,7 +20,7 @@ in {
         NEXTAUTH_URL = "https://hoarder.jorik-dev.com";
         DATA_DIR = "/data";
         MEILI_ADDR = "http://hoarder-meili:7700";
-        BROWSER_WEB_URL = "https://hoarder.jorik-dev.com";
+        BROWSER_WEB_URL = "http://hoarder-browser:9222";
       };
     };
 
@@ -33,6 +33,19 @@ in {
       volumes = [
         "/mnt/media/data/hoarder-meili:/meili_data"
       ];
+    };
+
+    hoarder-browser = {
+       image = "lscr.io/linuxserver/chromium:latest";
+       pull = "newer";
+       cmd = [
+          "--no-sandbox"
+          "--disable-gpu"
+          "--disable-dev-shm-usage"
+          "--remote-debugging-address=0.0.0.0"
+          "--remote-debugging-port=9222"
+          "--hide-scrollbars"
+       ];
     };
   };
 }
