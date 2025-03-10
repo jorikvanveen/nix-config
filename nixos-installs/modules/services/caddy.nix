@@ -4,7 +4,7 @@
     package = pkgs-stable.caddy;
     virtualHosts = {
       "hoarder.jorik-dev.com".extraConfig = ''
-        reverse_proxy http;//localhost:3131
+        reverse_proxy http://localhost:3131
       '';
       "ipfs.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8082
