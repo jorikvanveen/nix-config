@@ -39,6 +39,7 @@ in {
        image = "lscr.io/linuxserver/chromium:latest";
        pull = "newer";
        cmd = [
+          "--"
           "--no-sandbox"
           "--disable-gpu"
           "--disable-dev-shm-usage"
