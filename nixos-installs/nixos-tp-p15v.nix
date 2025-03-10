@@ -22,9 +22,11 @@
       ./modules/eth-conn-sharing.nix
 
       ./modules/xanmod-kernel.nix
+      ./modules/services/apache-php.nix
     ];
 
 
+  #services.kubo.settings.Addresses.Gateway = lib.mkForce "/ip4/127.0.0.1/tcp/8080";
   networking.hostName = "nixos-laptop"; # Define your hostname.
 
 
