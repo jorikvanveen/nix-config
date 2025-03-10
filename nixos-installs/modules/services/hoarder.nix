@@ -21,6 +21,7 @@ in {
         DATA_DIR = "/data";
         MEILI_ADDR = "http://hoarder-meili:7700";
         BROWSER_WEB_URL = "http://hoarder-browser:9222";
+        DISABLE_SIGNUPS = "true";
       };
     };
 
