@@ -13,7 +13,7 @@ in {
         "/mnt/media/data/hoarder-web:/data"
       ];
       ports = [
-        "3131:3000"
+        "127.0.0.1:3131:3000"
       ];
       environment = {
         HOARDER_VERSION = "release";
