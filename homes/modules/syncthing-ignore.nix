@@ -2,13 +2,13 @@
   home.file.personal-stignore = {
     target = homedir + "/shared/personal/.stignore";
     text = ''
-      **/target
-      **/node_modules
-      **/site-packages
+      (?d)**/target
+      (?d)**/node_modules
+      (?d)**/site-packages
       **/*.laz
       **/*.direnv
       **/*.osm.pbf
-      **/build
+      (?d)**/build
       **/*.map
       **/*.mbtiles
     '';
