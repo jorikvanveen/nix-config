@@ -57,6 +57,7 @@
   networking.hostName = "nixos-homelab";
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
   networking.firewall.allowedUDPPorts = [ 22 80 443 ];
+  networking.firewall.enable = true;
 
   system.stateVersion = "24.05";
 }
