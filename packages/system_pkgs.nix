@@ -49,8 +49,8 @@
     pkgs.ungoogled-chromium
     pkgs.jellyfin-media-player
 
-
     pkgs.fractal
     pkgs.ryujinx
+    pkgs.uv
   ];
 }
