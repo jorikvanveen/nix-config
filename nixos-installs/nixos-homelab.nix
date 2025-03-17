@@ -40,6 +40,7 @@
     #./modules/services/torbox-rclone.nix
     ./modules/services/vaultwarden.nix
     ./modules/services/hoarder.nix
+    ./modules/services/audiobookshelf.nix
   ];
 
   environment.systemPackages = [
