@@ -27,6 +27,7 @@
     pkgs.wl-clipboard
     pkgs.man-pages-posix
     pkgs.xdg-utils
+    pkgs.unrar
 
 
     pkgs.g4music
@@ -49,8 +50,8 @@
     pkgs.ungoogled-chromium
     pkgs.jellyfin-media-player
 
-
     pkgs.fractal
     pkgs.ryujinx
+    pkgs.uv
   ];
 }

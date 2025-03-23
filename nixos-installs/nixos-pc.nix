@@ -19,6 +19,8 @@
 
       ./modules/cachy-kernel.nix
 
+      ./modules/sshfs.nix
+
       ./modules/sops.nix
 
       ./modules/services/sunshine.nix

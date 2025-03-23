@@ -6,6 +6,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
     nixpkgs-php74.url = "github:nixos/nixpkgs?ref=ba45a559b5c42e123af07272b0241a73dcfa03b0";
+    nixpkgs-php8.url = "github:nixos/nixpkgs?ref=e6a26b900caddb8c2a033b7fb65c0971ab129664";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -63,11 +64,18 @@
       pkgs-php74 = import inputs.nixpkgs-php74 {
         inherit system;
       };
+      pkgs-php8 = import inputs.nixpkgs-php8 {
+        inherit system;
+        config.allowInsecure = true;
+        config.permittedInsecurePackages = [
+          "openssl-1.1.1u"
+        ];
+      };
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable pkgs-php74; };
+        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable pkgs-php74 pkgs-php8; };
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager

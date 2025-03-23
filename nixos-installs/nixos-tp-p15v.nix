@@ -16,6 +16,8 @@
       # Machine-specific syncthing config
       ./modules/syncthing-laptop.nix
 
+      ./modules/sshfs.nix
+
       # Add boot entry that enables NVIDIA dGPU
       ./modules/gaming-specialisation.nix
 
