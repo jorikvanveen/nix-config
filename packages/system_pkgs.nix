@@ -40,7 +40,6 @@
 
     # Module 9 Stuff
     pkgs.vscode
-    pkgs.android-studio
     pkgs.android-tools
 
     pkgs.lutris

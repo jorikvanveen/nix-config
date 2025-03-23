@@ -3,7 +3,7 @@
     zilean = {
       image = "ipromknight/zilean:v3.3.1";
       ports = [
-        "8181:8181"
+        "127.0.0.1:8181:8181"
       ];
       volumes = [
         "/home/main/data/zilean-data:/app/data"
