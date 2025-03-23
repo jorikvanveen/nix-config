@@ -17,6 +17,7 @@
       "nofail"
       "allow_other"
       "args2env"
+      "dir-cache-time=10s"
       "config=/etc/sshfs-qbd.conf"
     ];
   };
