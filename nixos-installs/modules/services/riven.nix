@@ -3,7 +3,7 @@
     riven-frontend = {
       image = "spoked/riven-frontend:latest";
       ports = [
-        "3033:3000"
+        "127.0.0.1:3033:3000"
       ];
       environment = {
         PUID = "1000";
@@ -22,7 +22,7 @@
       image = "spoked/riven:v0.20.1";
       #image = "jorikvanveen/riven-torbox:v0.20.1";
       ports = [
-        "8088:8080"
+        "127.0.0.1:8088:8080"
       ];
       environment = {
         PUID = "1000";
@@ -49,7 +49,7 @@
       image = "postgres:17.0-alpine3.20";
       volumes = [ "/home/main/data/riven-pg:/var/lib/postgresql/data/pgdata" ];
       ports = [
-        "5255:5432"
+        "127.0.0.1:5255:5432"
       ];
       environment = {
         PGDATA = "/var/lib/postgresql/data/pgdata";

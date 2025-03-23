@@ -27,6 +27,7 @@
     pkgs.wl-clipboard
     pkgs.man-pages-posix
     pkgs.xdg-utils
+    pkgs.unrar
 
 
     pkgs.g4music

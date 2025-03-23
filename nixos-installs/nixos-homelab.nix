@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware/nixos-homelab-hardware.nix
@@ -34,11 +34,13 @@
     ./modules/services/earlyoom.nix
     ./modules/services/zilean.nix
     ./modules/services/zurg.nix
-    ./modules/services/kubo.nix
+    #./modules/services/kubo.nix
     #./modules/services/jellyseerr.nix
     ./modules/services/riven.nix
     #./modules/services/torbox-rclone.nix
     ./modules/services/vaultwarden.nix
+    ./modules/services/hoarder.nix
+    ./modules/services/audiobookshelf.nix
   ];
 
   environment.systemPackages = [
@@ -56,6 +58,7 @@
   networking.hostName = "nixos-homelab";
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
   networking.firewall.allowedUDPPorts = [ 22 80 443 ];
+  networking.firewall.enable = true;
 
   system.stateVersion = "24.05";
 }
