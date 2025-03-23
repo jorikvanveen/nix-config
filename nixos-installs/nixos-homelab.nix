@@ -34,6 +34,7 @@
     ./modules/services/earlyoom.nix
     ./modules/services/zilean.nix
     ./modules/services/zurg.nix
+    ./modules/services/navidrome.nix
     #./modules/services/kubo.nix
     #./modules/services/jellyseerr.nix
     ./modules/services/riven.nix

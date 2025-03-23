@@ -3,6 +3,9 @@
     enable = true;
     package = pkgs-stable.caddy;
     virtualHosts = {
+      "navi.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8089
+      '';
       "ab.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8086
       '';
