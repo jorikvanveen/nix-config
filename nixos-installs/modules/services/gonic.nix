@@ -12,6 +12,7 @@
         "/mnt/media/podcasts"
       ];
       listen-addr = "127.0.0.1:4747";
+      scan-watcher-enabled = true;
     };
   };
   systemd.services.gonic.serviceConfig.BindReadOnlyPaths = [
