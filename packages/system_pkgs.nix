@@ -26,7 +26,7 @@
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {
-          name = "Finamp";
+          name = "com.unicornsonlsd.finamp";
           desktopName = "Finamp";
           genericName = "Music Player";
           exec = "finamp %U";
