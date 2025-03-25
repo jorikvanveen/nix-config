@@ -23,6 +23,7 @@
     pkgs.jellyfin-media-player
     pkgs.feishin
     pkgs.nicotine-plus
+    pkgs.finamp
 
     # Cli utilities
     pkgs.man-pages
