@@ -30,6 +30,7 @@
           desktopName = "Finamp";
           genericName = "Music Player";
           exec = "finamp %U";
+          tryExec = "finamp";
           icon = "finamp";
           startupWMClass = "finamp";
           comment = "An open source Jellyfin music player";
