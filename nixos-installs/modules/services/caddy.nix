@@ -3,6 +3,9 @@
     enable = true;
     package = pkgs-stable.caddy;
     virtualHosts = {
+      "s4k.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:9898
+      '';
       "gonic.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:4747
       '';
