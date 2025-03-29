@@ -14,7 +14,7 @@
     hoarder-meili-master = {};
     hoarder-openai-key = {};
     spottarr-usenet-name = {};
-    spottarr-usenet-name = {};
+    spottarr-usenet-pw = {};
   };
 }
 
