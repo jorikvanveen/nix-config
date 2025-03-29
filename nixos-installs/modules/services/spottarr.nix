@@ -17,7 +17,7 @@
       "SPOTNET__IMPORTADULTCONTENT" = "false";
     };
     volumes = [
-      "/mnt/media/data/spotarr:/data"
+      "/mnt/media/data/spottarr:/data"
     ];
     ports = [
       "127.0.0.1:8383:8383"
