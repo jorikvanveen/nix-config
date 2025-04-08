@@ -28,6 +28,7 @@
       ./modules/auto-login.nix
 
       ./modules/ddcutil.nix
+      ./modules/alvr.nix
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
