@@ -36,7 +36,6 @@
         # .production is nvidia-550 at the time of writing
         package = config.boot.kernelPackages.nvidiaPackages.production;
 
-
         prime = {
           nvidiaBusId = "PCI:1:0:0";
           intelBusId = "PCI:0:2:0";
