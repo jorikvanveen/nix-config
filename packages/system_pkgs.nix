@@ -21,6 +21,28 @@
     pkgs.delfin
     pkgs.qbittorrent
     pkgs.jellyfin-media-player
+    pkgs.feishin
+    pkgs.nicotine-plus
+    (pkgs.finamp.overrideAttrs (oldAttrs: {
+      desktopItems = [
+        (pkgs.makeDesktopItem {
+          name = "com.unicornsonlsd.finamp";
+          desktopName = "Finamp";
+          genericName = "Music Player";
+          exec = "finamp %U";
+          tryExec = "finamp";
+          icon = "finamp";
+          startupWMClass = "finamp";
+          comment = "An open source Jellyfin music player";
+          categories = [
+            "AudioVideo"
+            "Audio"
+            "Player"
+            "Music"
+          ];
+        })  
+      ];
+    }))
 
     # Cli utilities
     pkgs.man-pages
