@@ -30,7 +30,8 @@
     pkgs.man-pages-posix
     pkgs.xdg-utils
     pkgs.unrar
-
+    pkgs.htop
+    pkgs.wget
 
     pkgs.g4music
 
@@ -39,6 +40,7 @@
     pkgs.reaper
     pkgs.vital
     pkgs.samplv1
+    pkgs.distrho-ports
 
     # Module 9 Stuff
     pkgs.vscode
