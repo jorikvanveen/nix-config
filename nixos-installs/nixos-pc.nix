@@ -33,6 +33,7 @@
 
   networking.hostName = "nixos-pc"; # Define your hostname.
   networking.firewall.enable = true;
+  networking.interfaces.enp34s0.wakeOnLan.enable = true;
 
   environment.systemPackages = [ 
     inputs.zen_flake.packages.x86_64-linux.default
