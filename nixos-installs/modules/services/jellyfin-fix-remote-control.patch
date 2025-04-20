@@ -1,21 +1,110 @@
-diff --git a/src/plugins/sessionPlayer/plugin.js b/src/plugins/sessionPlayer/plugin.js
-index 32c24ce7e..fdc73ad39 100644
---- a/src/plugins/sessionPlayer/plugin.js
-+++ b/src/plugins/sessionPlayer/plugin.js
-@@ -234,11 +234,11 @@ function getChangedEvents(oldPlayerData, newPlayerData) {
- function onPollIntervalFired() {
-     const instance = this;
-     const apiClient = getCurrentApiClient(instance);
--    if (!apiClient.isMessageChannelOpen()) {
--        apiClient.getSessions().then(function (sessions) {
--            processUpdatedSessions(instance, sessions, apiClient);
--        });
--    }
-+    //if (!apiClient.isMessageChannelOpen()) {
-+    //    apiClient.getSessions().then(function (sessions) {
-+    //        processUpdatedSessions(instance, sessions, apiClient);
-+    //    });
-+    //}
- }
+diff --git a/Jellyfin.Api/WebSocketListeners/SessionInfoWebSocketListener.cs b/Jellyfin.Api/WebSocketListeners/SessionInfoWebSocketListener.cs
+index 7eeeec8e4..04f329e2d 100644
+--- a/Jellyfin.Api/WebSocketListeners/SessionInfoWebSocketListener.cs
++++ b/Jellyfin.Api/WebSocketListeners/SessionInfoWebSocketListener.cs
+@@ -1,4 +1,5 @@
+ using System.Collections.Generic;
++using System.Linq;
+ using System.Threading.Tasks;
+ using Jellyfin.Data.Enums;
+ using MediaBrowser.Controller.Authentication;
+@@ -55,6 +56,25 @@ public class SessionInfoWebSocketListener : BasePeriodicWebSocketListener<IEnume
+         return Task.FromResult(_sessionManager.Sessions);
+     }
+ 
++    /// <summary>
++    /// Gets the data to send for a specific connection.
++    /// </summary>
++    /// <param name="connection">The connection.</param>
++    /// <returns>Task{IEnumerable{SessionInfo}}.</returns>
++    protected override Task<IEnumerable<SessionInfo>> GetDataToSendForConnection(IWebSocketConnection connection)
++    {
++        // For non-admin users, filter the sessions to only include their own sessions
++        if (connection.AuthorizationInfo?.User != null &&
++            !connection.AuthorizationInfo.IsApiKey &&
++            !connection.AuthorizationInfo.User.HasPermission(PermissionKind.IsAdministrator))
++        {
++            var userId = connection.AuthorizationInfo.User.Id;
++            return Task.FromResult(_sessionManager.Sessions.Where(s => s.UserId.Equals(userId) || s.ContainsUser(userId)));
++        }
++
++        return Task.FromResult(_sessionManager.Sessions);
++    }
++
+     /// <inheritdoc />
+     protected override async ValueTask DisposeAsyncCore()
+     {
+@@ -79,9 +99,9 @@ public class SessionInfoWebSocketListener : BasePeriodicWebSocketListener<IEnume
+     /// <param name="message">The message.</param>
+     protected override void Start(WebSocketMessageInfo message)
+     {
+-        if (!message.Connection.AuthorizationInfo.User.HasPermission(PermissionKind.IsAdministrator) && !message.Connection.AuthorizationInfo.IsApiKey)
++        if (message.Connection.AuthorizationInfo.User is null && !message.Connection.AuthorizationInfo.IsApiKey)
+         {
+-            throw new AuthenticationException("Only admin users can subscribe to session information.");
++            throw new AuthenticationException("User must be authenticated to subscribe to session Information.");
+         }
+ 
+         base.Start(message);
+diff --git a/MediaBrowser.Controller/Net/BasePeriodicWebSocketListener.cs b/MediaBrowser.Controller/Net/BasePeriodicWebSocketListener.cs
+index a47d2fa45..e1692e0d3 100644
+--- a/MediaBrowser.Controller/Net/BasePeriodicWebSocketListener.cs
++++ b/MediaBrowser.Controller/Net/BasePeriodicWebSocketListener.cs
+@@ -80,6 +80,16 @@ namespace MediaBrowser.Controller.Net
+         /// <returns>Task{`1}.</returns>
+         protected abstract Task<TReturnDataType> GetDataToSend();
+ 
++        /// <summary>
++        /// Gets the data to send for a specific connection.
++        /// </summary>
++        /// <param name="connection">The connection.</param>
++        /// <returns>Task{`1}.</returns>
++        protected virtual Task<TReturnDataType> GetDataToSendForConnection(IWebSocketConnection connection)
++        {
++            return GetDataToSend();
++        }
++
+         /// <summary>
+         /// Processes the message.
+         /// </summary>
+@@ -174,17 +184,11 @@ namespace MediaBrowser.Controller.Net
+                             continue;
+                         }
+ 
+-                        var data = await GetDataToSend().ConfigureAwait(false);
+-                        if (data is null)
+-                        {
+-                            continue;
+-                        }
+-
+                         IEnumerable<Task> GetTasks()
+                         {
+                             foreach (var tuple in tuples)
+                             {
+-                                yield return SendDataInternal(data, tuple);
++                                yield return SendDataForConnectionAsync(tuple);
+                             }
+                         }
+ 
+@@ -198,12 +202,19 @@ namespace MediaBrowser.Controller.Net
+             }
+         }
+ 
+-        private async Task SendDataInternal(TReturnDataType data, (IWebSocketConnection Connection, CancellationTokenSource CancellationTokenSource, TStateType State) tuple)
++        private async Task SendDataForConnectionAsync((IWebSocketConnection Connection, CancellationTokenSource CancellationTokenSource, TStateType State) tuple)
+         {
+             try
+             {
+                 var (connection, cts, state) = tuple;
+                 var cancellationToken = cts.Token;
++
++                var data = await GetDataToSendForConnection(connection).ConfigureAwait(false);
++                if (data is null)
++                {
++                    return;
++                }
++
+                 await connection.SendAsync(
+                     new OutboundWebSocketMessage<TReturnDataType> { MessageType = Type, Data = data },
+                     cancellationToken).ConfigureAwait(false);
 
- function subscribeToPlayerUpdates(instance) {
