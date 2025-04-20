@@ -1,0 +1,21 @@
+diff --git a/src/plugins/sessionPlayer/plugin.js b/src/plugins/sessionPlayer/plugin.js
+index 32c24ce7e..fdc73ad39 100644
+--- a/src/plugins/sessionPlayer/plugin.js
++++ b/src/plugins/sessionPlayer/plugin.js
+@@ -234,11 +234,11 @@ function getChangedEvents(oldPlayerData, newPlayerData) {
+ function onPollIntervalFired() {
+     const instance = this;
+     const apiClient = getCurrentApiClient(instance);
+-    if (!apiClient.isMessageChannelOpen()) {
+-        apiClient.getSessions().then(function (sessions) {
+-            processUpdatedSessions(instance, sessions, apiClient);
+-        });
+-    }
++    //if (!apiClient.isMessageChannelOpen()) {
++    //    apiClient.getSessions().then(function (sessions) {
++    //        processUpdatedSessions(instance, sessions, apiClient);
++    //    });
++    //}
+ }
+
+ function subscribeToPlayerUpdates(instance) {
