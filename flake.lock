@@ -509,17 +509,17 @@
     },
     "nixpkgs-yabridge-wine": {
       "locked": {
-        "lastModified": 1735554305,
-        "narHash": "sha256-zExSA1i/b+1NMRhGGLtNfFGXgLtgo+dcuzHzaWA6w3Q=",
+        "lastModified": 1728233304,
+        "narHash": "sha256-kcyaiW/Vdp9NihhnBZxLWguRU8m3BAGo6BKz8/91zxY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0e82ab234249d8eee3e8c91437802b32c74bb3fd",
+        "rev": "e62d2eba7dbadce5dd2da2a78d9c989f9ef9e179",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0e82ab234249d8eee3e8c91437802b32c74bb3fd",
+        "rev": "e62d2eba7dbadce5dd2da2a78d9c989f9ef9e179",
         "type": "github"
       }
     },
