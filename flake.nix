@@ -7,6 +7,7 @@
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
     nixpkgs-php74.url = "github:nixos/nixpkgs?ref=ba45a559b5c42e123af07272b0241a73dcfa03b0";
     nixpkgs-php8.url = "github:nixos/nixpkgs?ref=e6a26b900caddb8c2a033b7fb65c0971ab129664";
+    nixpkgs-yabridge-wine.url = "github:NixOS/nixpkgs/0e82ab234249d8eee3e8c91437802b32c74bb3fd";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -73,6 +74,9 @@
           "openssl-1.1.1u"
         ];
       };
+      pkgs-yabridge = import inputs.nixpkgs-yabridge-wine {
+        inherit system;
+      };
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
@@ -92,7 +96,7 @@
       };
       nixosConfigurations.nixos-pc = let unstable = pkgs; in nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable pkgs-php74; };
+        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable pkgs-php74 pkgs-yabridge; };
         modules = [
           ./nixos-installs/nixos-pc.nix
           inputs.musnix.nixosModules.musnix
