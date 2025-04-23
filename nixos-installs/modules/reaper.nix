@@ -1,12 +1,12 @@
-{ pkgs, lib, ... }: {
+{ pkgs, pkgs-stable, lib, ... }: {
   environment.systemPackages = [ 
     pkgs.reaper
     pkgs.vital
     pkgs.samplv1
     pkgs.distrho-ports
     pkgs.carla
-    pkgs.yabridge
-    pkgs.yabridgectl
+    pkgs-stable.yabridge
+    pkgs-stable.yabridgectl
  ];
 
   
