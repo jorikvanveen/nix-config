@@ -25,6 +25,7 @@
 
       ./modules/xanmod-kernel.nix
       ./modules/services/apache-php.nix
+      ./modules/reaper.nix
     ];
 
 

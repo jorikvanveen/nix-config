@@ -37,10 +37,6 @@
 
     pinned-pkgs.qgis-ltr
 
-    pkgs.reaper
-    pkgs.vital
-    pkgs.samplv1
-    pkgs.distrho-ports
 
     # Module 9 Stuff
     pkgs.vscode
