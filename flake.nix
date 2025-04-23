@@ -32,6 +32,8 @@
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
+
+    musnix.url = "github:musnix/musnix";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -93,6 +95,7 @@
         specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable pkgs-php74; };
         modules = [
           ./nixos-installs/nixos-pc.nix
+          inputs.musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "hmbak";
