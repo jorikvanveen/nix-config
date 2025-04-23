@@ -1,5 +1,4 @@
 { pkgs, pkgs-yabridge, lib, ... }: let
-  yabridge = pkgs.wineWowPackages.yabridge;
 in {
   environment.systemPackages = [ 
     pkgs.reaper
@@ -7,7 +6,8 @@ in {
     pkgs.samplv1
     pkgs.distrho-ports
     pkgs.carla
-    yabridge 
+    (pkgs.yabridge.override { wine = pkgs.wineWowPackages.waylandFull; })
+    (pkgs.yabridgectl.override { wine = pkgs.wineWowPackages.waylandFull; })
     #(pkgs.yabridgectl.override { inherit yabridge; })
  ];
 
