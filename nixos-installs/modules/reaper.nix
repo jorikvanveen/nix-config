@@ -5,8 +5,8 @@
     pkgs.samplv1
     pkgs.distrho-ports
     pkgs.carla
-    pkgs-stable.yabridge
-    pkgs-stable.yabridgectl
+    pkgs.wineWowPackages.yabridge
+    pkgs.yabridgectl
  ];
 
   
