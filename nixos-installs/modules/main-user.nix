@@ -15,6 +15,8 @@
       "caddy"
       "minecraft"
       "fuse"
+      "audio"
+      "realtime"
     ];
     shell = pkgs.nushell;
     useDefaultShell = true;
