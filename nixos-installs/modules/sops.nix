@@ -13,6 +13,8 @@
     hoarder-nextauth-secret = {};
     hoarder-meili-master = {};
     hoarder-openai-key = {};
+    spottarr-usenet-name = {};
+    spottarr-usenet-pw = {};
   };
 }
 

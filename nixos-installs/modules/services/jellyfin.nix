@@ -1,8 +1,4 @@
 { pkgs, pkgs-stable, pinned-pkgs, ... }: {  # Enable vaapi on OS-level
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-
   services.jellyfin = {
     enable = true;
     user = "main";
@@ -10,33 +6,29 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = (pkgs.jellyfin.override {
-      jellyfin-web = (pkgs.jellyfin-web.overrideAttrs (oldAttrs: {
-        fixupPhase = ''
-          ${oldAttrs.fixupPhase or ""}
-          
-          echo "Patching config.json"
-          patch -p1 ${./jellyfin-rq-link.patch}
-        '';
-
-      }));
-    });
+    package = (pkgs.jellyfin.overrideAttrs (oldAttrs: {
+      patches = [
+        ./jellyfin-fix-remote-control.patch
+      ];
+    }));
   };
 
+  environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
   systemd.services.jellyfin = {
+    environment.LIBVA_DRIVER_NAME = "iHD";
     serviceConfig = {
       SupplementaryGroups = [ "users" "video" ];
     };
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = [
       pkgs.intel-media-driver
       pkgs.intel-media-sdk
-      pkgs.intel-vaapi-driver
-      pkgs.vaapiVdpau
-      pkgs-stable.intel-compute-runtime
+      pkgs.libva-vdpau-driver
+      pkgs.intel-compute-runtime-legacy1
+      pkgs.intel-ocl
     ];
   };
 }
