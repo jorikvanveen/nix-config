@@ -5,7 +5,7 @@
   #    sha256 = "sha256:1fc5gq6yhah97i06lpy5anzaydp2xln78pgcgxiwwiyb2098lmwx";
   #  };
   #});
-  wine = pkgs.wineWowPackages.yabridge;
+  wine = pkgs-yabridge.wineWowPackages.yabridge;
 in {
   environment.systemPackages = [ 
     pkgs.reaper
@@ -13,8 +13,8 @@ in {
     pkgs.samplv1
     pkgs.distrho-ports
     pkgs.carla
-    (pkgs.yabridge.override { inherit wine; })
-    (pkgs.yabridgectl.override { inherit wine; })
+    (pkgs-yabridge.yabridge.override { inherit wine; })
+    (pkgs-yabridge.yabridgectl.override { inherit wine; })
     #(pkgs.yabridge.override { wine = pkgs.wineWowPackages.stagingFull; })
     #(pkgs.yabridgectl.override { wine = pkgs.wineWowPackages.stagingFull; })
     #(pkgs.yabridgectl.override { inherit yabridge; })

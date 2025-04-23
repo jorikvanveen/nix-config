@@ -7,7 +7,7 @@
     nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
     nixpkgs-php74.url = "github:nixos/nixpkgs?ref=ba45a559b5c42e123af07272b0241a73dcfa03b0";
     nixpkgs-php8.url = "github:nixos/nixpkgs?ref=e6a26b900caddb8c2a033b7fb65c0971ab129664";
-    nixpkgs-yabridge-wine.url = "github:NixOS/nixpkgs/e62d2eba7dbadce5dd2da2a78d9c989f9ef9e179";
+    nixpkgs-yabridge-wine.url = "github:NixOS/nixpkgs/893c611d9ca0581cda04ddd7ff34d4973e35cca0";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
