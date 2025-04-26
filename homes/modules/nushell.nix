@@ -5,7 +5,7 @@
     shellAliases = {
       vi = "nvim";
       vim = "nvim";
-      cd = "z";
+      #cd = "z";
       t = "tmux";
       ta = "tmux a";
     };
