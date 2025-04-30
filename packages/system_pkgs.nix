@@ -23,6 +23,7 @@
     pkgs.jellyfin-media-player
     pkgs.feishin
     pkgs.nicotine-plus
+    pkgs.ffmpeg
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {

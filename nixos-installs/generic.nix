@@ -28,6 +28,7 @@
     ./modules/ntfs-support.nix
     ./modules/bottles.nix
     ./modules/calibre.nix
+    ./modules/audacity.nix
     ../packages/system_pkgs.nix
   ];
 }
