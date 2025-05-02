@@ -8,7 +8,9 @@
   wine = pkgs-yabridge.wineWowPackages.yabridge;
 in {
   environment.systemPackages = [ 
-    pkgs.reaper
+    (pkgs.reaper.overrideAttrs {
+
+    })
     pkgs.vital
     pkgs.samplv1
     pkgs.distrho-ports
