@@ -8,13 +8,13 @@
   wine = pkgs-yabridge.wineWowPackages.yabridge;
 in {
   environment.systemPackages = [ 
-    (pkgs.reaper.overrideAttrs {
-
-    })
+    pkgs.reaper
     pkgs.vital
     pkgs.samplv1
     pkgs.distrho-ports
     pkgs.carla
+    pkgs.reaper-sws-extension
+    pkgs.reaper-reapack-extension
     (pkgs-yabridge.yabridge.override { inherit wine; })
     (pkgs-yabridge.yabridgectl.override { inherit wine; })
     #(pkgs.yabridge.override { wine = pkgs.wineWowPackages.stagingFull; })
