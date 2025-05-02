@@ -13,4 +13,9 @@
     source = "${pkgs.reaper-sws-extension}/Scripts/sws_python64.py";
     target = "${homedir}/.config/REAPER/Scripts/sws_python64.py";
   };
+
+  home.file.reapack = {
+    source = "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
+    target = "${homedir}/.config/REAPER/UserPlugins/reaper_reapack-x86_64.so";
+  };
 }
