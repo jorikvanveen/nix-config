@@ -19,6 +19,7 @@
       "application/xhtml+xml" = "zen-beta.desktop";
       "application/x-extension-xhtml" = "zen-beta.desktop";
       "application/pdf" = "org.gnome.Evince.desktop";
+      "inode/directory" = "org.gnome.Nautilus.desktop";
     };
   };
 }
