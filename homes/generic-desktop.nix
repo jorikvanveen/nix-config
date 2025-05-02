@@ -8,6 +8,7 @@
     ./modules/heroic.nix
     ./modules/moonlight.nix
     ./modules/archive-tools.nix
+    ./modules/additional-fonts.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix
