@@ -28,6 +28,8 @@ in {
           wrapProgram $out/opt/REAPER/reaper \
             --prefix LD_LIBRARY_PATH : "${
               with pkgs; lib.makeLibraryPath [
+                gtk3
+                gtk4
                 curl
                 lame
                 libxml2
