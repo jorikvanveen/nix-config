@@ -18,7 +18,6 @@
       "audio"
       "realtime"
     ];
-    shell = pkgs.nushell;
-    useDefaultShell = true;
+    #useDefaultShell = true;
   };
 }
