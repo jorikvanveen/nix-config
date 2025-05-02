@@ -8,11 +8,7 @@
   wine = pkgs-yabridge.wineWowPackages.yabridge;
 in {
   environment.systemPackages = [ 
-    (pkgs.reaper.overrideAttrs (oldAttrs: {
-      #postInstall = oldAttrs.postInstall ++ ''
-      #  cp ${pkgs.reaper-sws-extension} 
-      #'';
-    }))
+    pkgs.reaper
     pkgs.vital
     pkgs.samplv1
     pkgs.distrho-ports
