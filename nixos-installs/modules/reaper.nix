@@ -7,6 +7,7 @@
   #});
   wine = pkgs-yabridge.wineWowPackages.yabridge;
 in {
+  networking.firewall.allowedTCPPorts = [ 58710 ];
   environment.systemPackages = [ 
     (pkgs.reaper.overrideAttrs (oldAttrs: {
         installPhase = ''
