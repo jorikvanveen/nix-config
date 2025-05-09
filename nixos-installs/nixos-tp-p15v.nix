@@ -32,6 +32,7 @@
   #services.kubo.settings.Addresses.Gateway = lib.mkForce "/ip4/127.0.0.1/tcp/8080";
   networking.hostName = "nixos-laptop"; # Define your hostname.
 
+  musnix.enable = true;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 

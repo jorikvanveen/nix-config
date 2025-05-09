@@ -86,10 +86,11 @@
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable pkgs-php74 pkgs-php8; };
+        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable pkgs-php74 pkgs-php8 pkgs-yabridge; };
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
+          inputs.musnix.nixosModules.musnix
           {
             home-manager.backupFileExtension = "hmbak";
             home-manager.extraSpecialArgs = { inherit homedir syncdir pkgs-stable; };
