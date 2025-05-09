@@ -12,7 +12,7 @@
     pkgs.kdePackages.breeze
     pkgs.planify
     pkgs.vlc
-    pkgs.signal-desktop
+    pkgs.signal-desktop-bin
     pkgs.thunderbird
     pkgs.mullvad-vpn
     pkgs.vesktop

@@ -49,9 +49,13 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        config.allowInsecure = true;
 
-        # Required to use sonarr at all as of 8 jan 2025 (yikes)
-        nixpkgs.config.permittedInsecurePackages = [
+        config.permittedInsecurePackages = [
+          # Idk what requires this but i need it (8 may 2025)
+          "electron-33.4.11"
+
+          # Required to use sonarr at all as of 8 jan 2025 (yikes)
           "dotnet-sdk-6.0.428"
         ];
       };
@@ -59,8 +63,9 @@
         inherit system;
         config.allowUnfree = true;
 
-        # Required to use sonarr at all as of 8 jan 2025 (yikes)
-        nixpkgs.config.permittedInsecurePackages = [
+        config.permittedInsecurePackages = [
+          "electron-33.4.11"
+          # Required to use sonarr at all as of 8 jan 2025 (yikes)
           "dotnet-sdk-6.0.428"
         ];
       };
@@ -101,6 +106,11 @@
           ./nixos-installs/nixos-pc.nix
           inputs.musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
+          {
+            nixpkgs.config.permittedInsecurePackages = [
+              "electron-33.4.11"
+            ];
+          }
           {
             home-manager.backupFileExtension = "hmbak";
             home-manager.extraSpecialArgs = { inherit homedir pkgs-stable; };

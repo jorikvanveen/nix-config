@@ -1,4 +1,4 @@
-{
+{ lib, ... }: {
   imports = [
     ./stylix-custom-nu.nix
   ];
@@ -6,4 +6,5 @@
   stylix.targets.vesktop.enable = true;
   stylix.targets.forge.enable = true;
   stylix.targets.ghostty.enable = true;
+  stylix.targets.mako.enable = lib.mkForce false;
 }

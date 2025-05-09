@@ -50,6 +50,7 @@ in {
     pkgs.samplv1
     pkgs.distrho-ports
     pkgs.carla
+    pkgs.qpwgraph
     #pkgs.reaper-sws-extension
     #pkgs.reaper-reapack-extension
     (pkgs-yabridge.yabridge.override { inherit wine; })
