@@ -2,6 +2,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
+      command = "nu";
       keybind = [
         "clear"
         "ctrl+t=new_tab"

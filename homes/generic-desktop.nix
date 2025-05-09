@@ -8,6 +8,7 @@
     ./modules/heroic.nix
     ./modules/moonlight.nix
     ./modules/archive-tools.nix
+    ./modules/additional-fonts.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix
@@ -17,5 +18,6 @@
     ./modules/dconf/keyboard-layout.nix
     ./modules/dconf/no-middle-click-paste.nix
     ./modules/dconf/window-prefs.nix
+    ./modules/dconf/mutter-alive-timeout.nix
   ];
 }
