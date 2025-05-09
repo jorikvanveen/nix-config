@@ -48,26 +48,9 @@
       };
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
-        config.allowInsecure = true;
-
-        config.permittedInsecurePackages = [
-          # Idk what requires this but i need it (8 may 2025)
-          "electron-33.4.11"
-
-          # Required to use sonarr at all as of 8 jan 2025 (yikes)
-          "dotnet-sdk-6.0.428"
-        ];
       };
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
-        config.allowUnfree = true;
-
-        config.permittedInsecurePackages = [
-          "electron-33.4.11"
-          # Required to use sonarr at all as of 8 jan 2025 (yikes)
-          "dotnet-sdk-6.0.428"
-        ];
       };
       pkgs-php74 = import inputs.nixpkgs-php74 {
         inherit system;
@@ -91,6 +74,11 @@
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
           inputs.musnix.nixosModules.musnix
+          {
+            nixpkgs.config.permittedInsecurePackages = [
+              "electron-33.4.11"
+            ];
+          }
           {
             home-manager.backupFileExtension = "hmbak";
             home-manager.extraSpecialArgs = { inherit homedir syncdir pkgs-stable; };
