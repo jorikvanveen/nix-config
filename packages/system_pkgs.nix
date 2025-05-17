@@ -10,7 +10,7 @@
     pkgs.nixd
     pkgs.skia
     pkgs.kdePackages.breeze
-    pkgs.planify
+    pkgs-stable.planify
     pkgs.vlc
     pkgs.signal-desktop-bin
     pkgs.thunderbird
