@@ -85,7 +85,7 @@
       {
         context = "Workspace";
         bindings = {
-          ctrl-n = "worspace::ToggleLeftDock";
+          #ctrl-n = "worspace::ToggleLeftDock";
           alt-w = "diagnostics::ToggleWarnings";
         };
       }

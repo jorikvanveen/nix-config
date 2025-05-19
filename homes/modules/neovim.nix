@@ -23,8 +23,6 @@ in {
       cmp_luasnip
       harpoon
       oil-nvim
-    ] ++ [
-      pkgs-stable.vimPlugins.coq_nvim # Broken in unstable as of 6 feb 2025
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
