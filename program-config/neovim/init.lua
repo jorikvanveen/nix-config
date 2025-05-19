@@ -121,6 +121,7 @@ vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end)
 vim.keymap.set("n", "E", function() vim.diagnostic.open_float() end)
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
 vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end)
+vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format() end)
 
 vim.diagnostic.config({
   float = {
