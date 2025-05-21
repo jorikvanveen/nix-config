@@ -88,11 +88,6 @@ require'telescope'.setup {
   }
 }
 
--- COQ: Completion provider
--- Requests completions from LSP and displays them to you in the editor
-local coq = require("coq")
-vim.cmd("COQnow --shut-up")
-
 -- LSPCONFIG
 local lsps = {
   rust_analyzer = {},
@@ -125,7 +120,7 @@ local lsps = {
 };
 
 for lsp,config in pairs(lsps) do
-  vim.lsp.config(lsp, coq.lsp_ensure_capabilities(config))
+  -- vim.lsp.config(lsp, coq.lsp_ensure_capabilities(config))
   vim.lsp.enable(lsp)
 end
 
@@ -164,4 +159,6 @@ vim.keymap.set("n", "<leader>0", function() require("harpoon.ui").nav_file(10) e
 
 -- FIDGET
 require("fidget").setup {}
+
+require("blink.cmp").setup {}
 

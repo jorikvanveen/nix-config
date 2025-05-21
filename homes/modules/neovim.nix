@@ -24,6 +24,7 @@ in {
       harpoon
       oil-nvim
       coq_nvim
+      blink-cmp
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
