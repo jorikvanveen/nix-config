@@ -109,7 +109,8 @@ local lsps = {
   tinymist = {},
   markdown_oxide = {},
   pyright = {},
-  gopls = {}
+  gopls = {},
+  vtsls = {}
 };
 
 for lsp,config in pairs(lsps) do
