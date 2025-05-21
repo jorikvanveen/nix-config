@@ -3,8 +3,6 @@
     enable = true;
     extensions = [
       "html"
-      # Remove when stylix supports zed
-      "catppuccin"
       "toml"
       "git-firefly"
       "sql"
@@ -21,8 +19,6 @@
     ];
 
     userSettings = {
-      # Remove when stylix supports zed
-      theme = "Catppuccin Mocha";
       vim_mode = true;
       ui_font_size = 14;
       buffer_font_size = 14;
