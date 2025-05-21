@@ -34,6 +34,7 @@
       ./modules/services/ssh.nix
       ./modules/reaper.nix
       ./modules/vinegar.nix
+      ./modules/input-remapper.nix
     ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
