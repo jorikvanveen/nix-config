@@ -125,7 +125,7 @@ local lsps = {
 };
 
 for lsp,config in pairs(lsps) do
-  require("lspconfig")[lsp].setup(coq.lsp_ensure_capabilities(config))
+  vim.lsp.config(lsp, coq.lsp_ensure_capabilities(config))
 end
 
 vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end)
