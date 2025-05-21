@@ -20,14 +20,14 @@
 
     userSettings = {
       vim_mode = true;
-      ui_font_size = 14;
-      buffer_font_size = 14;
+      #ui_font_size = 14;
+      #buffer_font_size = 14;
       # Enable ligatures
       buffer_font_features.calt = true;
       relative_line_numbers = true;
       # Remove when stylix supports zed
-      ui_font_family = "SFMono Nerd Font";
-      buffer_font_family = "SFMono Nerd Font";
+      #ui_font_family = "SFMono Nerd Font";
+      #buffer_font_family = "SFMono Nerd Font";
       tab_bar.show = false;
       base_keymap = "VSCode";
       cursor_blink = false;

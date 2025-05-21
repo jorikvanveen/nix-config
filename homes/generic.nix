@@ -6,7 +6,6 @@
     ./modules/nushell.nix
     ./modules/direnv.nix
     ./modules/custom_lsd.nix
-    ./modules/alacritty.nix
     ./modules/neovim.nix
     ./modules/syncthing-ignore.nix
     ./modules/zoxide.nix
