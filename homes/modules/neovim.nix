@@ -23,6 +23,7 @@ in {
       cmp_luasnip
       harpoon
       oil-nvim
+      coq_nvim
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
