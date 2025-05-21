@@ -160,5 +160,9 @@ vim.keymap.set("n", "<leader>0", function() require("harpoon.ui").nav_file(10) e
 -- FIDGET
 require("fidget").setup {}
 
-require("blink.cmp").setup {}
+require("blink.cmp").setup {
+  keymap = {
+    preset = "enter"
+  }
+}
 
