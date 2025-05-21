@@ -110,7 +110,8 @@ local lsps = {
   markdown_oxide = {},
   pyright = {},
   gopls = {},
-  vtsls = {}
+  vtsls = {},
+  tailwindcss = {}
 };
 
 for lsp,config in pairs(lsps) do
