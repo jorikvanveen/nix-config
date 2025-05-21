@@ -12,6 +12,7 @@
       "signon.rememberSignons" = false;
       "app.shield.optoutstudies.enabled" = false;
       "datareporting.healthreport.uploadEnabled" = false;
+      "middleclick.paste" = false;
     };
     bookmarks = [
       {
