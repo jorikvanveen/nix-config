@@ -1,7 +1,7 @@
 { spicetify-nix, ... }: {
   imports = [
     ./modules/locale.nix
-    ./modules/gnome.nix
+    ./modules/niri.nix
     ./modules/x11-keymap.nix
     ./modules/cups.nix
     ./modules/pipewire.nix
