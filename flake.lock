@@ -507,6 +507,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-linux6-14-6": {
+      "locked": {
+        "lastModified": 1747132366,
+        "narHash": "sha256-wYLxU3nvIa30gNok5MzXBKxANYyje0jLjbiVVeZeolg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "64458d571301c14aaaa8e70c925ccaae04f97ea7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "64458d571301c14aaaa8e70c925ccaae04f97ea7",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-php74": {
       "locked": {
         "lastModified": 1649873228,
@@ -649,6 +665,7 @@
         "musnix": "musnix",
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-linux6-14-6": "nixpkgs-linux6-14-6",
         "nixpkgs-php74": "nixpkgs-php74",
         "nixpkgs-php8": "nixpkgs-php8",
         "nixpkgs-pinned": "nixpkgs-pinned",

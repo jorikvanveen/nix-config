@@ -116,7 +116,8 @@ local lsps = {
       "javascript", "javascriptreact", "reason", "rescript", "typescript",
       "typescriptreact", "vue", "svelte", "templ"
     }
-  }
+  },
+  omnisharp = {}
 };
 
 for lsp,config in pairs(lsps) do
