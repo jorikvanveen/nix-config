@@ -1,5 +1,6 @@
 { spicetify-nix, ... }: {
   imports = [
+    ./modules/lix.nix
     ./modules/locale.nix
     ./modules/niri.nix
     ./modules/x11-keymap.nix
