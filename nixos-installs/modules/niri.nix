@@ -19,5 +19,5 @@ in {
   services.xserver.displayManager.gdm.enable = lib.mkDefault true;
   services.blueman.enable = true;
   environment.systemPackages =
-    [ pkgs.fuzzel pkgs.swaylock xwayland-satellite ];
+    [ pkgs.fuzzel pkgs.swaylock xwayland-satellite pkgs.pavucontrol ];
 }
