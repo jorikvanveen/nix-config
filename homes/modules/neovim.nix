@@ -25,6 +25,7 @@ in {
       oil-nvim
       coq_nvim
       blink-cmp
+      yuck-vim
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
@@ -50,6 +51,7 @@ in {
       yaml
       zig
       c_sharp
+      yuck
     ]);
   };
 }
