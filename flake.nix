@@ -48,9 +48,11 @@
       };
       pkgs = import nixpkgs {
         inherit system;
+        config.allowUnfree = true;
       };
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
+        config.allowUnfree = true;
       };
       pkgs-php74 = import inputs.nixpkgs-php74 {
         inherit system;
@@ -116,13 +118,17 @@
           inherit system;
           config.allowUnfree = true;
         };
+
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
       in nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs homedir syncdir unstable pkgs-stable pinned-pkgs; };
         modules = [
           {
             nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
-
           }
           ./nixos-installs/nixos-homelab.nix
           home-manager.nixosModules.home-manager
