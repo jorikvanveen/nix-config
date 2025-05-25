@@ -2,7 +2,7 @@ import { AstalIO, interval, Process, subprocess, timeout, Variable } from "astal
 import { Gtk } from "astal/gtk3";
 import { LevelBar, Overlay, Slider } from "astal/gtk3/widget";
 import Wp from "gi://AstalWp";
-import Astal30 from "gi://Astal";
+import Mpris from "gi://AstalMpris";
 
 interface Measurement {
 
@@ -65,6 +65,12 @@ export default function Audio() {
   function onVolumeDragged(slider: Slider) {
     Wp.get_default()?.audio.get_default_speaker()?.set_volume(slider.get_value())
   }
+
+  const spotify = Mpris.Player.new("spotify")
+
+  interval(1000, () => {
+    console.log(spotify.get_cover_art())
+  })
 
   const bar = <LevelBar
     margin={20}

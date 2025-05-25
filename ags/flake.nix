@@ -19,6 +19,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     shell_deps = [
       pkgs.astal.wireplumber
+      pkgs.astal.mpris
       pkgs.jack_capture
     ];
   in {
@@ -38,6 +39,7 @@
       default = pkgs.mkShell {
         buildInputs = [
           pkgs.vtsls
+          pkgs.nodejs
           # includes astal3 astal4 astal-io by default
           (ags.packages.${system}.default.override {
             extraPackages = shell_deps;

@@ -24,7 +24,7 @@ in {
   systemd.user.services.ags-bar = {
     wantedBy = [ "graphical-session.target" ];
     script = "${ags-bar}/bin/my-shell";
-    path = [ pkgs.bash pkgs.niri pkgs.ffmpeg pkgs.jack_capture ];
+    path = [ pkgs.bash pkgs.niri pkgs.ffmpeg pkgs.jack_capture pkgs.gvfs ];
     serviceConfig = {
       Restart = "always";
       RestartSec = "2s";
