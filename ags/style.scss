@@ -37,6 +37,10 @@ $base16-blue: #89b4fa;
 $base16-mauve: #cba6f7;
 $base16-flamingo: #f2cdcd;
 
+* {
+  margin: 0;
+  padding: 0;
+}
 window.Bar {
     background: transparent;
     color: $fg-color;
@@ -61,6 +65,7 @@ window.Bar {
       outline: 0 solid transparent;
       outline-offset: 10px;
     }
+
     .progress {
       color: $base16-blue;
       font-size: 4px;
@@ -83,14 +88,21 @@ window.Bar {
       border-radius: 5px;
     }
 
+    .audiolevel trough {
+      margin-left: 20px;
+      margin-right: 20px;
+      background-color: #cdd6f455;
+    }
+
     .volume-slider {
       highlight, trough {
         background: none;
       }
 
       slider {
-        background-color: $base16-surface2;
-        box-shadow: none;
+        background-color: $base16-surface0;
+        border: solid 3px $base16-text;
+        box-shadow: 0 0 4px 1px $base16-surface0;
       }
     }
 
@@ -138,5 +150,32 @@ window.Bar {
 
     .pill.icondown {
       padding-top: 12px;
+    }
+
+    .mpris-cover-overlay {
+      background-color: rgba(30, 30, 46, 0.65);   
+    }
+
+    .audio-container {
+      border-radius: 30px;
+      margin: 2px;
+      margin-bottom: 4px;
+      box-shadow: 0 0 3px $base16-surface2;
+      //border: solid 2px $base16-surface2;
+
+      > * {
+        border-radius: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+
+    .audio-playbutton {
+      font-size: 20px;
+      margin-left: 8px;
+      margin-right: 8px;
+      margin-top: 4px;
+      min-height: 35px;
+      border-radius: 20px;
     }
 }

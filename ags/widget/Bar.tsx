@@ -20,7 +20,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
     anchor={TOP | LEFT | BOTTOM}
     application={App}>
     <centerbox orientation={Gtk.Orientation.VERTICAL} widthRequest={50}>
-      <box widthRequest={50} vexpand halign={Gtk.Align.CENTER} valign={Gtk.Align.START} orientation={Gtk.Orientation.VERTICAL}>
+      <box height_request={500} vexpand halign={Gtk.Align.CENTER} valign={Gtk.Align.START} orientation={Gtk.Orientation.VERTICAL}>
         <Label
           widthRequest={50}
           justify={Gtk.Justification.CENTER}
@@ -29,7 +29,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           className="nix-logo"
           xalign={0.23}
         >{"\udb84\udd05"}</Label>
-        <box valign={Gtk.Align.END} height_request={200} marginStart={3}>
+        <box marginTop={20} valign={Gtk.Align.END} height_request={200}>
           <Audio />
         </box>
       </box>

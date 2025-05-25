@@ -21,6 +21,7 @@
       pkgs.astal.wireplumber
       pkgs.astal.mpris
       pkgs.jack_capture
+      pkgs.gvfs
     ];
   in {
     packages.${system} = {

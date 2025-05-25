@@ -1,18 +1,14 @@
-import { AstalIO, interval, Process, subprocess, timeout, Variable } from "astal"
+import { AstalIO, exec, interval, Process, subprocess, timeout, Variable } from "astal"
 import { Gtk } from "astal/gtk3";
-import { LevelBar, Overlay, Slider } from "astal/gtk3/widget";
+import { Label, LevelBar, Overlay, Slider } from "astal/gtk3/widget";
 import Wp from "gi://AstalWp";
 import Mpris from "gi://AstalMpris";
-
-interface Measurement {
-
-}
 
 function spawnCaptureProcess(loudness: Variable<number>): AstalIO.Process {
   return subprocess([
     "bash",
     "-c",
-    "jack_capture -p system:* -ws | ffmpeg -fflags nobuffer -f s16le -i - -filter_complex ebur128=peak=true -f null - 2>&1"
+    "jack_capture -p system:monitor* -ws | ffmpeg -fflags nobuffer -f s16le -i - -filter_complex ebur128=peak=true -f null - 2>&1"
   ], (out) => {
     if (!out.startsWith("[Parsed_ebur128_0")) {
       return
@@ -44,9 +40,25 @@ function spawnCaptureProcess(loudness: Variable<number>): AstalIO.Process {
   })
 }
 
+interface NiriWindow {
+  id: number,
+  title: string,
+  app_id: string,
+  pid: number,
+  is_focused: boolean,
+  is_floating: boolean,
+  is_urgent: boolean
+}
+
 export default function Audio() {
   let loudness_10hz = new Variable(0);
   let captureProcess = spawnCaptureProcess(loudness_10hz)
+  let spotifyId = new Variable<null | number>(null).poll(5000, () => {
+    const windows = JSON.parse(exec(["niri", "msg", "-j", "windows"])) as NiriWindow[]
+    const spotifyIdx = windows.findIndex(window => window.app_id == "Spotify")
+    if (spotifyIdx < 0) return null
+    return windows[spotifyIdx].id
+  })
 
   let loudness_interpolated = new Variable(0).poll(1000 / 60, (prev) => {
     return prev - (prev - loudness_10hz.get()) / 10
@@ -54,9 +66,9 @@ export default function Audio() {
 
   const default_speaker_path = new Variable("").poll(1000, () => Wp.get_default()?.audio.get_default_speaker()?.path ?? "");
   default_speaker_path.subscribe(_ => {
-     captureProcess.write("\n")
-     captureProcess.kill()
-     captureProcess = spawnCaptureProcess(loudness_10hz)
+    captureProcess.write("\n")
+    captureProcess.kill()
+    captureProcess = spawnCaptureProcess(loudness_10hz)
   })
 
   let default_sink_volume = new Variable(0).poll(1, () => Wp.get_default()?.audio.get_default_speaker()?.get_volume() ?? 0)
@@ -67,15 +79,25 @@ export default function Audio() {
   }
 
   const spotify = Mpris.Player.new("spotify")
+  const cover_url = Variable("");
 
   interval(1000, () => {
-    console.log(spotify.get_cover_art())
+    if (spotify.available) {
+      cover_url.set(spotify.get_cover_art())
+      console.log(spotify.get_bus_name())
+    }
   })
 
+  function openSpotify() {
+    const id = spotifyId.get()
+    if (id) {
+      exec(["niri", "msg", "action", "focus-window", "--id", id.toString()])
+    }
+  }
+
   const bar = <LevelBar
-    margin={20}
-    marginTop={4}
-    widthRequest={5}
+    widthRequest={1}
+    height_request={100}
     className="audiolevel"
     orientation={Gtk.Orientation.VERTICAL}
     inverted
@@ -88,8 +110,32 @@ export default function Audio() {
   bar.remove_offset_value("high")
   bar.add_offset_value("high", 0.8)
 
-  return <Overlay hexpand={false} halign={Gtk.Align.END}>
-    {bar}
-    <Slider className="volume-slider" onDragged={onVolumeDragged} value={default_sink_volume()} marginTop={10} marginBottom={10} orientation={Gtk.Orientation.VERTICAL} inverted />
-  </Overlay>
+  bar.add_offset_value("low", 0.5)
+
+  return <box orientation={Gtk.Orientation.VERTICAL}>
+    <centerbox
+      height_request={150}
+      hexpand
+      className="audio-container"
+      css={cover_url(url => `background-image: url('${url}'); background-position: center center; background-size: cover`)}
+    >
+      <centerbox hexpand className="mpris-cover-overlay">
+        <Overlay hexpand>
+          {bar}
+          <Slider
+            height_request={80}
+            className="volume-slider"
+            onDragged={onVolumeDragged}
+            value={default_sink_volume()}
+            orientation={Gtk.Orientation.VERTICAL}
+            inverted
+          />
+        </Overlay>
+      </centerbox>
+    </centerbox>
+
+    <button className="audio-playbutton">{"\udb81\udc0a"}</button>
+    {/*pause: "\uf04c"*/}
+    <button className="audio-playbutton" onClick={openSpotify}><Label xalign={0.40}>{"\uf1bc"}</Label></button>
+  </box>
 }
