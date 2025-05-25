@@ -19,6 +19,7 @@ let
 in {
   programs.niri.enable = true;
   services.xserver.displayManager.gdm.enable = lib.mkDefault true;
+  services.gvfs.enable = true;
   services.blueman.enable = true;
   systemd.user.services.ags-bar = {
     wantedBy = [ "graphical-session.target" ];
