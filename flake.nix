@@ -31,6 +31,11 @@
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
 
     musnix.url = "github:musnix/musnix";
+    musnix.inputs.nixpkgs.follows = "nixpkgs";
+
+    ags-shell.url = "path:./ags";
+    ags-shell.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:

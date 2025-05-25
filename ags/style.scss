@@ -1,0 +1,134 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+// Catppuccin mocha:
+// base00: "1e1e2e" # base
+// base01: "181825" # mantle
+// base02: "313244" # surface0
+// base03: "45475a" # surface1
+// base04: "585b70" # surface2
+// base05: "cdd6f4" # text
+// base06: "f5e0dc" # rosewater
+// base07: "b4befe" # lavender
+// base08: "f38ba8" # red
+// base09: "fab387" # peach
+// base0A: "f9e2af" # yellow
+// base0B: "a6e3a1" # green
+// base0C: "94e2d5" # teal
+// base0D: "89b4fa" # blue
+// base0E: "cba6f7" # mauve
+// base0F: "f2cdcd" # flamingo
+
+$base16-base: #1e1e2e;
+$base16-mantle: #181825;
+$base16-surface0: #313244;
+$base16-surface1: #45475a;
+$base16-surface2: #585b70;
+$base16-text: #cdd6f4;
+$base16-rosewater: #f5e0dc;
+$base16-lavender: #b4befe;
+$base16-red: #f38ba8;
+$base16-peach: #fab387;
+$base16-yellow: #f9e2af;
+$base16-green: #a6e3a1;
+$base16-teal: #94e2d5;
+$base16-blue: #89b4fa;
+$base16-mauve: #cba6f7;
+$base16-flamingo: #f2cdcd;
+
+window.Bar {
+    background: transparent;
+    color: $fg-color;
+    font-weight: bold;
+    font-family: "SFMono Nerd Font";
+
+    >centerbox {
+        background: $bg-color;
+        border-radius: 0px;
+        margin: 0;
+        padding: 0;
+        border-right: solid 1px $base16-surface2;
+    }
+
+    button {
+        border-radius: 8px;
+        margin: 2px;
+    }
+
+    .battery {
+      padding: 4px;
+      outline: 0 solid transparent;
+      outline-offset: 10px;
+    }
+    .progress {
+      color: $base16-blue;
+      font-size: 4px;
+    }
+
+    .battery_icon {
+      font-size: 20px;
+    }
+
+    .full {
+      background: $base16-red;
+    }
+
+    .high {
+      background: $base16-green;
+    }
+
+    .audiolevel * {
+      transition: 2s;
+      border-radius: 5px;
+    }
+
+    .volume-slider {
+      highlight, trough {
+        background: none;
+      }
+
+      slider {
+        background-color: $base16-surface2;
+        box-shadow: none;
+      }
+    }
+
+    .nix-logo {
+      //font-size: 36px;
+      outline-width: 0px;
+      font-size: 52px;
+      outline-offset: 0px;
+    }
+
+
+    .ws-btn {
+      transition-duration: .2s;
+      transition-property: min-height;
+      background-color: $base16-surface0;
+      color: $base16-text;
+      border-radius: 20px;
+      min-height: 25px;
+    }
+
+   .active-ws {
+      background-color: $base16-blue;
+      color: $base16-surface0;
+      min-height: 50px;
+    }
+
+    .pill {
+      background-color: $base16-surface0;
+      border-radius: 20px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      label {
+        color: $base16-text;
+      }
+
+      .pill-icon {
+        font-size: 20px;
+      }
+    }
+}
