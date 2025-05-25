@@ -32,7 +32,7 @@ in {
   };
   systemd.user.services.swaybg = {
     wantedBy = [ "graphical-session.target" ];
-    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m center";
+    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m fill";
     serviceConfig = { Restart = "always"; RestartSec = 2; };
   };
   environment.systemPackages =
