@@ -18,13 +18,22 @@ let
   ags-bar = inputs.ags-shell.packages.x86_64-linux.default;
 in {
   programs.niri.enable = true;
-  programs.waybar.enable = true;
   services.xserver.displayManager.gdm.enable = lib.mkDefault true;
   services.blueman.enable = true;
   systemd.user.services.ags-bar = {
-    wantedBy = [ "defaul.target" ];
+    wantedBy = [ "graphical-session.target" ];
     script = "${ags-bar}/bin/my-shell";
+    path = [ pkgs.bash pkgs.niri pkgs.ffmpeg pkgs.jack_capture ];
+    serviceConfig = {
+      Restart = "always";
+      RestartSec = "2s";
+    };
+  };
+  systemd.user.services.swaybg = {
+    wantedBy = [ "graphical-session.target" ];
+    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m center";
+    serviceConfig = { Restart = "always"; RestartSec = 2; };
   };
   environment.systemPackages =
-    [ pkgs.fuzzel pkgs.swaylock xwayland-satellite pkgs.pavucontrol ];
+    [ pkgs.fuzzel pkgs.swaylock xwayland-satellite pkgs.pavucontrol pkgs.swaybg ];
 }
