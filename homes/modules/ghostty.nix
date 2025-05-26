@@ -11,8 +11,8 @@
         "ctrl+q=close_surface"
         "ctrl+shift+c=copy_to_clipboard"
         "ctrl+shift+v=paste_from_clipboard"
-        "ctrl++=increase_font_size"
-        "ctrl+-=decrease_font_size"
+        "ctrl+equal=increase_font_size:1"
+        "ctrl+minus=decrease_font_size:1"
       ];
     };
   };
