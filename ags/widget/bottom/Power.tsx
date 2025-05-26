@@ -3,7 +3,7 @@ import { Gtk } from "astal/gtk3";
 import { EventBox, Label } from "astal/gtk3/widget";
 
 export default function Power() {
-  const expanded = new Variable(true);
+  const expanded = new Variable(false);
 
   function shutdown() {
     exec(["shutdown", "now"])
