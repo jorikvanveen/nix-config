@@ -90,6 +90,9 @@
       "bitwarden.tobeqz-on.top".extraConfig = ''
         reverse_proxy http://localhost:8222
       '';
+      "radicale.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:5232
+      '';
 
     };
   };

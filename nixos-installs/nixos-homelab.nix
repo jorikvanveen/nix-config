@@ -45,6 +45,7 @@
     ./modules/services/vaultwarden.nix
     ./modules/services/hoarder.nix
     ./modules/services/audiobookshelf.nix
+    ./modules/services/radicale.nix
   ];
 
   environment.systemPackages = [

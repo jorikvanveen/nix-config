@@ -15,6 +15,10 @@
     hoarder-openai-key = {};
     spottarr-usenet-name = {};
     spottarr-usenet-pw = {};
+    radicale-htpasswd = {
+      owner = "radicale";
+    };
+    radicale-password = {};
   };
 }
 
