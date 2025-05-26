@@ -58,4 +58,7 @@ in {
     pkgs.gnome-online-accounts
     pkgs.gnome-online-accounts-gtk
   ];
+  services.dbus.packages = [
+    pkgs.gnome-online-accounts
+  ];
 }
