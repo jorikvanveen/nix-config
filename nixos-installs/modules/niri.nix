@@ -49,6 +49,7 @@ in {
     pkgs.evince # pdfs
     pkgs.nautilus # file manager
     pkgs.decibels # audio file player
+    pkgs.celluloid # video player
     pkgs.gnome-characters
     pkgs.gnome-font-viewer
     pkgs.gnome-calendar
