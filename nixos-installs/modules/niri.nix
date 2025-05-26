@@ -19,11 +19,12 @@ let
 in {
   programs.niri.enable = true;
   services.xserver.displayManager.gdm.enable = lib.mkDefault true;
+  services.gvfs.enable = true;
   services.blueman.enable = true;
   systemd.user.services.ags-bar = {
     wantedBy = [ "graphical-session.target" ];
     script = "${ags-bar}/bin/my-shell";
-    path = [ pkgs.bash pkgs.niri pkgs.ffmpeg pkgs.jack_capture ];
+    path = [ pkgs.bash pkgs.niri pkgs.ffmpeg pkgs.jack_capture pkgs.gvfs ];
     serviceConfig = {
       Restart = "always";
       RestartSec = "2s";
@@ -31,7 +32,7 @@ in {
   };
   systemd.user.services.swaybg = {
     wantedBy = [ "graphical-session.target" ];
-    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m center";
+    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m fill";
     serviceConfig = { Restart = "always"; RestartSec = 2; };
   };
   environment.systemPackages =
