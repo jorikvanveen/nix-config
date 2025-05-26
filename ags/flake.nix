@@ -28,6 +28,7 @@
         pkgs.blueman
         pkgs.networkmanager
         pkgs.ghostty
+        pkgs.upower
       ];
     in {
       packages.${system} = {

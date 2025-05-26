@@ -20,7 +20,6 @@ export default function Network() {
     const wired = network.get_wired();
 
     if (wifi && wifi.get_state() == AstalNetwork.DeviceState.ACTIVATED) {
-      console.log(wifi.strength)
       switch (true) {
         case wifi.strength < 20:
           connection.set(Connection.Wifi0)
