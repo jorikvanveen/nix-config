@@ -21,6 +21,9 @@ in {
   services.xserver.displayManager.gdm.enable = lib.mkDefault true;
   services.gvfs.enable = true;
   services.blueman.enable = true;
+  services.gnome.evolution-data-server.enable = true;
+  services.gnome.gnome-online-accounts.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   systemd.user.services.ags-bar = {
     wantedBy = [ "graphical-session.target" ];
     script = "${ags-bar}/bin/my-shell";
