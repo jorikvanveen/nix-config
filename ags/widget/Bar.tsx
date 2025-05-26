@@ -22,6 +22,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
     application={App}>
     <centerbox orientation={Gtk.Orientation.VERTICAL} widthRequest={50}>
       <box orientation={Gtk.Orientation.VERTICAL}>
+        <box orientation={Gtk.Orientation.VERTICAL}>
         <Label
           widthRequest={50}
           justify={Gtk.Justification.CENTER}
@@ -30,6 +31,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           className="nix-logo"
           xalign={0.23}
         >{"\udb84\udd05"}</Label>
+        </box>
         <centerbox vexpand halign={Gtk.Align.CENTER} valign={Gtk.Align.CENTER} orientation={Gtk.Orientation.VERTICAL}>
           <box marginTop={0} valign={Gtk.Align.END} height_request={200}>
             <Audio />
@@ -37,20 +39,20 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         </centerbox>
       </box>
       <box orientation={Gtk.Orientation.VERTICAL}>
-        <Date />
         <Workspaces />
         <Time />
       </box>
       <box valign={Gtk.Align.END} orientation={Gtk.Orientation.VERTICAL} >
+        <Date />
         <box
           spacing={2}
           orientation={Gtk.Orientation.VERTICAL}
           css="padding: 2px 2px; margin: 0 6px; border-radius: 50px"
           className="bg-surface2"
         >
-          <Battery />
           <Network />
           <Bluetooth />
+          <Battery />
         </box>
         <Power />
       </box>
