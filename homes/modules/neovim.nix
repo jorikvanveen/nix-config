@@ -49,6 +49,7 @@ in {
       tsx
       yaml
       zig
+      c_sharp
     ]);
   };
 }

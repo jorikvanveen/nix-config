@@ -1,6 +1,7 @@
 {
   imports = [
     ./modules/stylix.nix
+    ./modules/niri.nix
     ./modules/zed.nix
     ./modules/mime-associations.nix
     ./modules/ghostty.nix

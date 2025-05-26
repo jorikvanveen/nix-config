@@ -15,7 +15,7 @@
 
       ./modules/syncthing-pc.nix
 
-      ./modules/gamescope-specialisation.nix
+      #./modules/gamescope-specialisation.nix
 
       ./modules/cachy-kernel.nix
 

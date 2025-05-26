@@ -1,11 +1,11 @@
-{ pkgs, pkgs-yabridge, lib, ... }: let
+{ pkgs, lib, ... }: let
   #wine = pkgs-yabridge.wine-staging.overrideAttrs (oldAttrs: {
   #  src = fetchTarball {
   #    url = "https://dl.winehq.org/wine/source/9.x/wine-9.21.tar.xz";
   #    sha256 = "sha256:1fc5gq6yhah97i06lpy5anzaydp2xln78pgcgxiwwiyb2098lmwx";
   #  };
   #});
-  wine = pkgs-yabridge.wineWowPackages.yabridge;
+  wine = pkgs.wineWowPackages.yabridge;
 in {
   networking.firewall.allowedTCPPorts = [ 58710 ];
   environment.systemPackages = [ 
@@ -54,8 +54,8 @@ in {
     pkgs.qpwgraph
     #pkgs.reaper-sws-extension
     #pkgs.reaper-reapack-extension
-    (pkgs-yabridge.yabridge.override { inherit wine; })
-    (pkgs-yabridge.yabridgectl.override { inherit wine; })
+    (pkgs.yabridge.override { inherit wine; })
+    (pkgs.yabridgectl.override { inherit wine; })
     #(pkgs.yabridge.override { wine = pkgs.wineWowPackages.stagingFull; })
     #(pkgs.yabridgectl.override { wine = pkgs.wineWowPackages.stagingFull; })
     #(pkgs.yabridgectl.override { inherit yabridge; })

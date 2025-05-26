@@ -1,0 +1,39 @@
+{ pkgs, lib, inputs, ... }:
+let
+  xwayland-satellite = (pkgs.xwayland-satellite.overrideAttrs
+    (finalAttrs: prevAttrs: {
+      src = pkgs.fetchFromGitHub {
+        owner = "Supreeeme";
+        repo = "xwayland-satellite";
+        rev = "ec9ff64c1e0cbec42710b580b7c0f759b1694e72";
+        hash = "sha256-GAqhWoxaBIk0tgoecZPa8gTHDHxNc0JtlwWHZN2iOOo=";
+      };
+      version = "0.5.1";
+      cargoHash = "sha256-QsU960aRU+ErU7vwoNyuOf2YmKjEWW3yCnQoikLaYeA=";
+      cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+        inherit (finalAttrs) pname src version;
+        hash = finalAttrs.cargoHash;
+      };
+    }));
+  ags-bar = inputs.ags-shell.packages.x86_64-linux.default;
+in {
+  programs.niri.enable = true;
+  services.xserver.displayManager.gdm.enable = lib.mkDefault true;
+  services.blueman.enable = true;
+  systemd.user.services.ags-bar = {
+    wantedBy = [ "graphical-session.target" ];
+    script = "${ags-bar}/bin/my-shell";
+    path = [ pkgs.bash pkgs.niri pkgs.ffmpeg pkgs.jack_capture ];
+    serviceConfig = {
+      Restart = "always";
+      RestartSec = "2s";
+    };
+  };
+  systemd.user.services.swaybg = {
+    wantedBy = [ "graphical-session.target" ];
+    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m center";
+    serviceConfig = { Restart = "always"; RestartSec = 2; };
+  };
+  environment.systemPackages =
+    [ pkgs.fuzzel pkgs.swaylock xwayland-satellite pkgs.pavucontrol pkgs.swaybg ];
+}

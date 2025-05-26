@@ -1,4 +1,4 @@
-{ inputs, pkgs, pinned-pkgs, pkgs-stable, ... }: {
+{ inputs, pkgs, pkgs-stable, ... }: {
   environment.systemPackages = [
     pkgs.xorg.libXi
     pkgs.xorg.libXtst
@@ -55,8 +55,6 @@
     pkgs.wget
 
     pkgs.g4music
-
-    pinned-pkgs.qgis-ltr
 
 
     # Module 9 Stuff
