@@ -21,6 +21,7 @@ in {
   services.xserver.displayManager.gdm.enable = lib.mkDefault true;
   services.gvfs.enable = true;
   services.blueman.enable = true;
+  services.gnome.gnome-online-accounts.enable = true;
   systemd.user.services.ags-bar = {
     wantedBy = [ "graphical-session.target" ];
     script = "${ags-bar}/bin/my-shell";
@@ -55,5 +56,7 @@ in {
     pkgs.gnome-calendar
     pkgs.gnome-control-center
     pkgs.gnome-weather
+    pkgs.gnome-online-accounts
+    pkgs.gnome-online-accounts-gtk
   ];
 }
