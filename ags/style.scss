@@ -180,7 +180,7 @@ window.Bar {
     }
     
     .power-container {
-        font-size: 25px;
+      font-size: 25px;
       > eventbox > label {
         font-size: 25px;
       };
@@ -188,14 +188,39 @@ window.Bar {
       > eventbox > label.power-expanded {
         font-size: 28px;
       }
-      min-width: 35px;
-      margin: 4px 4px;
-      padding: 4px 0px;
 
+      min-width: 35px;
+      margin: 15px 4px 4px 4px;
+      padding: 4px 0px;
       min-height: 35px;
       border-radius: 50px;
-
       background-color: $base16-red;
       color: $base16-surface0;
     }
+
+  .bottom-square {
+    margin: 0px 0px;
+    min-height: 36px;
+    border-radius: 50px;
+  }
+
+  .bg-blue {
+    background-color: $base16-blue;
+    color: $base16-base;
+  }
+
+  .bg-lavender {
+    background-color: $base16-lavender;
+    color: $base16-base;
+  }
+
+  .bg-surface0 {
+    background-color: $base16-surface0;
+    color: $base16-text;
+  }
+
+  .bg-surface2 {
+    background-color: $base16-surface2;
+    color: $base16-text;
+  }
 }

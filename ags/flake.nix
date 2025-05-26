@@ -26,6 +26,8 @@
         bluetooth
         pkgs.jack_capture
         pkgs.ffmpeg
+        pkgs.blueman
+        pkgs.networkmanager
       ];
     in {
       packages.${system} = {

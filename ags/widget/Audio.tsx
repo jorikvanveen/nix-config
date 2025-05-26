@@ -61,7 +61,7 @@ export default function Audio() {
   })
 
   let loudness_interpolated = new Variable(0).poll(1000 / 60, (prev) => {
-    return prev - (prev - loudness_10hz.get()) / 10
+    return prev - (prev - loudness_10hz.get()) / 5
   });
 
   const default_speaker_path = new Variable("").poll(1000, () => Wp.get_default()?.audio.get_default_speaker()?.path ?? "");
@@ -85,7 +85,6 @@ export default function Audio() {
   interval(1000, () => {
     if (spotify.available) {
       cover_url.set(spotify.get_cover_art())
-      console.log(spotify.get_bus_name())
       playback_status.set(spotify.get_playback_status() == Mpris.PlaybackStatus.PLAYING)
     }
   })

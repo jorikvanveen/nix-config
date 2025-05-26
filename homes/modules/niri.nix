@@ -310,6 +310,11 @@ window-rule {
     default-column-width {}
 }
 
+window-rule {
+    match app-id=r#"networkconfig"#
+    open-floating true
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
