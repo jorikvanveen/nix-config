@@ -43,6 +43,8 @@
       devShells.${system} = {
         default = pkgs.mkShell {
           buildInputs = [
+            pkgs.vtsls
+            pkgs.nodejs
             # includes astal3 astal4 astal-io by default
             (ags.packages.${system}.default.override {
               extraPackages = deps;

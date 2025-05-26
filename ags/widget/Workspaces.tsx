@@ -1,5 +1,4 @@
-import { interval, Process, subprocess, Variable } from "astal";
-import { Subscribable } from "astal/binding";
+import { subprocess, Variable } from "astal";
 import { Gtk } from "astal/gtk3";
 
 interface WorkspaceInfo {
@@ -7,7 +6,7 @@ interface WorkspaceInfo {
   idx: number,
   name: string | null,
   is_focused: boolean, // This property is only changed on WorkspacesChanged event
-                       // not WorkspaceActivated
+  // not WorkspaceActivated
   active_window_id: number
 }
 

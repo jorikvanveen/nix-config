@@ -33,8 +33,26 @@ in {
   systemd.user.services.swaybg = {
     wantedBy = [ "graphical-session.target" ];
     script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpaper.jpg} -m fill";
-    serviceConfig = { Restart = "always"; RestartSec = 2; };
+    serviceConfig = {
+      Restart = "always";
+      RestartSec = 2;
+    };
   };
-  environment.systemPackages =
-    [ pkgs.fuzzel pkgs.swaylock xwayland-satellite pkgs.pavucontrol pkgs.swaybg ];
+  environment.systemPackages = [
+    pkgs.fuzzel
+    pkgs.swaylock
+    xwayland-satellite
+    pkgs.pavucontrol
+    pkgs.swaybg
+
+    ## Nice stuff from GNOME
+    pkgs.evince # pdfs
+    pkgs.nautilus # file manager
+    pkgs.decibels # audio file player
+    pkgs.gnome-characters
+    pkgs.gnome-font-viewer
+    pkgs.gnome-calendar
+    pkgs.gnome-control-center
+    pkgs.gnome-weather
+  ];
 }

@@ -126,7 +126,7 @@ window.Bar {
    .active-ws {
       background-color: $base16-blue;
       color: $base16-surface0;
-      min-height: 50px;
+      min-height: 35px;
     }
 
     .pill {
@@ -177,5 +177,16 @@ window.Bar {
       margin-top: 4px;
       min-height: 35px;
       border-radius: 20px;
+    }
+    
+    .power-container {
+      font-size: 25px;
+      min-width: 35px;
+      margin: 8px;
+      min-height: 35px;
+      border-radius: 50px;
+
+      background-color: $base16-red;
+      color: $base16-surface0;
     }
 }
