@@ -1,5 +1,6 @@
 { spicetify-nix, ... }: {
   imports = [
+    ./modules/key-repeat.nix
     ./modules/locale.nix
     ./modules/gnome.nix
     ./modules/x11-keymap.nix
