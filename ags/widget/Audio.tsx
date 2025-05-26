@@ -71,7 +71,7 @@ export default function Audio() {
     captureProcess = spawnCaptureProcess(loudness_10hz)
   })
 
-  let default_sink_volume = new Variable(0).poll(1, () => Wp.get_default()?.audio.get_default_speaker()?.get_volume() ?? 0)
+  let default_sink_volume = new Variable(0).poll(1000, () => Wp.get_default()?.audio.get_default_speaker()?.get_volume() ?? 0)
 
 
   function onVolumeDragged(slider: Slider) {
@@ -80,11 +80,13 @@ export default function Audio() {
 
   const spotify = Mpris.Player.new("spotify")
   const cover_url = Variable("");
+  const playback_status = Variable(false);
 
   interval(1000, () => {
     if (spotify.available) {
       cover_url.set(spotify.get_cover_art())
       console.log(spotify.get_bus_name())
+      playback_status.set(spotify.get_playback_status() == Mpris.PlaybackStatus.PLAYING)
     }
   })
 
@@ -92,6 +94,20 @@ export default function Audio() {
     const id = spotifyId.get()
     if (id) {
       exec(["niri", "msg", "action", "focus-window", "--id", id.toString()])
+    }
+  }
+
+  function spotifyPlay() {
+    playback_status.set(true)
+    if (spotify.available) {
+      spotify.play()
+    }
+  }
+
+  function spotifyPause() {
+    playback_status.set(false)
+    if (spotify.available) {
+      spotify.pause()
     }
   }
 
@@ -134,8 +150,7 @@ export default function Audio() {
       </centerbox>
     </centerbox>
 
-    <button className="audio-playbutton">{"\udb81\udc0a"}</button>
-    {/*pause: "\uf04c"*/}
+    {playback_status(status => status ? <button onClick={spotifyPause} className="audio-playbutton">{"\uf04c"}</button> : <button onClick={spotifyPlay} className="audio-playbutton">{"\udb81\udc0a"}</button>)}
     <button className="audio-playbutton" onClick={openSpotify}><Label xalign={0.40}>{"\uf1bc"}</Label></button>
   </box>
 }
