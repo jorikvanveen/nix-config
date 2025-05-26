@@ -1,3 +1,4 @@
+
 {
   description = "My Awesome Desktop Shell";
 
@@ -10,43 +11,45 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ags,
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    shell_deps = [
-      pkgs.astal.wireplumber
-      pkgs.astal.mpris
-      pkgs.jack_capture
-      pkgs.gvfs
-    ];
-  in {
-    packages.${system} = {
-      default = ags.lib.bundle {
-        inherit pkgs;
-        src = ./.;
-        name = "my-shell";
-        entry = "app.ts";
+  outputs = { self, nixpkgs, ags, }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      deps = with ags.packages.${system}; [
+        battery
+        network
+        wireplumber
+        tray
+        battery
+        mpris
+        powerprofiles
+        bluetooth
+        pkgs.jack_capture
+        pkgs.ffmpeg
+      ];
+    in {
+      packages.${system} = {
+        default = ags.lib.bundle {
+          inherit pkgs;
+          src = ./.;
+          name = "my-shell";
+          entry = "app.ts";
 
-        # additional libraries and executables to add to gjs' runtime
-        extraPackages = shell_deps;
+          # additional libraries and executables to add to gjs' runtime
+          extraPackages = deps;
+        };
+      };
+
+      devShells.${system} = {
+        default = pkgs.mkShell {
+          buildInputs = [
+            # includes astal3 astal4 astal-io by default
+            (ags.packages.${system}.default.override {
+              extraPackages = deps;
+            })
+          ];
+        };
       };
     };
-
-    devShells.${system} = {
-      default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.vtsls
-          pkgs.nodejs
-          # includes astal3 astal4 astal-io by default
-          (ags.packages.${system}.default.override {
-            extraPackages = shell_deps;
-          })
-        ];
-      };
-    };
-  };
 }
+
