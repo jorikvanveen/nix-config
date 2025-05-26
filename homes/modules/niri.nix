@@ -311,7 +311,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"networkconfig"#
+    match title=r#"^networkconfig$"#
     open-floating true
 }
 

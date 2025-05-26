@@ -69,7 +69,7 @@ export default function Network() {
         "--command=nmtui-connect",
         "--window-decoration=none",
         "--confirm-close-surface=false",
-        "--class=networkconfig"
+        "--title=networkconfig"
       ])
   }
 

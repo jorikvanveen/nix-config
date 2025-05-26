@@ -1,4 +1,3 @@
-
 {
   description = "My Awesome Desktop Shell";
 
@@ -28,6 +27,7 @@
         pkgs.ffmpeg
         pkgs.blueman
         pkgs.networkmanager
+        pkgs.ghostty
       ];
     in {
       packages.${system} = {
@@ -48,9 +48,7 @@
             pkgs.vtsls
             pkgs.nodejs
             # includes astal3 astal4 astal-io by default
-            (ags.packages.${system}.default.override {
-              extraPackages = deps;
-            })
+            (ags.packages.${system}.default.override { extraPackages = deps; })
           ];
         };
       };
