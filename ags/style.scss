@@ -180,9 +180,18 @@ window.Bar {
     }
     
     .power-container {
-      font-size: 25px;
+        font-size: 25px;
+      > eventbox > label {
+        font-size: 25px;
+      };
+
+      > eventbox > label.power-expanded {
+        font-size: 28px;
+      }
       min-width: 35px;
-      margin: 8px;
+      margin: 4px 4px;
+      padding: 4px 0px;
+
       min-height: 35px;
       border-radius: 50px;
 
