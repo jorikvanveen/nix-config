@@ -29,6 +29,7 @@
         pkgs.networkmanager
         pkgs.ghostty
         pkgs.upower
+        pkgs.gnome-calendar
       ];
     in {
       packages.${system} = {
