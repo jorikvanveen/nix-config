@@ -3,6 +3,8 @@
     enable = true;
     settings = {
       command = "nu";
+      window-padding-x = 4;
+      window-padding-y = 4;
       keybind = [
         "clear"
         "ctrl+t=new_tab"
