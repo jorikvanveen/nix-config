@@ -8,6 +8,7 @@
     nixpkgs-php74.url = "github:nixos/nixpkgs?ref=ba45a559b5c42e123af07272b0241a73dcfa03b0";
     nixpkgs-php8.url = "github:nixos/nixpkgs?ref=e6a26b900caddb8c2a033b7fb65c0971ab129664";
     nixpkgs-yabridge-wine.url = "github:NixOS/nixpkgs/893c611d9ca0581cda04ddd7ff34d4973e35cca0";
+    nixpkgs-linux6-14-6.url = "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -47,9 +48,11 @@
       };
       pkgs = import nixpkgs {
         inherit system;
+        config.allowUnfree = true;
       };
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
+        config.allowUnfree = true;
       };
       pkgs-php74 = import inputs.nixpkgs-php74 {
         inherit system;
@@ -115,13 +118,17 @@
           inherit system;
           config.allowUnfree = true;
         };
+
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
       in nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs homedir syncdir unstable pkgs-stable pinned-pkgs; };
         modules = [
           {
             nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
-
           }
           ./nixos-installs/nixos-homelab.nix
           home-manager.nixosModules.home-manager
