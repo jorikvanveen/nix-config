@@ -1,5 +1,45 @@
 {
   "nodes": {
+    "ags": {
+      "inputs": {
+        "astal": "astal",
+        "nixpkgs": [
+          "ags-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1744557573,
+        "narHash": "sha256-XAyj0iDuI51BytJ1PwN53uLpzTDdznPDQFG4RwihlTQ=",
+        "owner": "aylur",
+        "repo": "ags",
+        "rev": "3ed9737bdbc8fc7a7c7ceef2165c9109f336bff6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "ags",
+        "type": "github"
+      }
+    },
+    "ags-shell": {
+      "inputs": {
+        "ags": "ags",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-0p8NDZ3+nZl9NmkPlmWJOIqVirh1TlHMw73E9IXL/AM=",
+        "path": "./ags",
+        "type": "path"
+      },
+      "original": {
+        "path": "./ags",
+        "type": "path"
+      }
+    },
     "apple-fonts": {
       "inputs": {
         "nixpkgs": [
@@ -25,6 +65,28 @@
       "original": {
         "owner": "Lyndeno",
         "repo": "apple-fonts.nix",
+        "type": "github"
+      }
+    },
+    "astal": {
+      "inputs": {
+        "nixpkgs": [
+          "ags-shell",
+          "ags",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742571008,
+        "narHash": "sha256-5WgfJAeBpxiKbTR/gJvxrGYfqQRge5aUDcGKmU1YZ1Q=",
+        "owner": "aylur",
+        "repo": "astal",
+        "rev": "dc0e5d37abe9424c53dcbd2506a4886ffee6296e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "astal",
         "type": "github"
       }
     },
@@ -430,7 +492,9 @@
     },
     "musnix": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1741303672,
@@ -493,15 +557,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1740695751,
-        "narHash": "sha256-D+R+kFxy1KsheiIzkkx/6L63wEHBYX21OIwlFV8JvDs=",
-        "owner": "NixOS",
+        "lastModified": 1747744144,
+        "narHash": "sha256-W7lqHp0qZiENCDwUZ5EX/lNhxjMdNapFnbErcbnP11Q=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6313551cd05425cd5b3e63fe47dbc324eabb15e4",
+        "rev": "2795c506fe8fb7b03c36ccb51f75b6df0ab2553f",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -518,103 +582,23 @@
       },
       "original": {
         "owner": "nixos",
-        "ref": "64458d571301c14aaaa8e70c925ccaae04f97ea7",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-php74": {
-      "locked": {
-        "lastModified": 1649873228,
-        "narHash": "sha256-j9GkuiOeLiipcWow1XFSHqdnRZFVahTZsWmSNX9lMUU=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "ba45a559b5c42e123af07272b0241a73dcfa03b0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "ba45a559b5c42e123af07272b0241a73dcfa03b0",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-php8": {
-      "locked": {
-        "lastModified": 1686218889,
-        "narHash": "sha256-IslCWkLALkTYQA9DtPUFsv+4qCZ4fcy7lnaRM9EU4/Y=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e6a26b900caddb8c2a033b7fb65c0971ab129664",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "e6a26b900caddb8c2a033b7fb65c0971ab129664",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-pinned": {
-      "locked": {
-        "lastModified": 1729880355,
-        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "18536bf04cd71abd345f9579158841376fdd0c5a",
-        "repo": "nixpkgs",
+        "rev": "64458d571301c14aaaa8e70c925ccaae04f97ea7",
         "type": "github"
       }
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1747676747,
-        "narHash": "sha256-LXkWBVqilgx7Pohwqu/ABxDVw+Cmi5/Mj2S2mpUH0Fw=",
+        "lastModified": 1747862697,
+        "narHash": "sha256-U4HaNZ1W26cbOVm0Eb5OdGSnfQVWQKbLSPrSSa78KC0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "72841a4a8761d1aed92ef6169a636872c986c76d",
+        "rev": "2baa12ff69913392faf0ace833bc54bba297ea95",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixos-24.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-yabridge-wine": {
-      "locked": {
-        "lastModified": 1744185019,
-        "narHash": "sha256-u56fAok3dL1E/VqBKE12k5y3gG4rFLegn2quuQbdBEk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "893c611d9ca0581cda04ddd7ff34d4973e35cca0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "893c611d9ca0581cda04ddd7ff34d4973e35cca0",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1747744144,
-        "narHash": "sha256-W7lqHp0qZiENCDwUZ5EX/lNhxjMdNapFnbErcbnP11Q=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "2795c506fe8fb7b03c36ccb51f75b6df0ab2553f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -659,18 +643,15 @@
     },
     "root": {
       "inputs": {
+        "ags-shell": "ags-shell",
         "apple-fonts": "apple-fonts",
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
         "musnix": "musnix",
         "nix-minecraft": "nix-minecraft",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixpkgs-linux6-14-6": "nixpkgs-linux6-14-6",
-        "nixpkgs-php74": "nixpkgs-php74",
-        "nixpkgs-php8": "nixpkgs-php8",
-        "nixpkgs-pinned": "nixpkgs-pinned",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-yabridge-wine": "nixpkgs-yabridge-wine",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",

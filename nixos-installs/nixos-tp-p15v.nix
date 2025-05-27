@@ -24,8 +24,10 @@
       ./modules/eth-conn-sharing.nix
 
       ./modules/xanmod-kernel.nix
-      ./modules/services/apache-php.nix
+
       ./modules/reaper.nix
+
+      ./modules/upower.nix
     ];
 
 

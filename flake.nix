@@ -4,10 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
-    nixpkgs-pinned.url = "github:nixos/nixpkgs?ref=18536bf04cd71abd345f9579158841376fdd0c5a";
-    nixpkgs-php74.url = "github:nixos/nixpkgs?ref=ba45a559b5c42e123af07272b0241a73dcfa03b0";
-    nixpkgs-php8.url = "github:nixos/nixpkgs?ref=e6a26b900caddb8c2a033b7fb65c0971ab129664";
-    nixpkgs-yabridge-wine.url = "github:NixOS/nixpkgs/893c611d9ca0581cda04ddd7ff34d4973e35cca0";
     nixpkgs-linux6-14-6.url = "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
 
     sops-nix.url = "github:Mic92/sops-nix";
@@ -35,6 +31,11 @@
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
 
     musnix.url = "github:musnix/musnix";
+    musnix.inputs.nixpkgs.follows = "nixpkgs";
+
+    ags-shell.url = "path:./ags";
+    ags-shell.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -54,24 +55,11 @@
         inherit system;
         config.allowUnfree = true;
       };
-      pkgs-php74 = import inputs.nixpkgs-php74 {
-        inherit system;
-      };
-      pkgs-php8 = import inputs.nixpkgs-php8 {
-        inherit system;
-        config.allowInsecure = true;
-        config.permittedInsecurePackages = [
-          "openssl-1.1.1u"
-        ];
-      };
-      pkgs-yabridge = import inputs.nixpkgs-yabridge-wine {
-        inherit system;
-      };
     in
     {
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable pkgs-php74 pkgs-php8 pkgs-yabridge; };
+        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable; };
         modules = [
           ./nixos-installs/nixos-tp-p15v.nix
           home-manager.nixosModules.home-manager
@@ -92,7 +80,7 @@
       };
       nixosConfigurations.nixos-pc = let unstable = pkgs; in nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable pkgs-php74 pkgs-yabridge; };
+        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable; };
         modules = [
           ./nixos-installs/nixos-pc.nix
           inputs.musnix.nixosModules.musnix
