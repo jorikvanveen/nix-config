@@ -22,6 +22,7 @@ input {
 
             // For example:
             layout "us,us(intl)"
+            options "grp:win_space_toggle"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
         }
 
@@ -362,6 +363,7 @@ binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
+
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Shift+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
