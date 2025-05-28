@@ -5,11 +5,11 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "Supreeeme";
         repo = "xwayland-satellite";
-        rev = "ec9ff64c1e0cbec42710b580b7c0f759b1694e72";
-        hash = "sha256-GAqhWoxaBIk0tgoecZPa8gTHDHxNc0JtlwWHZN2iOOo=";
+        rev = "76ace3c656c6680e58e53f95baac0ae0fa1178b5";
+        hash = "sha256-NPSbIK8dsayXj4RbEwm+fMbnAKrTRRB/qFoWxfkRLDo=";
       };
       version = "0.5.1";
-      cargoHash = "sha256-QsU960aRU+ErU7vwoNyuOf2YmKjEWW3yCnQoikLaYeA=";
+      cargoHash = "sha256-tzRafL9vTiMfpGmcUwnEUHtcE54RXLXUgosdkiZzNiE=";
       cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
         inherit (finalAttrs) pname src version;
         hash = finalAttrs.cargoHash;

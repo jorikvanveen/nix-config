@@ -17,13 +17,8 @@ overview {
 input {
     keyboard {
         xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
-
-            // For example:
             layout "us,us(intl)"
             options "grp:win_space_toggle"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
