@@ -25,6 +25,7 @@ in {
       oil-nvim
       coq_nvim
       blink-cmp
+      orgmode
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
