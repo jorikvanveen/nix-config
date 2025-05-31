@@ -60,6 +60,7 @@ in {
     pkgs.gnome-weather
     pkgs.gnome-online-accounts
     pkgs.gnome-online-accounts-gtk
+    pkgs.dunst
   ];
   services.dbus.packages = [
     pkgs.gnome-online-accounts

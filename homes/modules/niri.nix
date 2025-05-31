@@ -259,7 +259,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swaybg -i ${../wallpaper.jpg} -m center"
-spawn-at-startup "logseq"
+spawn-at-startup "dunst"
 
 environment {
   DISPLAY ":0"
