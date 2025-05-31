@@ -10,7 +10,6 @@ pkgs.stdenv.mkDerivation {
 
   };
   buildPhase = ''
-    ls .
     mkdir $out
     cp -r ./* $out/
   '';

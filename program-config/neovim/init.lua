@@ -174,3 +174,5 @@ require('orgmode').setup({
   org_default_notes_file = '~/shared/personal/orgmode/refile.org'
 })
 
+require('org-bullets').setup()
+
