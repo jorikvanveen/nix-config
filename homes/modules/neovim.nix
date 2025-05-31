@@ -26,6 +26,7 @@ in {
       coq_nvim
       blink-cmp
       orgmode
+      (import ../../program-config/neovim/custom-plugs/org-bullets.nix { inherit pkgs; })
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
       cpp
@@ -51,6 +52,7 @@ in {
       yaml
       zig
       c_sharp
+      #org-nvim
     ]);
   };
 }

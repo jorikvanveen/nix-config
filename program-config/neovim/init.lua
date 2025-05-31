@@ -168,3 +168,9 @@ require("blink.cmp").setup {
   completion = { documentation = { auto_show = true } },
 }
 
+-- orgmode
+require('orgmode').setup({
+  org_agenda_files = '~/shared/personal/orgmode/**/*',
+  org_default_notes_file = '~/shared/personal/orgmode/refile.org'
+})
+
