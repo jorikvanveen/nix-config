@@ -176,7 +176,7 @@ require('orgmode').setup({
   win_split_mode = "float",
   org_capture_templates = {
     t = { description = "Task", template = "** TODO %?" }
-  }
+  },
   org_agenda_span = 'day'
 })
 
