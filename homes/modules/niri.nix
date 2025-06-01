@@ -260,7 +260,7 @@ layout {
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swaybg -i ${../wallpaper.jpg} -m center"
 spawn-at-startup "dunst"
-spawn-at-startup "ghostty --command="cd ~/shared/personal/orgmode; nvim" --window-decoration=none --confirm-close-surface=false"
+spawn-at-startup "ghostty --command='cd ~/shared/personal/orgmode; nvim' --window-decoration=none --confirm-close-surface=false"
 
 environment {
   DISPLAY ":0"
