@@ -120,13 +120,15 @@ window.Bar {
       background-color: $base16-surface0;
       color: $base16-text;
       border-radius: 20px;
-      min-height: 25px;
+      min-height: 15px;
+      margin: 2px 13px;
     }
 
    .active-ws {
       background-color: $base16-blue;
       color: $base16-surface0;
       min-height: 35px;
+      margin: 4px;
     }
 
     .pill {

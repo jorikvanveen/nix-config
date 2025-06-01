@@ -1,5 +1,6 @@
 import { subprocess, Variable } from "astal";
 import { Gtk } from "astal/gtk3";
+import { Label } from "astal/gtk3/widget";
 
 interface WorkspaceInfo {
   id: number,
@@ -39,17 +40,20 @@ export default function Workspaces() {
     {workspaces(allWorkspaces => allWorkspaces.sort((a, b) => a.idx - b.idx)
       .map(ws => (
         <button
-          margin={2}
           height_request={20}
           width_request={20}
           onClick={() => focusWorkspace(ws.idx)}
           className="ws-btn"
           setup={self => {
             self.toggleClassName("active-ws", focused.get() == ws.id)
-            self.hook(focused, ((_, v: number) => self.toggleClassName("active-ws", v == ws.id)))
+            self.get_children()[0].set_visible(focused.get() == ws.id)
+            self.hook(focused, ((_, v: number) => {
+              self.toggleClassName("active-ws", v == ws.id)
+              self.get_children()[0].set_visible(v == ws.id)
+            }))
           }}
         >
-          {ws.idx}
+          <Label>{ws.idx}</Label>
         </button>
       )))}
   </box>
