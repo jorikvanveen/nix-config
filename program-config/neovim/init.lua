@@ -173,7 +173,11 @@ require('orgmode').setup({
   org_agenda_files = '~/shared/personal/orgmode/tasks.org',
   org_default_notes_file = '~/shared/personal/orgmode/refile.org',
   org_todo_keywords = { "TODO(t)", "NOW", "|", "DONE", "CANX" },
-  win_split_mode = "float"
+  win_split_mode = "float",
+  org_capture_templates = {
+    t = { description = "Task", template = "** TODO %?" }
+  }
+  org_agenda_span = 'day'
 })
 
 require('org-bullets').setup()
