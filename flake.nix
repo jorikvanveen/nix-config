@@ -84,6 +84,10 @@
         home = import ./homes/nixos-homelab.nix;
         extraModules = [ ./nixos-installs/nixos-homelab.nix ];
       };
+      nixosConfigurations.nixos-wsl = makeOsConfig {
+        home = import ./homes/nixos-wsl.nix;
+        extraModules = [ ./nixos-installs/nixos-wsl.nix ];
+      };
 
       devShells.x86_64-linux.default =
         pkgs.mkShell { buildInputs = [ pkgs.nixd pkgs.sops ]; };
