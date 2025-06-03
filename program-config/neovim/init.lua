@@ -117,7 +117,8 @@ local lsps = {
       "typescriptreact", "vue", "svelte", "templ"
     }
   },
-  omnisharp = {}
+  omnisharp = {},
+  [ "jsonls" ] = {}
 };
 
 for lsp,config in pairs(lsps) do
