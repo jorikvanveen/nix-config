@@ -57,6 +57,7 @@
       };
     in
     {
+      packages.${system}.neovim = import ./program-config/neovim/neovim.nix { inherit pkgs; };
       nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable; };
