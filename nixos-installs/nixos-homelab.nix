@@ -38,10 +38,7 @@
     ./modules/services/gonic.nix
     ./modules/services/spottarr.nix
     ./modules/services/lidarr.nix
-    #./modules/services/kubo.nix
-    #./modules/services/jellyseerr.nix
     ./modules/services/riven.nix
-    #./modules/services/torbox-rclone.nix
     ./modules/services/vaultwarden.nix
     ./modules/services/hoarder.nix
     ./modules/services/audiobookshelf.nix

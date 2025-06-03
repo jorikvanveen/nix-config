@@ -1,4 +1,6 @@
-{ pkgs, homedir, ... }: {
+{ pkgs, inputs, system, ... }:
+let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+in {
   imports = [
     ./modules/git.nix
     ./modules/carapace.nix
@@ -13,9 +15,24 @@
     ./modules/bash.nix
     ./modules/home-manager.nix
     ./modules/atuin.nix
+    ./modules/archive-tools.nix
 
-    ../packages/home_pkgs.nix
   ];
 
-
+  home.packages = [
+    pkgs.ripgrep
+    pkgs.jq
+    pkgs.file
+    pkgs.git
+    pkgs-stable.magic-wormhole # Broken on unstable (29 dec 2024)
+    pkgs.nixfmt
+    pkgs.uv
+    pkgs.ffmpeg
+    pkgs.nixd
+    pkgs.posting
+    pkgs.htop
+    pkgs.wget
+    pkgs.man-pages-posix
+    pkgs.man-pages
+  ];
 }

@@ -1,15 +1,26 @@
 { inputs, pkgs, system, ... }:
 let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
 in {
+  imports = [
+    ./modules/calibre.nix
+    ./modules/audacity.nix
+    ./modules/bottles.nix
+    ./modules/graphics.nix
+    ./modules/bluetooth.nix
+    ./modules/systemd-boot.nix
+    ./modules/spicetify.nix
+    ./modules/mullvad.nix
+    ./modules/fix-java-fonts.nix
+    ./modules/steam.nix
+    ./modules/gamemode.nix
+    ./modules/pipewire.nix
+    ./modules/niri.nix
+  ];
   environment.systemPackages = [
     pkgs.xorg.libXi
     pkgs.xorg.libXtst
-
     pkgs.dconf-editor
-
     pkgs.steam-run
-
-    pkgs.nixd
     pkgs.skia
     pkgs.kdePackages.breeze
     pkgs-stable.planify
@@ -25,7 +36,6 @@ in {
     pkgs.jellyfin-media-player
     pkgs.feishin
     pkgs.nicotine-plus
-    pkgs.ffmpeg
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {
@@ -43,22 +53,13 @@ in {
     }))
 
     # Cli utilities
-    pkgs.man-pages
     pkgs.wl-clipboard
-    pkgs.man-pages-posix
     pkgs.xdg-utils
-    #pkgs.unrar
-    pkgs.htop
-    pkgs.wget
 
     pkgs.g4music
 
-    # Module 9 Stuff
     pkgs.vscode
-    pkgs.android-tools
-
     pkgs.lutris
-    #pkgs.modrinth-app
     pkgs.prismlauncher
     pkgs.libreoffice
     pkgs.cemu
@@ -67,6 +68,5 @@ in {
 
     pkgs.fractal
     pkgs.ryujinx
-    pkgs.uv
   ];
 }

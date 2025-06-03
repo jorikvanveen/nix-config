@@ -41,15 +41,7 @@
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      pinned-pkgs = import inputs.nixpkgs-pinned {
-        inherit system;
-        config.allowUnfree = true;
-      };
       pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
       };
