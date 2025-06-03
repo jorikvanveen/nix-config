@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }: { home.packages = [
+{ pkgs, system, inputs, ... }: let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system}; in { home.packages = [
   pkgs.ripgrep
   pkgs.jq
   pkgs.file

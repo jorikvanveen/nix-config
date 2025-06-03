@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
-    nixpkgs-linux6-14-6.url = "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
+    nixpkgs-linux6-14-6.url =
+      "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,14 +36,11 @@
 
     ags-shell.url = "path:./ags";
     ags-shell.inputs.nixpkgs.follows = "nixpkgs";
-
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      homedir = "/home/main";
-      syncdir = homedir + "/shared";
       pinned-pkgs = import inputs.nixpkgs-pinned {
         inherit system;
         config.allowUnfree = true;
@@ -55,86 +53,47 @@
         inherit system;
         config.allowUnfree = true;
       };
-    in
-    {
-      packages.${system}.neovim = import ./program-config/neovim/neovim.nix { inherit pkgs; };
-      nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs homedir syncdir pinned-pkgs pkgs-stable; };
-        modules = [
-          ./nixos-installs/nixos-tp-p15v.nix
-          home-manager.nixosModules.home-manager
-          inputs.musnix.nixosModules.musnix
-          {
-            nixpkgs.config.permittedInsecurePackages = [
-              "electron-33.4.11"
-            ];
-          }
-          {
-            home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir syncdir pkgs-stable; };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.main = import ./homes/nixos-tp-p15v.nix;
-          }
-        ];
+      makeHomeManagerModule = { home, specialArgs }: {
+        home-manager.backupFileExtension = "hmbak";
+        home-manager.extraSpecialArgs = specialArgs;
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.main = home;
       };
-      nixosConfigurations.nixos-pc = let unstable = pkgs; in nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs homedir syncdir unstable pinned-pkgs pkgs-stable; };
-        modules = [
-          ./nixos-installs/nixos-pc.nix
-          inputs.musnix.nixosModules.musnix
-          home-manager.nixosModules.home-manager
-          {
-            nixpkgs.config.permittedInsecurePackages = [
-              "electron-33.4.11"
-            ];
-          }
-          {
-            home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir pkgs-stable; };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.main = import ./homes/nixos-pc.nix;
-          }
-        ];
-      };
-      nixosConfigurations.nixos-homelab = let
-        syncdir = homedir + "/data";
-        
-        unstable = import inputs.nixpkgs {
+      makeOsConfig = { home, extraModules ? [ ], extraSpecialArgs ? { }
+        , homedir ? "/home/main", syncdir ? homedir + "/shared", }:
+        nixpkgs.lib.nixosSystem rec {
           inherit system;
-          config.allowUnfree = true;
+          specialArgs = {
+            inherit system inputs homedir syncdir;
+          } // extraSpecialArgs;
+          modules = [
+            home-manager.nixosModules.home-manager
+            (makeHomeManagerModule { inherit home specialArgs; })
+          ] ++ extraModules;
         };
+    in {
+      packages.${system}.neovim =
+        import ./program-config/neovim/neovim.nix { inherit pkgs; };
 
-        pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      in nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs homedir syncdir unstable pkgs-stable pinned-pkgs; };
-        modules = [
-          {
-            nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
-          }
-          ./nixos-installs/nixos-homelab.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "hmbak";
-            home-manager.extraSpecialArgs = { inherit homedir pkgs-stable; };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.main = import ./homes/nixos-homelab.nix;
-          }
+      nixosConfigurations.nixos-laptop = makeOsConfig {
+        home = import ./homes/nixos-tp-p15v.nix;
+        extraModules = [
+          ./nixos-installs/nixos-tp-p15v.nix
+          inputs.musnix.nixosModules.musnix
         ];
       };
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.nixd
-          pkgs.sops
-        ];
+      nixosConfigurations.nixos-pc = makeOsConfig {
+        home = import ./homes/nixos-pc.nix;
+        extraModules =
+          [ ./nixos-installs/nixos-pc.nix inputs.musnix.nixosModules.musnix ];
       };
+      nixosConfigurations.nixos-homelab = makeOsConfig {
+        home = import ./homes/nixos-homelab.nix;
+        extraModules = [ ./nixos-installs/nixos-homelab.nix ];
+      };
+
+      devShells.x86_64-linux.default =
+        pkgs.mkShell { buildInputs = [ pkgs.nixd pkgs.sops ]; };
     };
 }

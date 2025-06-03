@@ -1,4 +1,6 @@
-{ inputs, pkgs, pkgs-stable, ... }: {
+{ inputs, pkgs, system, ... }:
+let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+in {
   environment.systemPackages = [
     pkgs.xorg.libXi
     pkgs.xorg.libXtst
@@ -35,13 +37,8 @@
           icon = "finamp";
           startupWMClass = "finamp";
           comment = "An open source Jellyfin music player";
-          categories = [
-            "AudioVideo"
-            "Audio"
-            "Player"
-            "Music"
-          ];
-        })  
+          categories = [ "AudioVideo" "Audio" "Player" "Music" ];
+        })
       ];
     }))
 
@@ -55,7 +52,6 @@
     pkgs.wget
 
     pkgs.g4music
-
 
     # Module 9 Stuff
     pkgs.vscode

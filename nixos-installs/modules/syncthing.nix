@@ -1,10 +1,10 @@
-{ syncdir, ... }:
-{
+{ syncdir, homedir, ... }: let
+in {
   services.syncthing = {
     enable = true;
     user = "main";
     dataDir = syncdir;
-    configDir = "/home/main/.config/syncthing";
+    configDir = homedir + "/.config/syncthing";
 
     settings.folders.personal = {
       path = syncdir + "/personal";

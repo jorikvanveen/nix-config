@@ -1,4 +1,4 @@
-{ pkgs-stable, pkgs, ... }: let
+{ pkgs, ... }: let
 in {
   programs.neovim = {
     enable = true;
