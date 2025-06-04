@@ -178,8 +178,19 @@ require('orgmode').setup({
   org_capture_templates = {
     t = { description = "Task", template = "** TODO %?" }
   },
-  org_agenda_span = 'day'
+  org_agenda_span = 'day',
+  org_todo_keyword_faces = {
+    TODO = ":foreground black :background blue :weight bold",
+    NOW = ":foreground black :background red :weight bold",
+    DONE = ":foreground black :background green :weight bold",
+    CANX = ":foreground black :background grey :weight bold"
+  }
 })
 
 require('org-bullets').setup()
+--if (require("mini.base16").config.palette != nil) then
+--end
+--for k,_ in pairs(require("mini.base16").config) do
+--  print(k)
+--end
 
