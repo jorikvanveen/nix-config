@@ -205,12 +205,12 @@ require('orgmode').setup({
     t = { description = "Task", template = "** TODO %?" }
   },
   org_agenda_span = 'day',
---  org_todo_keyword_faces = {
---    TODO = ":foreground " .. palette.base .. " :background " .. palette.base0C .. " :weight bold",
---    NOW =  ":foreground " .. palette.base .. " :background " .. palette.base06 .. " :weight bold",
---    DONE = ":foreground " .. palette.base .. " :background " .. palette.base0 :weight bold",
---    CANX = ":foreground " .. palette.base .. " :background grey :weight bold"
---  }
+  org_todo_keyword_faces = {
+    TODO = ":foreground " .. palette.base00 .. " :background " .. palette.base0C .. " :weight bold",
+    NOW =  ":foreground " .. palette.base00 .. " :background " .. palette.base06 .. " :weight bold",
+    DONE = ":foreground " .. palette.base00 .. " :background " .. palette.base0B .. " :weight bold",
+    CANX = ":foreground " .. palette.base00 .. " :background " .. palette.base04 .. " :weight bold"
+  }
 })
 
 require('org-bullets').setup()
