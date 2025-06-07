@@ -61,6 +61,7 @@ in {
     pkgs.gnome-online-accounts
     pkgs.gnome-online-accounts-gtk
     pkgs.dunst
+    pkgs.bato
   ];
   services.dbus.packages = [
     pkgs.gnome-online-accounts

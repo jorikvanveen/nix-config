@@ -10,6 +10,7 @@
     ./modules/moonlight.nix
     ./modules/additional-fonts.nix
     ./modules/logseq.nix
+    ./modules/bato.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix
