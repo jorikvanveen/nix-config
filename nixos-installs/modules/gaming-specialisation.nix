@@ -1,9 +1,17 @@
-{ config, ... }: {
+{ config, lib, ... }: {
   specialisation = {
     gaming.configuration = {
       # Disable gnome
       services.xserver.displayManager.gdm.enable = false;
       services.xserver.desktopManager.gnome.enable = false;
+
+      # Disable niri, ags bar, dunst
+      programs.niri.enable = lib.mkForce false;
+      services.gnome.evolution-data-server.enable = lib.mkForce true;
+      services.gnome.gnome-online-accounts.enable = lib.mkForce true;
+      services.gnome.gnome-keyring.enable = lib.mkForce true;
+      systemd.user.services.ags-bar = lib.mkForce {};
+      systemd.user.services.swaybg = lib.mkForce {};
 
       # Enable KDE plasma 6
       services.displayManager.sddm.enable = true;
