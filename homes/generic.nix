@@ -34,5 +34,6 @@ in {
     pkgs.wget
     pkgs.man-pages-posix
     pkgs.man-pages
+    pkgs.tree
   ];
 }
