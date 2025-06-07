@@ -4,4 +4,5 @@
     source = config.lib.file.mkOutOfStoreSymlink dotfiledir + "/niri/config.kdl";
   };
   services.dunst.enable = true;
+  programs.fuzzel.enable = true;
 }
