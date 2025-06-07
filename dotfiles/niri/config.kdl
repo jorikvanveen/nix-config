@@ -63,6 +63,10 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+switch-events {
+  lid-open { spawn "systemctl" "--user" "restart" "ags-bar"; }
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -106,6 +110,8 @@ output "DP-1" {
 layout {
     // Set gaps around windows in logical pixels.
     gaps 10
+
+    empty-workspace-above-first
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
