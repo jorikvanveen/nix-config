@@ -53,11 +53,12 @@
         home-manager.users.main = home;
       };
       makeOsConfig = { home, extraModules ? [ ], extraSpecialArgs ? { }
-        , homedir ? "/home/main", syncdir ? homedir + "/shared", }:
+        , homedir ? "/home/main", syncdir ? homedir + "/shared"
+        , dotfiledir ? homedir + "/nix-config/dotfiles" }:
         nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
-            inherit system inputs homedir syncdir;
+            inherit system inputs homedir syncdir dotfiledir;
           } // extraSpecialArgs;
           modules = [
             home-manager.nixosModules.home-manager

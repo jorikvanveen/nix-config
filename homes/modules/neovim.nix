@@ -1,10 +1,16 @@
-{ pkgs, ... }: let
+{ pkgs, lib, homedir, dotfiledir, config, ... }: let
 in {
+  stylix.targets.neovim.enable = false;
+  home.file.nvim-config = {
+    target = homedir + "/.config/nvim/init.lua";
+    source = config.lib.file.mkOutOfStoreSymlink dotfiledir + "/nvim/init.lua";
+  };
+
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
-    extraLuaConfig = builtins.readFile ../../program-config/neovim/init.lua;
+    #extraLuaConfig = builtins.readFile ../../program-config/neovim/init.lua;
     plugins = with pkgs.vimPlugins; [
       gitsigns-nvim
       which-key-nvim
@@ -26,6 +32,7 @@ in {
       coq_nvim
       blink-cmp
       orgmode
+      mini-base16
       (import ../../program-config/neovim/custom-plugs/org-bullets.nix { inherit pkgs; })
     ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
       c
