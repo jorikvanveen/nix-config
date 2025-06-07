@@ -2,7 +2,7 @@
   home.packages = [ pkgs.bato ];
   home.file.batoconfig = {
     text = ''
-    tick_rate: 1
+tick_rate: 1
 critical_level: 5
 low_level: 30
 critical:
