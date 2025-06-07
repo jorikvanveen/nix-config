@@ -30,6 +30,7 @@
         pkgs.ghostty
         pkgs.upower
         pkgs.gnome-calendar
+        pkgs.playerctl
       ];
     in {
       packages.${system} = {
