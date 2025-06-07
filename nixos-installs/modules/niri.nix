@@ -35,7 +35,7 @@ in {
   };
   systemd.user.services.swaybg = {
     wantedBy = [ "graphical-session.target" ];
-    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpapers/purple-paper.jpg} -m fill";
+    script = "${pkgs.swaybg}/bin/swaybg -i ${../wallpapers/epic-rock.jpg} -m fill";
     serviceConfig = {
       Restart = "always";
       RestartSec = 2;
