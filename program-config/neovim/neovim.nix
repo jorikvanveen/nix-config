@@ -1,54 +1,5 @@
 { pkgs, ... }:
-let org-bullets = (import ./custom-plugs/org-bullets.nix { inherit pkgs; });
-in (pkgs.neovim.override {
-  configure.packages.myPlugins.start = with pkgs.vimPlugins;
-    [
-      gitsigns-nvim
-      which-key-nvim
-      telescope-nvim
-      nvim-lspconfig
-      fidget-nvim
-      cmp-nvim-lsp
-      conform-nvim
-      nvim-cmp
-      todo-comments-nvim
-      nvim-treesitter
-      neo-tree-nvim
-      base16-nvim
-      telescope-fzf-native-nvim
-      luasnip
-      cmp_luasnip
-      harpoon
-      oil-nvim
-      coq_nvim
-      blink-cmp
-      orgmode
-      org-bullets
-    ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
-      c
-      cpp
-      rust
-      html
-      json
-      javascript
-      typescript
-      java
-      tsx
-      svelte
-      css
-      dockerfile
-      nix
-      lua
-      go
-      gitignore
-      haskell
-      python
-      toml
-      tmux
-      tsx
-      yaml
-      zig
-      c_sharp
-    ]);
-  configure.customRC = "lua << EOF\n" + builtins.readFile ./init.lua + "EOF";
+(pkgs.neovim.override {
+  configure.packages.myPlugins.start = pkgs.callPackage ./plugins.nix { };
+  configure.customRC = "source ${../../dotfiles/nvim/init.lua}";
 })

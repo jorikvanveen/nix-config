@@ -1,3 +1,4 @@
+print("hi")
 pcall(require, 'palette')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '

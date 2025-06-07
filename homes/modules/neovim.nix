@@ -1,4 +1,4 @@
-{ pkgs, lib, homedir, dotfiledir, config, ... }:
+{ pkgs, homedir, dotfiledir, config, ... }:
 let
   stylixPalette = with config.lib.stylix.colors.withHashtag; ''
     require('mini.base16').setup({
@@ -25,56 +25,6 @@ in {
     enable = true;
     viAlias = true;
     vimAlias = true;
-    plugins = with pkgs.vimPlugins;
-      [
-        gitsigns-nvim
-        which-key-nvim
-        telescope-nvim
-        nvim-lspconfig
-        fidget-nvim
-        cmp-nvim-lsp
-        conform-nvim
-        nvim-cmp
-        todo-comments-nvim
-        nvim-treesitter
-        neo-tree-nvim
-        base16-nvim
-        telescope-fzf-native-nvim
-        luasnip
-        cmp_luasnip
-        harpoon
-        oil-nvim
-        coq_nvim
-        blink-cmp
-        orgmode
-        mini-base16
-        (pkgs.callPackage ../../program-config/neovim/custom-plugs/org-bullets.nix {})
-      ] ++ (with pkgs.vimPlugins.nvim-treesitter-parsers; [
-        c
-        cpp
-        rust
-        html
-        json
-        javascript
-        typescript
-        java
-        tsx
-        svelte
-        css
-        dockerfile
-        nix
-        lua
-        go
-        gitignore
-        haskell
-        python
-        toml
-        tmux
-        tsx
-        yaml
-        zig
-        c_sharp
-        #org-nvim
-      ]);
+    plugins = pkgs.callPackage ../../program-config/neovim/plugins.nix {};
   };
 }
