@@ -1,8 +1,8 @@
-{ pkgs, ... }:
-pkgs.stdenv.mkDerivation {
+{ stdenv, fetchFromGitHub }:
+stdenv.mkDerivation {
   pname = "org-bullets.nvim";
-  version = "1.0.0"; # TODO
-  src = pkgs.fetchFromGitHub {
+  version = "1.0.0";
+  src = fetchFromGitHub {
     owner = "nvim-orgmode";
     repo = "org-bullets.nvim";
     rev = "21437cfa99c70f2c18977bffd423f912a7b832ea";
