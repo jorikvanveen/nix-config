@@ -15,6 +15,7 @@ in {
     ./modules/gamemode.nix
     ./modules/pipewire.nix
     ./modules/niri.nix
+    ./modules/geoclue.nix
   ];
   environment.systemPackages = [
     pkgs.xorg.libXi
