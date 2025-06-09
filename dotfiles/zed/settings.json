@@ -1,4 +1,12 @@
 {
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "openai",
+      "model": "o4-mini"
+    },
+    "version": "2"
+  },
   "auto_install_extensions": {
     "assembly": true,
     "git-firefly": true,
@@ -32,7 +40,7 @@
       "program": "nu"
     }
   },
-  "theme": "Base16 Catppuccin Mocha",
+  "theme": "Catppuccin Mocha",
   "ui_font_family": "SF Pro",
   "ui_font_size": 14.666666666666666,
   "use_autoclose": true,

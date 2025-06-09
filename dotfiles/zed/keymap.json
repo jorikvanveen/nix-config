@@ -1,11 +1,8 @@
 [
   {
     "bindings": {
-      "ctrl-m": [
-        "workspace::SendKeystrokes",
-        "up"
-      ],
-      "shift-tab": "menu::SelectPrev",
+      "ctrl-m": ["workspace::SendKeystrokes", "up"],
+      "shift-tab": "menu::SelectPrevious",
       "tab": "menu::SelectNext"
     },
     "context": "FileFinder"
@@ -19,22 +16,13 @@
       "space space": "tab_switcher::Toggle",
       "space w s": "project_symbols::Toggle"
     },
-    "context": "Editor && vim_mode != insert && !BufferSearchBar"
+    "context": "VimControl"
   },
   {
     "bindings": {
-      "ctrl-\\": [
-        "workspace::ActivatePaneInDirection",
-        "Up"
-      ],
-      "ctrl-b": [
-        "terminal::SendKeystroke",
-        "ctrl-b"
-      ],
-      "escape": [
-        "terminal::SendKeystroke",
-        "escape"
-      ]
+      "ctrl-\\": "workspace::ActivatePaneUp",
+      "ctrl-b": ["terminal::SendKeystroke", "ctrl-b"],
+      "escape": ["terminal::SendKeystroke", "escape"]
     },
     "context": "Terminal"
   },
@@ -46,14 +34,8 @@
   },
   {
     "bindings": {
-      "shift-tab": [
-        "workspace::SendKeystrokes",
-        "up"
-      ],
-      "tab": [
-        "workspace::SendKeystrokes",
-        "down"
-      ]
+      "shift-tab": ["workspace::SendKeystrokes", "up"],
+      "tab": ["workspace::SendKeystrokes", "down"]
     },
     "context": "Editor && (showing_code_actions || showing_completions)"
   },
@@ -66,7 +48,7 @@
   {
     "bindings": {
       "j": "menu::SelectNext",
-      "k": "menu::SelectPrev",
+      "k": "menu::SelectPrevious",
       "x": "tab_switcher::CloseSelectedItem"
     },
     "context": "TabSwitcher"
