@@ -2,8 +2,8 @@
   "agent": {
     "model_parameters": [],
     "default_model": {
-      "provider": "openai",
-      "model": "o4-mini"
+      "provider": "google",
+      "model": "gemini-2.0-flash"
     },
     "version": "2"
   },

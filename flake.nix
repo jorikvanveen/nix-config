@@ -36,6 +36,9 @@
 
     ags-shell.url = "path:./ags";
     ags-shell.inputs.nixpkgs.follows = "nixpkgs";
+
+    zed.url = "github:zed-industries/zed";
+    zed.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
