@@ -30,7 +30,7 @@
   },
   "buffer_font_size": 14.666666666666666,
   "cursor_blink": false,
-  "load_direnv": "shell_hook",
+  "load_direnv": "direct",
   "relative_line_numbers": true,
   "tab_bar": {
     "show": false
