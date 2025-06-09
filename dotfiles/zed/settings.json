@@ -1,0 +1,40 @@
+{
+  "auto_install_extensions": {
+    "assembly": true,
+    "git-firefly": true,
+    "html": true,
+    "java": true,
+    "java-eclipse-jdtls": true,
+    "make": true,
+    "nix": true,
+    "nu": true,
+    "pylsp": true,
+    "sql": true,
+    "svelte": true,
+    "toml": true,
+    "vue": true
+  },
+  "auto_update": false,
+  "base_keymap": "VSCode",
+  "buffer_font_family": "SFMono Nerd Font",
+  "buffer_font_features": {
+    "calt": true
+  },
+  "buffer_font_size": 14.666666666666666,
+  "cursor_blink": false,
+  "load_direnv": "shell_hook",
+  "relative_line_numbers": true,
+  "tab_bar": {
+    "show": false
+  },
+  "terminal": {
+    "shell": {
+      "program": "nu"
+    }
+  },
+  "theme": "Base16 Catppuccin Mocha",
+  "ui_font_family": "SF Pro",
+  "ui_font_size": 14.666666666666666,
+  "use_autoclose": true,
+  "vim_mode": true
+}
