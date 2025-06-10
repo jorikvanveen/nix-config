@@ -1,5 +1,17 @@
 [
   {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": null
+    }
+  },
+  {
+    "context": "AgentPanel || MessageEditor > (Editor && (vim_mode == insert || vim_mode == normal))",
+    "bindings": {
+      "ctrl-t": "agent::NewThread"
+    }
+  },
+  {
     "bindings": {
       "ctrl-m": ["workspace::SendKeystrokes", "up"],
       "shift-tab": "menu::SelectPrevious",
@@ -28,7 +40,8 @@
   },
   {
     "bindings": {
-      "ctrl-j": "terminal_panel::ToggleFocus"
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "ctrl-'": "editor::AcceptEditPrediction"
     },
     "context": "Editor"
   },

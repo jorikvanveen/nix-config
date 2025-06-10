@@ -2,8 +2,8 @@
   "agent": {
     "model_parameters": [],
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.0-flash"
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
     },
     "version": "2"
   },
@@ -28,7 +28,7 @@
   "buffer_font_features": {
     "calt": true
   },
-  "buffer_font_size": 14.666666666666666,
+  "buffer_font_size": 14,
   "cursor_blink": false,
   "load_direnv": "direct",
   "relative_line_numbers": true,
@@ -42,7 +42,10 @@
   },
   "theme": "Catppuccin Mocha",
   "ui_font_family": "SF Pro",
-  "ui_font_size": 14.666666666666666,
+  "ui_font_size": 16,
   "use_autoclose": true,
-  "vim_mode": true
+  "vim_mode": true,
+  "features": {
+    "edit_prediction_provider": "copilot"
+  }
 }
