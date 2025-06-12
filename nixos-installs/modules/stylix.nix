@@ -16,7 +16,7 @@ in {
   stylix.cursor.size = 24;
   stylix.fonts.monospace = {
     name = "SFMono Nerd Font";
-    package = pkgs.nerd-fonts.iosevka;
+    package = sfmono;
   };
   stylix.fonts.sansSerif = {
     name = "SF Pro";
@@ -27,4 +27,5 @@ in {
     applications = 11;
     terminal = 11;
   };
+  fonts.packages = [ pkgs.nerd-fonts.iosevka ];
 }

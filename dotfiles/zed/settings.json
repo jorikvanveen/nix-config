@@ -29,7 +29,7 @@
   },
   "auto_update": false,
   "base_keymap": "VSCode",
-  "buffer_font_family": "Iosevka",
+  "buffer_font_family": "Iosevka Nerd Font",
   "buffer_font_features": {
     "calt": true
   },
