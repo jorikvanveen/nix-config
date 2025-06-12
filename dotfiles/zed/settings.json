@@ -7,8 +7,8 @@
     },
     "model_parameters": [],
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-latest"
     },
     "version": "2"
   },
@@ -29,7 +29,7 @@
   },
   "auto_update": false,
   "base_keymap": "VSCode",
-  "buffer_font_family": "SFMono Nerd Font",
+  "buffer_font_family": "Iosevka Nerd Font",
   "buffer_font_features": {
     "calt": true
   },
