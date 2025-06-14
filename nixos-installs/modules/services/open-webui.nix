@@ -1,12 +1,12 @@
-{ unstable, pkgs-stable, ... }: {
+{ pkgs, ... }: {
   services.open-webui = {
     enable = true;
     port = 8090;
-    package = unstable.open-webui;
+    package = pkgs.open-webui;
   };
 
   systemd.services.litellm-claude = let
-    py-env = (pkgs-stable.python3.withPackages
+    py-env = (pkgs.python3.withPackages
       (ppkgs: with ppkgs; [ litellm ] ++ litellm.optional-dependencies.proxy ++ litellm.optional-dependencies.extra_proxy));
   in {
     enable = true;

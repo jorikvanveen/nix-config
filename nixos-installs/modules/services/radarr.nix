@@ -1,7 +1,7 @@
-{ pkgs-stable, ... }: {
+{ pkgs, ... }: {
   services.radarr = {
     enable = true;
-    package = pkgs-stable.radarr;
+    package = pkgs.radarr;
     user = "main";
     group = "users";
     dataDir = "/home/main/data/radarr";

@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, pinned-pkgs, ... }: {  # Enable vaapi on OS-level
+{ pkgs, ... }: {  # Enable vaapi on OS-level
   services.jellyfin = {
     enable = true;
     user = "main";

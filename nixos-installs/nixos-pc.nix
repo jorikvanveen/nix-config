@@ -12,6 +12,7 @@
       ./generic-cli.nix
       ./generic-desktop.nix
 
+      ./modules/main-user.nix
       ./modules/syncthing-pc.nix
       ./modules/cachy-kernel.nix
       ./modules/sshfs.nix

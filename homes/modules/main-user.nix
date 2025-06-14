@@ -1,7 +1,7 @@
-{ homedir, ... }: {
+{ homedir, lib, ... }: {
   home = {
     username = "main";
-    homeDirectory = homedir;
+    homeDirectory = lib.mkForce homedir;
     stateVersion = "24.05";
   };
 }

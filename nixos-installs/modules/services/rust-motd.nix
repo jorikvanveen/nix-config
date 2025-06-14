@@ -1,11 +1,11 @@
-{ pkgs-stable, ... }: {
+{ pkgs, ... }: {
   programs.rust-motd = {
     enable = true;
     order = [ "banner" "filesystems" "docker" "service_status" "uptime" ];
     settings = {
       banner = {
         color = "white";
-        command = ''${pkgs-stable.fastfetch.outPath}/bin/fastfetch'';
+        command = ''${pkgs.fastfetch.outPath}/bin/fastfetch'';
       };
       filesystems = {
         root = "/";

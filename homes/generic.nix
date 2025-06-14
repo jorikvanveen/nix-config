@@ -2,6 +2,7 @@
 let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
 in {
   imports = [
+    ./modules/stylix.nix
     ./modules/git.nix
     ./modules/carapace.nix
     ./modules/starship.nix

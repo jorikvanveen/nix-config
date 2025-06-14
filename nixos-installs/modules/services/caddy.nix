@@ -1,7 +1,7 @@
-{ pkgs-stable, ... }: {
+{ pkgs, ... }: {
   services.caddy = {
     enable = true;
-    package = pkgs-stable.caddy;
+    package = pkgs.caddy;
     virtualHosts = {
       "lr.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8686

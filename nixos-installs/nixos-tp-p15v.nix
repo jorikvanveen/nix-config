@@ -12,6 +12,7 @@
       ./generic-cli.nix
       ./generic-desktop.nix
 
+      ./modules/main-user.nix
       ./modules/syncthing-laptop.nix
       ./modules/sshfs.nix
       ./modules/gaming-specialisation.nix

@@ -30,15 +30,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-hHWJWaDHbftm9mEmJX0jIbbU7Ze0NqDk3YsSu41obss=",
         "path": "./ags",
         "type": "path"
       },
       "original": {
         "path": "./ags",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "apple-fonts": {
       "inputs": {
@@ -612,8 +611,8 @@
       },
       "original": {
         "owner": "nixos",
+        "ref": "64458d571301c14aaaa8e70c925ccaae04f97ea7",
         "repo": "nixpkgs",
-        "rev": "64458d571301c14aaaa8e70c925ccaae04f97ea7",
         "type": "github"
       }
     },

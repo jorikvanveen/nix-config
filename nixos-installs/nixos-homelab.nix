@@ -3,15 +3,13 @@
     # Include the results of the hardware scan.
     ./hardware/nixos-homelab-hardware.nix
 
+    ./generic-cli.nix
+
+    ./modules/main-user.nix
     ./modules/syncthing-homelab.nix
     ./modules/systemd-boot.nix
-    ./modules/network.nix
-    ./modules/locale.nix
-    ./modules/x11-keymap.nix
-    ./modules/main-user.nix
     ./modules/sops.nix
     ./modules/podman.nix
-    ./modules/flake-support.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
 
@@ -55,7 +53,7 @@
   ];
 
   # Disable printing
-  services.printing.enable = false;
+  services.printing.enable = lib.mkForce false;
 
   networking.hostName = "nixos-homelab";
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
