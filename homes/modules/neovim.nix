@@ -1,4 +1,4 @@
-{ pkgs, homedir, dotfiledir, config, ... }:
+{ pkgs, homedir, dotfiledir, config, lib, ... }:
 let
   stylixPalette = with config.lib.stylix.colors.withHashtag; ''
     require('mini.base16').setup({
@@ -11,7 +11,7 @@ let
     })
   '';
 in {
-  stylix.targets.neovim.enable = false;
+  stylix.targets.neovim.enable = lib.mkForce false;
   home.file.nvim-config = {
     target = homedir + "/.config/nvim/init.lua";
     source = config.lib.file.mkOutOfStoreSymlink dotfiledir + "/nvim/init.lua";
@@ -20,11 +20,10 @@ in {
     target = homedir + "/.config/nvim/lua/palette.lua";
     text = stylixPalette;
   };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    plugins = pkgs.callPackage ../../program-config/neovim/plugins.nix {};
-  };
+  home.packages = [
+    (pkgs.neovim.override {
+      configure.packages.myPlugins.start = pkgs.callPackage ../../program-config/neovim/plugins.nix { };
+      configure.customRC = "source /home/main/.config/nvim/init.lua";
+    })
+  ];
 }
