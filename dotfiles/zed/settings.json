@@ -1,0 +1,56 @@
+{
+  "agent": {
+    "always_allow_tool_actions": true,
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-latest"
+    },
+    "model_parameters": [],
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-latest"
+    },
+    "version": "2"
+  },
+  "auto_install_extensions": {
+    "assembly": true,
+    "git-firefly": true,
+    "html": true,
+    "java": true,
+    "java-eclipse-jdtls": true,
+    "make": true,
+    "nix": true,
+    "nu": true,
+    "pylsp": true,
+    "sql": true,
+    "svelte": true,
+    "toml": true,
+    "vue": true
+  },
+  "auto_update": false,
+  "base_keymap": "VSCode",
+  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_features": {
+    "calt": true
+  },
+  "buffer_font_size": 14,
+  "cursor_blink": false,
+  "load_direnv": "direct",
+  "relative_line_numbers": true,
+  "tab_bar": {
+    "show": false
+  },
+  "terminal": {
+    "shell": {
+      "program": "nu"
+    }
+  },
+  "theme": "Catppuccin Mocha",
+  "ui_font_family": "SF Pro",
+  "ui_font_size": 16,
+  "use_autoclose": true,
+  "vim_mode": true,
+  "features": {
+    "edit_prediction_provider": "copilot"
+  }
+}

@@ -10,7 +10,6 @@ in {
 
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  stylix.image = ./.bg.jpg;
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Classic";
   stylix.polarity = "dark";
@@ -28,4 +27,5 @@ in {
     applications = 11;
     terminal = 11;
   };
+  fonts.packages = [ pkgs.nerd-fonts.iosevka ];
 }

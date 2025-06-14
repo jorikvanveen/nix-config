@@ -7,5 +7,4 @@
     ./modules/main-user.nix
     ./modules/reaper-extensions.nix
   ];
-
 }

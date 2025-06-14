@@ -7,35 +7,27 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
       ./hardware/nixos-pc-hardware.nix
 
-      # Include generic nixos config
-      ./generic.nix
+      ./generic-cli.nix
+      ./generic-desktop.nix
 
       ./modules/syncthing-pc.nix
-
-      ./modules/gamescope-specialisation.nix
-
       ./modules/cachy-kernel.nix
-
       ./modules/sshfs.nix
-
       ./modules/sops.nix
-
       ./modules/services/sunshine.nix
-
       ./modules/auto-login.nix
-
       ./modules/ddcutil.nix
-
       ./modules/alvr.nix
-
       ./modules/services/ssh.nix
       ./modules/reaper.nix
       ./modules/vinegar.nix
       ./modules/input-remapper.nix
     ];
+
+
+  boot.kernel.sysctl."fs.file-max" = 1000000;
 
   networking.hostName = "nixos-pc"; # Define your hostname.
   networking.firewall.enable = true;

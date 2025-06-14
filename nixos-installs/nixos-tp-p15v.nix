@@ -7,25 +7,18 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
       ./hardware/nixos-tp-p15v-hardware.nix
 
-      # Machine-independent stuff
-      ./generic.nix
+      ./generic-cli.nix
+      ./generic-desktop.nix
 
-      # Machine-specific syncthing config
       ./modules/syncthing-laptop.nix
-
       ./modules/sshfs.nix
-
-      # Add boot entry that enables NVIDIA dGPU
       ./modules/gaming-specialisation.nix
-
       ./modules/eth-conn-sharing.nix
-
       ./modules/xanmod-kernel.nix
-      ./modules/services/apache-php.nix
       ./modules/reaper.nix
+      ./modules/upower.nix
     ];
 
 

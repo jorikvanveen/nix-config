@@ -1,14 +1,17 @@
 {
   imports = [
     ./modules/stylix.nix
+    ./modules/niri.nix
     ./modules/zed.nix
     ./modules/mime-associations.nix
     ./modules/ghostty.nix
     ./modules/kodi.nix
     ./modules/heroic.nix
     ./modules/moonlight.nix
-    ./modules/archive-tools.nix
     ./modules/additional-fonts.nix
+    ./modules/logseq.nix
+    ./modules/bato.nix
+    ./modules/gammastep.nix
 
     ./modules/dconf/enable-nightlight.nix
     ./modules/dconf/extensions.nix

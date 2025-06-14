@@ -1,0 +1,69 @@
+[
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": "editor::Tab"
+    }
+  },
+  {
+    "context": "AgentPanel || MessageEditor > (Editor && (vim_mode == insert || vim_mode == normal))",
+    "bindings": {
+      "ctrl-t": "agent::NewThread"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-m": ["workspace::SendKeystrokes", "up"],
+      "shift-tab": "menu::SelectPrevious",
+      "tab": "menu::SelectNext"
+    },
+    "context": "FileFinder"
+  },
+  {
+    "bindings": {
+      "space c a": "editor::ToggleCodeActions",
+      "space f f": "file_finder::Toggle",
+      "space g r": "editor::FindAllReferences",
+      "space r n": "editor::Rename",
+      "space space": "tab_switcher::Toggle",
+      "space w s": "project_symbols::Toggle"
+    },
+    "context": "VimControl"
+  },
+  {
+    "bindings": {
+      "ctrl-\\": "workspace::ActivatePaneUp",
+      "ctrl-b": ["terminal::SendKeystroke", "ctrl-b"],
+      "escape": ["terminal::SendKeystroke", "escape"]
+    },
+    "context": "Terminal"
+  },
+  {
+    "bindings": {
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "ctrl-'": "editor::AcceptEditPrediction"
+    },
+    "context": "Editor"
+  },
+  {
+    "bindings": {
+      "shift-tab": ["workspace::SendKeystrokes", "up"],
+      "tab": ["workspace::SendKeystrokes", "down"]
+    },
+    "context": "Editor && (showing_code_actions || showing_completions)"
+  },
+  {
+    "bindings": {
+      "alt-w": "diagnostics::ToggleWarnings"
+    },
+    "context": "Workspace"
+  },
+  {
+    "bindings": {
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "x": "tab_switcher::CloseSelectedItem"
+    },
+    "context": "TabSwitcher"
+  }
+]
