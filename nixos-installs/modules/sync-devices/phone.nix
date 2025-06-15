@@ -1,7 +1,7 @@
 {
   services.syncthing = {
     settings.devices.phone = {
-      id = "H2GQ7C4-OXZPDVO-4PUQ5IL-4KVIKNC-7EU3RNT-EO5NV5K-QUFY7R3-35LJHAT";
+      id = "DBX3H5O-3MVR5MX-2CMSIOW-4LCBWD6-RH5ZLRM-MRIXVGW-3GRXWAR-CAFFXQA";
       name = "phone";
     };
 

@@ -1,14 +1,17 @@
 {
+  "debugger": {
+    "button": true
+  },
   "agent": {
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash-preview-latest"
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "model_parameters": [],
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash-preview-latest"
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "version": "2"
   },
