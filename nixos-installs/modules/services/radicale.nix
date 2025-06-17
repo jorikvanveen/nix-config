@@ -15,4 +15,10 @@
       };
     };
   };
+  sops.secrets = {
+    radicale-htpasswd = {
+      owner = "radicale";
+    };
+    radicale-password = {};
+  };
 }

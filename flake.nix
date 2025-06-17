@@ -37,7 +37,7 @@
     ags-shell.url = "path:./ags";
     ags-shell.inputs.nixpkgs.follows = "nixpkgs";
 
-    zed.url = "github:zed-industries/zed";
+    zed.url = "github:zed-industries/zed?ref=v0.190.6";
     zed.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
