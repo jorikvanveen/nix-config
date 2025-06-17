@@ -39,6 +39,9 @@
 
     zed.url = "github:zed-industries/zed?ref=v0.190.6";
     zed.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -84,9 +87,11 @@
         extraModules =
           [ ./nixos-installs/nixos-pc.nix inputs.musnix.nixosModules.musnix ];
       };
-      nixosConfigurations.nixos-homelab = makeOsConfig {
+      nixosConfigurations.nixos-homelab = makeOsConfig rec {
         home = import ./homes/nixos-homelab.nix;
         extraModules = [ ./nixos-installs/nixos-homelab.nix ];
+        homedir = "/home/main";
+        syncdir = homedir + "/data";
       };
       nixosConfigurations.nixos-wsl = makeOsConfig {
         home = import ./homes/nixos-wsl.nix;
