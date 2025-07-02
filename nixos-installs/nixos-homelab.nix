@@ -41,6 +41,7 @@
     ./modules/services/hoarder.nix
     ./modules/services/audiobookshelf.nix
     ./modules/services/radicale.nix
+    ./modules/services/calibre-web.nix
   ];
 
   environment.systemPackages = [

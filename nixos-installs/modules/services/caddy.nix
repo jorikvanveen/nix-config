@@ -93,7 +93,9 @@
       "radicale.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:5232
       '';
-
+      "calibre.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8898
+      '';
     };
   };
 }
