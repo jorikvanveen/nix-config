@@ -99,7 +99,7 @@
       "ebookdl.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:3300
         basic_auth {
-          ebookdl $apr1$UZrn/tmg$/pti2KGn9iBEtpuFYythz0
+          ebookdl $2y$05$SLaAYz9ufP0E/cBTnPL20.w0li9sO2WkxWTWbvsENiV6bcnTxK3K6
         }
       '';
     };
