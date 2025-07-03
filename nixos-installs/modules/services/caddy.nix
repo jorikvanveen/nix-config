@@ -99,8 +99,7 @@
       "ebookdl.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:3300
         basic_auth {
-          # Username "Bob", password "hiccup"
-          ebookdl $apr1$wEjE/dVD$ixS1NogTa6wsff/PkpW.40
+          ebookdl $apr1$UZrn/tmg$/pti2KGn9iBEtpuFYythz0
         }
       '';
     };
