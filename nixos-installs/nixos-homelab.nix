@@ -42,6 +42,7 @@
     ./modules/services/audiobookshelf.nix
     ./modules/services/radicale.nix
     ./modules/services/calibre-web.nix
+    ./modules/services/ebookdl-web.nix
   ];
 
   environment.systemPackages = [

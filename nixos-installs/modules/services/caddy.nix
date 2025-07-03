@@ -96,6 +96,9 @@
       "calibre.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8898
       '';
+      "ebookdl.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:3300
+      '';
     };
   };
 }

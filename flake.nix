@@ -42,6 +42,9 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+
+    ebookdl-web.url = "github:jorikvanveen/ebookdl-web";
+    ebookdl-web.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
