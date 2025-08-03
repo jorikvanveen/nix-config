@@ -1,4 +1,4 @@
-{ inputs, system, homedir, dotfiledir, config, ... }: {
+{ pkgs, system, homedir, dotfiledir, config, ... }: {
   home.file.zed-keymap = {
     target = homedir + "/.config/zed/keymap.json";
     source = config.lib.file.mkOutOfStoreSymlink dotfiledir
@@ -10,5 +10,5 @@
       + "/zed/settings.json";
   };
 
-  home.packages = [ (inputs.zed.packages.${system}.default) ];
+  home.packages = [ pkgs.zed-editor ];
 }
