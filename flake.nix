@@ -42,6 +42,10 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    
+    nomouse.url = "github:jorikvanveen/nomouse";
+    nomouse.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
