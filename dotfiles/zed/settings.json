@@ -1,14 +1,18 @@
 {
+  "show_edit_predictions": false,
+  "debugger": {
+    "button": true
+  },
   "agent": {
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash-preview-latest"
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "model_parameters": [],
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4.1"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     },
     "version": "2"
   },
@@ -48,7 +52,7 @@
   "theme": "Catppuccin Mocha",
   "ui_font_family": "SF Pro",
   "ui_font_size": 16,
-  "use_autoclose": true,
+  "use_autoclose": false,
   "vim_mode": true,
   "features": {
     "edit_prediction_provider": "copilot"

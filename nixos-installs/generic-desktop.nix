@@ -1,5 +1,7 @@
 { inputs, pkgs, system, ... }:
-let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+let
+  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+  nomouse = inputs.nomouse.packages.${system}.default;
 in {
   imports = [
     ./modules/calibre.nix
@@ -18,6 +20,7 @@ in {
     ./modules/geoclue.nix
   ];
   environment.systemPackages = [
+    nomouse
     pkgs.xorg.libXi
     pkgs.xorg.libXtst
     pkgs.dconf-editor

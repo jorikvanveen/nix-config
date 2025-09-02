@@ -69,7 +69,9 @@ export default function Audio() {
     captureProcess.write("\n")
     captureProcess.kill()
     captureProcess = spawnCaptureProcess(loudness_10hz)
-    exec(["playerctl", "-a", "pause"])
+    try {
+      exec(["playerctl", "-a", "pause"])
+    } catch {}
   })
 
   let default_sink_volume = new Variable(0).poll(1000, () => Wp.get_default()?.audio.get_default_speaker()?.get_volume() ?? 0)
