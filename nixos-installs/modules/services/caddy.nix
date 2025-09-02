@@ -51,6 +51,9 @@
       "syncthing.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8384
       '';
+      "sptr.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:8383
+      '';
       "tutorials.jorik-dev.com".extraConfig = ''
         encode gzip
         root * /srv/tutorials
