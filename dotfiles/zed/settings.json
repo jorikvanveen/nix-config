@@ -11,8 +11,8 @@
     },
     "model_parameters": [],
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
+      "provider": "openrouter",
+      "model": "openai/gpt-5"
     },
     "version": "2"
   },
