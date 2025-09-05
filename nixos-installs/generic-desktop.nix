@@ -18,6 +18,7 @@ in {
     ./modules/pipewire.nix
     ./modules/niri.nix
     ./modules/geoclue.nix
+    ./modules/services/ratbagd.nix
   ];
   environment.systemPackages = [
     nomouse
