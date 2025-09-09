@@ -25,7 +25,7 @@
     enable = true;
     extraPackages = [
       pkgs.intel-media-driver
-      pkgs.intel-media-sdk
+      #pkgs.intel-media-sdk
       pkgs.libva-vdpau-driver
       pkgs.intel-compute-runtime-legacy1
       pkgs.intel-ocl

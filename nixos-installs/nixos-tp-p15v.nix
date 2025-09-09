@@ -21,6 +21,7 @@
       ./modules/xanmod-kernel.nix
       ./modules/reaper.nix
       ./modules/upower.nix
+      ./modules/services/ci-webhook.nix
     ];
 
 
