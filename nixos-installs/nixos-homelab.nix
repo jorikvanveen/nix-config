@@ -43,6 +43,7 @@
     ./modules/services/radicale.nix
     ./modules/services/calibre-web.nix
     ./modules/services/ebookdl-web.nix
+    ./modules/services/ci-webhook.nix
   ];
 
   environment.systemPackages = [
