@@ -22,7 +22,7 @@
       User = pkgs.lib.mkForce "main";
       Group = pkgs.lib.mkForce "users";
     };
-    path = [pkgs.nushell pkgs.curl];
+    path = [pkgs.nushell pkgs.curl pkgs.zip pkgs.podman];
   };
 }
 
