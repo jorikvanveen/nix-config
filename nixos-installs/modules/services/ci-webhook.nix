@@ -22,6 +22,7 @@
       User = pkgs.lib.mkForce "main";
       Group = pkgs.lib.mkForce "users";
     };
+    path = [pkgs.nushell pkgs.curl];
   };
 }
 
