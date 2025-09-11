@@ -105,6 +105,9 @@
           ebookdl $2y$05$SLaAYz9ufP0E/cBTnPL20.w0li9sO2WkxWTWbvsENiV6bcnTxK3K6
         }
       '';
+      "wh.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:9000
+      '';   
     };
   };
 }
