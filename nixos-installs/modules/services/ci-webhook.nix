@@ -2,13 +2,9 @@
   services.webhook = {
     enable = true;
     hooks.deploy-hovyu = {
-      execute-command = "${pkgs.nushell}/bin/nu";
+      execute-command = "/home/main/data/hovyu-scripts/deploy-hovyu.sh";
       command-working-directory = "/home/main/data/hovyu-scripts";
       pass-arguments-to-command = [
-        {
-          source = "string";
-          name =  "/home/main/data/hovyu-scripts/deploy-hovyu.sh";
-        } 
         {
           source = "payload";
           name = "job_id";
