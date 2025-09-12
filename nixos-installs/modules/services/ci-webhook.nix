@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services.webhook = {
     enable = true;
     hooks.deploy-hovyu = {
@@ -18,7 +19,15 @@
       User = pkgs.lib.mkForce "main";
       Group = pkgs.lib.mkForce "users";
     };
-    path = [pkgs.nushell pkgs.curl pkgs.zip pkgs.podman pkgs.unzip pkgs.su pkgs.slirp4netns];
+    path = [
+      pkgs.nushell
+      pkgs.curl
+      pkgs.zip
+      pkgs.podman
+      pkgs.unzip
+      pkgs.su
+      pkgs.slirp4netns
+      pkgs.shadow
+    ];
   };
 }
-
