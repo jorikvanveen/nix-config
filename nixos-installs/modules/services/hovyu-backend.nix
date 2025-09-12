@@ -1,6 +1,9 @@
 {
   virtualisation.oci-containers.containers.hovyu-backend = {
     image = "hovyu-backend:latest";
+    environment = {
+      "BASE_DIR" = "/data";
+    };
     #environmentFiles = [
     #  "/run/secrets/spottarr-usenet-pw"
     #  "/run/secrets/spottarr-usenet-name"
@@ -16,9 +19,9 @@
     #  "SPOTNET__IMPORTBATCHSIZE" = "10000";
     #  "SPOTNET__IMPORTADULTCONTENT" = "false";
     #};
-    #volumes = [
-    #  "/mnt/media/data/spottarr:/data"
-    #];
+    volumes = [
+      "/home/main/data/hovyu-backend:/data"
+    ];
     ports = [
       "127.0.0.1:8000:8000"
     ];
