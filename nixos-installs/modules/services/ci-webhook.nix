@@ -31,7 +31,6 @@
     serviceConfig = {
       User = pkgs.lib.mkForce "main";
       Group = pkgs.lib.mkForce "users";
-      SupplementaryGroups = [ "podman" ];
     };
     path = [
       pkgs.nushell

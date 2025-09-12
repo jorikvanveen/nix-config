@@ -9,7 +9,7 @@
     ./modules/syncthing-homelab.nix
     ./modules/systemd-boot.nix
     ./modules/sops.nix
-    ./modules/podman.nix
+    ./modules/docker.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
 
@@ -44,6 +44,7 @@
     ./modules/services/calibre-web.nix
     ./modules/services/ebookdl-web.nix
     ./modules/services/hovyu-backend.nix
+    ./modules/services/gitlab-runner.nix
   ];
 
   environment.systemPackages = [
