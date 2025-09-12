@@ -113,7 +113,7 @@
         reverse_proxy http://localhost:8000
       '';
       "hovyu.jorik-dev.com".extraConfig = ''
-        root * /home/main/data/hovryu-frontend
+        root * /home/main/data/hovyu-frontend
         try_files {path} /index.html
         file_server
         encode gzip
