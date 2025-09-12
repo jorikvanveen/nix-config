@@ -43,7 +43,7 @@
     ./modules/services/radicale.nix
     ./modules/services/calibre-web.nix
     ./modules/services/ebookdl-web.nix
-    ./modules/services/ci-webhook.nix
+    ./modules/services/hovyu-backend.nix
   ];
 
   environment.systemPackages = [

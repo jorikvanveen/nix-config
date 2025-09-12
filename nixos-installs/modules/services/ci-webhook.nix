@@ -13,8 +13,21 @@
       ];
     };
   };
+# [Unit]
+# After=network.target
+# Description=Webhook service
+# 
+# [Service]
+# ExecStart=/nix/store/3k3zm9pykydhzn3qzag72hii4x9rihgs-unit-script-webhook-start/bin/webhook-start
+# Group=users
+# Restart=on-failure
+# SupplementaryGroups=podman
+# User=main
+# 
+# [Install]
+# WantedBy=multi-user.target
 
-  systemd.services.webhook = {
+  systemd.services.user.webhook = {
     serviceConfig = {
       User = pkgs.lib.mkForce "main";
       Group = pkgs.lib.mkForce "users";
