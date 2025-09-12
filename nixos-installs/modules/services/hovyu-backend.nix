@@ -1,6 +1,6 @@
 {
   virtualisation.oci-containers.containers.hovyu-backend = {
-    image = "hovyu-backend:latest";
+    image = "localhost/hovyu-backend:latest";
     #environmentFiles = [
     #  "/run/secrets/spottarr-usenet-pw"
     #  "/run/secrets/spottarr-usenet-name"
