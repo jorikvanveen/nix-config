@@ -27,9 +27,9 @@
 # [Install]
 # WantedBy=multi-user.target
 
-  systemd.services.user.webhook = {
+  systemd.services.webhook = {
     serviceConfig = {
-      User = pkgs.lib.mkForce "main";
+      User = pkgs.lib.mkForce "root";
       Group = pkgs.lib.mkForce "users";
     };
     path = [

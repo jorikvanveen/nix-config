@@ -45,6 +45,7 @@
     ./modules/services/ebookdl-web.nix
     ./modules/services/hovyu-backend.nix
     ./modules/services/gitlab-runner.nix
+    ./modules/services/ci-webhook.nix
   ];
 
   environment.systemPackages = [
