@@ -42,6 +42,7 @@
       pkgs.slirp4netns
       pkgs.shadow
       pkgs.sudo
+      pkgs.docker
     ];
   };
 }
