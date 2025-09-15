@@ -2,7 +2,7 @@
   virtualisation.oci-containers.containers.hovyu-backend = {
     image = "hovyu-backend:latest";
     environment = {
-      "BASE_DIR" = "/data";
+      "DJANGO_BASEDIR" = "/data";
     };
     #environmentFiles = [
     #  "/run/secrets/spottarr-usenet-pw"
