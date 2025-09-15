@@ -112,7 +112,7 @@
       "hovyu-backend.jorik-dev.com".extraConfig = ''
         handle /static/* {
           file_server {
-            root /srv/hovyu-static/
+            root /srv/hovyu-static
           }
         }
         handle {
