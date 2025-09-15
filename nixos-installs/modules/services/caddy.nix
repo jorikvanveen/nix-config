@@ -110,10 +110,10 @@
         reverse_proxy http://localhost:9000
       '';
       "hovyu-backend.jorik-dev.com".extraConfig = ''
-        handle /static {
-          root * /srv/hovyu-static/
-          file_server
-          encode gzip
+        handle /static/* {
+          file_server {
+            root /srv/hovyu-static/
+          }
         }
         handle {
           reverse_proxy http://localhost:8000
