@@ -111,7 +111,7 @@
       '';
       "hovyu-backend.jorik-dev.com".extraConfig = ''
         root * /srv/hovyu-static
-        handle /static/* {
+        handle_path /static/* {
           file_server
         }
         handle {
