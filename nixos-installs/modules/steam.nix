@@ -9,5 +9,6 @@
 
   environment.systemPackages  = [
     pkgs.mangohud
+    pkgs.gamescope
   ];
 }
