@@ -1,4 +1,4 @@
 git add --all &&
-sudo nixos-rebuild switch --print-build-logs --flake . &&
+nh os switch . &&
 git add --all &&
 git commit -m "$1"
