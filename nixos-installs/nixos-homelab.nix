@@ -46,6 +46,7 @@
     ./modules/services/hovyu-backend.nix
     ./modules/services/gitlab-runner.nix
     ./modules/services/ci-webhook.nix
+    ./modules/services/actual.nix
   ];
 
   environment.systemPackages = [

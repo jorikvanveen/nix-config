@@ -12,5 +12,7 @@ in {
       label = "personal";
       enable = true;
     };
+
+    settings.options.relaysEnabled = true;
   };
 }
