@@ -5,6 +5,7 @@ in {
     user = "main";
     dataDir = syncdir;
     configDir = homedir + "/.config/syncthing";
+    openDefaultPorts = true;
 
     settings.folders.personal = {
       path = syncdir + "/personal";
