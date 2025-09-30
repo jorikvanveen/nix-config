@@ -22,7 +22,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      WorkingDirectory = "/home/main/data/actual-flow"; 
+      WorkingDirectory = "/home/main/data/actual-flow/"; 
     };
   };
 }
