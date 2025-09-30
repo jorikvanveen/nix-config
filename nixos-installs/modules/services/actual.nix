@@ -22,7 +22,6 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "main"; 
       WorkingDirectory = "/home/main/data/actual-flow"; 
     };
   };
