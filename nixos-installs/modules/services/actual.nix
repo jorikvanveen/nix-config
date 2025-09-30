@@ -6,7 +6,7 @@
     settings.hostname = "0.0.0.0";
   };
 
-  systemd.user.timers."actual-flow-import" = {
+  systemd.timers."actual-flow-import" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "daily";
@@ -15,7 +15,8 @@
     };
   };
 
-  systemd.user.services."actual-flow-import" = {
+  systemd.services."actual-flow-import" = {
+    path = [ pkgs.bash ];
     script = ''
       set -eu
       cd /home/main/data/actual-flow
@@ -23,6 +24,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
+      User = "main";
     };
   };
 }
