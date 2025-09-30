@@ -18,12 +18,11 @@
   systemd.user.services."actual-flow-import" = {
     script = ''
       set -eu
+      cd /home/main/data/actual-flow
       ${pkgs.nodejs}/bin/npx --yes @lunchflow/actual-flow import
     '';
     serviceConfig = {
       Type = "oneshot";
-      DynamicUser = true;
-      WorkingDirectory = "/home/main/data/actual-flow/"; 
     };
   };
 }
