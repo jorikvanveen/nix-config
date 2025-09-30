@@ -22,6 +22,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
+      DynamicUser = true;
       WorkingDirectory = "/home/main/data/actual-flow/"; 
     };
   };
