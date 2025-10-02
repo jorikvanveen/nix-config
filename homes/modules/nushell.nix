@@ -3,6 +3,13 @@
     enable = true;
     # configFile.source = ../program-config/nushell/config.nu;
     shellAliases = {
+      gs = "git status";
+      gaa = "git add --all";
+      gc = "git commit -m";
+      gb = "git branch";
+      gp = "git push";
+      gpl = "git pull";
+
       vi = "nvim";
       vim = "nvim";
       #cd = "z";

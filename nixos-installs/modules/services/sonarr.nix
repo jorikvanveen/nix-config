@@ -1,7 +1,6 @@
 { pkgs, utils, ... }: {
   services.sonarr = {
     enable = true;
-    #package = pkgs.sonarr;
     user = "main";
     group = "users";
     dataDir = "/home/main/data/sonarr";
