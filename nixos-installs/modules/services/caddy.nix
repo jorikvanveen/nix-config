@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services.caddy = {
     enable = true;
     package = pkgs.caddy;
@@ -69,7 +70,7 @@
           }
         }
       '';
-      "plausible.jorik-dev.com".extraConfig =  ''
+      "plausible.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8087
       '';
       "rdt.jorik-dev.com".extraConfig = ''
@@ -103,6 +104,36 @@
         reverse_proxy http://localhost:3300
         basic_auth {
           ebookdl $2y$05$SLaAYz9ufP0E/cBTnPL20.w0li9sO2WkxWTWbvsENiV6bcnTxK3K6
+        }
+      '';
+      "wh.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:9000
+      '';
+      "actual.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:30313
+      '';
+      "hovyu-backend.jorik-dev.com".extraConfig = ''
+        root /srv/hovyu-static
+        handle_path /static* {
+          file_server
+        }
+        handle {
+          reverse_proxy http://localhost:8000
+        }
+      '';
+      "hovyu.jorik-dev.com".extraConfig = ''
+        root * /srv/hovyu-frontend
+        try_files {path} /index.html
+        file_server
+        encode gzip
+
+        # Strict security headers for production
+        header {
+            Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+            X-Content-Type-Options nosniff
+            X-Frame-Options DENY
+            X-XSS-Protection "1; mode=block"
+            Referrer-Policy strict-origin-when-cross-origin
         }
       '';
     };

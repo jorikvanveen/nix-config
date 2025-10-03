@@ -15,6 +15,7 @@
     hoarder-openai-key = {};
     spottarr-usenet-name = {};
     spottarr-usenet-pw = {};
+    gitlab-runner-docker-images-token-env = {};
   };
 }
 
