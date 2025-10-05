@@ -1,6 +1,5 @@
 { pkgs, inputs, system, ... }:
-let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
-in {
+ {
   imports = [
     ./modules/stylix.nix
     ./modules/git.nix
@@ -25,7 +24,7 @@ in {
     pkgs.jq
     pkgs.file
     pkgs.git
-    pkgs-stable.magic-wormhole # Broken on unstable (29 dec 2024)
+    pkgs.magic-wormhole # Broken on unstable (29 dec 2024)
     pkgs.nixfmt
     pkgs.uv
     pkgs.ffmpeg

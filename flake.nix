@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-linux6-14-6.url =
       "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
 
@@ -72,6 +72,10 @@
           } // extraSpecialArgs;
           modules = [
             home-manager.nixosModules.home-manager
+            {
+              nixpkgs.config.permittedInsecurePackages =
+                [ "qtwebengine-5.15.19" ];
+            }
             (makeHomeManagerModule { inherit home specialArgs; })
           ] ++ extraModules;
         };

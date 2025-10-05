@@ -1,6 +1,5 @@
 { inputs, pkgs, system, ... }:
 let
-  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
   nomouse = inputs.nomouse.packages.${system}.default;
 in {
   imports = [
@@ -18,6 +17,8 @@ in {
     ./modules/pipewire.nix
     ./modules/niri.nix
     ./modules/geoclue.nix
+    ./modules/gamescope.nix
+    ./modules/services/ratbagd.nix
   ];
   environment.systemPackages = [
     nomouse
@@ -27,17 +28,15 @@ in {
     pkgs.steam-run
     pkgs.skia
     pkgs.kdePackages.breeze
-    pkgs-stable.planify
     pkgs.vlc
     pkgs.signal-desktop-bin
     pkgs.thunderbird
     pkgs.mullvad-vpn
     pkgs.vesktop
     pkgs.obsidian
-    pkgs-stable.bruno # Broken on unstable (29 dec 2024)
+    pkgs.bruno
     pkgs.delfin
     pkgs.qbittorrent
-    pkgs.jellyfin-media-player
     pkgs.feishin
     pkgs.nicotine-plus
     (pkgs.finamp.overrideAttrs (oldAttrs: {
@@ -68,9 +67,7 @@ in {
     pkgs.libreoffice
     pkgs.cemu
     pkgs.ungoogled-chromium
-    pkgs.jellyfin-media-player
 
-    pkgs.fractal
-    pkgs.ryujinx
+    pkgs.ryubing
   ];
 }
