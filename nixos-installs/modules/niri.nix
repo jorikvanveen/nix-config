@@ -48,6 +48,7 @@ in {
     pkgs.gnome-online-accounts-gtk
     pkgs.dunst
     pkgs.bato
+    pkgs.wdisplays # display configuration
   ];
   services.dbus.packages = [
     pkgs.gnome-online-accounts
