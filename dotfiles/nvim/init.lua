@@ -120,7 +120,9 @@ local lsps = {
     }
   },
   omnisharp = {},
-  [ "jsonls" ] = {}
+  [ "jsonls" ] = {},
+  svelte = {},
+  ts_ls = {}
 };
 
 for lsp,config in pairs(lsps) do
@@ -216,5 +218,15 @@ require('orgmode').setup({
 })
 
 require('org-bullets').setup()
+require('nvim-treesitter.configs').setup(
+  {
+    highlight = {
+      enable = true
+    },
+    indent = {
+      enable = true
+    }
+  }
+)
 
 

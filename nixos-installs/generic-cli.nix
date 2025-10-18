@@ -1,6 +1,5 @@
 { pkgs, system, inputs, ... }:
-let pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
-in {
+{
   imports = [
     ./modules/lix.nix
     ./modules/locale.nix

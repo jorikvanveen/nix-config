@@ -1,20 +1,6 @@
 { pkgs, lib, inputs, ... }:
 let
-  xwayland-satellite = (pkgs.xwayland-satellite.overrideAttrs
-    (finalAttrs: prevAttrs: {
-      src = pkgs.fetchFromGitHub {
-        owner = "Supreeeme";
-        repo = "xwayland-satellite";
-        rev = "76ace3c656c6680e58e53f95baac0ae0fa1178b5";
-        hash = "sha256-NPSbIK8dsayXj4RbEwm+fMbnAKrTRRB/qFoWxfkRLDo=";
-      };
-      version = "0.5.1";
-      cargoHash = "sha256-tzRafL9vTiMfpGmcUwnEUHtcE54RXLXUgosdkiZzNiE=";
-      cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
-        inherit (finalAttrs) pname src version;
-        hash = finalAttrs.cargoHash;
-      };
-    }));
+  xwayland-satellite = pkgs.xwayland-satellite;
   ags-bar = inputs.ags-shell.packages.x86_64-linux.default;
 in {
   programs.niri.enable = true;
@@ -62,6 +48,7 @@ in {
     pkgs.gnome-online-accounts-gtk
     pkgs.dunst
     pkgs.bato
+    pkgs.wdisplays # display configuration
   ];
   services.dbus.packages = [
     pkgs.gnome-online-accounts

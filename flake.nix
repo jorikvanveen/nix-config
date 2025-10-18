@@ -72,6 +72,10 @@
           } // extraSpecialArgs;
           modules = [
             home-manager.nixosModules.home-manager
+            {
+              nixpkgs.config.permittedInsecurePackages =
+                [ "qtwebengine-5.15.19" ];
+            }
             (makeHomeManagerModule { inherit home specialArgs; })
           ] ++ extraModules;
         };

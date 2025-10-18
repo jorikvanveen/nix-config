@@ -20,7 +20,6 @@
       ./modules/services/sunshine.nix
       ./modules/auto-login.nix
       ./modules/ddcutil.nix
-      ./modules/alvr.nix
       ./modules/services/ssh.nix
       ./modules/reaper.nix
       ./modules/vinegar.nix

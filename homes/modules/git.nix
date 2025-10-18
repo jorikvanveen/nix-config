@@ -5,6 +5,7 @@
     userName = "Jorik";
     extraConfig = {
       pull.rebase = false; # Merge instead of rebase
+      push.autoSetupRemote = true;
     };
   };
 }
