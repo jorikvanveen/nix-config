@@ -16,7 +16,7 @@
   };
 
   systemd.services."actual-flow-import" = {
-    path = [ pkgs.bash ];
+    path = [ pkgs.bash pkgs.nodejs ];
     script = ''
       set -eu
       cd /home/main/data/actual-flow

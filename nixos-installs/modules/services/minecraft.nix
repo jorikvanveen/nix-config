@@ -10,7 +10,7 @@ in {
   networking.firewall.allowedUDPPorts = [ 25565 ];
 
   services.minecraft-servers = {
-    enable = false;
+    enable = true;
     eula = true;
 
     servers.epicserver = {
