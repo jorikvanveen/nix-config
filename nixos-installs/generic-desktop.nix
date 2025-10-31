@@ -29,7 +29,7 @@ in {
     pkgs.skia
     pkgs.kdePackages.breeze
     pkgs.vlc
-    pkgs.signal-desktop-bin
+    pkgs.signal-desktop
     pkgs.thunderbird
     pkgs.mullvad-vpn
     pkgs.vesktop
