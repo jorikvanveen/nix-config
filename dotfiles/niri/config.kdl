@@ -264,6 +264,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "dunst"
 spawn-at-startup "bato"
 spawn-at-startup "ghostty --command='cd ~/shared/personal/orgmode; nvim' --window-decoration=none --confirm-close-surface=false"
+spawn-at-startup "gnome-keyring -rf"
 
 environment {
   DISPLAY ":0"

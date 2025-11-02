@@ -27,16 +27,16 @@
     ./modules/services/ssh.nix
     ./modules/services/minecraft.nix
     ./modules/services/plausible.nix
-    ./modules/services/rdt-client.nix
+    #./modules/services/rdt-client.nix
     ./modules/services/qbittorrent.nix
     ./modules/services/earlyoom.nix
-    ./modules/services/zilean.nix
-    ./modules/services/zurg.nix
+    #./modules/services/zilean.nix
+    #./modules/services/zurg.nix
     ./modules/services/navidrome.nix
     ./modules/services/gonic.nix
     ./modules/services/spottarr.nix
     ./modules/services/lidarr.nix
-    ./modules/services/riven.nix
+    #./modules/services/riven.nix
     ./modules/services/vaultwarden.nix
     ./modules/services/hoarder.nix
     ./modules/services/audiobookshelf.nix
