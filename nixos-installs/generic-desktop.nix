@@ -39,6 +39,7 @@ in {
     pkgs.qbittorrent
     pkgs.feishin
     pkgs.nicotine-plus
+    pkgs.gimp
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {
