@@ -2,7 +2,7 @@
   description = "My Awesome Desktop Shell";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
 
     ags = {
       url = "github:aylur/ags";

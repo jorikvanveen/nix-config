@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs-ags.url = "github:nixos/nixpkgs?ref=2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
     nixpkgs-linux6-14-6.url =
       "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
 
@@ -35,10 +36,8 @@
     musnix.inputs.nixpkgs.follows = "nixpkgs";
 
     ags-shell.url = "path:./ags";
-    ags-shell.inputs.nixpkgs.follows = "nixpkgs";
+    ags-shell.inputs.nixpkgs.follows = "nixpkgs-ags";
 
-    zed.url = "github:zed-industries/zed?ref=v0.190.6";
-    zed.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
