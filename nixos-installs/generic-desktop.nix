@@ -60,7 +60,7 @@ in {
     pkgs.wl-clipboard
     pkgs.xdg-utils
 
-    pkgs.g4music
+    pkgs.gapless
 
     pkgs.vscode
     pkgs.lutris

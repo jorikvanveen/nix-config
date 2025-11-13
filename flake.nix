@@ -73,7 +73,7 @@
             home-manager.nixosModules.home-manager
             {
               nixpkgs.config.permittedInsecurePackages =
-                [ "qtwebengine-5.15.19" ];
+                [ "qtwebengine-5.15.19" "electron-36.9.5" ];
             }
             (makeHomeManagerModule { inherit home specialArgs; })
           ] ++ extraModules;
