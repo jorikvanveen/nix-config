@@ -1,6 +1,18 @@
 {
+  "agent_servers": {
+    "your_agent": {
+      "command": "path_to_executable",
+      "args": [],
+      "env": {}
+    }
+  },
+  "languages": {
+    "Rust": {
+      "show_edit_predictions": true
+    }
+  },
   "format_on_save": "off",
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   "debugger": {
     "button": true
   },
@@ -12,8 +24,8 @@
     },
     "model_parameters": [],
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5"
     },
   },
   "auto_install_extensions": {

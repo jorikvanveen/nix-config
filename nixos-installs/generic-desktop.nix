@@ -40,6 +40,8 @@ in {
     pkgs.feishin
     pkgs.nicotine-plus
     pkgs.gimp
+    pkgs.bluetuith
+    pkgs.pulsemixer
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {
