@@ -33,7 +33,7 @@
   },
   "auto_update": false,
   "base_keymap": "VSCode",
-  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_family": "Atkinson Hyperlegible Mono",
   "buffer_font_features": {
     "calt": true
   },
@@ -47,7 +47,7 @@
     }
   },
   "theme": "Catppuccin Mocha",
-  "ui_font_family": "SF Pro",
+  "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
   "use_autoclose": false,
   "vim_mode": true,
