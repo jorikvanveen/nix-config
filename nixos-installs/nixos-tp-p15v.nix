@@ -18,6 +18,7 @@
       ./modules/syncthing-laptop.nix
       ./modules/sshfs.nix
       ./modules/gaming-specialisation.nix
+      ./modules/niri-nvidia-specialisation.nix
       ./modules/eth-conn-sharing.nix
       ./modules/xanmod-kernel.nix
       ./modules/reaper.nix
