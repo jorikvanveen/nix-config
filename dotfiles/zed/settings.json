@@ -1,5 +1,18 @@
 {
-  "show_edit_predictions": false,
+  "agent_servers": {
+    "your_agent": {
+      "command": "path_to_executable",
+      "args": [],
+      "env": {}
+    }
+  },
+  "languages": {
+    "Rust": {
+      "show_edit_predictions": true
+    }
+  },
+  "format_on_save": "off",
+  "show_edit_predictions": true,
   "debugger": {
     "button": true
   },
@@ -12,9 +25,8 @@
     "model_parameters": [],
     "default_model": {
       "provider": "openrouter",
-      "model": "openai/gpt-5"
+      "model": "anthropic/claude-sonnet-4.5"
     },
-    "version": "2"
   },
   "auto_install_extensions": {
     "assembly": true,
@@ -33,7 +45,7 @@
   },
   "auto_update": false,
   "base_keymap": "VSCode",
-  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_family": "Atkinson Hyperlegible Mono",
   "buffer_font_features": {
     "calt": true
   },
@@ -41,16 +53,13 @@
   "cursor_blink": false,
   "load_direnv": "direct",
   "relative_line_numbers": true,
-  "tab_bar": {
-    "show": false
-  },
   "terminal": {
     "shell": {
       "program": "nu"
     }
   },
   "theme": "Catppuccin Mocha",
-  "ui_font_family": "SF Pro",
+  "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
   "use_autoclose": false,
   "vim_mode": true,
