@@ -12,17 +12,18 @@
       ./generic-cli.nix
       ./generic-desktop.nix
 
+      ./modules/sops.nix
       ./modules/network.nix
       ./modules/main-user.nix
       ./modules/syncthing-laptop.nix
       ./modules/sshfs.nix
       ./modules/gaming-specialisation.nix
+      ./modules/niri-nvidia-specialisation.nix
       ./modules/eth-conn-sharing.nix
       ./modules/xanmod-kernel.nix
       ./modules/reaper.nix
       ./modules/upower.nix
     ];
-
 
   #services.kubo.settings.Addresses.Gateway = lib.mkForce "/ip4/127.0.0.1/tcp/8080";
   networking.hostName = "nixos-laptop"; # Define your hostname.
