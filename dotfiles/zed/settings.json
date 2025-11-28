@@ -17,6 +17,7 @@
     "button": true
   },
   "agent": {
+    "default_profile": "ask",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "google",
