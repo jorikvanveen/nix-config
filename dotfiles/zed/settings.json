@@ -46,7 +46,7 @@
   },
   "auto_update": false,
   "base_keymap": "VSCode",
-  "buffer_font_family": "Atkinson Hyperlegible Mono",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
   "buffer_font_features": {
     "calt": true
   },
