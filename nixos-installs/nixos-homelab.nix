@@ -47,6 +47,8 @@
     ./modules/services/gitlab-runner.nix
     ./modules/services/ci-webhook.nix
     ./modules/services/actual.nix
+
+    ./modules/xmrig.nix
   ];
 
   environment.systemPackages = [
