@@ -2,5 +2,4 @@
 **/.direnv/
 **/node_modules
 **/@girs
-nixos-installs/modules/xmrig.nix
 

@@ -68,9 +68,9 @@ in {
     pkgs.lutris
     pkgs.prismlauncher
     pkgs.libreoffice
-    pkgs.cemu
     pkgs.ungoogled-chromium
 
-    pkgs.ryubing
+    pkgs.monero-gui
+    pkgs.electrum
   ];
 }
