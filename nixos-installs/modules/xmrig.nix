@@ -3,11 +3,12 @@
   services.xmrig = {
     enable = true;
     settings = {
-      autosave = false;
       cpu = {
+        autosave = false;
         enabled = true;
         asm = true;
         huge-pages = true;
+        priority = 1;
         max-threads-hint = 50;
       };
       opencl = false;
