@@ -24,8 +24,8 @@
       ./modules/reaper.nix
       ./modules/vinegar.nix
       ./modules/input-remapper.nix
+      ./modules/xmrig.nix
     ];
-
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
 
@@ -35,7 +35,7 @@
 
   musnix.enable = true;
 
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     inputs.zen_flake.packages.x86_64-linux.default
   ];
 

@@ -20,7 +20,6 @@
     "button": true
   },
   "agent": {
-    "always_allow_tool_actions": true,
     "model_parameters": []
   },
   "auto_install_extensions": {
@@ -47,7 +46,7 @@
   "buffer_font_size": 14,
   "cursor_blink": false,
   "load_direnv": "direct",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "terminal": {
     "shell": {
       "program": "nu"
