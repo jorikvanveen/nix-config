@@ -16,6 +16,7 @@
     spottarr-usenet-name = {};
     spottarr-usenet-pw = {};
     gitlab-runner-docker-images-token-env = {};
+    gitlab-runner-docker-images-token-env-laptop = {};
   };
 }
 

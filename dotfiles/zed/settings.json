@@ -1,20 +1,26 @@
 {
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "agent_servers": {
+    "your_agent": {
+      "command": "path_to_executable",
+      "args": [],
+      "env": {}
+    }
+  },
+  "languages": {
+    "Rust": {
+      "show_edit_predictions": false
+    }
+  },
+  "format_on_save": "off",
   "show_edit_predictions": false,
   "debugger": {
     "button": true
   },
   "agent": {
-    "always_allow_tool_actions": true,
-    "inline_assistant_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-preview-04-17"
-    },
-    "model_parameters": [],
-    "default_model": {
-      "provider": "openrouter",
-      "model": "openai/gpt-5"
-    },
-    "version": "2"
+    "model_parameters": []
   },
   "auto_install_extensions": {
     "assembly": true,
@@ -33,24 +39,21 @@
   },
   "auto_update": false,
   "base_keymap": "VSCode",
-  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
   "buffer_font_features": {
     "calt": true
   },
   "buffer_font_size": 14,
   "cursor_blink": false,
   "load_direnv": "direct",
-  "relative_line_numbers": true,
-  "tab_bar": {
-    "show": false
-  },
+  "relative_line_numbers": "enabled",
   "terminal": {
     "shell": {
       "program": "nu"
     }
   },
   "theme": "Catppuccin Mocha",
-  "ui_font_family": "SF Pro",
+  "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
   "use_autoclose": false,
   "vim_mode": true,

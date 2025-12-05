@@ -65,5 +65,20 @@
       "x": "tab_switcher::CloseSelectedItem"
     },
     "context": "TabSwitcher"
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space": null,
+      "space space": "tab_switcher::Toggle",
+      "space f f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "space k": "agent::Keep",
+      "space r": "agent::Reject"
+    }
   }
 ]

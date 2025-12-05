@@ -39,6 +39,9 @@ in {
     pkgs.qbittorrent
     pkgs.feishin
     pkgs.nicotine-plus
+    pkgs.gimp
+    pkgs.bluetuith
+    pkgs.pulsemixer
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {
@@ -59,15 +62,15 @@ in {
     pkgs.wl-clipboard
     pkgs.xdg-utils
 
-    pkgs.g4music
+    pkgs.gapless
 
     pkgs.vscode
     pkgs.lutris
     pkgs.prismlauncher
     pkgs.libreoffice
-    pkgs.cemu
     pkgs.ungoogled-chromium
 
-    pkgs.ryubing
+    pkgs.monero-gui
+    pkgs.electrum
   ];
 }
