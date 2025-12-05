@@ -80,7 +80,12 @@
         reverse_proxy http://localhost:9117
       '';
       "qb.jorik-dev.com".extraConfig = ''
-        reverse_proxy http://localhost:8081
+        reverse_proxy http://localhost:8081 {
+          header_up X-Real-IP {remote_host}
+          header_up X-Forwarded-For {remote_host}
+          header_up X-Forwarded-Proto {scheme}
+          header_up X-Forwarded-Host {host}
+        }
       '';
       "rq.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:5055
