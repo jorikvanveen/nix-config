@@ -14,7 +14,6 @@
 
       ./modules/main-user.nix
       ./modules/syncthing-pc.nix
-      ./modules/cachy-kernel.nix
       ./modules/sshfs.nix
       ./modules/sops.nix
       ./modules/services/sunshine.nix
@@ -28,6 +27,7 @@
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
+  boot.kernelPackages = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.linuxPackages_latest;
 
   networking.hostName = "nixos-pc"; # Define your hostname.
   networking.firewall.enable = true;
