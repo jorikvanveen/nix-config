@@ -1,4 +1,6 @@
 {
+  "show_whitespaces": "selection",
+  "remove_trailing_whitespace_on_save": false,
   "edit_predictions": {
     "mode": "subtle"
   },
