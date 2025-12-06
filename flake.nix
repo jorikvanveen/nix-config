@@ -5,8 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-ags.url = "github:nixos/nixpkgs?ref=2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
-    nixpkgs-linux6-14-6.url =
-      "github:nixos/nixpkgs?ref=64458d571301c14aaaa8e70c925ccaae04f97ea7";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";

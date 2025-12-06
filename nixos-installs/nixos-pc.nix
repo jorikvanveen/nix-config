@@ -14,7 +14,6 @@
 
       ./modules/main-user.nix
       ./modules/syncthing-pc.nix
-      ./modules/cachy-kernel.nix
       ./modules/sshfs.nix
       ./modules/sops.nix
       ./modules/services/sunshine.nix
@@ -24,10 +23,11 @@
       ./modules/reaper.nix
       ./modules/vinegar.nix
       ./modules/input-remapper.nix
+      ./modules/xmrig.nix
     ];
 
-
   boot.kernel.sysctl."fs.file-max" = 1000000;
+  boot.kernelPackages = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.linuxPackages_latest;
 
   networking.hostName = "nixos-pc"; # Define your hostname.
   networking.firewall.enable = true;
@@ -35,7 +35,7 @@
 
   musnix.enable = true;
 
-  environment.systemPackages = [ 
+  environment.systemPackages = [
     inputs.zen_flake.packages.x86_64-linux.default
   ];
 
