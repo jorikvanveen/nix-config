@@ -72,5 +72,7 @@ in {
 
     pkgs.monero-gui
     pkgs.electrum
+    
+    pkgs.librewolf
   ];
 }
