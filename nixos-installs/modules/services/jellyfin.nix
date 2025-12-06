@@ -6,11 +6,6 @@
     cacheDir = "/home/main/Jellyfin/cache";
     dataDir = "/home/main/Jellyfin/data";
     configDir = "/home/main/Jellyfin/config";
-    package = (pkgs.jellyfin.overrideAttrs (oldAttrs: {
-      patches = [
-        ./jellyfin-fix-remote-control.patch
-      ];
-    }));
   };
 
   environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
