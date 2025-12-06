@@ -49,6 +49,7 @@
     ./modules/services/actual.nix
 
     ./modules/xmrig.nix
+    ./modules/sync-backup.nix
   ];
 
   environment.systemPackages = [
