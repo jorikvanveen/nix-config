@@ -11,6 +11,7 @@
   systemd.services."upload-backup" = {
     path = [ pkgs.bash pkgs.rclone ];
     script = ''
+      cp -r /var/lib/actual /var/backup/actual &&
       rclone --config /home/main/.config/rclone/rclone.conf sync /var/backup/ b2-encrypted:jorik-homelab-backups
     '';
     serviceConfig = {
