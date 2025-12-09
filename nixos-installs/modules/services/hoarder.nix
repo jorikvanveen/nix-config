@@ -8,7 +8,7 @@ in {
   virtualisation.oci-containers.containers = {
     hoarder-web = {
       inherit environmentFiles;
-      image = "ghcr.io/hoarder-app/hoarder:release";
+      image = "ghcr.io/karakeep-app/karakeep:latest";
       volumes = [
         "/mnt/media/data/hoarder-web:/data"
       ];
@@ -37,8 +37,8 @@ in {
     };
 
     hoarder-browser = {
-       image = "gcr.io/zenika-hub/alpine-chrome:123";
-       #pull = "newer";
+       image = "gcr.io/zenika-hub/alpine-chrome:latest";
+       pull = "always";
        cmd = [
           "--no-sandbox"
           "--disable-gpu"

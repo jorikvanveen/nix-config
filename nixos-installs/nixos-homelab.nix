@@ -22,7 +22,7 @@
     ./modules/services/sabnzbd.nix
     ./modules/services/open-webui.nix
     ./modules/services/caddy.nix
-    ./modules/services/nextcloud.nix
+    #./modules/services/nextcloud.nix
     ./modules/services/rust-motd.nix
     ./modules/services/ssh.nix
     ./modules/services/minecraft.nix
@@ -32,8 +32,8 @@
     ./modules/services/earlyoom.nix
     #./modules/services/zilean.nix
     #./modules/services/zurg.nix
-    ./modules/services/navidrome.nix
-    ./modules/services/gonic.nix
+    #./modules/services/navidrome.nix
+    #./modules/services/gonic.nix
     ./modules/services/spottarr.nix
     ./modules/services/lidarr.nix
     #./modules/services/riven.nix
