@@ -9,6 +9,6 @@
     services.xserver.displayManager.gdm.enable = lib.mkForce false;
 
     #boot.kernelPackages = pkgs.linuxPackages; # (this is the default) some amdgpu issues on 6.10
-    hardware.xone.enable = true; # support for the xbox controller USB dongle
+    #hardware.xone.enable = true; # support for the xbox controller USB dongle
   };
 }
