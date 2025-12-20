@@ -1,6 +1,7 @@
 { inputs, pkgs, system, ... }:
 let
   nomouse = inputs.nomouse.packages.${system}.default;
+  desktop-file-query = inputs.desktop-file-query.packages.${system}.default;
 in {
   imports = [
     ./modules/calibre.nix
@@ -74,5 +75,7 @@ in {
     pkgs.electrum
     
     pkgs.librewolf
+    
+    desktop-file-query
   ];
 }

@@ -183,6 +183,26 @@
         "type": "github"
       }
     },
+    "desktop-file-query": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736449023,
+        "narHash": "sha256-C6vI8wRGLx2nYL+o8sKqyq0+gVNaOCQzhoQQc8Bvm1g=",
+        "owner": "jorikvanveen",
+        "repo": "desktop-file-query",
+        "rev": "5aa11123cd2c3a8c22eb1d7a728c8146cda126ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jorikvanveen",
+        "repo": "desktop-file-query",
+        "type": "github"
+      }
+    },
     "ebookdl-web": {
       "inputs": {
         "nixpkgs": [
@@ -622,6 +642,7 @@
         "ags-shell": "ags-shell",
         "apple-fonts": "apple-fonts",
         "chaotic": "chaotic",
+        "desktop-file-query": "desktop-file-query",
         "ebookdl-web": "ebookdl-web",
         "home-manager": "home-manager_2",
         "musnix": "musnix",

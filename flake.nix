@@ -36,13 +36,17 @@
     ags-shell.url = "path:./ags";
     ags-shell.inputs.nixpkgs.follows = "nixpkgs-ags";
 
-
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    
     ebookdl-web.url = "github:jorikvanveen/ebookdl-web";
     ebookdl-web.inputs.nixpkgs.follows = "nixpkgs";
+    
     nomouse.url = "github:jorikvanveen/nomouse";
     nomouse.inputs.nixpkgs.follows = "nixpkgs";
+    
+    desktop-file-query.url = "github:jorikvanveen/desktop-file-query";
+    desktop-file-query.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

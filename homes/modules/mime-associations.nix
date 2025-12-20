@@ -1,4 +1,6 @@
-{
+let
+  browserDesktopFile = "librewolf.desktop";
+in {
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
@@ -7,17 +9,17 @@
       "image/jpeg" = "org.gnome.Loupe.desktop";
       "image/png" = "org.gnome.Loupe.desktop";
       "image/webp" = "org.gnome.Loupe.desktop";
-      "application/x-extension-xht" = "zen-beta.desktop";
+      "application/x-extension-xht" = browserDesktopFile;
       "image/gif" = "org.gnome.Loupe.desktop";
-      "x-scheme-handler/http" = "zen-beta.desktop";
-      "x-scheme-handler/https" = "zen-beta.desktop";
-      "x-scheme-handler/chrome" = "zen-beta.desktop";
-      "text/html" = "zen-beta.desktop";
-      "application/x-extension-htm" = "zen-beta.desktop";
-      "application/x-extension-html" = "zen-beta.desktop";
-      "application/x-extension-shtml" = "zen-beta.desktop";
-      "application/xhtml+xml" = "zen-beta.desktop";
-      "application/x-extension-xhtml" = "zen-beta.desktop";
+      "x-scheme-handler/http" = browserDesktopFile;
+      "x-scheme-handler/https" = browserDesktopFile;
+      "x-scheme-handler/chrome" = browserDesktopFile;
+      "text/html" = browserDesktopFile;
+      "application/x-extension-htm" = browserDesktopFile;
+      "application/x-extension-html" = browserDesktopFile;
+      "application/x-extension-shtml" = browserDesktopFile;
+      "application/xhtml+xml" = browserDesktopFile;
+      "application/x-extension-xhtml" = browserDesktopFile;
       "application/pdf" = "org.gnome.Evince.desktop";
       "inode/directory" = "org.gnome.Nautilus.desktop";
     };
