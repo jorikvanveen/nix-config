@@ -1,19 +1,20 @@
 { config, lib, ... }: {
-  modules = [
-    ./kde.nix
-  ];
-  programs.niri.enable = false;
   specialisation = {
     kde-nvidia.configuration = {
 
       # Make gaming configuration an entry in the boot menu
       system.nixos.tags = [ "kde-nvidia" ];
 
+      imports = [
+        ./kde.nix
+      ];
+      
+      programs.niri.enable = lib.mkForce false;
       services.xserver.displayManager.gdm.enable = lib.mkForce false;
       services.gnome.evolution-data-server.enable = lib.mkForce false;
       services.gnome.gnome-online-accounts.enable = lib.mkForce false;
       services.gnome.gnome-keyring.enable = lib.mkForce false;
-      systemd.user.services.ags-bar = lib.mkForce null;
+      systemd.user.services.ags-bar = lib.mkForce {};
       
       # https://wiki.nixos.org/wiki/Nvidia
       hardware.nvidia = {
