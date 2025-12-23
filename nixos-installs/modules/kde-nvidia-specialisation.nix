@@ -10,11 +10,16 @@
       ];
       
       programs.niri.enable = lib.mkForce false;
+      services.xserver.desktopManager.gnome.enable = lib.mkForce false;
       services.xserver.displayManager.gdm.enable = lib.mkForce false;
       services.gnome.evolution-data-server.enable = lib.mkForce false;
       services.gnome.gnome-online-accounts.enable = lib.mkForce false;
       services.gnome.gnome-keyring.enable = lib.mkForce false;
       systemd.user.services.ags-bar = lib.mkForce {};
+      services.gvfs.enable = lib.mkForce false;
+
+      services.displayManager.sddm.enable = lib.mkForce true;
+      services.displayManager.sddm.wayland.enable = lib.mkForce true;
       
       # https://wiki.nixos.org/wiki/Nvidia
       hardware.nvidia = {
