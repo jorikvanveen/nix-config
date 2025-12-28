@@ -35,7 +35,7 @@
     ports = [ "127.0.0.1:2468:2468" ];
     volumes = [
       "/home/main/.config/cross-seed/:/config"
-      "/mnt/media/data/qbittorrent/downloads/cross-seed-links/:/cross-seed-links"
+      "/mnt/media/data/qbittorrent/downloads:/downloads/cross-seed-links"
     ];
     cmd = [ "daemon" ];
   };
