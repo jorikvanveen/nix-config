@@ -77,5 +77,7 @@ in {
     pkgs.librewolf
     
     desktop-file-query
+
+    pkgs.cryptomator
   ];
 }
