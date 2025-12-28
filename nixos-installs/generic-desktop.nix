@@ -79,5 +79,6 @@ in {
     desktop-file-query
 
     pkgs.cryptomator
+    pkgs.filezilla
   ];
 }
