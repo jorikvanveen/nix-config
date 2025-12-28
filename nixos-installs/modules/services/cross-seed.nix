@@ -36,6 +36,7 @@
     volumes = [
       "/home/main/.config/cross-seed/:/config"
     ];
+    cmd = [ "daemon" ];
   };
     #services.cross-seed = {
     #  # "/mnt/media/data/qbittorrent/downloads:/downloads"
