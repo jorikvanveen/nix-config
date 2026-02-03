@@ -108,6 +108,6 @@
       };
 
       devShells.x86_64-linux.default =
-        pkgs.mkShell { buildInputs = [ pkgs.nixd pkgs.sops pkgs.nh ]; };
+        pkgs.mkShell { buildInputs = [ pkgs.nixd pkgs.sops pkgs.nh pkgs.nil ]; };
     };
 }

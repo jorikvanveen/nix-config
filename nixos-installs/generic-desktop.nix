@@ -35,7 +35,6 @@ in {
     pkgs.mullvad-vpn
     pkgs.vesktop
     pkgs.obsidian
-    pkgs.bruno
     pkgs.delfin
     pkgs.qbittorrent
     pkgs.feishin
@@ -43,21 +42,6 @@ in {
     pkgs.gimp
     pkgs.bluetuith
     pkgs.pulsemixer
-    (pkgs.finamp.overrideAttrs (oldAttrs: {
-      desktopItems = [
-        (pkgs.makeDesktopItem {
-          name = "com.unicornsonlsd.finamp";
-          desktopName = "Finamp";
-          genericName = "Music Player";
-          exec = "finamp %U";
-          tryExec = "finamp";
-          icon = "finamp";
-          startupWMClass = "finamp";
-          comment = "An open source Jellyfin music player";
-          categories = [ "AudioVideo" "Audio" "Player" "Music" ];
-        })
-      ];
-    }))
 
     # Cli utilities
     pkgs.wl-clipboard

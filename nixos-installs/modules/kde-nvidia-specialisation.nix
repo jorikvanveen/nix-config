@@ -20,6 +20,9 @@
 
       services.displayManager.sddm.enable = lib.mkForce true;
       services.displayManager.sddm.wayland.enable = lib.mkForce true;
+
+      hardware.graphics.enable = true;
+      services.xserver.videoDrivers = [ "nvidia" ];
       
       # https://wiki.nixos.org/wiki/Nvidia
       hardware.nvidia = {
@@ -38,15 +41,15 @@
         # Enable nvidia-settings GUI
         nvidiaSettings = true;
 
-        # .production is nvidia-550 at the time of writing
+        # .production is nvidia-580 at the time of writing
         package = config.boot.kernelPackages.nvidiaPackages.production;
 
-        #prime = {
-        #  nvidiaBusId = "PCI:1:0:0";
-        #  intelBusId = "PCI:0:2:0";
-        #  reverseSync.enable = true;
-        #  allowExternalGpu = false;
-        #};
+        prime = {
+          nvidiaBusId = "PCI:1:0:0";
+          intelBusId = "PCI:0:2:0";
+          reverseSync.enable = true;
+          allowExternalGpu = false;
+        };
       };
     };
   };

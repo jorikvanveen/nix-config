@@ -21,7 +21,7 @@
       ./modules/kde-nvidia-specialisation.nix
       ./modules/eth-conn-sharing.nix
       ./modules/xanmod-kernel.nix
-      ./modules/reaper.nix
+      #./modules/reaper.nix
       ./modules/upower.nix
       ./modules/xmrig.nix
     ];
