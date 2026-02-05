@@ -27,7 +27,6 @@
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
-  boot.kernelPackages = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.linuxPackages_6_17;
 
   networking.hostName = "nixos-pc"; # Define your hostname.
   networking.firewall.enable = true;
