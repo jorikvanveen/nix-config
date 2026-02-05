@@ -5,7 +5,6 @@
   #    sha256 = "sha256:1fc5gq6yhah97i06lpy5anzaydp2xln78pgcgxiwwiyb2098lmwx";
   #  };
   #});
-  wine = pkgs.wineWowPackages.yabridge;
 in {
   networking.firewall.allowedTCPPorts = [ 58710 ];
   environment.systemPackages = [ 
