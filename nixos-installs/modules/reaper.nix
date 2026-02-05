@@ -55,7 +55,7 @@ in {
     #pkgs.reaper-sws-extension
     #pkgs.reaper-reapack-extension
     (pkgs.yabridge.override { wineWowPackages = pkgs.wineWowPackages.yabridge; })
-    (pkgs.yabridgectl.override { wine = pkgs.wineWowPackages.yabridge; })
+    (pkgs.yabridgectl.override { wineWowPackages = pkgs.wineWowPackages.yabridge; })
     #(pkgs.yabridge.override { wine = pkgs.wineWowPackages.stagingFull; })
     #(pkgs.yabridgectl.override { wine = pkgs.wineWowPackages.stagingFull; })
     #(pkgs.yabridgectl.override { inherit yabridge; })
