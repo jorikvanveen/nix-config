@@ -6,13 +6,8 @@
 }:
 let
   nomouse = inputs.nomouse.packages.${system}.default;
-<<<<<<< HEAD
-in
-{
-=======
   desktop-file-query = inputs.desktop-file-query.packages.${system}.default;
 in {
->>>>>>> 7d0b8cdafa707826959b6b529fc901adde94307e
   imports = [
     ./modules/calibre.nix
     ./modules/audacity.nix
@@ -52,29 +47,6 @@ in {
     pkgs.gimp
     pkgs.bluetuith
     pkgs.pulsemixer
-<<<<<<< HEAD
-    (pkgs.finamp.overrideAttrs (oldAttrs: {
-      desktopItems = [
-        (pkgs.makeDesktopItem {
-          name = "com.unicornsonlsd.finamp";
-          desktopName = "Finamp";
-          genericName = "Music Player";
-          exec = "finamp %U";
-          tryExec = "finamp";
-          icon = "finamp";
-          startupWMClass = "finamp";
-          comment = "An open source Jellyfin music player";
-          categories = [
-            "AudioVideo"
-            "Audio"
-            "Player"
-            "Music"
-          ];
-        })
-      ];
-    }))
-=======
->>>>>>> 7d0b8cdafa707826959b6b529fc901adde94307e
 
     # Cli utilities
     pkgs.wl-clipboard
