@@ -6,8 +6,13 @@
 }:
 let
   nomouse = inputs.nomouse.packages.${system}.default;
+<<<<<<< HEAD
 in
 {
+=======
+  desktop-file-query = inputs.desktop-file-query.packages.${system}.default;
+in {
+>>>>>>> 7d0b8cdafa707826959b6b529fc901adde94307e
   imports = [
     ./modules/calibre.nix
     ./modules/audacity.nix
@@ -40,7 +45,6 @@ in
     pkgs.mullvad-vpn
     pkgs.vesktop
     pkgs.obsidian
-    pkgs.bruno
     pkgs.delfin
     pkgs.qbittorrent
     pkgs.feishin
@@ -48,6 +52,7 @@ in
     pkgs.gimp
     pkgs.bluetuith
     pkgs.pulsemixer
+<<<<<<< HEAD
     (pkgs.finamp.overrideAttrs (oldAttrs: {
       desktopItems = [
         (pkgs.makeDesktopItem {
@@ -68,6 +73,8 @@ in
         })
       ];
     }))
+=======
+>>>>>>> 7d0b8cdafa707826959b6b529fc901adde94307e
 
     # Cli utilities
     pkgs.wl-clipboard
@@ -85,5 +92,10 @@ in
     pkgs.electrum
 
     pkgs.librewolf
+    
+    desktop-file-query
+
+    pkgs.cryptomator
+    pkgs.filezilla
   ];
 }
