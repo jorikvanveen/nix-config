@@ -1,7 +1,13 @@
-{ inputs, pkgs, system, ... }:
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}:
 let
   nomouse = inputs.nomouse.packages.${system}.default;
-in {
+in
+{
   imports = [
     ./modules/calibre.nix
     ./modules/audacity.nix
@@ -53,7 +59,12 @@ in {
           icon = "finamp";
           startupWMClass = "finamp";
           comment = "An open source Jellyfin music player";
-          categories = [ "AudioVideo" "Audio" "Player" "Music" ];
+          categories = [
+            "AudioVideo"
+            "Audio"
+            "Player"
+            "Music"
+          ];
         })
       ];
     }))
@@ -72,7 +83,7 @@ in {
 
     pkgs.monero-gui
     pkgs.electrum
-    
+
     pkgs.librewolf
   ];
 }
