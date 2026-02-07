@@ -6,6 +6,7 @@
   },
   "agent_servers": {
     "your_agent": {
+      "type": "custom",
       "command": "path_to_executable",
       "args": [],
       "env": {}
@@ -22,6 +23,10 @@
     "button": true
   },
   "agent": {
+    "default_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5"
+    },
     "model_parameters": []
   },
   "auto_install_extensions": {
