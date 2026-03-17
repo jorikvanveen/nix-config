@@ -47,6 +47,7 @@ in {
     pkgs.gimp
     pkgs.bluetuith
     pkgs.pulsemixer
+    pkgs.qalculate-gtk
 
     # Cli utilities
     pkgs.wl-clipboard
