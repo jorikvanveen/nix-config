@@ -24,7 +24,7 @@
       ./modules/vinegar.nix
       ./modules/input-remapper.nix
       ./modules/xmrig.nix
-      ./modules/alvr.nix
+      ./modules/wivrn.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
