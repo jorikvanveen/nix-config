@@ -15,6 +15,7 @@ let
   });
 in {
   home.packages = [
-    mylsd
+    #mylsd
+    pkgs.lsd
   ];
 }
