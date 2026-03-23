@@ -23,7 +23,7 @@
       ./modules/reaper.nix
       ./modules/vinegar.nix
       ./modules/input-remapper.nix
-      ./modules/xmrig.nix
+      #./modules/xmrig.nix
       ./modules/wivrn.nix
     ];
 
