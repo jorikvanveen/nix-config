@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./modules/niri.nix
     ./modules/zed.nix
@@ -21,5 +21,9 @@
     ./modules/dconf/no-middle-click-paste.nix
     ./modules/dconf/window-prefs.nix
     ./modules/dconf/mutter-alive-timeout.nix
+  ];
+
+  home.packages = [
+    pkgs.yt-dlp
   ];
 }
