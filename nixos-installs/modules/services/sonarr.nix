@@ -1,4 +1,4 @@
-{ pkgs, utils, ... }: {
+{ pkgs, utils, lib, ... }: {
   services.sonarr = {
     enable = true;
     user = "main";
@@ -6,6 +6,10 @@
     dataDir = "/home/main/data/sonarr";
   };
 
+  systemd.services.sonarr.serviceConfig = {
+    BindPaths = lib.mkForce [ "/home/main/data/sonarr" ];
+    ProtectHome = lib.mkForce false;
+  };
   systemd.services.sonarr-4k = {
     description = "Sonarr 4k";
     after = [ "network.target" ];
