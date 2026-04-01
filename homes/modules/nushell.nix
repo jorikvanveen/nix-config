@@ -31,7 +31,7 @@
         open .env
         | lines
         | where $it != ""
-        | split column "="
+        | split column -n 2 "="
         | rename key val
         | reduce --fold {} {|it, acc| $acc | insert $it.key $it.val }
         | load-env
