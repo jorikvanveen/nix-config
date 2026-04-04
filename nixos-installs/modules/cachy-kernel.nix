@@ -1,9 +1,6 @@
-{ _pkgs, inputs, ... }:
-let
-  pkgs = import inputs.cachy-flake {
-    system = "x86_64-linux";
-  };
-in
-{
-  boot.kernelPackages = pkgs.x86_64-linux.linux_cachyos;
+{ pkgs, inputs, ... }: {
+  nixpkgs.overlays = [
+    inputs.cachy-flake.overlays.pinned
+  ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
 }
