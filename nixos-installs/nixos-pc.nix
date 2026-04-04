@@ -26,6 +26,7 @@
       #./modules/xmrig.nix
       ./modules/wivrn.nix
       ./modules/docker.nix
+      #./modules/cachy-kernel.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
