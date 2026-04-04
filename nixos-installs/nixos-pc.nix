@@ -3,7 +3,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports =
     [
@@ -39,6 +39,10 @@
 
   environment.systemPackages = [
     inputs.zen_flake.packages.x86_64-linux.default
+
+    pkgs.goverlay
+    pkgs.vkbasalt
+    pkgs.protontricks
   ];
 
   # This value determines the NixOS release from which the default
