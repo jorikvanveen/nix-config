@@ -3,7 +3,6 @@
     enable = true;
     openFirewall = true;
     highPriority = true;
-    defaultRuntime = true;
     config.enable = true;
     config.json = {
       application = [ pkgs.wayvr ];
