@@ -652,6 +652,7 @@
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
+        "updated-lutris-pkgs": "updated-lutris-pkgs",
         "zen_flake": "zen_flake"
       }
     },
@@ -967,6 +968,22 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "updated-lutris-pkgs": {
+      "locked": {
+        "lastModified": 1772337513,
+        "narHash": "sha256-V3SwwyHBgQdEl8TmH1NFkhlx3t4G5gaDdfDV6iACYQY=",
+        "owner": "r-ryantm",
+        "repo": "nixpkgs",
+        "rev": "5046d0ac80bb9bee73fe6e54d38844fac0412f65",
+        "type": "github"
+      },
+      "original": {
+        "owner": "r-ryantm",
+        "ref": "auto-update/lutris-unwrapped",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },

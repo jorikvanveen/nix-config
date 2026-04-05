@@ -2,7 +2,7 @@
   programs.gamemode.enable = true;
   programs.gamemode.enableRenice = true;
   programs.gamemode.settings = {
-  general = {
+    general = {
       renice = 10;
     };
   };

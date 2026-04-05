@@ -46,6 +46,8 @@
     
     desktop-file-query.url = "github:jorikvanveen/desktop-file-query";
     desktop-file-query.inputs.nixpkgs.follows = "nixpkgs";
+
+    updated-lutris-pkgs.url = "github:r-ryantm/nixpkgs/auto-update/lutris-unwrapped";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
