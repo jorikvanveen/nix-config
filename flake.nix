@@ -48,6 +48,9 @@
     desktop-file-query.inputs.nixpkgs.follows = "nixpkgs";
 
     updated-lutris-pkgs.url = "github:r-ryantm/nixpkgs/auto-update/lutris-unwrapped";
+
+    sunshine-vlk-flake.url = "github:jorikvanveen/sunshine-vlk-flake";
+    sunshine-vlk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

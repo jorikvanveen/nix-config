@@ -650,6 +650,7 @@
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
+        "sunshine-vlk-flake": "sunshine-vlk-flake",
         "updated-lutris-pkgs": "updated-lutris-pkgs",
         "zen_flake": "zen_flake"
       }
@@ -809,6 +810,26 @@
       "original": {
         "owner": "nix-community",
         "repo": "stylix",
+        "type": "github"
+      }
+    },
+    "sunshine-vlk-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775947133,
+        "narHash": "sha256-kRv+04YuZwohmBaJrUP3yg4URTZa6ngBfHPIA+4aUoU=",
+        "owner": "jorikvanveen",
+        "repo": "sunshine-vlk-flake",
+        "rev": "be80a65522fc091d560125e5df19947b35246757",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jorikvanveen",
+        "repo": "sunshine-vlk-flake",
         "type": "github"
       }
     },
