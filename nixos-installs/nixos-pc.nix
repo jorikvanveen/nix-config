@@ -27,6 +27,7 @@
       ./modules/wivrn.nix
       ./modules/docker.nix
       ./modules/cachy-kernel.nix
+      ./modules/kde-specialisation.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
