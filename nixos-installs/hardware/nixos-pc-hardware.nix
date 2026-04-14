@@ -24,12 +24,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  #fileSystems."/mnt/smallssd" =
-  #  {
-  #    device = "/dev/disk/by-uuid/b274c719-1b0e-4eb9-8923-b9434589f58b";
-  #    fsType = "ext4";
-  #  };
-
+  fileSystems."/mnt/smallssd" =
+    { device = "/dev/disk/by-uuid/18902baa-e45b-4e96-a292-6148c24c1b25";
+      fsType = "btrfs";
+    };
+      
   swapDevices =
     [ { device = "/dev/disk/by-uuid/14b368b3-141d-4351-b8de-c533400cff62"; }
     ];
