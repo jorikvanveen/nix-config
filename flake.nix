@@ -51,6 +51,9 @@
 
     sunshine-vlk-flake.url = "github:jorikvanveen/sunshine-vlk-flake";
     sunshine-vlk-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    helium-flake.url = "github:schembriaiden/helium-browser-nix-flake";
+    helium-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

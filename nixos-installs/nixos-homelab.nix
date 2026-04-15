@@ -49,7 +49,6 @@
     ./modules/services/actual.nix
     ./modules/services/cross-seed.nix
 
-    ./modules/xmrig.nix
     ./modules/sync-backup.nix
   ];
 
