@@ -19,8 +19,8 @@ in {
     package = sfmono;
   };
   stylix.fonts.sansSerif = {
-    name = "SF Pro";
-    package = sfpro;
+    name = "Atkinson Hyperlegible Next";
+    package = pkgs.atkinson-hyperlegible-next;
   };
   stylix.fonts.sizes = {
     desktop = 11;
