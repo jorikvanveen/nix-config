@@ -28,6 +28,7 @@
       ./modules/docker.nix
       ./modules/cachy-kernel.nix
       ./modules/kde-specialisation.nix
+      ./modules/helium.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
