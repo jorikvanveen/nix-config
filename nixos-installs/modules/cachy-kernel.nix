@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: let
-  kernel = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
+  kernel = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 in {
   nixpkgs.overlays = [
     inputs.cachy-flake.overlays.pinned
