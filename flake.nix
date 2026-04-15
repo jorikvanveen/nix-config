@@ -24,8 +24,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic.inputs.nixpkgs.follows = "nixpkgs";
+    cachy-flake.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +46,14 @@
     
     desktop-file-query.url = "github:jorikvanveen/desktop-file-query";
     desktop-file-query.inputs.nixpkgs.follows = "nixpkgs";
+
+    updated-lutris-pkgs.url = "github:r-ryantm/nixpkgs/auto-update/lutris-unwrapped";
+
+    sunshine-vlk-flake.url = "github:jorikvanveen/sunshine-vlk-flake";
+    sunshine-vlk-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    helium-flake.url = "github:schembriaiden/helium-browser-nix-flake";
+    helium-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

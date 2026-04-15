@@ -3,7 +3,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports =
     [
@@ -23,8 +23,12 @@
       ./modules/reaper.nix
       ./modules/vinegar.nix
       ./modules/input-remapper.nix
-      ./modules/xmrig.nix
+      #./modules/xmrig.nix
       ./modules/wivrn.nix
+      ./modules/docker.nix
+      ./modules/cachy-kernel.nix
+      ./modules/kde-specialisation.nix
+      ./modules/helium.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 1000000;
@@ -37,6 +41,10 @@
 
   environment.systemPackages = [
     inputs.zen_flake.packages.x86_64-linux.default
+
+    pkgs.goverlay
+    pkgs.vkbasalt
+    pkgs.protontricks
   ];
 
   # This value determines the NixOS release from which the default

@@ -10,7 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "ntsync" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -24,6 +24,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/smallssd" =
+    { device = "/dev/disk/by-uuid/18902baa-e45b-4e96-a292-6148c24c1b25";
+      fsType = "btrfs";
+    };
+      
   swapDevices =
     [ { device = "/dev/disk/by-uuid/14b368b3-141d-4351-b8de-c533400cff62"; }
     ];
@@ -37,4 +42,8 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.amdgpu.overdrive.enable = true;
+  hardware.amdgpu.initrd.enable = true;
+  hardware.amdgpu.opencl.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
 }

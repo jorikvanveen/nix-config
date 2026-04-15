@@ -25,6 +25,7 @@ in {
     ./modules/geoclue.nix
     ./modules/gamescope.nix
     ./modules/services/ratbagd.nix
+    ./modules/lutris.nix
   ];
   environment.systemPackages = [
     nomouse
@@ -56,7 +57,6 @@ in {
     pkgs.gapless
 
     pkgs.vscode
-    pkgs.lutris
     pkgs.prismlauncher
     pkgs.libreoffice
     pkgs.ungoogled-chromium
