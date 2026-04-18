@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
-    nixpkgs-ags.url = "github:nixos/nixpkgs?ref=2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
+    #nixpkgs-ags.url = "github:nixos/nixpkgs?ref=2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +33,7 @@
     musnix.inputs.nixpkgs.follows = "nixpkgs";
 
     ags-shell.url = "path:./ags";
-    ags-shell.inputs.nixpkgs.follows = "nixpkgs-ags";
+    #ags-shell.inputs.nixpkgs.follows = "nixpkgs-ags";
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
@@ -46,8 +46,6 @@
     
     desktop-file-query.url = "github:jorikvanveen/desktop-file-query";
     desktop-file-query.inputs.nixpkgs.follows = "nixpkgs";
-
-    updated-lutris-pkgs.url = "github:r-ryantm/nixpkgs/auto-update/lutris-unwrapped";
 
     sunshine-vlk-flake.url = "github:jorikvanveen/sunshine-vlk-flake";
     sunshine-vlk-flake.inputs.nixpkgs.follows = "nixpkgs";

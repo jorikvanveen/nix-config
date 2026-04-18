@@ -14,8 +14,9 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e2dbb418-f12a-4a42-bdfc-405401fd7741";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/2f7d156a-c7c0-4b80-825b-c8f8c6e62edc";
+      fsType = "btrfs";
+      options = [ "compress=zstd" ];
     };
 
   fileSystems."/boot" =
@@ -27,6 +28,7 @@
   fileSystems."/mnt/smallssd" =
     { device = "/dev/disk/by-uuid/18902baa-e45b-4e96-a292-6148c24c1b25";
       fsType = "btrfs";
+      options = [ "compress=zstd" "nofail" ];
     };
       
   swapDevices =
