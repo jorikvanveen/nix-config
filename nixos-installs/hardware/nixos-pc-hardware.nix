@@ -19,6 +19,11 @@
       options = [ "compress=zstd" ];
     };
 
+  services.beesd.filesystems."root" = {
+    spec = "/";
+    hashTableSizeMB = 4096;
+  };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/C7B2-40E3";
       fsType = "vfat";
