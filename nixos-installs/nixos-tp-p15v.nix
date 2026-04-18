@@ -23,7 +23,6 @@
       ./modules/xanmod-kernel.nix
       #./modules/reaper.nix
       ./modules/upower.nix
-      ./modules/xmrig.nix
     ];
 
   #services.kubo.settings.Addresses.Gateway = lib.mkForce "/ip4/127.0.0.1/tcp/8080";
@@ -45,4 +44,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
   programs.kdeconnect.enable = true;
+  services.lidarr.enable = true;
 }

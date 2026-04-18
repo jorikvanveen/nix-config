@@ -2,6 +2,7 @@
   "show_whitespaces": "selection",
   "remove_trailing_whitespace_on_save": false,
   "edit_predictions": {
+    "provider": "copilot",
     "mode": "subtle"
   },
   "agent_servers": {
@@ -23,10 +24,15 @@
     "button": true
   },
   "agent": {
-    "default_model": {
-      "enable_thinking": true,
+    "inline_assistant_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-6-thinking-latest"
+      "model": "claude-sonnet-4-6-latest",
+      "enable_thinking": false
+    },
+    "default_model": {
+      "enable_thinking": false,
+      "provider": "google",
+      "model": "gemini-3-flash-preview"
     },
     "model_parameters": []
   },
@@ -64,8 +70,5 @@
   "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
   "use_autoclose": false,
-  "vim_mode": true,
-  "features": {
-    "edit_prediction_provider": "copilot"
-  }
+  "vim_mode": true
 }
