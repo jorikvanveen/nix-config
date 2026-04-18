@@ -42,6 +42,10 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
 
+  systemd.network.networks.enp34s0.dns = [
+    "1.1.1.1"
+  ];
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.amdgpu.overdrive.enable = true;
