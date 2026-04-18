@@ -22,7 +22,7 @@
   services.beesd.filesystems."root" = {
     spec = "/";
     hashTableSizeMB = 4096;
-    extraOptions = [ "--loadavg-target" "1" ];
+    extraOptions = [ "--loadavg-target" "4" ];
   };
 
   fileSystems."/boot" =
