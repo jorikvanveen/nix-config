@@ -1,5 +1,8 @@
-{ pkgs, homedir, dotfiledir, config, lib, ... }:
+{ inputs, homedir, dotfiledir, config, lib, ... }:
 let
+  pkgs = import inputs.nvim-pkgs {
+    system = "x86_64-linux";
+  };
   stylixPalette = with config.lib.stylix.colors.withHashtag; ''
     require('mini.base16').setup({
       palette = {
