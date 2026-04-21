@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
-    #nixpkgs-ags.url = "github:nixos/nixpkgs?ref=2795c506fe8fb7b03c36ccb51f75b6df0ab2553f";
+    nvim-pkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
