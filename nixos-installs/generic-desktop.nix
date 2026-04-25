@@ -26,6 +26,7 @@ in {
     ./modules/gamescope.nix
     ./modules/services/ratbagd.nix
     ./modules/lutris.nix
+    ./modules/helium.nix
   ];
   environment.systemPackages = [
     nomouse
