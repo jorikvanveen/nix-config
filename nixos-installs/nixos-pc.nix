@@ -44,6 +44,9 @@
     pkgs.goverlay
     pkgs.vkbasalt
     pkgs.protontricks
+    pkgs.protonplus
+
+    pkgs.openrgb
   ];
 
   # This value determines the NixOS release from which the default

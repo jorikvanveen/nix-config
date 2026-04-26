@@ -57,5 +57,10 @@
   hardware.amdgpu.overdrive.enable = true;
   hardware.amdgpu.initrd.enable = true;
   hardware.amdgpu.opencl.enable = true;
+
+
+  services.hardware.openrgb = {
+    enable = true;
+  };
   services.xserver.videoDrivers = [ "amdgpu" ];
 }
