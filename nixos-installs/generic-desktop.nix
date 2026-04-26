@@ -11,7 +11,6 @@ in {
   imports = [
     ./modules/calibre.nix
     ./modules/audacity.nix
-    ./modules/bottles.nix
     ./modules/graphics.nix
     ./modules/bluetooth.nix
     ./modules/systemd-boot.nix
@@ -25,7 +24,6 @@ in {
     ./modules/geoclue.nix
     ./modules/gamescope.nix
     ./modules/services/ratbagd.nix
-    ./modules/lutris.nix
     ./modules/helium.nix
   ];
   environment.systemPackages = [
