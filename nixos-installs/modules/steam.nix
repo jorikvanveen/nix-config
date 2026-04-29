@@ -22,5 +22,5 @@
 
   hardware.xone.enable = true;
 
-  environment.systemPackages = [ pkgs.mangohud pkgs.gamescope ];
+  environment.systemPackages = [ pkgs.mangohud pkgs.gamescope pkgs.gamescope-wsi ];
 }

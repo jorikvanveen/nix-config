@@ -4,7 +4,6 @@
 
   environment.systemPackages = [
     pkgs.vulkan-loader
-    pkgs.mesa
     pkgs.vulkan-headers
     pkgs.vulkan-tools
   ];

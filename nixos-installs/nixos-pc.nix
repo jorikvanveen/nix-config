@@ -28,15 +28,17 @@
       ./modules/docker.nix
       ./modules/cachy-kernel.nix
       ./modules/kde-specialisation.nix
+      ./modules/mesa-git.nix
+      ./modules/ulimit-fix.nix
     ];
 
-  boot.kernel.sysctl."fs.file-max" = 1000000;
+  boot.kernel.sysctl."fs.file-max" = 99999999;
 
   networking.hostName = "nixos-pc"; # Define your hostname.
   networking.firewall.enable = true;
-  networking.interfaces.enp34s0.wakeOnLan.enable = true;
+  #networking.interfaces.enp34s0.wakeOnLan.enable = true;
 
-  musnix.enable = true;
+  musnix.enable = false;
 
   environment.systemPackages = [
     inputs.zen_flake.packages.x86_64-linux.default
@@ -45,8 +47,8 @@
     pkgs.vkbasalt
     pkgs.protontricks
     pkgs.protonplus
-
     pkgs.openrgb
+    pkgs.mesa-demos
   ];
 
   # This value determines the NixOS release from which the default
