@@ -1,5 +1,5 @@
 let
-  browserDesktopFile = "librewolf.desktop";
+  browserDesktopFile = "helium.desktop";
 in {
   xdg.mimeApps = {
     enable = true;
