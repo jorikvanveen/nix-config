@@ -1,4 +1,16 @@
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "show_whitespaces": "selection",
   "remove_trailing_whitespace_on_save": false,
   "edit_predictions": {
@@ -24,15 +36,17 @@
     "button": true
   },
   "agent": {
+    "dock": "right",
     "inline_assistant_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6-latest",
       "enable_thinking": false
     },
     "default_model": {
-      "enable_thinking": false,
-      "provider": "google",
-      "model": "gemini-3-flash-preview"
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6-latest"
     },
     "model_parameters": []
   },

@@ -52,6 +52,9 @@
 
     helium-flake.url = "github:schembriaiden/helium-browser-nix-flake";
     helium-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    optiscaler-client.url = "github:jorikvanveen/Optiscaler-Client?ref=nix-flake";
+    optiscaler-client.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

@@ -69,5 +69,6 @@ in {
 
     pkgs.cryptomator
     pkgs.filezilla
+    inputs.optiscaler-client.packages.${system}.default
   ];
 }
