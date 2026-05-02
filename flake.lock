@@ -691,11 +691,11 @@
         "utils": "utils_4"
       },
       "locked": {
-        "lastModified": 1777751140,
-        "narHash": "sha256-zj94VEuegy/xlcA5ucZEayFVuVxGOCCZrbGUvCvV3s0=",
+        "lastModified": 1777751851,
+        "narHash": "sha256-lC+I66McQbdw3p57lb3ElIKmiVIfRygbDJOG2fTPFj4=",
         "owner": "jorikvanveen",
         "repo": "Optiscaler-Client",
-        "rev": "5a34f8671fb6af70611bab9a69b0c9cdb051ccfa",
+        "rev": "d4c18fe70d331a34810354675ec05623159448b9",
         "type": "github"
       },
       "original": {
