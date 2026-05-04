@@ -47,7 +47,7 @@
     pkgs.vkbasalt
     pkgs.protontricks
     pkgs.protonplus
-    pkgs.openrgb
+    pkgs.openrgb-with-all-plugins
     pkgs.mesa-demos
   ];
 
