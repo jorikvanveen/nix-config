@@ -12,8 +12,8 @@
           domain = "gitlab.freedesktop.org";
           owner = "mesa";
           repo = "mesa";
-          rev = "4b662587170196783ae0abd10fb34161d30db394"; # Crimson desert flicker fix
-          hash = "sha256-Li83P+YzAiXeDj4CntY8bcgFfqJQMCm6cyndzR5JTK4=";
+          rev = "f09ca6234849d79cd74c5fa5c5b0726c9c1c1dbd";
+          hash = "sha256-2s7efATtAzD15CQvOEqm2MtC1lgczx4Pqf61QK4LDn4=";
         };
       });
     })
