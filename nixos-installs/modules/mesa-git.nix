@@ -7,27 +7,16 @@
   nixpkgs.overlays = [
     (final: prev: {
       mesa = (
-        (prev.mesa.overrideAttrs (oldAttrs: {
-          version = "26.1-git";
+        prev.mesa.overrideAttrs (oldAttrs: {
+          version = "26.0-git";
           src = pkgs.fetchFromGitLab {
             domain = "gitlab.freedesktop.org";
             owner = "mesa";
             repo = "mesa";
-            rev = "1323939f6314fdeecf5be5ba3f5680380cd5783e";
-            hash = "sha256-RlnnkpvIu1f1+pKV94L4WntCS/LCxFBO11kktR8+RY8=";
+            rev = "164633de71aa45f18ecc4133d9ae392cdb93ef21";
+            hash = "sha256-3TWzjuhNuqJ606tlvOZw/m6m4w4f4MA1ylBZ7Q0553o=";
           };
-        })).override
-          {
-            libdrm = (
-              prev.libdrm.overrideAttrs (oldAttrs: rec {
-                version = "2.4.133";
-                src = pkgs.fetchurl {
-                  url = "https://dri.freedesktop.org/libdrm/libdrm-${version}.tar.xz";
-                  hash = "sha256-/Gj50LoupjyUMqKZ4U/qCfrXqKZugDn814AspZ93tPU=";
-                };
-              })
-            );
-          }
+        })
       );
     })
   ];
