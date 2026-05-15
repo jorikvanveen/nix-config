@@ -70,5 +70,7 @@ in {
     pkgs.cryptomator
     pkgs.filezilla
     inputs.optiscaler-client.packages.${system}.default
+    pkgs.steam-devices-udev-rules
+    pkgs.libusb1
   ];
 }
