@@ -6,16 +6,18 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      mesa = prev.mesa.overrideAttrs (oldAttrs: {
-        version = "26.1-git";
-        src = pkgs.fetchFromGitLab {
-          domain = "gitlab.freedesktop.org";
-          owner = "mesa";
-          repo = "mesa";
-          rev = "4b662587170196783ae0abd10fb34161d30db394"; # Crimson desert flicker fix
-          hash = "sha256-Li83P+YzAiXeDj4CntY8bcgFfqJQMCm6cyndzR5JTK4=";
-        };
-      });
+      mesa = (
+        prev.mesa.overrideAttrs (oldAttrs: {
+          version = "26.0-git";
+          src = pkgs.fetchFromGitLab {
+            domain = "gitlab.freedesktop.org";
+            owner = "mesa";
+            repo = "mesa";
+            rev = "164633de71aa45f18ecc4133d9ae392cdb93ef21";
+            hash = "sha256-3TWzjuhNuqJ606tlvOZw/m6m4w4f4MA1ylBZ7Q0553o=";
+          };
+        })
+      );
     })
   ];
 }
