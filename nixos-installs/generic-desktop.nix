@@ -72,5 +72,6 @@ in {
     inputs.optiscaler-client.packages.${system}.default
     pkgs.steam-devices-udev-rules
     pkgs.libusb1
+    pkgs.hidapi
   ];
 }
