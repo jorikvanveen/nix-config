@@ -3,5 +3,6 @@
   programs.nix-ld.libraries = [
     pkgs.xorg.libXtst
     pkgs.xorg.libXi
+    pkgs.hidapi
   ];
 }
