@@ -22,6 +22,7 @@
   };
 
   hardware.xone.enable = true;
+  hardware.steam-hardware.enable = true;
 
   environment.systemPackages = [ pkgs.mangohud pkgs.gamescope pkgs.gamescope-wsi ];
 }
