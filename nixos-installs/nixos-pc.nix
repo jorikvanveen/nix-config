@@ -49,6 +49,7 @@
     pkgs.protonplus
     pkgs.openrgb-with-all-plugins
     pkgs.mesa-demos
+    pkgs.ryubing
   ];
 
   # This value determines the NixOS release from which the default
