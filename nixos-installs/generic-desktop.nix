@@ -71,5 +71,6 @@ in {
     pkgs.filezilla
     inputs.optiscaler-client.packages.${system}.default
     pkgs.steam-devices-udev-rules
+    pkgs.extest
   ];
 }
