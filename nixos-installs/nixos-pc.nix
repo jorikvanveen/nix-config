@@ -30,6 +30,7 @@
       ./modules/kde-specialisation.nix
       ./modules/mesa-git.nix
       ./modules/ulimit-fix.nix
+      ./modules/ryubing.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 99999999;
@@ -49,7 +50,6 @@
     pkgs.protonplus
     pkgs.openrgb-with-all-plugins
     pkgs.mesa-demos
-    pkgs.ryubing
   ];
 
   # This value determines the NixOS release from which the default

@@ -530,6 +530,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-eden": {
+      "locked": {
+        "lastModified": 1778858920,
+        "narHash": "sha256-kM2ChLuQiQWTgOUfTp6KWkrTL+Pb6TGF9WAvBCB+N2o=",
+        "owner": "marcin-serwin",
+        "repo": "nixpkgs",
+        "rev": "cfcb985d52648de885623bf1566f50f72e94043f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "marcin-serwin",
+        "repo": "nixpkgs",
+        "rev": "cfcb985d52648de885623bf1566f50f72e94043f",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1777168982,
@@ -718,6 +734,7 @@
         "nix-minecraft": "nix-minecraft",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-eden": "nixpkgs-eden",
         "nixpkgs-stable": "nixpkgs-stable",
         "nomouse": "nomouse",
         "nvim-pkgs": "nvim-pkgs",

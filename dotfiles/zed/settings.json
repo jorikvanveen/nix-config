@@ -1,4 +1,5 @@
 {
+  "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "left"
   },
@@ -36,7 +37,7 @@
     "button": true
   },
   "agent": {
-    "default_profile": "ask",
+    "default_profile": "write",
     "dock": "right",
     "inline_assistant_model": {
       "provider": "anthropic",
@@ -46,7 +47,7 @@
     "default_model": {
       "enable_thinking": true,
       "provider": "openrouter",
-      "model": "anthropic/claude-sonnet-4.6"
+      "model": "moonshotai/kimi-k2.6"
     },
     "model_parameters": []
   },
