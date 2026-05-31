@@ -60,6 +60,8 @@
   hardware.amdgpu.initrd.enable = true;
   hardware.amdgpu.opencl.enable = true;
 
+  powerManagement.cpuFreqGovernor = "performance";
+
 
   services.hardware.openrgb = {
     enable = true;
