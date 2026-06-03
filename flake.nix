@@ -10,7 +10,8 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix.url = "github:nix-community/stylix";
+    # Master build is broken as of 03 June 2026
+    stylix.url = "github:nix-community/stylix/pull/2337/head";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
     zen_flake.url = "github:0xc000022070/zen-browser-flake";
