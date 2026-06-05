@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     nvim-pkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-eden.url = "github:marcin-serwin/nixpkgs?ref=cfcb985d52648de885623bf1566f50f72e94043f";
 
