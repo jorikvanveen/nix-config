@@ -13,6 +13,7 @@
       ./generic-desktop.nix
 
       ./modules/main-user.nix
+      ./modules/network.nix
       ./modules/syncthing-pc.nix
       ./modules/sshfs.nix
       ./modules/sops.nix
