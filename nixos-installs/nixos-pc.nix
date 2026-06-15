@@ -32,6 +32,7 @@
       ./modules/mesa-git.nix
       ./modules/ulimit-fix.nix
       ./modules/ryubing.nix
+      ./modules/moza-udev.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 99999999;
