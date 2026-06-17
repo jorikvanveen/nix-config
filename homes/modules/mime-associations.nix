@@ -22,6 +22,7 @@ in {
       "application/x-extension-xhtml" = browserDesktopFile;
       "application/pdf" = "org.gnome.Evince.desktop";
       "inode/directory" = "org.gnome.Nautilus.desktop";
+      "x-scheme-hander/acmanager" = "Assetto Corsa.desktop";
     };
   };
 }

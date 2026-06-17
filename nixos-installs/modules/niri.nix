@@ -1,6 +1,5 @@
 { pkgs, lib, inputs, ... }:
 let
-  xwayland-satellite = pkgs.xwayland-satellite;
   ags-bar = inputs.ags-shell.packages.x86_64-linux.default;
 in {
   programs.niri.enable = true;
@@ -30,7 +29,7 @@ in {
   environment.systemPackages = [
     pkgs.fuzzel
     pkgs.swaylock
-    xwayland-satellite
+    pkgs.xwayland-satellite
     pkgs.pavucontrol
     pkgs.swaybg
 

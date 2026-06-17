@@ -73,5 +73,6 @@ in {
     pkgs.steam-devices-udev-rules
     pkgs.libusb1
     pkgs.hidapi
+    pkgs.extest
   ];
 }

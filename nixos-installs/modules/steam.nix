@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   programs.steam = {
     enable = true;
+    extest.enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     package = pkgs.steam.override {
@@ -23,6 +24,7 @@
   };
 
   hardware.xone.enable = true;
+  hardware.steam-hardware.enable = true;
 
   environment.systemPackages = [ pkgs.mangohud pkgs.gamescope pkgs.gamescope-wsi ];
 }

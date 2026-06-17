@@ -8,7 +8,6 @@
     ./modules/heroic.nix
     ./modules/moonlight.nix
     ./modules/additional-fonts.nix
-    ./modules/logseq.nix
     ./modules/bato.nix
     ./modules/gammastep.nix
 

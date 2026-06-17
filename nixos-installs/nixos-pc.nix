@@ -13,6 +13,7 @@
       ./generic-desktop.nix
 
       ./modules/main-user.nix
+      ./modules/network.nix
       ./modules/syncthing-pc.nix
       ./modules/sshfs.nix
       ./modules/sops.nix
@@ -30,6 +31,8 @@
       ./modules/kde-specialisation.nix
       ./modules/mesa-git.nix
       ./modules/ulimit-fix.nix
+      ./modules/ryubing.nix
+      ./modules/moza-udev.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 99999999;
