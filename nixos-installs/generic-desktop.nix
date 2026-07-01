@@ -62,8 +62,6 @@ in {
 
     pkgs.monero-gui
     pkgs.electrum
-
-    pkgs.librewolf
     
     desktop-file-query
 
@@ -71,6 +69,8 @@ in {
     pkgs.filezilla
     inputs.optiscaler-client.packages.${system}.default
     pkgs.steam-devices-udev-rules
+    pkgs.libusb1
+    pkgs.hidapi
     pkgs.extest
   ];
 }

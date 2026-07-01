@@ -91,6 +91,7 @@
       "enable_thinking": false
     },
     "default_model": {
+      "effort": "high",
       "enable_thinking": true,
       "provider": "openrouter",
       "model": "z-ai/glm-5.2"
