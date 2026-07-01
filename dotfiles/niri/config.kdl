@@ -263,15 +263,11 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "dunst"
 spawn-at-startup "bato"
 spawn-at-startup "ghostty --command='cd ~/shared/personal/orgmode; nvim' --window-decoration=none --confirm-close-surface=false"
 spawn-at-startup "gnome-keyring -rf"
 
-environment {
-  DISPLAY ":0"
-}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
