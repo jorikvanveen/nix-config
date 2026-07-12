@@ -19,12 +19,7 @@
     "mode": "subtle"
   },
   "agent_servers": {
-    "your_agent": {
-      "type": "custom",
-      "command": "path_to_executable",
-      "args": [],
-      "env": {}
-    }
+    
   },
   "languages": {
     "Rust": {
@@ -37,6 +32,57 @@
     "button": true
   },
   "agent": {
+    "sidebar_side": "right",
+    "tool_permissions": {
+      "tools": {
+        "mcp:mcp-server-context7:query-docs": {
+          "default": "allow"
+        },
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^cargo\\s+build(\\s|$)"
+            },
+            {
+              "pattern": "^tail\\b"
+            },
+            {
+              "pattern": "^cargo\\s+run(\\s|$)"
+            },
+            {
+              "pattern": "^head\\b"
+            },
+            {
+              "pattern": "^grep\\b"
+            },
+            {
+              "pattern": "^sed\\b"
+            },
+            {
+              "pattern": "^CLEANARR_MEDIA_DIR=/tmp/x\\s+cargo\\s+run(\\s|$)"
+            },
+            {
+              "pattern": "^CLEANARR_DOWNLOAD_DIR=/tmp/dl\\s+cargo\\s+run(\\s|$)"
+            },
+            {
+              "pattern": "^CLEANARR_MEDIA_DIR=/tmp/env\\s+cargo\\s+run(\\s|$)"
+            },
+            {
+              "pattern": "^mkdir\\b"
+            },
+            {
+              "pattern": "^cp\\s+cleanarr\\.toml(\\s|$)"
+            },
+            {
+              "pattern": "^cargo\\s+test(\\s|$)"
+            },
+            {
+              "pattern": "^cargo\\s+clippy(\\s|$)"
+            }
+          ]
+        }
+      }
+    },
     "default_profile": "write",
     "dock": "right",
     "inline_assistant_model": {
