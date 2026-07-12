@@ -45,10 +45,9 @@
       "enable_thinking": false
     },
     "default_model": {
-      "effort": "high",
       "enable_thinking": true,
       "provider": "openrouter",
-      "model": "moonshotai/kimi-k2.6"
+      "model": "z-ai/glm-5.2"
     },
     "model_parameters": []
   },
