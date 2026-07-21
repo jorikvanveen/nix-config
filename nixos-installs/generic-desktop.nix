@@ -38,7 +38,17 @@ in {
     pkgs.signal-desktop
     pkgs.thunderbird
     pkgs.mullvad-vpn
-    pkgs.vesktop
+      #((pkgs.vesktop.overrideAttrs {
+      #  src = pkgs.fetchFromGitHub {
+      #    owner = "Vencord";
+      #    repo = "Vesktop";
+      #    rev = "29c11f3191d8bd8d1e3ba6fecee4c3e880181dd6";
+      #    hash = "sha256-XqdLYGqIyohNheK9qXpap2hZ8ejhB66WdrYB6FReVLk=";
+      #  };
+      #}).override {
+      #    pnpm_10_29_2 = pkgs.pnpm;
+      #})
+    pkgs.discord
     pkgs.obsidian
     pkgs.delfin
     pkgs.qbittorrent

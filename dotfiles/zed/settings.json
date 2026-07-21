@@ -35,6 +35,9 @@
     "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
+        "create_directory": {
+          "default": "allow"
+        },
         "mcp:mcp-server-context7:query-docs": {
           "default": "allow"
         },
@@ -78,6 +81,18 @@
             },
             {
               "pattern": "^cargo\\s+clippy(\\s|$)"
+            },
+            {
+              "pattern": "^grep\\s+\\^warning:(\\s|$)"
+            },
+            {
+              "pattern": "^sort\\b"
+            },
+            {
+              "pattern": "^uniq\\b"
+            },
+            {
+              "pattern": "^echo\\b"
             }
           ]
         }
@@ -91,7 +106,6 @@
       "enable_thinking": false
     },
     "default_model": {
-      "effort": "high",
       "enable_thinking": true,
       "provider": "openrouter",
       "model": "z-ai/glm-5.2"
