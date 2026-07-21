@@ -44,7 +44,7 @@
     ./modules/services/calibre-web.nix
     ./modules/services/ebookdl-web.nix
     ./modules/services/hovyu-backend.nix
-    ./modules/services/gitlab-runner.nix
+    #./modules/services/gitlab-runner.nix
     ./modules/services/ci-webhook.nix
     ./modules/services/actual.nix
     ./modules/services/cross-seed.nix

@@ -3,7 +3,6 @@ let
   ags-bar = inputs.ags-shell.packages.x86_64-linux.default;
 in {
   programs.niri.enable = true;
-  #services.xserver.displayManager.gdm.enable = lib.mkDefault true;
   services.displayManager.sddm.enable = lib.mkDefault true;
   services.gvfs.enable = true;
   services.blueman.enable = true;
