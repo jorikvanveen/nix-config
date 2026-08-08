@@ -1,4 +1,10 @@
 {
+  "semantic_tokens": "combined",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "left"
@@ -142,7 +148,11 @@
       "program": "nu"
     }
   },
-  "theme": "Catppuccin Mocha",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha"
+  },
   "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
   "use_autoclose": false,

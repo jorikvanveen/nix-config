@@ -49,7 +49,6 @@ in {
       #}).override {
       #    pnpm_10_29_2 = pkgs.pnpm;
       #})
-    pkgs.discord
     pkgs.obsidian
     pkgs.delfin
     pkgs.qbittorrent
@@ -83,5 +82,6 @@ in {
     pkgs.libusb1
     pkgs.hidapi
     pkgs.extest
+    pkgs.ivpn
   ];
 }
