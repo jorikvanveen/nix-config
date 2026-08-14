@@ -149,9 +149,9 @@
     }
   },
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Catppuccin Macchiato"
   },
   "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
