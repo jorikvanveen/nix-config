@@ -9,6 +9,7 @@ let
   desktop-file-query = inputs.desktop-file-query.packages.${system}.default;
 in {
   programs.localsend.enable = true;
+  services.ivpn.enable = true;
   imports = [
     ./modules/calibre.nix
     ./modules/audacity.nix
