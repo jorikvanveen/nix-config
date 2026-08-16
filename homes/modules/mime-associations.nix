@@ -23,6 +23,7 @@ in {
       "application/pdf" = "org.gnome.Evince.desktop";
       "inode/directory" = "org.gnome.Nautilus.desktop";
       "x-scheme-hander/acmanager" = "Assetto Corsa.desktop";
+      "audio/flac" = "org.gnome.Decibels.desktop";
     };
   };
 }
