@@ -10,7 +10,7 @@
   '';
 
   fileSystems."/mnt/qb" = {
-    device = "jorik-dev:/mnt/media/data/qbittorrent/downloads";
+    device = "jorik-dev:/";
     fsType = "rclone";
     options = [
       "nodev"
