@@ -10,5 +10,5 @@
       + "/zed/settings.json";
   };
 
-  home.packages = [ pkgs.zed-editor ];
+  home.packages = [ pkgs.zed-editor pkgs.bubblewrap ];
 }

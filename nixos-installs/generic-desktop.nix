@@ -84,5 +84,6 @@ in {
     pkgs.hidapi
     pkgs.extest
     pkgs.ivpn
+    pkgs.github-cli
   ];
 }
