@@ -12,6 +12,7 @@
     ./modules/docker.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
+    ./modules/platen.nix
 
     ./modules/services/atuin.nix
     ./modules/services/jellyfin.nix
@@ -50,6 +51,7 @@
     ./modules/services/cross-seed.nix
 
     ./modules/sync-backup.nix
+    ./modules/claude-timer.nix
   ];
 
   environment.systemPackages = [
