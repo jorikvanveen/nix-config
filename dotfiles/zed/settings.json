@@ -1,7 +1,31 @@
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "language_models": {
+    "opencode": {
+      "show_free_models": false,
+      "show_zen_models": false,
+      "show_go_models": true
+    }
+  },
   "semantic_tokens": "combined",
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
@@ -38,9 +62,54 @@
     "button": true
   },
   "agent": {
+    "sandbox_permissions": {
+      "write_paths": [
+        "/nix/var/nix/daemon-socket/socket",
+        "/nix/store"
+      ],
+      "network_hosts": [
+        "developer.tidal.com",
+        "musicbrainz.org",
+        "openapi.tidal.com",
+        "auth.tidal.com",
+        "cache.nixos.org",
+        "*.cache.nixos.org",
+        "github.com",
+        "api.github.com",
+        "channels.nixos.org",
+        "docs.rs",
+        "svelte.dev"
+      ]
+    },
     "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
+        "skill": {
+          "default": "allow"
+        },
+        "search_web": {
+          "default": "allow"
+        },
+        "fetch": {
+          "default": "allow"
+        },
+        "move_path": {
+          "default": "allow"
+        },
+        "copy_path": {
+          "default": "allow"
+        },
+        "write_file": {
+          "default": "allow"
+        },
+        "edit_file": {
+          "always_confirm": [
+            {
+              "pattern": "\\.env"
+            }
+          ],
+          "default": "allow"
+        },
         "create_directory": {
           "default": "allow"
         },
@@ -48,59 +117,18 @@
           "default": "allow"
         },
         "terminal": {
-          "always_allow": [
+          "always_deny": [
             {
-              "pattern": "^cargo\\s+build(\\s|$)"
-            },
-            {
-              "pattern": "^tail\\b"
-            },
-            {
-              "pattern": "^cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^head\\b"
-            },
-            {
-              "pattern": "^grep\\b"
-            },
-            {
-              "pattern": "^sed\\b"
-            },
-            {
-              "pattern": "^CLEANARR_MEDIA_DIR=/tmp/x\\s+cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^CLEANARR_DOWNLOAD_DIR=/tmp/dl\\s+cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^CLEANARR_MEDIA_DIR=/tmp/env\\s+cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^mkdir\\b"
-            },
-            {
-              "pattern": "^cp\\s+cleanarr\\.toml(\\s|$)"
-            },
-            {
-              "pattern": "^cargo\\s+test(\\s|$)"
-            },
-            {
-              "pattern": "^cargo\\s+clippy(\\s|$)"
-            },
-            {
-              "pattern": "^grep\\s+\\^warning:(\\s|$)"
-            },
-            {
-              "pattern": "^sort\\b"
-            },
-            {
-              "pattern": "^uniq\\b"
-            },
-            {
-              "pattern": "^echo\\b"
+              "pattern": "find / .*"
             }
-          ]
+          ],
+          "always_confirm": [
+            {
+              "pattern": "\\.env"
+            }
+          ],
+          "default": "allow",
+          "always_allow": []
         }
       }
     },
@@ -150,7 +178,7 @@
   },
   "theme": {
     "mode": "dark",
-    "light": "One Light",
+    "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé"
   },
   "ui_font_family": "Atkinson Hyperlegible Next",
