@@ -1,4 +1,13 @@
 {
+  "context_servers": {
+    "Kagi": {
+      "enabled": true,
+      "url": "https://mcp.kagi.com/mcp",
+      "headers": {
+        "Authorization": "Bearer 0HQ78WZkqGA6hTwXfr6YKkVr76-76L4bLK-UiOTMUlU.tlKMtwpOSgMBz9lBDot_ZxWOKLaGeKo7Qs-kyFwiF34"
+      }
+    }
+  },
   "lsp": {
     "vtsls": {
       "settings": {
@@ -86,6 +95,7 @@
     "button": true
   },
   "agent": {
+    "play_sound_when_agent_done": "always",
     "favorite_models": [
       {
         "provider": "opencode",
@@ -96,10 +106,7 @@
     ],
     "sandbox_permissions": {
       "allow_unsandboxed": false,
-      "write_paths": [
-        "/nix/var/nix/daemon-socket/socket",
-        "/nix/store"
-      ],
+      "write_paths": [],
       "network_hosts": [
         "developer.tidal.com",
         "musicbrainz.org",
@@ -122,6 +129,12 @@
     "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
+        "mcp:Kagi:kagi_extract": {
+          "default": "allow"
+        },
+        "mcp:Kagi:kagi_search_fetch": {
+          "default": "allow"
+        },
         "skill": {
           "default": "allow"
         },
