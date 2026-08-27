@@ -52,6 +52,7 @@
 
     ./modules/sync-backup.nix
     ./modules/claude-timer.nix
+    ./modules/pc-as-substituter.nix
   ];
 
   environment.systemPackages = [
