@@ -27,6 +27,7 @@ in {
     ./modules/gamescope.nix
     ./modules/services/ratbagd.nix
     ./modules/helium.nix
+    ./modules/mouseless-udev.nix
   ];
   environment.systemPackages = [
     nomouse

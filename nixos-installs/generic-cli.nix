@@ -1,5 +1,8 @@
 { pkgs, system, inputs, ... }:
 {
+  environment.systemPackages = [
+    pkgs.opencode
+  ];
   imports = [
     ./modules/lix.nix
     ./modules/locale.nix

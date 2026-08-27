@@ -20,7 +20,15 @@
     "opencode": {
       "show_free_models": false,
       "show_zen_models": false,
-      "show_go_models": true
+      "show_go_models": true,
+      "available_models": [
+        {
+          "display_name": "GLM 5.3 Flash",
+          "name": "glm-5.3-flash",
+          "max_tokens": 1000000,
+          "subscription": "go"
+        }
+      ]
     },
     "open_router": {
       "available_models": [
@@ -83,11 +91,11 @@
         "provider": "opencode",
         "model": "go/glm-5.2",
         "enable_thinking": true,
-        "effort": "high"
+        "effort": "max"
       }
     ],
     "sandbox_permissions": {
-      "allow_unsandboxed": true,
+      "allow_unsandboxed": false,
       "write_paths": [
         "/nix/var/nix/daemon-socket/socket",
         "/nix/store"
@@ -170,10 +178,9 @@
       "enable_thinking": false
     },
     "default_model": {
-      "effort": "high",
-      "enable_thinking": true,
+      "enable_thinking": false,
       "provider": "opencode",
-      "model": "go/glm-5.2"
+      "model": "go/glm-5.3-flash"
     },
     "model_parameters": []
   },
