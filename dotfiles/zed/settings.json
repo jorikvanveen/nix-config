@@ -110,6 +110,7 @@
       }
     ],
     "sandbox_permissions": {
+      "allow_fs_write_all": false,
       "allow_unsandboxed": false,
       "write_paths": [],
       "network_hosts": [

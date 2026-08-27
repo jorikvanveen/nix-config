@@ -4,6 +4,6 @@
   users.users.main.extraGroups = [ "mouseless" ];
   services.udev.extraRules = ''
     # Output: Virtual device creation
-    KERNEL=="uinput", GROUP="mouseless", MODE:="0660"
+    KERNEL=="uinput", GROUP:="mouseless", MODE:="0660"
   '';
 }
