@@ -21,6 +21,21 @@
       "show_free_models": false,
       "show_zen_models": false,
       "show_go_models": true
+    },
+    "open_router": {
+      "available_models": [
+        {
+          "name": "z-ai/glm-5.2",
+          "max_tokens": 150000,
+          "supports_tools": true,
+          "mode": {
+            "type": "thinking"
+          },
+          "provider": {
+            "only": ["baidu/fp8", "streamlake/fp8"]
+          }
+        }
+      ]
     }
   },
   "semantic_tokens": "combined",
@@ -40,6 +55,7 @@
     "dock": "left"
   },
   "git_panel": {
+    "tree_view": true,
     "dock": "left"
   },
   "show_whitespaces": "selection",
@@ -62,7 +78,16 @@
     "button": true
   },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "opencode",
+        "model": "go/glm-5.2",
+        "enable_thinking": true,
+        "effort": "high"
+      }
+    ],
     "sandbox_permissions": {
+      "allow_unsandboxed": true,
       "write_paths": [
         "/nix/var/nix/daemon-socket/socket",
         "/nix/store"
@@ -78,7 +103,12 @@
         "api.github.com",
         "channels.nixos.org",
         "docs.rs",
-        "svelte.dev"
+        "svelte.dev",
+        "tidal.com",
+        "tidal-music.github.io",
+        "github.io",
+        "antra.hoshi.cxd",
+        "antra.hoshi.cfd"
       ]
     },
     "sidebar_side": "right",
@@ -140,9 +170,10 @@
       "enable_thinking": false
     },
     "default_model": {
+      "effort": "high",
       "enable_thinking": true,
-      "provider": "openrouter",
-      "model": "z-ai/glm-5.2"
+      "provider": "opencode",
+      "model": "go/glm-5.2"
     },
     "model_parameters": []
   },
