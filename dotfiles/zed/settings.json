@@ -56,13 +56,26 @@
           "provider": {
             "only": ["baidu/fp8", "streamlake/fp8"]
           }
+        },
+        {
+          "display_name": "GLM 5.3 Flash (*)",
+          "name": "z-ai/glm-5.3-flash",
+          "max_tokens": 1000000,
+          "supports_tools": true,
+          "mode": {
+            "type": "thinking",
+            "budget_tokens": 10000
+          },
+          "provider": {
+            "only": ["modal/fp8", "together"]
+          }
         }
       ]
     }
   },
   "semantic_tokens": "combined",
   "icon_theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
@@ -74,6 +87,7 @@
     "dock": "left"
   },
   "collaboration_panel": {
+    "button": false,
     "dock": "left"
   },
   "git_panel": {
@@ -100,13 +114,32 @@
     "button": true
   },
   "agent": {
-    "play_sound_when_agent_done": "always",
+    "show_turn_stats": true,
+    "terminal_init_command": "",
+    "play_sound_when_agent_done": "when_hidden",
     "favorite_models": [
       {
         "provider": "opencode",
-        "model": "go/glm-5.2",
+        "model": "go/glm-5.3-flash",
         "enable_thinking": true,
-        "effort": "max"
+        "effort": "high"
+      },
+      {
+        "provider": "openrouter",
+        "model": "z-ai/glm-5.3-flash",
+        "enable_thinking": true
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.6-sol",
+        "enable_thinking": true,
+        "effort": "medium"
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.6-luna",
+        "enable_thinking": true,
+        "effort": "medium"
       }
     ],
     "sandbox_permissions": {
@@ -135,6 +168,12 @@
     "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
+        "mcp:mcp-server-context7:resolve-library-id": {
+          "default": "allow"
+        },
+        "delete_path": {
+          "default": "allow"
+        },
         "mcp:Kagi:kagi_extract": {
           "default": "allow"
         },
@@ -197,10 +236,10 @@
       "enable_thinking": false
     },
     "default_model": {
-      "effort": "high",
+      "effort": "medium",
       "enable_thinking": true,
-      "provider": "opencode",
-      "model": "go/glm-5.3-flash"
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-sol"
     },
     "model_parameters": []
   },
@@ -235,7 +274,7 @@
     }
   },
   "theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé"
   },
