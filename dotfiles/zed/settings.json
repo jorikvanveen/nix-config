@@ -62,6 +62,7 @@
           "name": "z-ai/glm-5.3-flash",
           "max_tokens": 1000000,
           "supports_tools": true,
+          "supports_images": true,
           "mode": {
             "type": "thinking",
             "budget_tokens": 10000
@@ -75,7 +76,7 @@
   },
   "semantic_tokens": "combined",
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
@@ -133,13 +134,19 @@
         "provider": "openai-subscribed",
         "model": "gpt-5.6-sol",
         "enable_thinking": true,
-        "effort": "medium"
+        "effort": "high"
       },
       {
         "provider": "openai-subscribed",
         "model": "gpt-5.6-luna",
         "enable_thinking": true,
-        "effort": "medium"
+        "effort": "high"
+      },
+      {
+        "provider": "opencode",
+        "model": "go/gpt-5.6-luna",
+        "enable_thinking": true,
+        "effort": "high"
       }
     ],
     "sandbox_permissions": {
@@ -162,7 +169,10 @@
         "tidal-music.github.io",
         "github.io",
         "antra.hoshi.cxd",
-        "antra.hoshi.cfd"
+        "antra.hoshi.cfd",
+        "resources.tidal.com",
+        "index.crates.io",
+        "static.crates.io"
       ]
     },
     "sidebar_side": "right",
@@ -218,11 +228,7 @@
               "pattern": "find / .*"
             }
           ],
-          "always_confirm": [
-            {
-              "pattern": "\\.env"
-            }
-          ],
+          "always_confirm": [],
           "default": "allow",
           "always_allow": []
         }
@@ -236,10 +242,10 @@
       "enable_thinking": false
     },
     "default_model": {
-      "effort": "medium",
+      "effort": "high",
       "enable_thinking": true,
       "provider": "openai-subscribed",
-      "model": "gpt-5.6-sol"
+      "model": "gpt-5.6-luna"
     },
     "model_parameters": []
   },
@@ -264,17 +270,18 @@
   "buffer_font_features": {
     "calt": true
   },
-  "buffer_font_size": 14,
+  "buffer_font_size": 12.0,
   "cursor_blink": false,
   "load_direnv": "direct",
   "relative_line_numbers": "enabled",
   "terminal": {
+    "font_size": 12.0,
     "shell": {
       "program": "nu"
     }
   },
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé"
   },
