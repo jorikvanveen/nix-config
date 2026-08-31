@@ -18,6 +18,7 @@
     gitlab-runner-docker-images-token-env = {};
     gitlab-runner-docker-images-token-env-laptop = {};
     platen-backend-env = {};
+    hermes-env = {};
   };
 }
 

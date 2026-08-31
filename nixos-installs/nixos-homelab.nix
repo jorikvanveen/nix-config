@@ -49,6 +49,7 @@
     ./modules/services/ci-webhook.nix
     ./modules/services/actual.nix
     ./modules/services/cross-seed.nix
+    ./modules/services/hermes.nix
 
     ./modules/sync-backup.nix
     ./modules/claude-timer.nix

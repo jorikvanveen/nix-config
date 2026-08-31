@@ -172,7 +172,8 @@
         "antra.hoshi.cfd",
         "resources.tidal.com",
         "index.crates.io",
-        "static.crates.io"
+        "static.crates.io",
+        "raw.githubusercontent.com"
       ]
     },
     "sidebar_side": "right",
@@ -242,10 +243,9 @@
       "enable_thinking": false
     },
     "default_model": {
-      "effort": "high",
       "enable_thinking": true,
-      "provider": "openai-subscribed",
-      "model": "gpt-5.6-luna"
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.3-flash"
     },
     "model_parameters": []
   },

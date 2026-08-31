@@ -33,6 +33,7 @@
       ./modules/ulimit-fix.nix
       ./modules/ryubing.nix
       ./modules/moza-udev.nix
+      ./modules/services/hermes.nix
     ];
 
   boot.kernel.sysctl."fs.file-max" = 99999999;
