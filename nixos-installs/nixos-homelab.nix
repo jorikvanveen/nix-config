@@ -54,6 +54,8 @@
     ./modules/sync-backup.nix
     ./modules/claude-timer.nix
     ./modules/pc-as-substituter.nix
+    ./modules/services/hermes.nix
+    ./modules/services/matrix-conduit.nix
   ];
 
   environment.systemPackages = [
