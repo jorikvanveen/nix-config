@@ -1,4 +1,18 @@
 {
+  "ssh_connections": [
+    {
+      "host": "j.jorik-dev.com",
+      "username": "main",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/main/nix-config"
+          ]
+        }
+      ]
+    }
+  ],
   "context_servers": {
     "Kagi": {
       "enabled": true,
@@ -68,7 +82,7 @@
             "budget_tokens": 10000
           },
           "provider": {
-            "only": ["modal/fp8", "together"]
+            "only": ["together", "makora", "modal/fp8", "baseten/fp"]
           }
         }
       ]
@@ -134,7 +148,7 @@
         "provider": "openai-subscribed",
         "model": "gpt-5.6-sol",
         "enable_thinking": true,
-        "effort": "high"
+        "effort": "medium"
       },
       {
         "provider": "openai-subscribed",
