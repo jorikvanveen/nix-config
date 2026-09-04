@@ -27,7 +27,7 @@
       #./modules/xmrig.nix
       ./modules/wivrn.nix
       ./modules/docker.nix
-      ./modules/cachy-kernel.nix
+      #./modules/cachy-kernel.nix
       ./modules/kde-specialisation.nix
       ./modules/mesa-git.nix
       ./modules/ulimit-fix.nix
@@ -53,6 +53,23 @@
     pkgs.protonplus
     pkgs.openrgb-with-all-plugins
     pkgs.mesa-demos
+  ];
+
+  nix.settings = {
+    extra-substituters = [
+      "https://zed.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "zed.cachix.org-1:/pHQ6dpMsAZk2DiP4WCL0p9YDNKWj2Q5FL20bNmw1cU="
+    ];
+  };
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 32 * 1024;
+      priority = -2;
+    }
   ];
 
   # This value determines the NixOS release from which the default

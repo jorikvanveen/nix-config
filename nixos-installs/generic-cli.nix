@@ -2,6 +2,7 @@
 {
   environment.systemPackages = [
     pkgs.opencode
+    pkgs.codex
   ];
   imports = [
     ./modules/lix.nix
@@ -19,6 +20,6 @@
     ./modules/flake-support.nix
     ./modules/flatpak.nix
     ./modules/ntfs-support.nix
+    
   ];
 }
-

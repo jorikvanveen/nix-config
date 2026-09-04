@@ -41,20 +41,16 @@
   },
   "language_models": {
     "opencode": {
-      "show_free_models": false,
       "show_zen_models": false,
       "show_go_models": true,
       "available_models": [
         {
-          "display_name": "GLM 5.3 Flash",
-          "name": "glm-5.3-flash",
-          "max_tokens": 1000000,
+          "display_name": "Omen Alpha",
+          "name": "omen-alpha",
+          "max_tokens": 200000,
+          "protocol": "openai_chat",
           "subscription": "go",
-          "reasoning_effort_levels": [
-            "medium",
-            "high",
-            "max"
-          ]
+          "reasoning_effort_levels": [ "low", "high" ]
         }
       ]
     },
@@ -71,20 +67,6 @@
             "only": ["baidu/fp8", "streamlake/fp8"]
           }
         },
-        {
-          "display_name": "GLM 5.3 Flash (*)",
-          "name": "z-ai/glm-5.3-flash",
-          "max_tokens": 1000000,
-          "supports_tools": true,
-          "supports_images": true,
-          "mode": {
-            "type": "thinking",
-            "budget_tokens": 10000
-          },
-          "provider": {
-            "only": ["together", "makora", "modal/fp8", "baseten/fp"]
-          }
-        }
       ]
     }
   },
@@ -116,7 +98,15 @@
     "mode": "subtle"
   },
   "agent_servers": {
-    
+    "codex-acp": {
+      "default_config_options": {
+        "collaboration_mode": "default",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "mode": "agent-full-access"
+      },
+      "type": "registry"
+    }
   },
   "languages": {
     "Rust": {
@@ -148,13 +138,15 @@
         "provider": "openai-subscribed",
         "model": "gpt-5.6-sol",
         "enable_thinking": true,
-        "effort": "medium"
+        "effort": "medium",
+        "speed": "standard"
       },
       {
         "provider": "openai-subscribed",
         "model": "gpt-5.6-luna",
         "enable_thinking": true,
-        "effort": "high"
+        "effort": "high",
+        "speed": "fast"
       },
       {
         "provider": "opencode",
@@ -257,9 +249,11 @@
       "enable_thinking": false
     },
     "default_model": {
+      "speed": "standard",
+      "effort": "medium",
       "enable_thinking": true,
-      "provider": "openrouter",
-      "model": "z-ai/glm-5.3-flash"
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-sol"
     },
     "model_parameters": []
   },
@@ -290,9 +284,6 @@
   "relative_line_numbers": "enabled",
   "terminal": {
     "font_size": 12.0,
-    "shell": {
-      "program": "nu"
-    }
   },
   "theme": {
     "mode": "dark",
