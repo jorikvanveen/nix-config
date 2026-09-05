@@ -152,6 +152,12 @@
         "provider": "opencode",
         "model": "go/gpt-5.6-luna",
         "enable_thinking": true,
+        "effort": "max"
+      },
+      {
+        "provider": "opencode",
+        "model": "go/omen-alpha",
+        "enable_thinking": true,
         "effort": "high"
       }
     ],
@@ -249,11 +255,11 @@
       "enable_thinking": false
     },
     "default_model": {
-      "speed": "fast",
-      "effort": "high",
+      "speed": "standard",
+      "effort": "medium",
       "enable_thinking": true,
       "provider": "openai-subscribed",
-      "model": "gpt-5.6-luna"
+      "model": "gpt-6-astra"
     },
     "model_parameters": []
   },
