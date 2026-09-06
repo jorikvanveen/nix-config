@@ -643,6 +643,18 @@
     },
     "nixpkgs_4": {
       "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-LQy14TZp77TwbQf40gg1V3jo8FwJG0jGDkAH+zRHqg8=",
+        "path": "/nix/store/lj0fr41wwbrx2mwq2378jg8qrns7b93d-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
         "lastModified": 1775710090,
         "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
         "owner": "nixos",
@@ -755,17 +767,15 @@
     },
     "platen": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_4",
         "utils": "utils_5"
       },
       "locked": {
-        "lastModified": 1788638598,
-        "narHash": "sha256-8uUv0vJ4pnmrdQXbMmbd8AXm5B1C7/Lv1sSHRWPceJI=",
+        "lastModified": 1788703248,
+        "narHash": "sha256-Ksgsoj0oyhe8gdHTn0nJ/o1/6V3DXTSetVTS+dt8USs=",
         "owner": "jorikvanveen",
         "repo": "platen",
-        "rev": "a999b0b5fbb06f924b6d643573d3ee90663835f8",
+        "rev": "300e9870e029487af8009d77e4447805a56475fd",
         "type": "github"
       },
       "original": {
@@ -961,7 +971,7 @@
     },
     "sunshine-vlk-flake": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1777226431,
