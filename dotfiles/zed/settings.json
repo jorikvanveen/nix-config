@@ -1,4 +1,7 @@
 {
+  "inlay_hints": {
+    "show_type_hints": true
+  },
   "ssh_connections": [
     {
       "host": "j.jorik-dev.com",
@@ -255,11 +258,11 @@
       "enable_thinking": false
     },
     "default_model": {
-      "speed": "standard",
-      "effort": "medium",
+      "speed": "fast",
+      "effort": "high",
       "enable_thinking": true,
       "provider": "openai-subscribed",
-      "model": "gpt-6-astra"
+      "model": "gpt-5.6-luna"
     },
     "model_parameters": []
   },
