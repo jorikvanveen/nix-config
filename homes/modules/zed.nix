@@ -25,6 +25,6 @@ in {
   };
 
   home.packages = [
-    zed
+    pkgs.zed-editor
      pkgs.bubblewrap ];
 }
