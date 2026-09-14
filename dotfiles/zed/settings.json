@@ -151,8 +151,8 @@
         "provider": "openai-subscribed",
         "model": "gpt-6-astra",
         "enable_thinking": true,
-        "effort": "medium",
-        "speed": "standard"
+        "effort": "max",
+        "speed": "fast"
       }
     ],
     "sandbox_permissions": {
@@ -252,8 +252,8 @@
       "enable_thinking": false
     },
     "default_model": {
-      "speed": "standard",
-      "effort": "medium",
+      "speed": "fast",
+      "effort": "max",
       "enable_thinking": true,
       "provider": "openai-subscribed",
       "model": "gpt-6-astra"

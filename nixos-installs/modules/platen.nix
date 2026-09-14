@@ -48,6 +48,7 @@ in {
       PLATEN_BIND_ADDRESS = "0.0.0.0:43330";
       PLATEN_MUSIC_DIR = "/mnt/media/music";
       PLATEN_DATABASE_URL = "sqlite://${PLATEN_MUSIC_DIR}/platen-backend.sqlite?mode=rwc";
+      PLATEN_TIDAL_COUNTRY_CODE = "NL";
     };
 
     wantedBy = [ "multi-user.target" ];

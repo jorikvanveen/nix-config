@@ -59,7 +59,6 @@
     optiscaler-client.inputs.nixpkgs.follows = "nixpkgs";
 
     platen.url = "github:jorikvanveen/platen";
-    platen.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
