@@ -1,4 +1,7 @@
 {
+  "git": {
+    "diff_base": "head"
+  },
   "inlay_hints": {
     "show_type_hints": true
   },
@@ -21,7 +24,7 @@
       "enabled": true,
       "url": "https://mcp.kagi.com/mcp",
       "headers": {
-        "Authorization": "Bearer 0HQ78WZkqGA6hTwXfr6YKkVr76-76L4bLK-UiOTMUlU.tlKMtwpOSgMBz9lBDot_ZxWOKLaGeKo7Qs-kyFwiF34"
+        "Authorization": "Bearer jyg8BVnON-p9lL9RJ-C-RLYcioBlAdqKXiyQCqoknR0.YWeARF8rip5L8HqJlpVa8wmZy2HAm9yfrsRrcahiCNE"
       }
     }
   },
@@ -139,29 +142,17 @@
       },
       {
         "provider": "openai-subscribed",
-        "model": "gpt-5.6-sol",
-        "enable_thinking": true,
-        "effort": "medium",
-        "speed": "standard"
-      },
-      {
-        "provider": "openai-subscribed",
         "model": "gpt-5.6-luna",
         "enable_thinking": true,
-        "effort": "high",
+        "effort": "max",
         "speed": "fast"
       },
       {
-        "provider": "opencode",
-        "model": "go/gpt-5.6-luna",
+        "provider": "openai-subscribed",
+        "model": "gpt-6-astra",
         "enable_thinking": true,
-        "effort": "max"
-      },
-      {
-        "provider": "opencode",
-        "model": "go/omen-alpha",
-        "enable_thinking": true,
-        "effort": "high"
+        "effort": "max",
+        "speed": "fast"
       }
     ],
     "sandbox_permissions": {
@@ -188,7 +179,10 @@
         "resources.tidal.com",
         "index.crates.io",
         "static.crates.io",
-        "raw.githubusercontent.com"
+        "raw.githubusercontent.com",
+        "www.discogs.com",
+        "support.discogs.com",
+        "api.discogs.com"
       ]
     },
     "sidebar_side": "right",
@@ -259,10 +253,10 @@
     },
     "default_model": {
       "speed": "fast",
-      "effort": "high",
+      "effort": "max",
       "enable_thinking": true,
       "provider": "openai-subscribed",
-      "model": "gpt-5.6-luna"
+      "model": "gpt-6-astra"
     },
     "model_parameters": []
   },
