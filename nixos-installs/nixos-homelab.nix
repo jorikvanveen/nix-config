@@ -56,6 +56,7 @@
     ./modules/pc-as-substituter.nix
     ./modules/services/hermes.nix
     ./modules/services/matrix-conduit.nix
+    ./modules/services/ntfy.sh
   ];
 
   environment.systemPackages = [

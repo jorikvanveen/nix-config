@@ -771,11 +771,11 @@
         "utils": "utils_5"
       },
       "locked": {
-        "lastModified": 1788703248,
-        "narHash": "sha256-Ksgsoj0oyhe8gdHTn0nJ/o1/6V3DXTSetVTS+dt8USs=",
+        "lastModified": 1789300564,
+        "narHash": "sha256-eAsbslLl5cy467WPUglN6toVXcfPagb04OewWXyl5FE=",
         "owner": "jorikvanveen",
         "repo": "platen",
-        "rev": "300e9870e029487af8009d77e4447805a56475fd",
+        "rev": "5676205f7e2e11e9b90e94262f0b130ab432f9b7",
         "type": "github"
       },
       "original": {
