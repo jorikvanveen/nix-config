@@ -68,4 +68,3 @@
 #      - # You will need at least one extra volume for your media drive if using https://www.cross-seed.org/docs/tutorials/linking
 #    command: daemon
 #    restart: unless-stopped
-

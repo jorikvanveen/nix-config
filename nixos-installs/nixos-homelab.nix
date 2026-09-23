@@ -39,7 +39,7 @@
     ./modules/services/lidarr.nix
     #./modules/services/riven.nix
     ./modules/services/vaultwarden.nix
-    ./modules/services/hoarder.nix
+    #./modules/services/hoarder.nix
     ./modules/services/audiobookshelf.nix
     ./modules/services/radicale.nix
     ./modules/services/calibre-web.nix
