@@ -18,7 +18,17 @@
         },
         {
           "paths": [
+            "/home/main/data/matrixbrr-checkout/matrixbrr"
+          ]
+        },
+        {
+          "paths": [
             "/home/main/nix-config"
+          ]
+        },
+        {
+          "paths": [
+            "/home/main/shared"
           ]
         }
       ]
@@ -251,10 +261,10 @@
     },
     "default_model": {
       "speed": "fast",
-      "effort": "max",
+      "effort": "xhigh",
       "enable_thinking": true,
       "provider": "openai-subscribed",
-      "model": "gpt-6-astra"
+      "model": "gpt-6.1-sol"
     },
     "model_parameters": []
   },
