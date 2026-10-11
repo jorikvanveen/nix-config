@@ -75,21 +75,21 @@
         }
       ]
     },
-    "open_router": {
-      "available_models": [
-        {
-          "name": "z-ai/glm-5.2",
-          "max_tokens": 150000,
-          "supports_tools": true,
-          "mode": {
-            "type": "thinking"
-          },
-          "provider": {
-            "only": ["baidu/fp8", "streamlake/fp8"]
-          }
-        },
-      ]
-    }
+    //"open_router": {
+    //  //"available_models": [
+    //  //  {
+    //  //    "name": "z-ai/glm-5.2",
+    //  //    "max_tokens": 150000,
+    //  //    "supports_tools": true,
+    //  //    "mode": {
+    //  //      "type": "thinking"
+    //  //    },
+    //  //    "provider": {
+    //  //      "only": ["baidu/fp8", "streamlake/fp8"]
+    //  //    }
+    //  //  },
+    //  //]
+    //}
   },
   "semantic_tokens": "combined",
   "icon_theme": {
@@ -109,6 +109,7 @@
     "dock": "left"
   },
   "git_panel": {
+    "group_by": "none",
     "tree_view": true,
     "dock": "left"
   },
@@ -121,10 +122,11 @@
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
+        "fast-mode": false,
         "collaboration_mode": "default",
-        "model": "gpt-5.6-sol",
-        "reasoning_effort": "medium",
-        "mode": "agent-full-access"
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "mode": "agent"
       },
       "type": "registry"
     }
@@ -140,8 +142,12 @@
     "button": true
   },
   "agent": {
+    "enable_feedback": false,
+    "threads_sidebar": {
+      "position": "right"
+    },
     "show_turn_stats": true,
-    "terminal_init_command": "",
+    "terminal_init_command": "codex",
     "play_sound_when_agent_done": "always",
     "favorite_models": [
       {
@@ -149,11 +155,6 @@
         "model": "go/glm-5.3-flash",
         "enable_thinking": true,
         "effort": "high"
-      },
-      {
-        "provider": "openrouter",
-        "model": "z-ai/glm-5.3-flash",
-        "enable_thinking": true
       },
       {
         "provider": "openai-subscribed",
@@ -190,10 +191,14 @@
         "raw.githubusercontent.com",
         "www.discogs.com",
         "support.discogs.com",
-        "api.discogs.com"
+        "api.discogs.com",
+        "interview.orpheus.network",
+        "typesafe.ai",
+        "openrouter.ai",
+        "registry.npmjs.org",
+        "ui.shadcn.com"
       ]
     },
-    "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
         "mcp:mcp-server-context7:resolve-library-id": {
@@ -260,7 +265,7 @@
       "enable_thinking": false
     },
     "default_model": {
-      "speed": "fast",
+      "speed": "standard",
       "effort": "xhigh",
       "enable_thinking": true,
       "provider": "openai-subscribed",

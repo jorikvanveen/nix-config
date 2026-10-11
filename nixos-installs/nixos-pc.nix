@@ -29,6 +29,7 @@
       ./modules/docker.nix
       #./modules/cachy-kernel.nix
       ./modules/kde-specialisation.nix
+      ./modules/shared-keyring.nix
       ./modules/mesa-git.nix
       ./modules/ulimit-fix.nix
       ./modules/ryubing.nix
