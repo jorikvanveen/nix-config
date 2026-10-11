@@ -266,10 +266,10 @@
     },
     "default_model": {
       "speed": "standard",
-      "effort": "xhigh",
+      "effort": "low",
       "enable_thinking": true,
-      "provider": "openai-subscribed",
-      "model": "gpt-6.1-sol"
+      "provider": "openrouter",
+      "model": "openai/gpt-6.1-sol"
     },
     "model_parameters": []
   },
