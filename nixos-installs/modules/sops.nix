@@ -20,5 +20,6 @@
     platen-backend-env = {};
     hermes-env = {};
     matrix-conduit = {};
+    oph-trainer-env = {};
   };
 }

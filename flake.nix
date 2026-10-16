@@ -59,6 +59,9 @@
     optiscaler-client.inputs.nixpkgs.follows = "nixpkgs";
 
     platen.url = "github:jorikvanveen/platen";
+
+    oph-trainer.url = "github:jorikvanveen/oph-trainer";
+    oph-trainer.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -111,7 +114,10 @@
         };
     in
     {
-      packages.${system}.neovim = import ./program-config/neovim/neovim.nix { inherit pkgs; };
+      packages.${system} = {
+        neovim = import ./program-config/neovim/neovim.nix { inherit pkgs; };
+        oph-trainer = inputs.oph-trainer.packages.${system}.default;
+      };
 
       nixosConfigurations.nixos-laptop = makeOsConfig {
         home = import ./homes/nixos-tp-p15v.nix;

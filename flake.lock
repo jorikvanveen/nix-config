@@ -743,12 +743,33 @@
         "url": "https://devimages-cdn.apple.com/design/resources/download/NY.dmg"
       }
     },
-    "optiscaler-client": {
+    "oph-trainer": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ],
         "utils": "utils_4"
+      },
+      "locked": {
+        "lastModified": 1791754848,
+        "narHash": "sha256-BArdabgUR8NZNZxxRUvDbCo2VYpPk8PbKuMOb0yxIio=",
+        "owner": "jorikvanveen",
+        "repo": "oph-trainer",
+        "rev": "fb52a249375cac21368d8f52d9a3d687ceee815b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jorikvanveen",
+        "repo": "oph-trainer",
+        "type": "github"
+      }
+    },
+    "optiscaler-client": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils_5"
       },
       "locked": {
         "lastModified": 1777752048,
@@ -768,7 +789,7 @@
     "platen": {
       "inputs": {
         "nixpkgs": "nixpkgs_4",
-        "utils": "utils_5"
+        "utils": "utils_6"
       },
       "locked": {
         "lastModified": 1791572485,
@@ -801,6 +822,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nomouse": "nomouse",
         "nvim-pkgs": "nvim-pkgs",
+        "oph-trainer": "oph-trainer",
         "optiscaler-client": "optiscaler-client",
         "platen": "platen",
         "sops-nix": "sops-nix",
@@ -919,7 +941,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_7"
+        "systems": "systems_8"
       },
       "locked": {
         "lastModified": 1791109926,
@@ -948,7 +970,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems_8",
+        "systems": "systems_9",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
         "tinted-tmux": "tinted-tmux",
@@ -1107,6 +1129,21 @@
         "type": "github"
       }
     },
+    "systems_9": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tinted-kitty": {
       "flake": false,
       "locked": {
@@ -1246,6 +1283,24 @@
     "utils_5": {
       "inputs": {
         "systems": "systems_6"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_6": {
+      "inputs": {
+        "systems": "systems_7"
       },
       "locked": {
         "lastModified": 1731533236,

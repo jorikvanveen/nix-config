@@ -13,6 +13,7 @@
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
     ./modules/platen.nix
+    ./modules/oph-trainer.nix
 
     ./modules/services/atuin.nix
     ./modules/services/jellyfin.nix
