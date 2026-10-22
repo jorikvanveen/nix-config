@@ -6,6 +6,7 @@
     ./generic-cli.nix
 
     ./modules/main-user.nix
+    ./modules/media-storage.nix
     ./modules/syncthing-homelab.nix
     ./modules/systemd-boot.nix
     ./modules/sops.nix

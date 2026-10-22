@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.actual = {
-    enable = true;
+    enable = false;
     settings.port = 30313;
     settings.hostname = "0.0.0.0";
   };
