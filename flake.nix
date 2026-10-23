@@ -69,23 +69,9 @@
     { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      nodejsOverlay = final: prev: {
-        # Keep full and slim runtimes together: packages such as seerr use slim.
-        inherit (inputs.nixpkgs-master.legacyPackages.${prev.stdenv.hostPlatform.system})
-          nodejs
-          nodejs_22
-          nodejs_24
-          nodejs_26
-          nodejs-slim
-          nodejs-slim_22
-          nodejs-slim_24
-          nodejs-slim_26
-          ;
-      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ nodejsOverlay ];
       };
       makeHomeManagerModule = { home, specialArgs }: {
         home-manager.backupFileExtension = "hmbak";
@@ -118,7 +104,6 @@
           modules = [
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.overlays = [ nodejsOverlay ];
               nixpkgs.config.permittedInsecurePackages = [
                 "qtwebengine-5.15.19"
                 "electron-36.9.5"
