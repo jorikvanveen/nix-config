@@ -593,6 +593,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1792789181,
+        "narHash": "sha256-zcxF7WM5dGaTzs3xfdysJdjOEYgtCSHO+eEoSOAjd4M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9b27ac9da830f016f4a0fa238ec02ef5d19163a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1791549541,
@@ -819,6 +835,7 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-eden": "nixpkgs-eden",
+        "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nomouse": "nomouse",
         "nvim-pkgs": "nvim-pkgs",

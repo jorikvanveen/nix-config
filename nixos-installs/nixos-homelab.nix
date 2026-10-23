@@ -60,6 +60,7 @@
     ./modules/services/hermes.nix
     ./modules/services/matrix-conduit.nix
     ./modules/services/ntfy.sh
+    ./modules/services/seerr.nix
   ];
 
   environment.systemPackages = [

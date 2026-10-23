@@ -5,6 +5,9 @@
     package = pkgs.caddy;
     virtualHosts = {
       # Public services
+      "seerr.jorik-dev.com".extraConfig = ''
+        reverse_proxy http://localhost:47333
+      '';
       "j.jorik-dev.com".extraConfig = ''
         reverse_proxy http://localhost:8096
       '';
@@ -384,7 +387,7 @@
       '';
 
       "matrix.jorik-dev.com".extraConfig = ''
-        @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1
+        @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1 77.163.185.179
         handle @wireguard {
           reverse_proxy http://localhost:6167
         }

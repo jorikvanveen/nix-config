@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs?ref=master";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     nvim-pkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-eden.url = "github:marcin-serwin/nixpkgs?ref=cfcb985d52648de885623bf1566f50f72e94043f";
@@ -68,9 +69,18 @@
     { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
+      nodejsOverlay = final: prev: {
+        inherit (inputs.nixpkgs-master.legacyPackages.${prev.stdenv.hostPlatform.system})
+          nodejs
+          nodejs_22
+          nodejs_24
+          nodejs_26
+          ;
+      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ nodejsOverlay ];
       };
       makeHomeManagerModule = { home, specialArgs }: {
         home-manager.backupFileExtension = "hmbak";
@@ -103,6 +113,7 @@
           modules = [
             home-manager.nixosModules.home-manager
             {
+              nixpkgs.overlays = [ nodejsOverlay ];
               nixpkgs.config.permittedInsecurePackages = [
                 "qtwebengine-5.15.19"
                 "electron-36.9.5"

@@ -3,7 +3,7 @@
   imports = [ ./torrent-network.nix ];
 
   virtualisation.oci-containers.containers.qbittorrent = {
-    image = "lscr.io/linuxserver/qbittorrent:latest";
+    image = "lscr.io/linuxserver/qbittorrent:5.2.4-libtorrentv1";
     networks = [ "torrenting" ];
     
     environment = {
