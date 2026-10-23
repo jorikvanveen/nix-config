@@ -9,7 +9,4 @@
     };
   };
   
-  services.caddy.virtualHosts."matrix.jorik-dev.com".extraConfig = ''
-    reverse_proxy http://localhost:6167
-  '';
 }

@@ -100,13 +100,4 @@ in {
     wantedBy = [ "multi-user.target" ];
   }; 
 
-  services.caddy.virtualHosts."platen.jorik-dev.com".extraConfig = ''
-    basic_auth {
-      platen $2y$05$gpFloq5HzrH75yLFQEwZu.LXLTJMuDoXUP7SpPTYlCy05JH8bQv72
-    }
-    handle_path /api/* {
-      reverse_proxy http://localhost:43330
-    }
-    reverse_proxy http://localhost:43331
-  '';
 }

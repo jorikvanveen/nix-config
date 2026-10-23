@@ -25,9 +25,6 @@
   #  dependsOn = [ "signal-rest-api" ];
   #};
   
-  services.caddy.virtualHosts."hermes.jorik-dev.com".extraConfig = ''
-    reverse_proxy http://localhost:9119
-  '';
   
   virtualisation.incus.enable = true;
   networking.nftables.enable = true;

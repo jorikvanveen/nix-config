@@ -11,6 +11,7 @@
     ./modules/systemd-boot.nix
     ./modules/sops.nix
     ./modules/docker.nix
+    ./modules/wireguard.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
     ./modules/platen.nix

@@ -34,9 +34,4 @@ in
     };
   };
 
-  services.caddy.virtualHosts."oph-trainer.jorik-dev.com".extraConfig = ''
-    reverse_proxy http://127.0.0.1:43332 {
-      header_up X-Forwarded-For {remote_host}
-    }
-  '';
 }

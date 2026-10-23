@@ -15,7 +15,4 @@
     };
   };
 
-  services.caddy.virtualHosts."ntfy.jorik-dev.com".extraConfig = ''
-    reverse_proxy http://localhost:2586
-  '';
 }
