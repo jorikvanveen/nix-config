@@ -10,12 +10,13 @@
 
   environment.systemPackages = [ pkgs.wireguard-tools ];
 
-  # Allow HTTP(S), WireGuard, and mDNS discovery. Services can
+  # Public HTTP(S) is restricted to Cloudflare in services/caddy.nix.
+  # Allow WireGuard and mDNS discovery. Services can
   # explicitly add public ports with allowedTCPPorts/allowedUDPPorts = mkForce.
   networking.firewall = {
     # Bootstrap: remove 22 after verifying a fresh SSH session to 10.66.66.1.
-    allowedTCPPorts = lib.mkForce [ 22 80 443 ];
-    allowedUDPPorts = lib.mkForce [ 443 5353 51820 ];
+    allowedTCPPorts = lib.mkForce [ 22 ];
+    allowedUDPPorts = lib.mkForce [ 5353 51820 ];
     interfaces.wg0 = {
       allowedTCPPorts = [ 22 53 80 443 22000 25565 ];
       allowedUDPPorts = [ 53 443 22000 25565 ];

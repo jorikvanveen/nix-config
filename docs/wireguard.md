@@ -3,6 +3,7 @@
 The homelab uses `wg0`, address `10.66.66.1/24`, and UDP port `51820`.
 Only these Caddy hosts stay public:
 
+- `seerr.jorik-dev.com` (Seerr)
 - `j.jorik-dev.com` (Jellyfin)
 - `vw.jorik-dev.com` (Vaultwarden)
 - `bitwarden.tobeqz-on.top` (Vaultwarden)
@@ -16,16 +17,25 @@ APIs are currently in the private section.
 These matchers allow the VPN subnet `10.66.66.0/24` and local connections from
 IPv4 loopback `127.0.0.0/8` or IPv6 loopback `::1`.
 Caddy still handles public certificate challenges and HTTP-to-HTTPS redirects.
+Public HTTP(S) reaches the origin only through Cloudflare. The IPv4 and IPv6
+ranges in `nixos-installs/modules/cloudflare-ips.nix` are shared by the nftables
+allowlist and Caddy's trusted proxy configuration. WireGuard and loopback access
+remain available directly. Public application proxies set `X-Forwarded-For` and
+`X-Real-IP` to Caddy's resolved client IP, trusting `CF-Connecting-IP` only from
+Cloudflare peers and replacing any client-supplied forwarding chain.
 
 To make a host private, copy the matcher and both `handle` blocks from another
 private host, putting its existing directives inside `handle @wireguard`.
-To make it public, remove that wrapper and keep its service directives.
+To make it public, remove that wrapper and keep its service directives. Use the
+`publicReverseProxy` helper, or import `upstream-client-ip` inside a custom
+`reverse_proxy` block, to forward the visitor IP safely.
 Also add or remove the host's explicit `host-record` and `local` DNS entries in
 `nixos-installs/modules/wireguard.nix`. New hosts need an explicit access rule;
 there is no automatic wrapping or host discovery.
 
-During bootstrap, public TCP ports are 22 (SSH), 80, 443, and 54345 (BitTorrent
-peers). Allowed UDP ports are 443 (HTTP/3), 5353 (mDNS discovery), 51820
+During bootstrap, public TCP ports are 22 (SSH) and 54345 (BitTorrent peers).
+TCP ports 80 and 443 accept only Cloudflare sources; direct public UDP 443 is
+closed. Allowed UDP ports are 5353 (mDNS discovery), 51820
 (WireGuard), and 54345 (BitTorrent peers). mDNS remains available for `.local`
 name discovery on the LAN. SSH temporarily stays reachable over the LAN/public address
 so you can complete setup remotely. Close non-VPN SSH using the steps below
@@ -37,6 +47,15 @@ devices with `tcp://10.66.66.1:22000` as the homelab's address and connect their
 VPN first. Outbound downloads still use the server's normal internet connection.
 
 ## Before activation
+
+Every Caddy hostname must have a **proxied** public DNS record in Cloudflare,
+including private hostnames: Caddy renews their certificates with HTTP-01 through
+Cloudflare. Keep TCP ports 80 and 443 forwarded to the homelab. Cloudflare must
+forward `/.well-known/acme-challenge/*` without blocking, caching, or redirecting
+it away from the challenge handler. Use Full (strict) TLS with a valid origin
+certificate. TLS-ALPN validation is disabled because Cloudflare terminates TLS.
+DNS-only hostnames need DNS-01 certificate validation before this restriction
+can be activated. The WireGuard endpoint itself must remain DNS-only.
 
 1. Make sure `10.66.66.0/24` does not overlap a network used by your clients.
 2. Forward UDP port 51820 on your router to the homelab. Use a DNS name that
@@ -86,13 +105,15 @@ its private key. Each client needs its own key and address. The client routes
 only the VPN subnet through WireGuard. Its DNS queries go to the server's
 resolver, which answers private hostnames with `10.66.66.1` and forwards other
 queries upstream. Configure the client OS/browser to use this resolver rather
-than a separate secure-DNS provider for these names. Public DNS records do not
-need to change. Private AAAA queries receive no public IPv6 address.
+than a separate secure-DNS provider for these names. Public DNS records stay
+proxied through Cloudflare for certificate renewal. Private AAAA queries receive
+no public IPv6 address.
 
 Keep using normal HTTPS names such as `https://s.jorik-dev.com` while connected.
-Connecting directly to the public address of a private host returns HTTP 403,
-even if the WireGuard tunnel is on. The private DNS answer is what directs the
-request through the tunnel. Public Jellyfin, Vaultwarden, Atuin, and Tutorials
+Connecting directly to the origin's public address is blocked by the firewall,
+even if the WireGuard tunnel is on. Through Cloudflare, private hosts return
+HTTP 403. The private DNS answer directs the request through the tunnel.
+Public Seerr, Jellyfin, Vaultwarden, Atuin, and Tutorials
 names keep their public DNS answers and work without WireGuard.
 
 ## Close non-VPN SSH after setup
@@ -110,7 +131,7 @@ Keep the original SSH session open throughout these steps.
    Remove the bootstrap comment and change the global TCP list to:
 
    ```nix
-   allowedTCPPorts = lib.mkForce [ 80 443 ];
+   allowedTCPPorts = lib.mkForce [ ];
    ```
 
    Keep port 22 in `interfaces.wg0.allowedTCPPorts`.
@@ -136,8 +157,10 @@ no need to visit the server room for this sequence.
 - On the server, `sudo wg show wg0` should show a recent client handshake.
 - On a connected client, `nslookup s.jorik-dev.com 10.66.66.1` should return
   `10.66.66.1`; the normal HTTPS URL should load.
-- From outside the VPN, private hostnames should return 403, while Jellyfin,
-  Atuin, Tutorials, and both Vaultwarden domains should work normally.
+- From outside the VPN, private hostnames should return 403 through Cloudflare,
+  while Seerr, Jellyfin, Atuin, Tutorials, and both Vaultwarden domains should
+  work normally. Direct connections to the origin's public IPv4 and IPv6 on
+  ports 80/443 should fail, including requests with forged forwarding headers.
 - Check that public IPv4 and IPv6 cannot reach backend ports. After completing
   the SSH lockdown above, also verify that non-VPN SSH is blocked. Keep the
   torrent peer port 54345 reachable and remove obsolete router forwards and

@@ -70,11 +70,16 @@
     let
       system = "x86_64-linux";
       nodejsOverlay = final: prev: {
+        # Keep full and slim runtimes together: packages such as seerr use slim.
         inherit (inputs.nixpkgs-master.legacyPackages.${prev.stdenv.hostPlatform.system})
           nodejs
           nodejs_22
           nodejs_24
           nodejs_26
+          nodejs-slim
+          nodejs-slim_22
+          nodejs-slim_24
+          nodejs-slim_26
           ;
       };
       pkgs = import nixpkgs {
