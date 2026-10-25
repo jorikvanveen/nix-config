@@ -1,9 +1,9 @@
 {
   programs.git = {
     enable = true;
-    userEmail = "vanveenjorik@protonmail.com";
-    userName = "Jorik";
-    extraConfig = {
+    settings = {
+      user.email = "vanveenjorik@protonmail.com";
+      user.name = "Jorik";
       pull.rebase = false; # Merge instead of rebase
       push.autoSetupRemote = true;
     };
