@@ -11,6 +11,7 @@
       ];
       auth-access = [
         "jorik-regular:phone-notifications:rw"
+        "jorik-regular:red:rw"
       ];
     };
   };

@@ -26,16 +26,13 @@
 #  networking.firewall.allowedUDPPorts = [ 54345 ];
 #}
 {
-  imports = [ ./torrent-network.nix ];
-
   virtualisation.oci-containers.containers.cross-seed = {
     image = "ghcr.io/cross-seed/cross-seed:latest";
-    networks = [ "torrenting" ];
+    networks = [ "host" ];
     environment = {
       PUID = "1000";
       PGID = "1000";
     };
-    ports = [ "127.0.0.1:2468:2468" ];
     volumes = [
       "/home/main/.config/cross-seed/:/config"
       "/mnt/media/data/qbittorrent/downloads:/downloads"
@@ -43,10 +40,6 @@
     cmd = [ "daemon" ];
   };
 
-  systemd.services.docker-cross-seed = {
-    requires = [ "docker-network-torrenting.service" ];
-    after = [ "docker-network-torrenting.service" ];
-  };
     #services.cross-seed = {
     #  # "/mnt/media/data/qbittorrent/downloads:/downloads"
 

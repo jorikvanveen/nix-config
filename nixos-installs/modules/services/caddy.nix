@@ -69,6 +69,15 @@ in
 
       # Private services: allow WireGuard clients and local loopback connections.
       # When changing access, also update the DNS records in ../wireguard.nix.
+      "actual-arthur.jorik-dev.com".extraConfig = ''
+        @wireguard client_ip 77.163.185.179 2a02:a443:9963:0::/64
+        handle @wireguard {
+          reverse_proxy http://192.168.2.126:5006
+        }
+        handle {
+          respond "Connect to WireGuard to access this service." 403
+        }
+      '';
       "lr.jorik-dev.com".extraConfig = ''
         @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1
         handle @wireguard {

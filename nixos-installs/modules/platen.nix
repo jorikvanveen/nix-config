@@ -55,7 +55,7 @@ in {
   }; 
 
   systemd.services.platen-frontend = {
-    enable = false;
+    enable = true;
     description = "Platen Frontend";
     after = [ "network.target" ];
     wants = [ "network-online.target" ];

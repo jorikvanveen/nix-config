@@ -1,6 +1,6 @@
 {
   services.audiobookshelf = {
-    enable = false;
+    enable = true;
     port = 8086;
     user = "main";
   };
