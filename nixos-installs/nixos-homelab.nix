@@ -23,6 +23,7 @@
     ./modules/services/sonarr.nix
     ./modules/services/jackett.nix
     ./modules/services/prowlarr.nix
+    ./modules/services/autobrr.nix
     ./modules/services/sabnzbd.nix
     ./modules/services/open-webui.nix
     ./modules/services/caddy.nix
