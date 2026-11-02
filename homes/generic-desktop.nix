@@ -23,6 +23,7 @@
   ];
 
   home.packages = [
+    pkgs.easyeffects
     pkgs.yt-dlp
   ];
 }
