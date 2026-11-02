@@ -52,7 +52,8 @@
     #./modules/services/gitlab-runner.nix
     ./modules/services/ci-webhook.nix
     ./modules/services/actual.nix
-    ./modules/services/cross-seed.nix
+    #./modules/services/cross-seed.nix
+    ./modules/services/qui.nix
     ./modules/services/hermes.nix
 
     ./modules/sync-backup.nix

@@ -188,6 +188,16 @@ in
         }
       '';
 
+      "qui.jorik-dev.com".extraConfig = ''
+        @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1
+        handle @wireguard {
+          reverse_proxy http://127.0.0.1:7476
+        }
+        handle {
+          respond "Connect to WireGuard to access this service." 403
+        }
+      '';
+
       "sab.jorik-dev.com".extraConfig = ''
         @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1
         handle @wireguard {
