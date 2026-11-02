@@ -7,7 +7,7 @@
   },
   "ssh_connections": [
     {
-      "host": "j.jorik-dev.com",
+      "host": "qb.jorik-dev.com",
       "username": "main",
       "args": [],
       "projects": [
@@ -18,17 +18,12 @@
         },
         {
           "paths": [
-            "/home/main/data/matrixbrr-checkout/matrixbrr"
+            "/home/main/data/matrixbrr-checkout"
           ]
         },
         {
           "paths": [
-            "/home/main/nix-config"
-          ]
-        },
-        {
-          "paths": [
-            "/home/main/shared"
+            "/home/main/data/matrixbrr-checkout/matrixbrr/./"
           ]
         }
       ]
@@ -122,10 +117,10 @@
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
-        "fast-mode": false,
+        "fast-mode": true,
         "collaboration_mode": "default",
         "model": "gpt-6.1-sol",
-        "reasoning_effort": "xhigh",
+        "reasoning_effort": "high",
         "mode": "agent"
       },
       "type": "registry"
@@ -266,10 +261,10 @@
     },
     "default_model": {
       "speed": "standard",
-      "effort": "low",
+      "effort": "max",
       "enable_thinking": true,
       "provider": "openrouter",
-      "model": "openai/gpt-6.1-sol"
+      "model": "z-ai/glm-5.3-flash"
     },
     "model_parameters": []
   },
