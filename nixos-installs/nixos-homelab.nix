@@ -23,6 +23,7 @@
     ./modules/services/sonarr.nix
     ./modules/services/jackett.nix
     ./modules/services/prowlarr.nix
+    ./modules/services/autobrr.nix
     ./modules/services/sabnzbd.nix
     ./modules/services/open-webui.nix
     ./modules/services/caddy.nix
@@ -51,7 +52,8 @@
     #./modules/services/gitlab-runner.nix
     ./modules/services/ci-webhook.nix
     ./modules/services/actual.nix
-    ./modules/services/cross-seed.nix
+    #./modules/services/cross-seed.nix
+    ./modules/services/qui.nix
     ./modules/services/hermes.nix
 
     ./modules/sync-backup.nix
