@@ -573,8 +573,8 @@
       },
       "original": {
         "owner": "marcin-serwin",
-        "ref": "cfcb985d52648de885623bf1566f50f72e94043f",
         "repo": "nixpkgs",
+        "rev": "cfcb985d52648de885623bf1566f50f72e94043f",
         "type": "github"
       }
     },
