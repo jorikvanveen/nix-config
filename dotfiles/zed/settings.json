@@ -1,4 +1,102 @@
 {
+  "git": {
+    "diff_base": "head"
+  },
+  "inlay_hints": {
+    "show_type_hints": true
+  },
+  "ssh_connections": [
+    {
+      "host": "qb.jorik-dev.com",
+      "username": "main",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/main/.config/smoked-salmon"
+          ]
+        },
+        {
+          "paths": [
+            "/home/main/cleanarr"
+          ]
+        },
+        {
+          "paths": [
+            "/home/main/data/matrixbrr-checkout"
+          ]
+        },
+        {
+          "paths": [
+            "/home/main/data/matrixbrr-checkout/matrixbrr/./"
+          ]
+        }
+      ]
+    }
+  ],
+  "context_servers": {
+    "Kagi": {
+      "enabled": true,
+      "url": "https://mcp.kagi.com/mcp",
+      "headers": {
+        "Authorization": "Bearer jyg8BVnON-p9lL9RJ-C-RLYcioBlAdqKXiyQCqoknR0.YWeARF8rip5L8HqJlpVa8wmZy2HAm9yfrsRrcahiCNE"
+      }
+    }
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "language_models": {
+    "opencode": {
+      "show_zen_models": false,
+      "show_go_models": true,
+      "available_models": [
+        {
+          "display_name": "Omen Alpha",
+          "name": "omen-alpha",
+          "max_tokens": 200000,
+          "protocol": "openai_chat",
+          "subscription": "go",
+          "reasoning_effort_levels": [ "low", "high" ]
+        }
+      ]
+    },
+    //"open_router": {
+    //  //"available_models": [
+    //  //  {
+    //  //    "name": "z-ai/glm-5.2",
+    //  //    "max_tokens": 150000,
+    //  //    "supports_tools": true,
+    //  //    "mode": {
+    //  //      "type": "thinking"
+    //  //    },
+    //  //    "provider": {
+    //  //      "only": ["baidu/fp8", "streamlake/fp8"]
+    //  //    }
+    //  //  },
+    //  //]
+    //}
+  },
+  "semantic_tokens": "combined",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "left"
@@ -7,9 +105,12 @@
     "dock": "left"
   },
   "collaboration_panel": {
+    "button": false,
     "dock": "left"
   },
   "git_panel": {
+    "group_by": "none",
+    "tree_view": true,
     "dock": "left"
   },
   "show_whitespaces": "selection",
@@ -19,7 +120,12 @@
     "mode": "subtle"
   },
   "agent_servers": {
-    
+    "codex-acp": {
+      "default_config_options": {
+        "fast-mode": false
+      },
+      "type": "registry"
+    }
   },
   "languages": {
     "Rust": {
@@ -32,9 +138,105 @@
     "button": true
   },
   "agent": {
-    "sidebar_side": "right",
+    "expand_terminal_card": false,
+    "expand_edit_card": false,
+    "enable_feedback": false,
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "show_turn_stats": true,
+    "terminal_init_command": "codex",
+    "play_sound_when_agent_done": "always",
+    "favorite_models": [
+      {
+        "provider": "opencode",
+        "model": "go/glm-5.3-flash",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-6-astra",
+        "enable_thinking": true,
+        "effort": "max",
+        "speed": "fast"
+      }
+    ],
+    "sandbox_permissions": {
+      "allow_fs_write_all": false,
+      "allow_unsandboxed": false,
+      "write_paths": [],
+      "network_hosts": [
+        "developer.tidal.com",
+        "musicbrainz.org",
+        "openapi.tidal.com",
+        "auth.tidal.com",
+        "cache.nixos.org",
+        "*.cache.nixos.org",
+        "github.com",
+        "api.github.com",
+        "channels.nixos.org",
+        "docs.rs",
+        "svelte.dev",
+        "tidal.com",
+        "tidal-music.github.io",
+        "github.io",
+        "antra.hoshi.cxd",
+        "antra.hoshi.cfd",
+        "resources.tidal.com",
+        "index.crates.io",
+        "static.crates.io",
+        "raw.githubusercontent.com",
+        "www.discogs.com",
+        "support.discogs.com",
+        "api.discogs.com",
+        "interview.orpheus.network",
+        "typesafe.ai",
+        "openrouter.ai",
+        "registry.npmjs.org",
+        "ui.shadcn.com"
+      ]
+    },
     "tool_permissions": {
       "tools": {
+        "mcp:mcp-server-context7:resolve-library-id": {
+          "default": "allow"
+        },
+        "delete_path": {
+          "default": "allow"
+        },
+        "mcp:Kagi:kagi_extract": {
+          "default": "allow"
+        },
+        "mcp:Kagi:kagi_search_fetch": {
+          "default": "allow"
+        },
+        "skill": {
+          "default": "allow"
+        },
+        "search_web": {
+          "default": "allow"
+        },
+        "fetch": {
+          "default": "allow"
+        },
+        "move_path": {
+          "default": "allow"
+        },
+        "copy_path": {
+          "default": "allow"
+        },
+        "write_file": {
+          "default": "allow"
+        },
+        "edit_file": {
+          "always_confirm": [
+            {
+              "pattern": "\\.env"
+            }
+          ],
+          "default": "allow"
+        },
         "create_directory": {
           "default": "allow"
         },
@@ -42,59 +244,14 @@
           "default": "allow"
         },
         "terminal": {
-          "always_allow": [
+          "always_deny": [
             {
-              "pattern": "^cargo\\s+build(\\s|$)"
-            },
-            {
-              "pattern": "^tail\\b"
-            },
-            {
-              "pattern": "^cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^head\\b"
-            },
-            {
-              "pattern": "^grep\\b"
-            },
-            {
-              "pattern": "^sed\\b"
-            },
-            {
-              "pattern": "^CLEANARR_MEDIA_DIR=/tmp/x\\s+cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^CLEANARR_DOWNLOAD_DIR=/tmp/dl\\s+cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^CLEANARR_MEDIA_DIR=/tmp/env\\s+cargo\\s+run(\\s|$)"
-            },
-            {
-              "pattern": "^mkdir\\b"
-            },
-            {
-              "pattern": "^cp\\s+cleanarr\\.toml(\\s|$)"
-            },
-            {
-              "pattern": "^cargo\\s+test(\\s|$)"
-            },
-            {
-              "pattern": "^cargo\\s+clippy(\\s|$)"
-            },
-            {
-              "pattern": "^grep\\s+\\^warning:(\\s|$)"
-            },
-            {
-              "pattern": "^sort\\b"
-            },
-            {
-              "pattern": "^uniq\\b"
-            },
-            {
-              "pattern": "^echo\\b"
+              "pattern": "find / .*"
             }
-          ]
+          ],
+          "always_confirm": [],
+          "default": "allow",
+          "always_allow": []
         }
       }
     },
@@ -106,9 +263,11 @@
       "enable_thinking": false
     },
     "default_model": {
+      "speed": "fast",
+      "effort": "medium",
       "enable_thinking": true,
       "provider": "openrouter",
-      "model": "z-ai/glm-5.2"
+      "model": "anthropic/claude-haiku-5.5"
     },
     "model_parameters": []
   },
@@ -133,16 +292,18 @@
   "buffer_font_features": {
     "calt": true
   },
-  "buffer_font_size": 14,
+  "buffer_font_size": 12.0,
   "cursor_blink": false,
   "load_direnv": "direct",
   "relative_line_numbers": "enabled",
   "terminal": {
-    "shell": {
-      "program": "nu"
-    }
+    "font_size": 12.0,
   },
-  "theme": "Catppuccin Mocha",
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé"
+  },
   "ui_font_family": "Atkinson Hyperlegible Next",
   "ui_font_size": 16,
   "use_autoclose": false,

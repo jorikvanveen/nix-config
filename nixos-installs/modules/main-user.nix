@@ -2,6 +2,7 @@
   users.users.main = {
     isNormalUser = true;
     description = "Jorik";
+    linger = true;
     extraGroups = [
       "networkmanager"
       "render"

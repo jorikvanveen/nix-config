@@ -1,5 +1,5 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   environment.systemPackages = [
-    inputs.helium-flake.packages.x86_64-linux.helium 
+    (pkgs.helium or inputs.helium-flake.packages.x86_64-linux.helium)
   ];
 }

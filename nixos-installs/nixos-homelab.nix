@@ -6,12 +6,16 @@
     ./generic-cli.nix
 
     ./modules/main-user.nix
+    ./modules/media-storage.nix
     ./modules/syncthing-homelab.nix
     ./modules/systemd-boot.nix
     ./modules/sops.nix
     ./modules/docker.nix
+    ./modules/wireguard.nix
     ./modules/ignore-lid-switch.nix
     ./modules/nvidia.nix
+    ./modules/platen.nix
+    ./modules/oph-trainer.nix
 
     ./modules/services/atuin.nix
     ./modules/services/jellyfin.nix
@@ -19,6 +23,7 @@
     ./modules/services/sonarr.nix
     ./modules/services/jackett.nix
     ./modules/services/prowlarr.nix
+    ./modules/services/autobrr.nix
     ./modules/services/sabnzbd.nix
     ./modules/services/open-webui.nix
     ./modules/services/caddy.nix
@@ -38,7 +43,7 @@
     ./modules/services/lidarr.nix
     #./modules/services/riven.nix
     ./modules/services/vaultwarden.nix
-    ./modules/services/hoarder.nix
+    #./modules/services/hoarder.nix
     ./modules/services/audiobookshelf.nix
     ./modules/services/radicale.nix
     ./modules/services/calibre-web.nix
@@ -47,9 +52,17 @@
     #./modules/services/gitlab-runner.nix
     ./modules/services/ci-webhook.nix
     ./modules/services/actual.nix
-    ./modules/services/cross-seed.nix
+    #./modules/services/cross-seed.nix
+    ./modules/services/qui.nix
+    ./modules/services/hermes.nix
 
     ./modules/sync-backup.nix
+    ./modules/claude-timer.nix
+    ./modules/pc-as-substituter.nix
+    ./modules/services/hermes.nix
+    ./modules/services/matrix-conduit.nix
+    ./modules/services/ntfy.sh
+    ./modules/services/seerr.nix
   ];
 
   environment.systemPackages = [
@@ -65,8 +78,6 @@
   services.printing.enable = lib.mkForce false;
 
   networking.hostName = "nixos-homelab";
-  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
-  networking.firewall.allowedUDPPorts = [ 22 80 443 ];
   networking.firewall.enable = true;
 
   system.stateVersion = "24.05";

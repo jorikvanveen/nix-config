@@ -80,5 +80,17 @@
       "space k": "agent::Keep",
       "space r": "agent::Reject"
     }
+  },
+  {
+    "context": "!Terminal",
+    "unbind": {
+      "ctrl-shift-c": "collab_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+      "bindings": {
+      "ctrl-shift-c": "editor::Copy"
+    }
   }
 ]

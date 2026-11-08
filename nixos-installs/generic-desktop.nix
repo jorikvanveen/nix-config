@@ -9,6 +9,7 @@ let
   desktop-file-query = inputs.desktop-file-query.packages.${system}.default;
 in {
   programs.localsend.enable = true;
+  services.ivpn.enable = true;
   imports = [
     ./modules/calibre.nix
     ./modules/audacity.nix
@@ -26,6 +27,7 @@ in {
     ./modules/gamescope.nix
     ./modules/services/ratbagd.nix
     ./modules/helium.nix
+    ./modules/mouseless-udev.nix
   ];
   environment.systemPackages = [
     nomouse
@@ -49,7 +51,6 @@ in {
       #}).override {
       #    pnpm_10_29_2 = pkgs.pnpm;
       #})
-    pkgs.discord
     pkgs.obsidian
     pkgs.delfin
     pkgs.qbittorrent
@@ -83,5 +84,7 @@ in {
     pkgs.libusb1
     pkgs.hidapi
     pkgs.extest
+    pkgs.ivpn
+    pkgs.github-cli
   ];
 }

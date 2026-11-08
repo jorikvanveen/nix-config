@@ -266,7 +266,7 @@ layout {
 spawn-at-startup "dunst"
 spawn-at-startup "bato"
 spawn-at-startup "ghostty --command='cd ~/shared/personal/orgmode; nvim' --window-decoration=none --confirm-close-surface=false"
-spawn-at-startup "gnome-keyring -rf"
+
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

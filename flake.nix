@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs?ref=master";
     nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     nvim-pkgs.url = "github:nixos/nixpkgs?ref=nixos-25.05";
     nixpkgs-eden.url = "github:marcin-serwin/nixpkgs?ref=cfcb985d52648de885623bf1566f50f72e94043f";
@@ -39,13 +40,13 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
-    
+
     ebookdl-web.url = "github:jorikvanveen/ebookdl-web";
     ebookdl-web.inputs.nixpkgs.follows = "nixpkgs";
-    
+
     nomouse.url = "github:jorikvanveen/nomouse";
     nomouse.inputs.nixpkgs.follows = "nixpkgs";
-    
+
     desktop-file-query.url = "github:jorikvanveen/desktop-file-query";
     desktop-file-query.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -58,9 +59,14 @@
     optiscaler-client.url = "github:jorikvanveen/Optiscaler-Client?ref=nix-flake";
     optiscaler-client.inputs.nixpkgs.follows = "nixpkgs";
 
+    platen.url = "github:jorikvanveen/platen";
+
+    oph-trainer.url = "github:jorikvanveen/oph-trainer";
+    oph-trainer.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -74,26 +80,45 @@
         home-manager.useUserPackages = true;
         home-manager.users.main = home;
       };
-      makeOsConfig = { home, extraModules ? [ ], extraSpecialArgs ? { }
-        , homedir ? "/home/main", syncdir ? homedir + "/shared"
-        , dotfiledir ? homedir + "/nix-config/dotfiles" }:
+      makeOsConfig =
+        {
+          home,
+          extraModules ? [ ],
+          extraSpecialArgs ? { },
+          homedir ? "/home/main",
+          syncdir ? homedir + "/shared",
+          dotfiledir ? homedir + "/nix-config/dotfiles",
+        }:
         nixpkgs.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
-            inherit system inputs homedir syncdir dotfiledir;
-          } // extraSpecialArgs;
+            inherit
+              system
+              inputs
+              homedir
+              syncdir
+              dotfiledir
+              ;
+          }
+          // extraSpecialArgs;
           modules = [
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.config.permittedInsecurePackages =
-                [ "qtwebengine-5.15.19" "electron-36.9.5" ];
+              nixpkgs.config.permittedInsecurePackages = [
+                "qtwebengine-5.15.19"
+                "electron-36.9.5"
+              ];
             }
             (makeHomeManagerModule { inherit home specialArgs; })
-          ] ++ extraModules;
+          ]
+          ++ extraModules;
         };
-    in {
-      packages.${system}.neovim =
-        import ./program-config/neovim/neovim.nix { inherit pkgs; };
+    in
+    {
+      packages.${system} = {
+        neovim = import ./program-config/neovim/neovim.nix { inherit pkgs; };
+        oph-trainer = inputs.oph-trainer.packages.${system}.default;
+      };
 
       nixosConfigurations.nixos-laptop = makeOsConfig {
         home = import ./homes/nixos-tp-p15v.nix;
@@ -104,8 +129,10 @@
       };
       nixosConfigurations.nixos-pc = makeOsConfig {
         home = import ./homes/nixos-pc.nix;
-        extraModules =
-          [ ./nixos-installs/nixos-pc.nix inputs.musnix.nixosModules.musnix ];
+        extraModules = [
+          ./nixos-installs/nixos-pc.nix
+          inputs.musnix.nixosModules.musnix
+        ];
       };
       nixosConfigurations.nixos-homelab = makeOsConfig rec {
         home = import ./homes/nixos-homelab.nix;
@@ -118,7 +145,13 @@
         extraModules = [ ./nixos-installs/nixos-wsl.nix ];
       };
 
-      devShells.x86_64-linux.default =
-        pkgs.mkShell { buildInputs = [ pkgs.nixd pkgs.sops pkgs.nh pkgs.nil ]; };
+      devShells.x86_64-linux.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nixd
+          pkgs.sops
+          pkgs.nh
+          pkgs.nil
+        ];
+      };
     };
 }

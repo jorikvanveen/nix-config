@@ -7,5 +7,12 @@
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
+    # without publish, avahi runs but never answers for its own hostname
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      workstation = true;
+    };
   };
 }

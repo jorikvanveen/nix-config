@@ -4,13 +4,13 @@
   environment.etc."sshfs-qbd.conf".text = ''
     [jorik-dev]
     type = sftp
-    host = j.jorik-dev.com
+    host = qb.jorik-dev.com
     user = main
     key_file = /home/main/.ssh/id_ed25519
   '';
 
   fileSystems."/mnt/qb" = {
-    device = "jorik-dev:/mnt/media/data/qbittorrent/downloads";
+    device = "jorik-dev:/";
     fsType = "rclone";
     options = [
       "nodev"
