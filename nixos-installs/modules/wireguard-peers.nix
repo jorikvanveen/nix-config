@@ -11,4 +11,9 @@
     publicKey = "gYgJfp1fiGs7A3wLYZHI9dH89FsJ80ks9YR0oHvFU3w=";
     allowedIPs = [ "10.66.66.3/32"];
   }
+  {
+    name = "hermes";
+    publicKey = "El8+HOWFG2J3mQOjD5WoJ/OSHA08S24Q3Mrdm4qgvlc=";
+    allowedIPs = [ "10.66.66.4/32" ];
+  }
 ]
