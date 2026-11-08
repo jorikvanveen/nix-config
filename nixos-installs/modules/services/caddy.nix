@@ -443,7 +443,7 @@ in
       '';
 
       "matrix.jorik-dev.com".extraConfig = ''
-        @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1 77.163.185.179
+        @wireguard remote_ip 10.66.66.0/24 127.0.0.0/8 ::1 77.163.185.179 2a02:a443:9963:0::/64
         handle @wireguard {
           reverse_proxy http://localhost:6167
         }
