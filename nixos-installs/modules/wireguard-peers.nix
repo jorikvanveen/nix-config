@@ -16,4 +16,9 @@
     publicKey = "El8+HOWFG2J3mQOjD5WoJ/OSHA08S24Q3Mrdm4qgvlc=";
     allowedIPs = [ "10.66.66.4/32" ];
   }
+  {
+    name = "laptop";
+    publicKey = "FHLR/CTjZ8d0WZ4iU/ELRaFK0xCzz+pWK30BL9+kaWo=";
+    allowedIPs = [ "10.66.66.5/32" ];
+  }
 ]
