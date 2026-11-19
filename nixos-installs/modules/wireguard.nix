@@ -67,7 +67,7 @@
         "hovyu-backend.jorik-dev.com,10.66.66.1"
         "hovyu.jorik-dev.com,10.66.66.1"
         "platen.jorik-dev.com,10.66.66.1"
-        "oph-trainer.jorik-dev.com,10.66.66.1"
+
         "hermes.jorik-dev.com,10.66.66.1"
         "matrix.jorik-dev.com,10.66.66.1"
         "ntfy.jorik-dev.com,10.66.66.1"
@@ -105,7 +105,7 @@
         "/hovyu-backend.jorik-dev.com/"
         "/hovyu.jorik-dev.com/"
         "/platen.jorik-dev.com/"
-        "/oph-trainer.jorik-dev.com/"
+
         "/hermes.jorik-dev.com/"
         "/matrix.jorik-dev.com/"
         "/ntfy.jorik-dev.com/"
