@@ -18,6 +18,7 @@
       "fuse"
       "audio"
       "realtime"
+      "cdrom"
     ];
     #useDefaultShell = true;
   };
