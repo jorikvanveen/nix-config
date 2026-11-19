@@ -120,6 +120,21 @@
     "mode": "subtle"
   },
   "agent_servers": {
+    "opencode-v2": {
+      "default_config_options": {
+        "effort": "max",
+        "model": "opencode-go/deepseek-v4.1-flash"
+      },
+      "favorite_config_option_values": {
+        "model": [
+          "opencode-go/deepseek-v4.1-flash"
+        ]
+      },
+      "type": "registry"
+    },
+    "pi-acp": {
+      "type": "registry"
+    },
     "codex-acp": {
       "default_config_options": {
         "fast-mode": false
@@ -160,6 +175,18 @@
         "enable_thinking": true,
         "effort": "max",
         "speed": "fast"
+      },
+      {
+        "provider": "opencode",
+        "model": "go/deepseek-v4.1-flash",
+        "enable_thinking": true,
+        "effort": "max"
+      },
+      {
+        "provider": "opencode",
+        "model": "go/glm-5.3",
+        "enable_thinking": true,
+        "effort": "high"
       }
     ],
     "sandbox_permissions": {
@@ -186,7 +213,6 @@
         "resources.tidal.com",
         "index.crates.io",
         "static.crates.io",
-        "raw.githubusercontent.com",
         "www.discogs.com",
         "support.discogs.com",
         "api.discogs.com",
@@ -194,7 +220,8 @@
         "typesafe.ai",
         "openrouter.ai",
         "registry.npmjs.org",
-        "ui.shadcn.com"
+        "ui.shadcn.com",
+        "*.githubusercontent.com"
       ]
     },
     "tool_permissions": {
@@ -264,10 +291,10 @@
     },
     "default_model": {
       "speed": "fast",
-      "effort": "medium",
+      "effort": "max",
       "enable_thinking": true,
-      "provider": "openrouter",
-      "model": "anthropic/claude-haiku-5.5"
+      "provider": "opencode",
+      "model": "go/deepseek-v4.1-flash"
     },
     "model_parameters": []
   },
