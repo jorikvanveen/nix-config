@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }: let
+{ lib, inputs, ... }: let
+  pkgs = import inputs.nixpkgs-stable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
   #wine = pkgs-yabridge.wine-staging.overrideAttrs (oldAttrs: {
   #  src = fetchTarball {
   #    url = "https://dl.winehq.org/wine/source/9.x/wine-9.21.tar.xz";
@@ -51,8 +55,8 @@ in {
     pkgs.distrho-ports
     pkgs.carla
     pkgs.qpwgraph
-    #pkgs.reaper-sws-extension
-    #pkgs.reaper-reapack-extension
+    pkgs.reaper-sws-extension
+    pkgs.reaper-reapack-extension
     pkgs.yabridge
     pkgs.yabridgectl
     #(pkgs.yabridge.override { wine = pkgs.wineWowPackages.stagingFull; })

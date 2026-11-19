@@ -122,7 +122,7 @@
   "agent_servers": {
     "codex-acp": {
       "default_config_options": {
-        "fast-mode": true
+        "fast-mode": false
       },
       "type": "registry"
     }
@@ -263,11 +263,11 @@
       "enable_thinking": false
     },
     "default_model": {
-      "speed": "standard",
-      "effort": "high",
+      "speed": "fast",
+      "effort": "medium",
       "enable_thinking": true,
-      "provider": "openai-subscribed",
-      "model": "gpt-6.1-sol"
+      "provider": "openrouter",
+      "model": "anthropic/claude-haiku-5.5"
     },
     "model_parameters": []
   },
