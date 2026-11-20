@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 let
-  pkgs = import inputs.nixpkgs-stable {
-    system = "x86_64-linux";
-  };
+  #pkgs = import inputs.nixpkgs-stable {
+  #  system = "x86_64-linux";
+  #};
 in
 {
   programs.kodi.enable = true;
