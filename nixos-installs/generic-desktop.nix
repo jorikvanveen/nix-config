@@ -86,5 +86,7 @@ in {
     pkgs.extest
     pkgs.ivpn
     pkgs.github-cli
+
+    pkgs.eden
   ];
 }

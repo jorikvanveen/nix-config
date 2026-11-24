@@ -186,7 +186,7 @@
         "provider": "opencode",
         "model": "go/glm-5.3",
         "enable_thinking": true,
-        "effort": "high"
+        "effort": "max"
       }
     ],
     "sandbox_permissions": {
@@ -294,7 +294,7 @@
       "effort": "max",
       "enable_thinking": true,
       "provider": "opencode",
-      "model": "go/deepseek-v4.1-flash"
+      "model": "go/glm-5.3"
     },
     "model_parameters": []
   },
